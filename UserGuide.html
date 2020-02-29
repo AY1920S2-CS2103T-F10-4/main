@@ -14,11 +14,32 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#managing-modules-code-mod-code">3.2. Managing modules : <code>mod</code></a></li>
+<li><a href="#managing-modules-code-mod-code">3.2. Managing modules : <code>mod</code></a>
+<ul class="sectlevel3">
+<li><a href="#adding-a-module">3.2.1. Adding a module</a></li>
+<li><a href="#viewing-information-related-to-a-module">3.2.2. Viewing information related to a module</a></li>
+<li><a href="#editing-a-module-s-description">3.2.3. Editing a module&#8217;s description</a></li>
+<li><a href="#deleting-a-module">3.2.4. Deleting a module</a></li>
+</ul>
+</li>
 <li><a href="#managing-classes-code-class-code">3.3. Managing classes : <code>class</code></a></li>
 <li><a href="#managing-tasks-code-task-code">3.4. Managing tasks : <code>task</code></a></li>
-<li><a href="#managing-facilitators-code-facil-code">3.5. Managing facilitators : <code>facil</code></a></li>
-<li><a href="#managing-calendar-code-cal-code">3.6. Managing calendar : <code>cal</code></a></li>
+<li><a href="#managing-facilitators-code-facil-code">3.5. Managing facilitators : <code>facil</code></a>
+<ul class="sectlevel3">
+<li><a href="#adding-a-facilitator">3.5.1. Adding a facilitator</a></li>
+<li><a href="#viewing-all-facilitators">3.5.2. Viewing all facilitators</a></li>
+<li><a href="#finding-a-facilitator-by-name">3.5.3. Finding a facilitator by name</a></li>
+<li><a href="#editing-a-facilitator">3.5.4. Editing a facilitator</a></li>
+<li><a href="#deleting-a-facilitator">3.5.5. Deleting a facilitator</a></li>
+</ul>
+</li>
+<li><a href="#managing-calendar-code-cal-code">3.6. Managing calendar : <code>cal</code></a>
+<ul class="sectlevel3">
+<li><a href="#viewing-calendar-for-current-week">3.6.1. Viewing calendar for current week</a></li>
+<li><a href="#viewing-calendar-for-next-week">3.6.2. Viewing calendar for next week</a></li>
+<li><a href="#finding-empty-slots">3.6.3. Finding empty slots</a></li>
+</ul>
+</li>
 <li><a href="#listing-commands-code-command-code">3.7. Listing commands : <code>command</code></a></li>
 <li><a href="#automatic-command-guidance">3.8. Automatic command guidance</a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.9. Exiting the program : <code>exit</code></a></li>
@@ -106,34 +127,69 @@ Format: <code>help</code></p>
 </div>
 <div class="sect2">
 <h3 id="managing-modules-code-mod-code"><a class="link" href="#managing-modules-code-mod-code">3.2. Managing modules : <code>mod</code></a></h3>
+<div class="sect3">
+<h4 id="adding-a-module"><a class="link" href="#adding-a-module">3.2.1. Adding a module</a></h4>
 <div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+<p>Adds a module to the module list.<br>
+Format: <code>mod add /code MOD_CODE /desc DESCRIPTION</code></p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-A person can have any number of tags (including 0)
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p>MOD_CODE should not exceed 10 characters.</p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p>DESCRIPTION should not exceed 64 characters.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example: <code>mod add /code CS2103T /desc Software Engineering</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-information-related-to-a-module"><a class="link" href="#viewing-information-related-to-a-module">3.2.2. Viewing information related to a module</a></h4>
+<div class="paragraph">
+<p>Shows all classes, tasks and facilitators for a module.<br>
+Format: <code>mod view /code MOD_CODE</code><br>
+Example: <code>mod view /code CS2103T</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-module-s-description"><a class="link" href="#editing-a-module-s-description">3.2.3. Editing a module&#8217;s description</a></h4>
+<div class="paragraph">
+<p>Edits the description of the module.<br>
+Format: <code>mod edit /code MOD_CODE /desc DESCRIPTION</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>DESCRIPTION should not exceed 64 characters.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example: <code>mod edit /code CS2103T /desc A+ for everyone</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-module"><a class="link" href="#deleting-a-module">3.2.4. Deleting a module</a></h4>
+<div class="paragraph">
+<p>Deletes the module, along with classes, facilitators and tasks for that module.<br>
+Format: <code>mod delete /code MOD_CODE</code><br>
+Example: <code>mod delete /code CS2103T</code></p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -190,9 +246,42 @@ Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all 
 </div>
 <div class="sect2">
 <h3 id="managing-facilitators-code-facil-code"><a class="link" href="#managing-facilitators-code-facil-code">3.5. Managing facilitators : <code>facil</code></a></h3>
+<div class="sect3">
+<h4 id="adding-a-facilitator"><a class="link" href="#adding-a-facilitator">3.5.1. Adding a facilitator</a></h4>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Adds a facilitator to the module.<br>
+Format: <code>facil add /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE_NUMBER] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>A facilitator can be linked to any number of modules (including 0).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example: <code>facil add /name Akshay Narayan /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /phone 98765432 /code CS2103T</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-all-facilitators"><a class="link" href="#viewing-all-facilitators">3.5.2. Viewing all facilitators</a></h4>
+<div class="paragraph">
+<p>Shows a list of all facilitators<br>
+Format: <code>facil view</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-a-facilitator-by-name"><a class="link" href="#finding-a-facilitator-by-name">3.5.3. Finding a facilitator by name</a></h4>
+<div class="paragraph">
+<p>Finds facilitators whose names contain the given keywords.<br>
+Format: <code>facil find /name FACILITATOR_NAME</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -218,19 +307,46 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example: <code>facil find /name Akshay Narayan</code></p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-facilitator"><a class="link" href="#editing-a-facilitator">3.5.4. Editing a facilitator</a></h4>
+<div class="paragraph">
+<p>Edits the information of a facilitator.<br>
+Format: <code>facil edit /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE_NUMBER] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
+<p>At least one of the optional fields must be provided.</p>
 </li>
 <li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing module codes, the existing module codes of the facilitator will be removed i.e adding of module code is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all module codes linked to the facilitator by typing <code>/code</code> without specifying any module code after it.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example: <code>facil edit /name Akshay Narayan /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-facilitator"><a class="link" href="#deleting-a-facilitator">3.5.5. Deleting a facilitator</a></h4>
+<div class="paragraph">
+<p>Deletes a facilitator from the module.<br>
+Format: <code>facil delete /name FACILITATOR_NAME</code><br>
+Example: <code>facil delete /name Akshay Narayan</code></p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -324,14 +440,49 @@ There is no need to save manually.</p>
 <div class="paragraph">
 <p><strong>Facilitator</strong> : <code>facil</code></p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>facil add /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE_NUMBER] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><code>facil delete /name FACILITATOR_NAME</code></p>
+</li>
+<li>
+<p><code>facil edit /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE_NUMBER] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><code>facil find /name FACILITATOR_NAME</code></p>
+</li>
+<li>
+<p><code>facil view</code></p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><strong>Help</strong> : <code>help</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Module</strong> : <code>mod</code></p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mod add /code MOD_CODE /desc DESCRIPTION</code></p>
+</li>
+<li>
+<p><code>mod delete /code MOD_CODE</code></p>
+</li>
+<li>
+<p><code>mod edit /code MOD_CODE /desc DESCRIPTION</code></p>
+</li>
+<li>
+<p><code>mod view /code MOD_CODE</code></p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><strong>Task</strong> : <code>task</code></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-29 04:04:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-29 06:23:46 UTC</div></div></div></body></html>
