@@ -10,7 +10,12 @@
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#quick-start">2. Quick Start</a>
+<ul class="sectlevel2">
+<li><a href="#installing-modmanager">2.1. Installing ModManager</a></li>
+<li><a href="#using-modmanager">2.2. Using ModManager</a></li>
+</ul>
+</li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
@@ -29,7 +34,16 @@
 <li><a href="#deleting-a-class">3.3.3. Deleting a class</a></li>
 </ul>
 </li>
-<li><a href="#managing-tasks-code-task-code">3.4. Managing tasks : <code>task</code></a></li>
+<li><a href="#managing-tasks-code-task-code">3.4. Managing tasks : <code>task</code></a>
+<ul class="sectlevel3">
+<li><a href="#adding-a-task">3.4.1. Adding a task</a></li>
+<li><a href="#viewing-all-tasks">3.4.2. Viewing all tasks</a></li>
+<li><a href="#editing-a-task">3.4.3. Editing a task</a></li>
+<li><a href="#delete-a-task">3.4.4. Delete a task</a></li>
+<li><a href="#finding-tasks-by-date">3.4.5. Finding tasks by date</a></li>
+<li><a href="#finding-upcoming-tasks">3.4.6. Finding upcoming tasks</a></li>
+</ul>
+</li>
 <li><a href="#managing-facilitators-code-facil-code">3.5. Managing facilitators : <code>facil</code></a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-facilitator">3.5.1. Adding a facilitator</a></li>
@@ -55,6 +69,11 @@
 <li><a href="#automatic-command-guidance">3.8. Automatic command guidance</a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.9. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.10. Saving the data</a></li>
+<li><a href="#upcoming-code-coming-in-v2-0-code">3.11. Upcoming <code>[coming in v2.0]</code></a>
+<ul class="sectlevel3">
+<li><a href="#indexing-command-system-code-coming-in-v2-0-code">3.11.1. Indexing command system <code>[coming in v2.0]</code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -73,6 +92,8 @@
 <div class="sect1">
 <h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="installing-modmanager"><a class="link" href="#installing-modmanager">2.1. Installing ModManager</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -90,16 +111,99 @@
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
+<div class="title">Figure 1. GUI for Mark</div>
 </div>
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
 e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+<div class="paragraph">
+<p>Here are some example commands that you can try:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>command all</code></strong> : lists all available commands in our Mod Manager.</p>
+</li>
+<li>
+<p><strong><code>mod add /code CS2103T /desc Software Engineering</code></strong> : start by adding our module CS2103T to our module list.</p>
+</li>
+<li>
+<p><strong><code>facil add /name Akshay Narayan /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T</code></strong>: adds our Lecturer information to the module. If you are rushing to write an e-mail to our Lecturer, you can refer to this at [&#8230;&#8203;] conveniently.</p>
+</li>
+<li>
+<p><strong><code>task add /code CS2103T /task Complete tP tasks</code></strong>: adds a task to our CS2103T module</p>
+</li>
+<li>
+<p><strong><code>task add /code CS2103T /task Improve the DG</code></strong>: adds another task to our CS2103T module</p>
+</li>
+<li>
+<p><strong><code>task find /upcoming</code></strong>: finds upcoming tasks. You should see the two tasks above right here.</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong> : exits the application</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-modmanager"><a class="link" href="#using-modmanager">2.2. Using ModManager</a></h3>
+<div class="paragraph">
+<p>This section offers an overview of ModManager&#8217;s layout so that you can find what you need easily.</p>
+</div>
+<div class="paragraph">
+<p>There are three main areas in ModManager:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A <em>task bar with all the module codes</em> at the top of the screen</p>
+</li>
+<li>
+<p>A <em>command box</em> and <em>result display box</em> at the bottom of the screen</p>
+</li>
+<li>
+<p>A <em>dashboard</em> that occupies most of the screen, which tells you the module code and name,
+facilitators' information, classes information, and tasks or deadlines that you need to complete.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The <strong><em>taskbar</em></strong> at the top of the screen lists all of the modules that you are taking this semester.
+Clicking in one of these tabs will lead you to the section related to that module.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/foo.png" alt="foo">
+</div>
+<div class="title">Figure 2. The taskbar</div>
+</div>
+<div class="paragraph">
+<p>The <strong><em>command box</em></strong> is the area for you to enter commands. The result of each command will be shown
+in the <strong><em>result display box</em></strong>, immediately below the command box.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/foo.png" alt="foo">
+</div>
+<div class="title">Figure 3. The command box and result display box</div>
+</div>
+<div class="paragraph">
+<p>The <strong><em>dashboard</em></strong> shows all the contents and task for your module. It contains information about
+the module, facilitators' information, classes information, and tasks or deadlines that you need to complete.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/foo.png" alt="foo">
+</div>
+<div class="title">Figure 4. The dashboard</div>
+</div>
 </div>
 </div>
 </div>
@@ -258,47 +362,51 @@ Example: <code>class delete /code CS2103T /type Tut</code></p>
 </div>
 <div class="sect2">
 <h3 id="managing-tasks-code-task-code"><a class="link" href="#managing-tasks-code-task-code">3.4. Managing tasks : <code>task</code></a></h3>
+<div class="sect3">
+<h4 id="adding-a-task"><a class="link" href="#adding-a-task">3.4.1. Adding a task</a></h4>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
-</li>
-</ul>
+<p>Adds a task to a module.<br>
+Format: <code>task add /code MOD_CODE /task TASK_NAME {[/by DATE TIME] | [/at DATE TIME]}</code><br>
+Example: <code>task add /code CS2103T /task duke /by 2020-02-20 23:59</code></p>
 </div>
 </div>
-</div>
+<div class="sect3">
+<h4 id="viewing-all-tasks"><a class="link" href="#viewing-all-tasks">3.4.2. Viewing all tasks</a></h4>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Shows a list of all tasks.<br>
+Format: <code>task view</code></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
-</li>
-<li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
-</li>
-</ul>
+</div>
+<div class="sect3">
+<h4 id="editing-a-task"><a class="link" href="#editing-a-task">3.4.3. Editing a task</a></h4>
+<div class="paragraph">
+<p>Edits the information of a task.<br>
+Format: <code>task edit /code MOD_CODE /task TASK_NAME {[/by DATE TIME] | [/at DATE TIME]}</code><br>
+Example: <code>task edit /code CS2103T /task duke /by 02-03-2020 23:59</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-a-task"><a class="link" href="#delete-a-task">3.4.4. Delete a task</a></h4>
+<div class="paragraph">
+<p>Deletes a task from the module.<br>
+Format: <code>task delete /code MOD_CODE /task TASK_NAME</code><br>
+Example: <code>task delete /code CS2103T /task IP week 4</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-tasks-by-date"><a class="link" href="#finding-tasks-by-date">3.4.5. Finding tasks by date</a></h4>
+<div class="paragraph">
+<p>Finds tasks occurring on a specific date, month or year.<br>
+Format: <code>task find [/date DATE] [/month MONTH] [/year YEAR]</code><br>
+Example: <code>task find /month 02</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-upcoming-tasks"><a class="link" href="#finding-upcoming-tasks">3.4.6. Finding upcoming tasks</a></h4>
+<div class="paragraph">
+<p>Finds upcoming tasks<br>
+Format: <code>task find /upcoming</code><br></p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -469,6 +577,16 @@ Format: <code>exit</code></p>
 There is no need to save manually.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="upcoming-code-coming-in-v2-0-code"><a class="link" href="#upcoming-code-coming-in-v2-0-code">3.11. Upcoming <code>[coming in v2.0]</code></a></h3>
+<div class="paragraph">
+<p>These features will be available in the next version of Mark.</p>
+</div>
+<div class="sect3">
+<h4 id="indexing-command-system-code-coming-in-v2-0-code"><a class="link" href="#indexing-command-system-code-coming-in-v2-0-code">3.11.1. Indexing command system <code>[coming in v2.0]</code></a></h4>
+
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -483,100 +601,101 @@ There is no need to save manually.</p>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>Calendar</strong> <code>cal</code>:</p>
+<table class="tableblock frame-all grid-all">
+<caption class="title">Table 1. Summary of command formats</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Category</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Commands</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> add /code MOD_CODE /desc DESCRIPTION</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> delete /code MOD_CODE</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> edit /code MOD_CODE /desc DESCRIPTION</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> view /code MOD_CODE</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE] [/facil FACILITATOR_NAME]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> edit /code MOD_CODE /type CLASS_TYPE [/at DAY START_TIME END_TIME] [/venue VENUE] [/facil FACILITATOR_NAME]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> delete /code MOD_CODE /type CLASS_TYPE</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock">Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> add /code MOD_CODE /task TASK_NAME {[/by DATE TIME] [/at DATE TIME]}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> view</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> edit /code MOD_CODE /task TASK_NAME {[/by DATE TIME] [/at DATE TIME]}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> delete /code MOD_CODE /task TASK_NAME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> find [/date DATE] [/month MONTH] [/year YEAR]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> find /upcoming</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Facilitators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> add /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE_NUMBER] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> delete /name FACILITATOR_NAME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> edit /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE_NUMBER] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> find /name FACILITATOR_NAME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> view</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Calendar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cal</strong> find /type empty</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cal</strong> view /week next</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cal</strong> view /week this</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>command</strong> all</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>command</strong> feat COMMAND_NAME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>help</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>exit</strong></code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>cal find /type empty</code></p>
-</li>
-<li>
-<p><code>cal view /week next</code></p>
-</li>
-<li>
-<p><code>cal view /week this</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Class</strong> : <code>class</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>class add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE] [/facil FACILITATOR_NAME]</code></p>
-</li>
-<li>
-<p><code>class edit /code MOD_CODE /type CLASS_TYPE [/at DAY START_TIME END_TIME] [/venue VENUE] [/facil FACILITATOR_NAME]</code></p>
-</li>
-<li>
-<p><code>class delete /code MOD_CODE /type CLASS_TYPE</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Command</strong> : <code>command</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>command all</code></p>
-</li>
-<li>
-<p><code>command feat COMMAND_NAME</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Exit</strong> : <code>exit</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Facilitator</strong> : <code>facil</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>facil add /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE_NUMBER] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
-</li>
-<li>
-<p><code>facil delete /name FACILITATOR_NAME</code></p>
-</li>
-<li>
-<p><code>facil edit /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE_NUMBER] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
-</li>
-<li>
-<p><code>facil find /name FACILITATOR_NAME</code></p>
-</li>
-<li>
-<p><code>facil view</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Help</strong> : <code>help</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Module</strong> : <code>mod</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>mod add /code MOD_CODE /desc DESCRIPTION</code></p>
-</li>
-<li>
-<p><code>mod delete /code MOD_CODE</code></p>
-</li>
-<li>
-<p><code>mod edit /code MOD_CODE /desc DESCRIPTION</code></p>
-</li>
-<li>
-<p><code>mod view /code MOD_CODE</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Task</strong> : <code>task</code></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-01 09:59:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-01 10:30:09 UTC</div></div></div></body></html>
