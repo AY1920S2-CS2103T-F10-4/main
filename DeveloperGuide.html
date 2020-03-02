@@ -9,28 +9,34 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#purpose">1.1. Purpose</a></li>
+<li><a href="#audience">1.2. Audience</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#setting-up">2. Setting up</a></li>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#implementation">4. Implementation</a>
+<ul class="sectlevel2">
+<li><a href="#proposed-undo-redo-feature">4.1. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">4.2. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">4.3. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.4. Configuration</a></li>
+</ul>
+</li>
+<li><a href="#documentation">5. Documentation</a></li>
+<li><a href="#testing">6. Testing</a></li>
+<li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
@@ -48,7 +54,24 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="purpose"><a class="link" href="#purpose">1.1. Purpose</a></h3>
+<div class="paragraph">
+<p>This document describes the architecture and system design of Mod Manager.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="audience"><a class="link" href="#audience">1.2. Audience</a></h3>
+<div class="paragraph">
+<p>The developer guide is for software developers, designers and testers who wants to understand the architecture and system design of Mod Manager.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
@@ -56,10 +79,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -162,7 +185,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -193,7 +216,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -246,7 +269,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -291,7 +314,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -316,7 +339,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
 </div>
@@ -324,15 +347,15 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">4.1. [Proposed] Undo/Redo feature</a></h3>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.1.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -474,7 +497,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -544,20 +567,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.2. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.3. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.4, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -588,7 +611,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.4. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -596,7 +619,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -604,7 +627,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -612,7 +635,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -628,7 +651,16 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage a significant number of contacts</p>
+<p>is a NUS student</p>
+</li>
+<li>
+<p>has a need to manage modules taken in a semester</p>
+</li>
+<li>
+<p>has a need to manage classes, tasks and facilitators for each module</p>
+</li>
+<li>
+<p>has a need to visualize schedule and tasks of the week in a calendar</p>
 </li>
 <li>
 <p>prefer desktop apps over other types</p>
@@ -645,7 +677,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>manage school-related modules faster than a typical mouse/GUI driven app</p>
+</li>
+<li>
+<p>view schedule and tasks for the current and upcoming week easily</p>
+</li>
+<li>
+<p>navigate easily with the command assistant for quicker management</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -679,33 +724,207 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add modules I am taking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the information related to the module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the classes I have for a particular module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the tasks I have for a particular module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add facilitators' information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the information of the facilitators</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view information related to a module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for each module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">complete them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view facilitators' information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contact them when I need help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a module’s description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modify the module’s description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep my classes up to date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep my tasks up to date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a facilitator’s information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep their contact details up to date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use the App for different semesters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove classes that I am no longer in</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove tasks that I no longer need to track</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a facilitator’s information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove information that I no longer need</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view schedule for the current week</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view schedule for the upcoming week</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">learn how to use them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view commands for a specific feature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">learn how to use them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get reminded about how commands work</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">recall the commands</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a person by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of persons without having to go through the entire list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">import and export data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily migrate the data to another computer</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a facilitator by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of facilitators without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of tasks on a particular date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find upcoming tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prioritise them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find empty slots in my schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my time easily</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many persons in the address book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort persons by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a person easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark a task as done</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not take note of them anymore</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a priority level to a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prioritise my tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag my tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">categorise them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see countdown timers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be reminded of deadlines</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">receive reminders about deadlines and events the next day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">take note of them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mass delete the modules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete them quickly once the semester is over</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">advanced user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use shorter versions of a command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type a command faster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">careless user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo my commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo the mistakes in my command</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visual user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see a clear GUI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navigate the App more easily</p></td>
 </tr>
 </tbody>
 </table>
@@ -718,7 +937,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>Mod Manager</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
 <div class="paragraph">
@@ -760,6 +979,138 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <ul class="none">
 <li>
 <p>3a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc05-add-class" class="discrete">Use case: UC05 - Add class</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to add a class.</p>
+</li>
+<li>
+<p>User provides the details of the class.</p>
+</li>
+<li>
+<p>Mod Manager adds a class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Compulsory fields are not provided or none of the optional fields provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc06-edit-class" class="discrete">Use case: UC06 - Edit class</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to edit a class.</p>
+</li>
+<li>
+<p>User provides the module code and class type of the class to be edited.</p>
+</li>
+<li>
+<p>User provides the new details of the class.</p>
+</li>
+<li>
+<p>Mod Manager edits the class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Compulsory fields are not provided or fields provided are not valid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for valid data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc07-delete-class" class="discrete">Use case: UC07 - Delete class</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a class.</p>
+</li>
+<li>
+<p>User provides module code and class type.</p>
+</li>
+<li>
+<p>Mod Manager deletes the class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Module code or class type provided is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for valid data.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -958,4 +1309,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-01 22:29:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-02 08:44:32 UTC</div></div></div></body></html>
