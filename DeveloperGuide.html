@@ -928,9 +928,6 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -939,23 +936,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>Mod Manager</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<h3 id="use-case-uc01-add-module" class="discrete">Use case: UC01 - Add module</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>User requests to add a module.</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
+<p>User provides the module code and description of the module.</p>
 </li>
 <li>
-<p>User requests to delete a specific person in the list</p>
-</li>
-<li>
-<p>AddressBook deletes the person</p>
+<p>Mod Manager adds the module.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -968,17 +962,178 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>2a. Compulsory fields are not provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The module code is more than 10 characters or the description is more than 60 characters.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2b2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc02-view-module" class="discrete">Use case: UC02 - View module</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view a module.</p>
+</li>
+<li>
+<p>User provides the module code.</p>
+</li>
+<li>
+<p>Mod Manager shows all information related to the module.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-<li>
-<p>3a. The given index is invalid.</p>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>2a. The given module code is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc03-edit-module" class="discrete">Use case: UC03 - Edit module</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to edit a module.</p>
+</li>
+<li>
+<p>User provides the module code.</p>
+</li>
+<li>
+<p>User provides the new description.</p>
+</li>
+<li>
+<p>Mod Manager edits the module.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given module code is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. The new description is more than 60 characters.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>3a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc04-delete-module" class="discrete">Use case: UC04 - Delete module</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a module.</p>
+</li>
+<li>
+<p>User provides the module code.</p>
+</li>
+<li>
+<p>Mod Manager deletes the module.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given module code is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -1120,6 +1275,227 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
+<h3 id="use-case-uc014-add-facilitator" class="discrete">Use case: UC014 - Add facilitator</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a facilitator.</p>
+</li>
+<li>
+<p>User provides the details of the facilitator.</p>
+</li>
+<li>
+<p>Mod Manager adds the facilitator.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Compulsory fields are not provided or none of the optional fields provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc15-view-facilitators" class="discrete">Use case: UC15 - View facilitators</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view facilitators.</p>
+</li>
+<li>
+<p>Mod Manager shows the list of all the facilitators.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list of facilitators is empty.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc16-find-facilitator" class="discrete">Use case: UC16 - Find facilitator</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find a facilitator.</p>
+</li>
+<li>
+<p>User enters a keyword.</p>
+</li>
+<li>
+<p>Mod Manager shows the list of facilitators whose names contain the keyword.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. None of the names of the facilitators contain the keyword.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc17-edit-facilitator" class="discrete">Use case: UC17 - Edit facilitator</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to edit a facilitator.</p>
+</li>
+<li>
+<p>User provides the facilitator’s name.</p>
+</li>
+<li>
+<p>User provides the new details.</p>
+</li>
+<li>
+<p>Mod Manager edits the facilitator.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given facilitator name is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. The new description is more than 60 characters.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>3a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc18-delete-facilitator" class="discrete">Use case: UC18 - Delete facilitator</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a facilitator.</p>
+</li>
+<li>
+<p>User provides the facilitator name.</p>
+</li>
+<li>
+<p>Mod Manager deletes the facilitator.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given facilitator name is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+</li>
+<li>
+<p>2a2. Mod Manager requests for the correct data.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <h3 id="use-case-uc19-view-calendar" class="discrete">Use case: UC19 - View calendar</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
@@ -1210,9 +1586,6 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1224,15 +1597,21 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+<p>Should be able to hold up to 250 classes, 250 tasks and 250 facilitators and without a noticeable sluggishness in performance for typical usage.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
+<li>
+<p>Should work without any internet required.</p>
+</li>
+<li>
+<p>Should be for a single user.</p>
+</li>
+<li>
+<p>Data should be stored locally and should be in a human editable file.</p>
+</li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -1411,4 +1790,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-02 09:51:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-02 13:50:52 UTC</div></div></div></body></html>
