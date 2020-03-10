@@ -989,7 +989,37 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc02-view-module" class="discrete">Use case: UC02 - View module</h3>
+<h3 id="use-case-uc02-list-modules" class="discrete">Use case: UC02 - List modules</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list all modules.</p>
+</li>
+<li>
+<p>Mod Manager shows the list of all the modules.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list of modules is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc03-view-module" class="discrete">Use case: UC03 - View module</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1029,7 +1059,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc03-edit-module" class="discrete">Use case: UC03 - Edit module</h3>
+<h3 id="use-case-uc04-edit-module" class="discrete">Use case: UC04 - Edit module</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1039,10 +1069,10 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>User requests to edit a module.</p>
 </li>
 <li>
-<p>User provides the module code.</p>
+<p>User provides the index.</p>
 </li>
 <li>
-<p>User provides the new description.</p>
+<p>User provides the new module code and description.</p>
 </li>
 <li>
 <p>Mod Manager edits the module.</p>
@@ -1058,7 +1088,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given module code is invalid.</p>
+<p>2a. The given index is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1071,7 +1101,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </li>
 <li>
-<p>3a. The new description is more than 60 characters.</p>
+<p>3a. The new module code is more than 10 characters or the new description is more than 60 characters.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1085,7 +1115,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc04-delete-module" class="discrete">Use case: UC04 - Delete module</h3>
+<h3 id="use-case-uc05-delete-module" class="discrete">Use case: UC05 - Delete module</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1095,7 +1125,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>User requests to delete a module.</p>
 </li>
 <li>
-<p>User provides the module code.</p>
+<p>User provides the index.</p>
 </li>
 <li>
 <p>Mod Manager deletes the module.</p>
@@ -1111,7 +1141,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given module code is invalid.</p>
+<p>2a. The given index is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1125,7 +1155,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc05-add-class" class="discrete">Use case: UC05 - Add class</h3>
+<h3 id="use-case-uc06-add-class" class="discrete">Use case: UC06 - Add class</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1168,7 +1198,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc06-edit-class" class="discrete">Use case: UC06 - Edit class</h3>
+<h3 id="use-case-uc10-edit-class" class="discrete">Use case: UC10 - Edit class</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1214,7 +1244,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc07-delete-class" class="discrete">Use case: UC07 - Delete class</h3>
+<h3 id="use-case-uc11-delete-class" class="discrete">Use case: UC11 - Delete class</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1257,7 +1287,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc14-add-facilitator" class="discrete">Use case: UC14 - Add facilitator</h3>
+<h3 id="use-case-uc18-add-facilitator" class="discrete">Use case: UC18 - Add facilitator</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1297,14 +1327,31 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc15-view-facilitators" class="discrete">Use case: UC15 - View facilitators</h3>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. Fields provided are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc19-list-facilitators" class="discrete">Use case: UC19 - List facilitators</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view facilitators.</p>
+<p>User requests to list all facilitators.</p>
 </li>
 <li>
 <p>Mod Manager shows the list of all the facilitators.</p>
@@ -1327,7 +1374,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc16-find-facilitator" class="discrete">Use case: UC16 - Find facilitator</h3>
+<h3 id="use-case-uc20-find-facilitator" class="discrete">Use case: UC20 - Find facilitator</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1360,7 +1407,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc17-edit-facilitator" class="discrete">Use case: UC17 - Edit facilitator</h3>
+<h3 id="use-case-uc21-edit-facilitator" class="discrete">Use case: UC21 - Edit facilitator</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1370,7 +1417,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>User requests to edit a facilitator.</p>
 </li>
 <li>
-<p>User provides the facilitator’s name.</p>
+<p>User provides the index.</p>
 </li>
 <li>
 <p>User provides the new details.</p>
@@ -1389,7 +1436,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given facilitator name is invalid.</p>
+<p>2a. The given index is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1401,12 +1448,16 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </ul>
 </div>
 </li>
-<li>
-<p>3a. The new description is more than 60 characters.</p>
+</ul>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Mod Manager shows an error message.</p>
+<p>2a. Fields provided are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1416,7 +1467,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc18-delete-facilitator" class="discrete">Use case: UC18 - Delete facilitator</h3>
+<h3 id="use-case-uc22-delete-facilitator" class="discrete">Use case: UC22 - Delete facilitator</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1426,7 +1477,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>User requests to delete a facilitator.</p>
 </li>
 <li>
-<p>User provides the facilitator name.</p>
+<p>User provides the index.</p>
 </li>
 <li>
 <p>Mod Manager deletes the facilitator.</p>
@@ -1442,7 +1493,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given facilitator name is invalid.</p>
+<p>2a. The given index is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1456,7 +1507,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc19-view-calendar" class="discrete">Use case: UC19 - View calendar</h3>
+<h3 id="use-case-uc23-view-calendar" class="discrete">Use case: UC23 - View calendar</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1484,11 +1535,8 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <ul class="none">
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
-</li>
-<li>
-<p>1a2. Mod Manager requests for correct input.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1496,7 +1544,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc20-find-empty-slots-in-calendar" class="discrete">Use case: UC20 - Find empty slots in calendar</h3>
+<h3 id="use-case-uc24-find-empty-slots-in-calendar" class="discrete">Use case: UC24 - Find empty slots in calendar</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1524,11 +1572,8 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <ul class="none">
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
-</li>
-<li>
-<p>1a2. Mod Manager requests for correct input.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1750,4 +1795,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-09 15:05:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-10 05:25:48 UTC</div></div></div></body></html>
