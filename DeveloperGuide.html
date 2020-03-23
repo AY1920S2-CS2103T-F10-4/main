@@ -1162,10 +1162,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User request to add a class.</p>
-</li>
-<li>
-<p>User provides the details of the class.</p>
+<p>User request to add a class and provides the details of the new class.</p>
 </li>
 <li>
 <p>Mod Manager adds a class.</p>
@@ -1181,19 +1178,119 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Compulsory fields are not provided or none of the optional fields provided.</p>
+<p>1a. Compulsory fields are not provided or fields provided are invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
-</li>
-<li>
-<p>2a2. Mod Manager requests for the correct data.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc07-list-classes" class="discrete">Use case: UC07 - List classes</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to list all the classes.</p>
+</li>
+<li>
+<p>Mod Manager replies with the list of all classes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The list of classes is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc08-find-class-by-day" class="discrete">Use case: UC08 - Find class by day</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to list all the classes by day and provides the day.</p>
+</li>
+<li>
+<p>Mod Manager replies with the list of classes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Day provided is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. No class on the day provided.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc09-find-next-class" class="discrete">Use case: UC09 - Find next class</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to find the next class.</p>
+</li>
+<li>
+<p>Mod Manager replies with the next class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No next class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1205,13 +1302,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User request to edit a class.</p>
-</li>
-<li>
-<p>User provides the module code and class type of the class to be edited.</p>
-</li>
-<li>
-<p>User provides the new details of the class.</p>
+<p>User request to edit a class and provides the index and necessary details to be edited.</p>
 </li>
 <li>
 <p>Mod Manager edits the class.</p>
@@ -1227,16 +1318,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Compulsory fields are not provided or fields provided are not valid.</p>
+<p>1a. Index is not provided or invalid, or details are not provided or invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
-</li>
-<li>
-<p>2a2. Mod Manager requests for valid data.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1251,10 +1339,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to delete a class.</p>
-</li>
-<li>
-<p>User provides module code and class type.</p>
+<p>User requests to delete a class and provides the index.</p>
 </li>
 <li>
 <p>Mod Manager deletes the class.</p>
@@ -1270,16 +1355,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Module code or class type provided is invalid.</p>
+<p>1a. Index is not provided or is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
-</li>
-<li>
-<p>2a2. Mod Manager requests for valid data.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1795,4 +1877,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-23 15:28:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-23 15:49:02 UTC</div></div></div></body></html>
