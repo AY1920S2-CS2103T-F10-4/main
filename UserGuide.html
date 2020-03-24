@@ -23,7 +23,7 @@
 <ul class="sectlevel3">
 <li><a href="#adding-a-module">3.2.1. Adding a module</a></li>
 <li><a href="#viewing-all-modules">3.2.2. Viewing all modules</a></li>
-<li><a href="#viewing-information-related-to-a-module">3.2.3. Viewing information related to a module</a></li>
+<li><a href="#viewing-information-of-a-module">3.2.3. Viewing information of a module</a></li>
 <li><a href="#editing-a-module">3.2.4. Editing a module</a></li>
 <li><a href="#deleting-a-module">3.2.5. Deleting a module</a></li>
 </ul>
@@ -288,7 +288,7 @@ Format: <code>mod list</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-information-related-to-a-module"><a class="link" href="#viewing-information-related-to-a-module">3.2.3. Viewing information related to a module</a></h4>
+<h4 id="viewing-information-of-a-module"><a class="link" href="#viewing-information-of-a-module">3.2.3. Viewing information of a module</a></h4>
 <div class="paragraph">
 <p>Shows all classes, tasks and facilitators for a module.<br>
 Format: <code>mod view MOD_CODE</code><br>
@@ -299,17 +299,14 @@ Example: <code>mod view CS2103T</code></p>
 <h4 id="editing-a-module"><a class="link" href="#editing-a-module">3.2.4. Editing a module</a></h4>
 <div class="paragraph">
 <p>Edits the information of the module.<br>
-Format: <code>mod edit INDEX [/desc DESCRIPTION]</code> or <code>mod edit MOD_CODE [/desc DESCRIPTION]</code></p>
+Format: <code>mod edit INDEX /desc DESCRIPTION</code> or <code>mod edit MOD_CODE /desc DESCRIPTION</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the module at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed module list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
+<p>Edits the module at the specified <code>INDEX</code> or with the specified <code>MOD_CODE</code>. The index refers to the index number shown in the displayed module list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
 <p>Existing values will be updated to the input values.</p>
@@ -319,6 +316,9 @@ Format: <code>mod edit INDEX [/desc DESCRIPTION]</code> or <code>mod edit MOD_CO
 </li>
 <li>
 <p>DESCRIPTION should not exceed 64 characters.</p>
+</li>
+<li>
+<p>You can remove description linked to the facilitator by typing <code>/desc</code> without specifying any input after it.</p>
 </li>
 </ul>
 </div>
@@ -339,7 +339,7 @@ Format: <code>mod delete INDEX</code> or <code>mod delete MOD_CODE</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the module at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed module list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Deletes the module at the specified <code>INDEX</code> or with the specified <code>MOD_CODE</code>. The index refers to the index number shown in the displayed module list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 </ul>
 </div>
@@ -479,14 +479,15 @@ Example: <code>task delete /code CS2103T /task IP week 4</code></p>
 <h4 id="adding-a-facilitator"><a class="link" href="#adding-a-facilitator">3.5.1. Adding a facilitator</a></h4>
 <div class="paragraph">
 <p>Adds a facilitator to the module.<br>
-Format: <code>facil add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code></p>
+Format: <code>facil add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [MORE_MOD_CODES]&#8230;&#8203;</code>
+or <code>facil add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>At least one of the optional fields (phone, email, office) must be provided.</p>
 </li>
 <li>
 <p>A facilitator can be linked to 1 or more modules.</p>
@@ -496,7 +497,8 @@ Format: <code>facil add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/o
 </div>
 </div>
 <div class="paragraph">
-<p>Example: <code>facil add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T</code></p>
+<p>Example: <code>facil add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS2101</code>
+or <code>facil add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T /code CS2101</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -543,7 +545,8 @@ Format: <code>facil find FACILITATOR_NAME [MORE_FACILITATOR_NAMES]&#8230;&#8203;
 <h4 id="editing-a-facilitator"><a class="link" href="#editing-a-facilitator">3.5.4. Editing a facilitator</a></h4>
 <div class="paragraph">
 <p>Edits the information of a facilitator.<br>
-Format: <code>facil edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
+Format: <code>facil edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code>
+or <code>facil edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -729,7 +732,7 @@ There is no need to save manually.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> view MOD_CODE</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> edit INDEX [/desc DESCRIPTION]</code> or <code><strong>mod</strong> edit MOD_CODE [/desc DESCRIPTION]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> edit INDEX /desc DESCRIPTION</code> or <code><strong>mod</strong> edit MOD_CODE /desc DESCRIPTION</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> delete INDEX</code> or <code><strong>mod</strong> delete MOD_CODE</code></p></td>
@@ -780,7 +783,8 @@ There is no need to save manually.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Facilitator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> add /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [MORE_MOD_CODES]&#8230;&#8203;</code>
+or <code><strong>facil</strong> add /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> list</code></p></td>
@@ -789,7 +793,8 @@ There is no need to save manually.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> find FACILITATOR_NAME [MORE_FACILITATOR_NAMES]&#8230;&#8203;</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/email EMAIL] [/phone PHONE] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/email EMAIL] [/phone PHONE] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code>
+or <code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/email EMAIL] [/phone PHONE] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> delete INDEX</code></p></td>
@@ -822,4 +827,4 @@ There is no need to save manually.</p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 04:43:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 15:05:49 UTC</div></div></div></body></html>

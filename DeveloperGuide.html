@@ -28,10 +28,12 @@
 </li>
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">4.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">4.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">4.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.4. Configuration</a></li>
+<li><a href="#module-feature">4.1. Module feature</a></li>
+<li><a href="#facilitator-feature">4.2. Facilitator feature</a></li>
+<li><a href="#proposed-undo-redo-feature">4.3. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">4.4. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">4.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -46,7 +48,7 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-facilitator">G.2. Deleting a facilitator</a></li>
+<li><a href="#deleting-a-facilitator-2">G.2. Deleting a facilitator</a></li>
 <li><a href="#saving-data">G.3. Saving data</a></li>
 </ul>
 </li>
@@ -317,7 +319,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
+<img src="images/StorageClassDiagram1.png" alt="StorageClassDiagram1">
 </div>
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
@@ -333,7 +335,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in json format and read it back.</p>
+<p>can save the Mod Manager data in json format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -353,9 +355,612 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">4.1. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="module-feature"><a class="link" href="#module-feature">4.1. Module feature</a></h3>
+<div class="paragraph">
+<p>The module feature manages the modules in Mod Manager and is represented by the <code>Module</code> class.
+A module has a <code>ModuleCode</code> and an optional <code>Description</code>.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>add - Adds a module to Mod Manager.</p>
+</li>
+<li>
+<p>list - Lists all modules in Mod Manager.</p>
+</li>
+<li>
+<p>view - View information of a module in Mod Manager.</p>
+</li>
+<li>
+<p>edit - Edits a module in Mod Manager.</p>
+</li>
+<li>
+<p>delete - Deletes a module in Mod Manager.</p>
+</li>
+</ul>
+</div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.1.1. Proposed Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.1. Implementation</a></h4>
+<div class="sect4">
+<h5 id="adding-a-module"><a class="link" href="#adding-a-module">Adding a module</a></h5>
+<div class="paragraph">
+<p>The add module feature allows users to add a module to Mod Manager.
+This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleAddCommandParser</code> and <code>ModuleAddCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#addModule()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the module add mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the module add command and provides the module code and description of the module to be added.</p>
+</li>
+<li>
+<p><code>ModuleAddCommandParser</code> creates a new <code>Module</code> based on the module code and description.</p>
+</li>
+<li>
+<p><code>ModuleAddCommandParser</code> creates a new <code>ModuleAddCommand</code> based on the module.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>ModuleAddCommand</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> adds the module to the <code>UniqueModuleList</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredModules</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the module add command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleAddSequenceDiagram.png" alt="ModuleAddSequenceDiagram">
+</div>
+<div class="title">Figure 9. Sequence diagram for <code>mod add</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>ModuleCommandParser</code>, <code>ModuleAddCommandParser</code> and <code>ModuleAddCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a module add command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleAddActivityDiagram.png" alt="ModuleAddActivityDiagram">
+</div>
+<div class="title">Figure 10. Activity diagram for <code>mod add</code> command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="listing-all-modules"><a class="link" href="#listing-all-modules">Listing all modules</a></h5>
+<div class="paragraph">
+<p>The list module feature allows users to list all modules in Mod Manager.
+This feature is facilitated by <code>ModuleCommandParser</code> and <code>ModuleListCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredModuleList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the module list mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the module list command.</p>
+</li>
+<li>
+<p><code>ModuleCommandParser</code> creates a new <code>ModuleListCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>ModuleListCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredModules</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the module list command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleListSequenceDiagram.png" alt="ModuleListSequenceDiagram">
+</div>
+<div class="title">Figure 11. Sequence diagram for <code>mod list</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>ModuleCommandParser</code> and <code>ModuleListCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a module list command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleListActivityDiagram.png" alt="ModuleListActivityDiagram">
+</div>
+<div class="title">Figure 12. Activity diagram for <code>mod list</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-whether-to-support-editing-of-module-code"><a class="link" href="#aspect-whether-to-support-editing-of-module-code">Aspect: Whether to support editing of module code</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Allow users to only edit the description of a module.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement.</p>
+</li>
+<li>
+<p>Cons: More rigid for users.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Allow users to edit the module code of a module.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Provides more flexibility for users.</p>
+</li>
+<li>
+<p>Cons: Implementation is more complex as the classes, tasks and facilitators all store module codes and have to be edited too.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="facilitator-feature"><a class="link" href="#facilitator-feature">4.2. Facilitator feature</a></h3>
+<div class="paragraph">
+<p>The facilitator feature manages the facilitators in Mod Manager and is represented by the <code>Facilitator</code> class.
+A facilitator has a <code>Name</code>, an optional <code>Phone</code>, an optional <code>Email</code>, and optional <code>Office</code> and one or more <code>ModuleCode</code>.
+A <code>Module</code> with the <code>ModuleCode</code> of the facilitator should exist in Mod Manager.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>add - Adds a facilitator to Mod Manager.</p>
+</li>
+<li>
+<p>list - Lists all facilitators in Mod Manager.</p>
+</li>
+<li>
+<p>view - Finds a facilitator in Mod Manager by name.</p>
+</li>
+<li>
+<p>edit - Edits a facilitator in Mod Manager.</p>
+</li>
+<li>
+<p>delete - Deletes a facilitator in Mod Manager.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.1. Implementation</a></h4>
+<div class="sect4">
+<h5 id="adding-a-facilitator"><a class="link" href="#adding-a-facilitator">Adding a facilitator</a></h5>
+<div class="paragraph">
+<p>The add facilitator feature allows users to add a facilitator to Mod Manager.
+This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilAddCommandParser</code> and <code>FacilAddCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#addFacilitator()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the facilitator add mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the facilitator add command and provides the name, phone, email, office and module code of the facilitator to be added.</p>
+</li>
+<li>
+<p><code>FacilitatorAddCommandParser</code> creates a new <code>Facilitator</code> based on the name, phone, email, office and module code.</p>
+</li>
+<li>
+<p><code>FacilitatorAddCommandParser</code> creates a new <code>FacilitatorAddCommand</code> based on the facilitator.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>FacilitatorAddCommand</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> adds the facilitator to the <code>UniqueFacilitatorList</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredFacilitators</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the facilitator add command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorAddSequenceDiagram.png" alt="FacilitatorAddSequenceDiagram">
+</div>
+<div class="title">Figure 13. Sequence diagram for <code>facil add</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>FacilitatorCommandParser</code>, <code>FacilitatorAddCommandParser</code> and <code>FacilitatorAddCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a facilitator add command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorAddActivityDiagram.png" alt="FacilitatorAddActivityDiagram">
+</div>
+<div class="title">Figure 14. Activity diagram for <code>facil add</code> command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="listing-all-facilitators"><a class="link" href="#listing-all-facilitators">Listing all facilitators</a></h5>
+<div class="paragraph">
+<p>The list facilitator feature allows users to list all facilitators in Mod Manager.
+This feature is facilitated by <code>FacilCommandParser</code> and <code>FacilListCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredFacilitatorList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the facilitator list mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the facilitator list command.</p>
+</li>
+<li>
+<p><code>FacilCommandParser</code> creates a new <code>FacilListCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>FacilListCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredFacilitators</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the facilitator list command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorListSequenceDiagram.png" alt="FacilitatorListSequenceDiagram">
+</div>
+<div class="title">Figure 15. Sequence diagram for <code>facil list</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>FacilCommandParser</code> and <code>FacilListCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a facilitator list command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorListActivityDiagram.png" alt="FacilitatorListActivityDiagram">
+</div>
+<div class="title">Figure 16. Activity diagram for <code>facil list</code> command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="finding-facilitators"><a class="link" href="#finding-facilitators">Finding facilitators</a></h5>
+<div class="paragraph">
+<p>The find facilitator feature allows users to find a facilitator by name in Mod Manager.
+This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilFindCommandParser</code> and <code>FacilFindCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredFacilitatorList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the facilitator find mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the facilitator find command and provides the names of the facilitators to search for.</p>
+</li>
+<li>
+<p><code>FacilFindCommandParser</code> creates a new <code>FacilFindCommand</code> based on the names.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>FacilFindCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredFacilitators</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the facilitator find command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorFindSequenceDiagram.png" alt="FacilitatorFindSequenceDiagram">
+</div>
+<div class="title">Figure 17. Sequence diagram for <code>facil find</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>FacilCommandParser</code>, <code>FacilFindCommandParser</code>, <code>FacilFindCommand</code> and <code>NameContainsKeyword</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a facilitator find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorFindActivityDiagram.png" alt="FacilitatorFindActivityDiagram">
+</div>
+<div class="title">Figure 18. Activity diagram for <code>facil find</code> command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="editing-a-facilitator"><a class="link" href="#editing-a-facilitator">Editing a facilitator</a></h5>
+<div class="paragraph">
+<p>The edit facilitator feature allows users to edit a facilitator from Mod Manager.
+This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilEditCommandParser</code> and <code>FacilEditCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#setFacilitator()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the facilitator edit mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the facilitator edit command and provides the index of the facilitator to be edited and the fields to be edited.</p>
+</li>
+<li>
+<p><code>FacilEditCommandParser</code> creates a new <code>EditFacilitatorDescriptor</code> with the fields to be edited.</p>
+</li>
+<li>
+<p><code>FacilEditCommandParser</code> creates a new <code>FacilEditCommand</code> based on the index and <code>EditFacilitatorDescriptor</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>FacilEditCommand</code>.</p>
+</li>
+<li>
+<p><code>FacilEditCommand</code> retrieves the facilitator to be edited.</p>
+</li>
+<li>
+<p><code>FacilEditCommand</code> creates a new <code>Facilitator</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> sets the existing facilitator to the new facilitator in the <code>UniqueFacilitatorList</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredFacilitators</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the facilitator edits command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorEditSequenceDiagram.png" alt="FacilitatorEditSequenceDiagram">
+</div>
+<div class="title">Figure 19. Sequence diagram for <code>facil edit</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>FacilCommandParser</code>, <code>FacilEditCommandParser</code>, <code>EditFacilitatorDescriptor</code> and <code>FacilEditCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a facilitator edit command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorEditActivityDiagram.png" alt="FacilitatorEditActivityDiagram">
+</div>
+<div class="title">Figure 20. Activity diagram for <code>facil edt</code> command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="deleting-a-facilitator"><a class="link" href="#deleting-a-facilitator">Deleting a facilitator</a></h5>
+<div class="paragraph">
+<p>The delete facilitator feature allows users to delete a facilitator from Mod Manager.
+This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilDeleteCommandParser</code> and <code>FacilDeleteCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#deleteFacilitator()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the facilitator delete mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the facilitator delete command and provides the index of the facilitator to be deleted.</p>
+</li>
+<li>
+<p><code>FacilDeleteCommandParser</code> creates a new <code>FacilDeleteCommand</code> based on the index.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>FacilDeleteCommand</code>.</p>
+</li>
+<li>
+<p><code>FacilDeleteCommand</code> retrieves the facilitator to be deleted.</p>
+</li>
+<li>
+<p><code>ModManager</code> deletes the facilitator from the <code>UniqueFacilitatorList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the facilitator delete command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorDeleteSequenceDiagram.png" alt="FacilitatorDeleteSequenceDiagram">
+</div>
+<div class="title">Figure 21. Sequence diagram for <code>facil delete</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>FacilCommandParser</code>, <code>FacilDeleteCommandParser</code> and <code>FacilDeleteCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a facilitator delete command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilitatorDeleteActivityDiagram.png" alt="FacilitatorDeleteActivityDiagram">
+</div>
+<div class="title">Figure 22. Activity diagram for <code>facil delete</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-the-facilitator-is-edited"><a class="link" href="#aspect-how-the-facilitator-is-edited">Aspect: How the facilitator is edited</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Create a new facilitator with the edited fields and replace the existing facilitator with the new facilitator.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Preserves the immutability of the <code>Facilitator</code> object.</p>
+</li>
+<li>
+<p>Cons: Overhead in creating a new <code>Facilitator</code> object for every edit operation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Modify the existing facilitator directly.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More convenient and lower overhead to edit a facilitator by setting the relevant fields without creating a new <code>Facilitator</code> object.</p>
+</li>
+<li>
+<p>Cons: The <code>Facilitator</code> object has to be mutable and may be edited unintentionally.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-the-facilitator-list-is-stored"><a class="link" href="#aspect-how-the-facilitator-list-is-stored">Aspect: How the facilitator list is stored</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Store all facilitators in a single facilitator list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will not have to maintain multiple lists. Less memory usage as each facilitator is represented once. Will not have to iterate through multiple lists to find all instances of a particular facilitator when executing facilitator commands.</p>
+</li>
+<li>
+<p>Cons: Have to iterate through the whole list to find facilitators for a particular module when executing module commands.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store facilitators for each module in a separate list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Able to find facilitators for a particular module easily when executing module commands.</p>
+</li>
+<li>
+<p>Cons: May contain duplicates as some facilitators may have multiple module codes. Have to iterate through multiple lists when executing facilitator commands.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">4.3. [Proposed] Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.3.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -497,7 +1102,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -567,20 +1172,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.2. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.4. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -611,7 +1216,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -943,10 +1548,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to add a module.</p>
-</li>
-<li>
-<p>User provides the module code and description of the module.</p>
+<p>User requests to add a module and provides the module code and description of the module.</p>
 </li>
 <li>
 <p>Mod Manager adds the module.</p>
@@ -962,26 +1564,26 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Compulsory fields are not provided.</p>
+<p>1a. Compulsory fields are not provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>2b. The module code is more than 10 characters or the description is more than 60 characters.</p>
+<p>1b. The module code or description is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2b1. Mod Manager shows an error message.</p>
+<p>1b1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1026,10 +1628,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view a module.</p>
-</li>
-<li>
-<p>User provides the module code.</p>
+<p>User requests to view a module and provides the module code.</p>
 </li>
 <li>
 <p>Mod Manager shows all information related to the module.</p>
@@ -1045,13 +1644,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given module code is invalid.</p>
+<p>1a. The given module code is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1066,13 +1665,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to edit a module.</p>
-</li>
-<li>
-<p>User provides the index.</p>
-</li>
-<li>
-<p>User provides the new module code and description.</p>
+<p>User requests to edit a module and provides the index or module code and the new description.</p>
 </li>
 <li>
 <p>Mod Manager edits the module.</p>
@@ -1088,26 +1681,26 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given index is invalid.</p>
+<p>1a. The given index or module code is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>3a. The new module code is more than 10 characters or the new description is more than 60 characters.</p>
+<p>1b. The new description is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Mod Manager shows an error message.</p>
+<p>1b1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 3.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1122,10 +1715,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to delete a module.</p>
-</li>
-<li>
-<p>User provides the index.</p>
+<p>User requests to delete a module and provides the index or module code.</p>
 </li>
 <li>
 <p>Mod Manager deletes the module.</p>
@@ -1141,13 +1731,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given index is invalid.</p>
+<p>1a. The given index or module code is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1376,10 +1966,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to add a facilitator.</p>
-</li>
-<li>
-<p>User provides the details of the facilitator.</p>
+<p>User requests to add a facilitator and provides the details of the facilitator.</p>
 </li>
 <li>
 <p>Mod Manager adds the facilitator.</p>
@@ -1395,13 +1982,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. Compulsory fields are not provided or none of the optional fields provided.</p>
+<p>1a. Compulsory fields are not provided or none of the optional fields provided.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1412,13 +1999,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2b. Fields provided are invalid.</p>
+<p>1b. Fields provided are invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2b1. Mod Manager shows an error message.</p>
+<p>1b1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1463,10 +2050,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to find a facilitator.</p>
-</li>
-<li>
-<p>User enters a keyword.</p>
+<p>User requests to find a facilitator and provides a keyword.</p>
 </li>
 <li>
 <p>Mod Manager shows the list of facilitators whose names contain the keyword.</p>
@@ -1482,7 +2066,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. None of the names of the facilitators contain the keyword.</p>
+<p>1a. None of the names of the facilitators contain the keyword.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1496,13 +2080,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to edit a facilitator.</p>
-</li>
-<li>
-<p>User provides the index.</p>
-</li>
-<li>
-<p>User provides the new details.</p>
+<p>User requests to edit a facilitator and provides the index or module code and new details.</p>
 </li>
 <li>
 <p>Mod Manager edits the facilitator.</p>
@@ -1518,13 +2096,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given index is invalid.</p>
+<p>1a. The given index or module code is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1535,13 +2113,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a. Fields provided are invalid.</p>
+<p>1a. Fields provided are invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Mod Manager shows an error message.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 3.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1556,10 +2134,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to delete a facilitator.</p>
-</li>
-<li>
-<p>User provides the index.</p>
+<p>User requests to delete a facilitator and provides the index or module code.</p>
 </li>
 <li>
 <p>Mod Manager deletes the facilitator.</p>
@@ -1575,13 +2150,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The given index is invalid.</p>
+<p>1a. The given index or module code is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a1. Mod Manager shows an error message.</p>
+<p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case resumes at step 1.</p>
 </div>
 </li>
 </ul>
@@ -1825,7 +2400,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-facilitator"><a class="link" href="#deleting-a-facilitator">G.2. Deleting a facilitator</a></h3>
+<h3 id="deleting-a-facilitator-2"><a class="link" href="#deleting-a-facilitator-2">G.2. Deleting a facilitator</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1877,4 +2452,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 04:43:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 15:05:49 UTC</div></div></div></body></html>
