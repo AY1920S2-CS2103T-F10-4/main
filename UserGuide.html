@@ -42,10 +42,11 @@
 <ul class="sectlevel3">
 <li><a href="#adding-a-task">3.4.1. Adding a task</a></li>
 <li><a href="#viewing-all-tasks">3.4.2. Viewing all tasks</a></li>
-<li><a href="#finding-tasks-by-date">3.4.3. Finding tasks by date</a></li>
-<li><a href="#finding-upcoming-tasks">3.4.4. Finding upcoming tasks</a></li>
-<li><a href="#editing-a-task">3.4.5. Editing a task</a></li>
-<li><a href="#deleting-a-task">3.4.6. Deleting a task</a></li>
+<li><a href="#finding-a-task-by-description">3.4.3. Finding a task by description</a></li>
+<li><a href="#search-tasks-by-date">3.4.4. Search tasks by date</a></li>
+<li><a href="#finding-upcoming-tasks">3.4.5. Finding upcoming tasks</a></li>
+<li><a href="#editing-a-task">3.4.6. Editing a task</a></li>
+<li><a href="#deleting-a-task">3.4.7. Deleting a task</a></li>
 </ul>
 </li>
 <li><a href="#managing-facilitators-code-facil-code">3.5. Managing facilitators : <code>facil</code></a>
@@ -54,39 +55,10 @@
 <li><a href="#viewing-all-facilitators">3.5.2. Viewing all facilitators</a></li>
 <li><a href="#finding-a-facilitator-by-name">3.5.3. Finding a facilitator by name</a></li>
 <li><a href="#editing-a-facilitator">3.5.4. Editing a facilitator</a></li>
-<li><a href="#deleting-a-facilitator">3.5.5. Deleting a facilitator</a></li>
-</ul>
-</li>
-<li><a href="#managing-calendar-code-cal-code">3.6. Managing calendar : <code>cal</code></a>
-<ul class="sectlevel3">
-<li><a href="#viewing-calendar-for-current-week">3.6.1. Viewing calendar for current week</a></li>
-<li><a href="#viewing-calendar-for-next-week">3.6.2. Viewing calendar for next week</a></li>
-<li><a href="#finding-empty-slots">3.6.3. Finding empty slots</a></li>
-</ul>
-</li>
-<li><a href="#listing-commands-code-cmd-code">3.7. Listing commands : <code>cmd</code></a>
-<ul class="sectlevel3">
-<li><a href="#listing-all-commands">3.7.1. Listing all commands</a></li>
-<li><a href="#listing-commands-for-a-specific-feature">3.7.2. Listing commands for a specific feature</a></li>
-</ul>
-</li>
-<li><a href="#automatic-command-guidance">3.8. Automatic command guidance</a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.9. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.11. Saving the data</a></li>
-<li><a href="#upcoming-code-coming-in-v2-0-code">3.12. Upcoming <code>[coming in v2.0]</code></a>
-<ul class="sectlevel3">
-<li><a href="#using-indexing-command-system-code-coming-in-v2-0-code">3.12.1. Using indexing command system <code>[coming in v2.0]</code></a></li>
-<li><a href="#undoing-previous-command-code-coming-in-v2-0-code">3.12.2. Undoing previous command <code>[coming in v2.0]</code></a></li>
-<li><a href="#categorising-a-tasks-code-coming-in-v2-0-code">3.12.3. Categorising a tasks <code>[coming in v2.0]</code></a></li>
-<li><a href="#adding-a-priority-level-to-a-task-code-coming-in-v2-0-code">3.12.4. Adding a priority level to a task <code>[coming in v2.0]</code></a></li>
-<li><a href="#receiving-reminders-code-coming-in-v2-0-code">3.12.5. Receiving reminders <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -263,6 +235,9 @@ Format: <code>help</code></p>
 <p>Adds a module to the module list.<br>
 Format: <code>mod add /code MOD_CODE [/desc DESCRIPTION]</code></p>
 </div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -292,8 +267,8 @@ Format: <code>mod list</code></p>
 <h4 id="viewing-information-of-a-module"><a class="link" href="#viewing-information-of-a-module">3.2.3. Viewing information of a module</a></h4>
 <div class="paragraph">
 <p>Shows all classes, tasks and facilitators for a module.<br>
-Format: <code>mod view MOD_CODE</code><br>
-Example: <code>mod view CS2103T</code></p>
+Format: <code>mod view /code MOD_CODE</code><br>
+Example: <code>mod view /code CS2103T</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -301,6 +276,9 @@ Example: <code>mod view CS2103T</code></p>
 <div class="paragraph">
 <p>Edits the information of the module.<br>
 Format: <code>mod edit INDEX /desc DESCRIPTION</code> or <code>mod edit MOD_CODE /desc DESCRIPTION</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -326,14 +304,17 @@ Format: <code>mod edit INDEX /desc DESCRIPTION</code> or <code>mod edit MOD_CODE
 </div>
 </div>
 <div class="paragraph">
-<p>Example: <code>mod edit 1 /desc Software Engineering</code> or <code>mod edit CS2103T /desc Software Engineering</code></p>
+<p>Example: <code>mod edit 1 /code CS2103</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-module"><a class="link" href="#deleting-a-module">3.2.5. Deleting a module</a></h4>
 <div class="paragraph">
 <p>Deletes the module, along with classes, facilitators and tasks for that module.<br>
-Format: <code>mod delete INDEX</code> or <code>mod delete MOD_CODE</code></p>
+Format: <code>mod delete INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -347,7 +328,7 @@ Format: <code>mod delete INDEX</code> or <code>mod delete MOD_CODE</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Example: <code>mod delete 2</code> or <code>mod delete CS2103T</code></p>
+<p>Example: <code>mod delete 2</code></p>
 </div>
 </div>
 </div>
@@ -358,6 +339,9 @@ Format: <code>mod delete INDEX</code> or <code>mod delete MOD_CODE</code></p>
 <div class="paragraph">
 <p>Adds a class to a module.<br>
 Format: <code>class add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -407,21 +391,9 @@ Example: <code>class edit 1 /code CS9000 /venue Home</code></p>
 <div class="sect3">
 <h4 id="deleting-a-class"><a class="link" href="#deleting-a-class">3.3.6. Deleting a class</a></h4>
 <div class="paragraph">
-<p>Deletes the class from the module. There are 2 ways you can delete a class.<br></p>
-</div>
-<div class="paragraph">
-<p>Select a class by its index in the full class list. You can see the full class list by using <code>class list</code>.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>class delete INDEX</code><br>
-Example: <code>class delete 1</code><br></p>
-</div>
-<div class="paragraph">
-<p>Select a class by its index in the module&#8217;s class list.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>class delete /code MOD_CODE /num INDEX</code><br>
-Example: <code>class delete /code CS2103T /num 1</code><br></p>
+<p>Deletes the class from the module. Class is selected by its index in the class list.<br>
+Format: <code>class delete INDEX</code><br>
+Example: <code>class delete INDEX</code></p>
 </div>
 </div>
 </div>
@@ -431,34 +403,138 @@ Example: <code>class delete /code CS2103T /num 1</code><br></p>
 <h4 id="adding-a-task"><a class="link" href="#adding-a-task">3.4.1. Adding a task</a></h4>
 <div class="paragraph">
 <p>Adds a task to a module.<br>
-Format: <code>task add /code MOD_CODE /task TASK_NAME {[/on DATE TIME] | [/at DATE TIME]}</code><br>
-Example: <code>task add /code CS2103T /task duke /on 2020-02-20 23:59</code></p>
+Format: <code><strong>task</strong> add /code MOD_CODE /desc DESCRIPTION [/on DATE] [/at TIME]</code><br>
+Example: <code><strong>task</strong> add /code CS3230 /desc Programming Assignment 2 /on 20/02/2020 /at 23:59</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>MOD_CODE must be an existing and valid module code in the list of modules.</p>
+</li>
+<li>
+<p>A module can be linked to any number of tasks (including 0).</p>
+</li>
+<li>
+<p><code>DATE</code> and <code>TIME</code> are optional fields, however, there can only be a <code>TIME</code> field
+if a <code>DATE</code> field is provided. For example, <code>/at 23:59</code> without <code>/on DATE</code> is not allowed.</p>
+</li>
+<li>
+<p><code>DATE</code> follows <code><em>dd/MM/yyyy</em></code> format. It should be a valid date,
+e.g. Day 32 or Month 13 is not allowed.</p>
+</li>
+<li>
+<p><code>TIME</code> follows <code><em>HHmm</em></code> format. It should be a valid time period,
+e.g. 24:00 is not allowed.</p>
+</li>
+<li>
+<p>Duplicate task descriptions in the same module or across modules are allowed, however,
+these tasks cannot be in the same time period, for example, in the same day.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="viewing-all-tasks"><a class="link" href="#viewing-all-tasks">3.4.2. Viewing all tasks</a></h4>
 <div class="paragraph">
-<p>Shows a list of all tasks.<br>
-Format: <code>task list</code></p>
+<p>Shows a list of all tasks across all modules in the Mod Manager.<br>
+Format: <code><strong>task</strong> list</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-tasks-by-date"><a class="link" href="#finding-tasks-by-date">3.4.3. Finding tasks by date</a></h4>
+<h4 id="finding-a-task-by-description"><a class="link" href="#finding-a-task-by-description">3.4.3. Finding a task by description</a></h4>
 <div class="paragraph">
-<p>Finds tasks occurring on a specific date, month or year.<br>
-Format: <code>task find [/date DATE] [/month MONTH] [/year YEAR]</code><br>
-Example: <code>task find /month 02</code></p>
+<p>With this command, you can find tasks that contain any of the given keywords in their description.
+Format: <code><strong>task</strong> find DESCRIPTION [MORE_DESCRIPTIONS]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search works across modules, and no <code>/code</code> commands are required. For example, you may want to find all the <code>assignment</code> currently due.</p>
+</li>
+<li>
+<p>Search for description is case insensitive. e.g <code>programming</code> will match <code>Programming</code>.</p>
+</li>
+<li>
+<p>The order of the descriptions does not matter. e.g. <code>Programming Assignment</code> will match <code>Assignment Programming</code>.</p>
+</li>
+<li>
+<p>Tasks are only searched in the description.</p>
+</li>
+<li>
+<p>Words can be partially matched e.g. <code>A</code> will match <code>Assignment</code>.</p>
+</li>
+<li>
+<p>Tasks matching at least one description will be returned (i.e. <code>OR</code> search). e.g. <code>assign home</code> will return both <code>Programming Assignment 2</code> and <code>Homework 3</code>.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-upcoming-tasks"><a class="link" href="#finding-upcoming-tasks">3.4.4. Finding upcoming tasks</a></h4>
+<h4 id="search-tasks-by-date"><a class="link" href="#search-tasks-by-date">3.4.4. Search tasks by date</a></h4>
+<div class="paragraph">
+<p>Searches all tasks that occur on your specified date, month, or year.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>task</strong> search [/day DAY] [/month MONTH] [/year YEAR]</code><br>
+Example: <code><strong>task</strong> search /month 4</code>, <code><strong>task</strong> search /day 10 /month 4</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search works across modules, and no <code>/code</code> commands are required.</p>
+</li>
+<li>
+<p>Tasks are only searched for its date. Tasks that do not have dates or times
+will not be found in this list.</p>
+</li>
+<li>
+<p>If no optional fields are provided, the Mod Manager&#8217;s behaviour is the same as <code><strong>task</strong> list</code>.</p>
+</li>
+<li>
+<p>An invalid day, month, or year number can be provided, e.g.
+<code>/day 32</code>, <code>/month 13</code>, <code>year -1</code>, however, no matching tasks
+will be returned by the search. On the other hand, Invalid inputs such as
+<code>/day monday</code>, <code>/month December</code>, <code>/year this year</code> are not allowed,
+and you will have to follow the input requirements using valid numbers for
+<code>/day</code>, <code>/month</code>, and <code>/year</code> instead.</p>
+</li>
+<li>
+<p>Tasks matching all conditions will be returned (i.e. <code>AND</code> search). e.g. <code>/day 10 /month 4</code> will
+match only tasks that are on 10 April in any year.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-upcoming-tasks"><a class="link" href="#finding-upcoming-tasks">3.4.5. Finding upcoming tasks</a></h4>
 <div class="paragraph">
 <p>Finds upcoming tasks.<br>
 Format: <code>task find /upcoming</code><br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-task"><a class="link" href="#editing-a-task">3.4.5. Editing a task</a></h4>
+<h4 id="editing-a-task"><a class="link" href="#editing-a-task">3.4.6. Editing a task</a></h4>
 <div class="paragraph">
 <p>Edits the information of a task.<br>
 Format: <code>task edit /code MOD_CODE /task TASK_NAME {[/on DATE TIME] | [/at DATE TIME]}</code><br>
@@ -466,7 +542,7 @@ Example: <code>task edit /code CS2103T /task duke /on 02-03-2020 23:59</code></p
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-task"><a class="link" href="#deleting-a-task">3.4.6. Deleting a task</a></h4>
+<h4 id="deleting-a-task"><a class="link" href="#deleting-a-task">3.4.7. Deleting a task</a></h4>
 <div class="paragraph">
 <p>Deletes a task from the module.<br>
 Format: <code>task delete /code MOD_CODE /task TASK_NAME</code><br>
@@ -483,7 +559,12 @@ Example: <code>task delete /code CS2103T /task IP week 4</code></p>
 Format: <code>facil add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [MORE_MOD_CODES]&#8230;&#8203;</code>
 or <code>facil add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code></p>
 </div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
 <div class="sidebarblock">
+<div class="content">
+<div class="exampleblock">
 <div class="content">
 <div class="ulist">
 <ul>
@@ -494,6 +575,8 @@ or <code>facil add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office
 <p>A facilitator can be linked to 1 or more modules.</p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -514,6 +597,9 @@ Format: <code>facil list</code></p>
 <div class="paragraph">
 <p>Finds facilitators whose names contain the given name.<br>
 Format: <code>facil find FACILITATOR_NAME [MORE_FACILITATOR_NAMES]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -545,9 +631,16 @@ Format: <code>facil find FACILITATOR_NAME [MORE_FACILITATOR_NAMES]&#8230;&#8203;
 <div class="sect3">
 <h4 id="editing-a-facilitator"><a class="link" href="#editing-a-facilitator">3.5.4. Editing a facilitator</a></h4>
 <div class="paragraph">
-<p>Edits the information of a facilitator.<br>
-Format: <code>facil edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code>
+<p>Edits the information of a facilitator.<br></p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Format: <code>facil edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code>
 or <code>facil edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -566,7 +659,7 @@ or <code>facil edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL]
 <p>When editing module codes, the existing module codes of the facilitator will be removed i.e adding of module code is not cumulative.</p>
 </li>
 <li>
-<p>You can remove phone, email or office linked to the facilitator by typing <code>/phone</code>, <code>/email</code> or <code>/office</code> respectively without specifying any input after it.</p>
+<p>You can remove phone, email, office and module codes linked to the facilitator by typing <code>/phone</code>, <code>/email</code>, <code>/office</code> and <code>/code</code> respectively without specifying any input after it.</p>
 </li>
 </ul>
 </div>
@@ -575,12 +668,15 @@ or <code>facil edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL]
 <div class="paragraph">
 <p>Example: <code>facil edit 1 /name Akshay Narayan /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></p>
 </div>
+<div class="paragraph">
+<p>==== Deleting a facilitator</p>
 </div>
-<div class="sect3">
-<h4 id="deleting-a-facilitator"><a class="link" href="#deleting-a-facilitator">3.5.5. Deleting a facilitator</a></h4>
 <div class="paragraph">
 <p>Deletes a facilitator from the module.<br>
 Format: <code>facil delete INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -596,128 +692,120 @@ Format: <code>facil delete INDEX</code></p>
 <div class="paragraph">
 <p>Example: <code>facil delete 2</code></p>
 </div>
+<div class="paragraph">
+<p>=== Managing calendar : <code>cal</code></p>
 </div>
+<div class="paragraph">
+<p>==== Viewing calendar for current week</p>
 </div>
-<div class="sect2">
-<h3 id="managing-calendar-code-cal-code"><a class="link" href="#managing-calendar-code-cal-code">3.6. Managing calendar : <code>cal</code></a></h3>
-<div class="sect3">
-<h4 id="viewing-calendar-for-current-week"><a class="link" href="#viewing-calendar-for-current-week">3.6.1. Viewing calendar for current week</a></h4>
 <div class="paragraph">
 <p>Shows the calender for the current week.<br>
 Format: <code>cal view /week this</code></p>
 </div>
+<div class="paragraph">
+<p>==== Viewing calendar for next week</p>
 </div>
-<div class="sect3">
-<h4 id="viewing-calendar-for-next-week"><a class="link" href="#viewing-calendar-for-next-week">3.6.2. Viewing calendar for next week</a></h4>
 <div class="paragraph">
 <p>Shows the calendar for next week.<br>
 Format: <code>cal view /week next</code></p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="finding-empty-slots"><a class="link" href="#finding-empty-slots">3.6.3. Finding empty slots</a></h4>
 <div class="paragraph">
-<p>Finds and lists empty slots from current day to end of the week of the current day.<br>
-Format: <code>cal find empty</code></p>
+<p>==== Finding empty slots</p>
 </div>
+<div class="paragraph">
+<p>Finds empty slots in the calendar.<br>
+Format: <code>cal find /type empty</code></p>
 </div>
+<div class="paragraph">
+<p>=== Listing commands : <code>cmd</code></p>
 </div>
-<div class="sect2">
-<h3 id="listing-commands-code-cmd-code"><a class="link" href="#listing-commands-code-cmd-code">3.7. Listing commands : <code>cmd</code></a></h3>
-<div class="sect3">
-<h4 id="listing-all-commands"><a class="link" href="#listing-all-commands">3.7.1. Listing all commands</a></h4>
+<div class="paragraph">
+<p>==== Listing all commands</p>
+</div>
 <div class="paragraph">
 <p>Lists all valid commands.<br>
 Format: <code>cmd all</code></p>
 </div>
+<div class="paragraph">
+<p>==== Listing commands for a specific feature</p>
 </div>
-<div class="sect3">
-<h4 id="listing-commands-for-a-specific-feature"><a class="link" href="#listing-commands-for-a-specific-feature">3.7.2. Listing commands for a specific feature</a></h4>
 <div class="paragraph">
 <p>Lists commands for a specific group.<br>
 Format: <code>cmd group COMMAND_WORD</code><br>
 Example: <code>cmd group task</code></p>
 </div>
+<div class="paragraph">
+<p>=== Automatic command guidance</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="automatic-command-guidance"><a class="link" href="#automatic-command-guidance">3.8. Automatic command guidance</a></h3>
 <div class="paragraph">
 <p>Provides guidance for mistyped commands by showing a list of possible valid commands.<br>
 The command(s) closest to your mistyped one will be shown: both the syntax format(s) and context-dependent examples.</p>
 </div>
+<div class="paragraph">
+<p>=== Clearing all entries : <code>clear</code></p>
 </div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.9. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from Mod Manager
 Format: <code>clear</code></p>
 </div>
+<div class="paragraph">
+<p>=== Exiting the program : <code>exit</code></p>
 </div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
+<div class="paragraph">
+<p>=== Saving the data</p>
 </div>
-<div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.11. Saving the data</a></h3>
 <div class="paragraph">
 <p>Saves Mod Manager data in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
+<div class="paragraph">
+<p>=== Upcoming <code>[coming in v2.0]</code></p>
 </div>
-<div class="sect2">
-<h3 id="upcoming-code-coming-in-v2-0-code"><a class="link" href="#upcoming-code-coming-in-v2-0-code">3.12. Upcoming <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>These features will be available in the next version of Mod Manager.</p>
 </div>
-<div class="sect3">
-<h4 id="using-indexing-command-system-code-coming-in-v2-0-code"><a class="link" href="#using-indexing-command-system-code-coming-in-v2-0-code">3.12.1. Using indexing command system <code>[coming in v2.0]</code></a></h4>
+<div class="paragraph">
+<p>==== Using indexing command system <code>[coming in v2.0]</code></p>
+</div>
 <div class="paragraph">
 <p>Accesses modules, classes, tasks and facilitators using an indexing system.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="undoing-previous-command-code-coming-in-v2-0-code"><a class="link" href="#undoing-previous-command-code-coming-in-v2-0-code">3.12.2. Undoing previous command <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
-<p>Restores the Mod Manager to the state before the previous undoable command was executed.</p>
+<p>==== Undoing previous command <code>[coming in v2.0]</code>
+Restores the Mod Manager to the state before the previous undoable command was executed.</p>
 </div>
+<div class="paragraph">
+<p>==== Categorising a tasks <code>[coming in v2.0]</code></p>
 </div>
-<div class="sect3">
-<h4 id="categorising-a-tasks-code-coming-in-v2-0-code"><a class="link" href="#categorising-a-tasks-code-coming-in-v2-0-code">3.12.3. Categorising a tasks <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Add tags to a task.</p>
 </div>
+<div class="paragraph">
+<p>==== Adding a priority level to a task <code>[coming in v2.0]</code></p>
 </div>
-<div class="sect3">
-<h4 id="adding-a-priority-level-to-a-task-code-coming-in-v2-0-code"><a class="link" href="#adding-a-priority-level-to-a-task-code-coming-in-v2-0-code">3.12.4. Adding a priority level to a task <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Adds a priority level to a task.</p>
 </div>
+<div class="paragraph">
+<p>==== Receiving reminders <code>[coming in v2.0]</code></p>
 </div>
-<div class="sect3">
-<h4 id="receiving-reminders-code-coming-in-v2-0-code"><a class="link" href="#receiving-reminders-code-coming-in-v2-0-code">3.12.5. Receiving reminders <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>Receive reminders for deadlines and events the next day.</p>
 </div>
+<div class="paragraph">
+<p>== FAQ</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Mod Manager folder.</p>
 </div>
+<div class="paragraph">
+<p>== Command Summary</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
-<div class="sectionbody">
 <table class="tableblock frame-all grid-all">
 <caption class="title">Table 1. Summary of command formats</caption>
 <colgroup>
@@ -746,8 +834,8 @@ There is no need to save manually.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> delete INDEX</code> or <code><strong>mod</strong> delete MOD_CODE</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">Class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock">Class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE] [/facil FACILITATOR_NAME]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> list</code></p></td>
@@ -766,10 +854,10 @@ There is no need to save manually.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> delete /code MOD_CODE /num INDEX</code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">Task</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">Task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> add /code MOD_CODE /desc TASK_NAME {[/on DATE TIME] [/at DATE TIME]}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> add /code MOD_CODE /task TASK_NAME [/on DATE TIME] [/at DATE TIME]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> list</code></p></td>
@@ -786,53 +874,40 @@ There is no need to save manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> edit /code MOD_CODE /desc TASK_NAME {[/on DATE TIME] [/at DATE TIME]}</code></p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> delete /code MOD_CODE /task TASK_NAME</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Facilitator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [MORE_MOD_CODES]&#8230;&#8203;</code>
-or <code><strong>facil</strong> add /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> list</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> find FACILITATOR_NAME [MORE_FACILITATOR_NAMES]&#8230;&#8203;</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/email EMAIL] [/phone PHONE] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code>
-or <code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/email EMAIL] [/phone PHONE] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> delete INDEX</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Calendar</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cal</strong> find empty</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cal</strong> view /week next</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cal</strong> view /week this</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Command</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>command</strong> all</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>command</strong> feature COMMAND_NAME</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Help</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>help</strong></code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>exit</strong></code></p></td>
-</tr>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 11:52:31 UTC</div></div></div></body></html>
+</div>
+<div class="paragraph">
+<div class="title">5+|Facilitator</div>
+<p>|  <code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [MORE_MOD_CODES]&#8230;&#8203;</code>
+or <code><strong>facil</strong> add /name FACILITATOR_NAME [/email EMAIL] [/phone PHONE] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code>
+|  <code><strong>facil</strong> list</code>
+|  <code><strong>facil</strong> find FACILITATOR_NAME [MORE_FACILITATOR_NAMES]&#8230;&#8203;</code>
+|  <code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/email EMAIL] [/phone PHONE] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code>
+or <code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/email EMAIL] [/phone PHONE] [/office OFFICE] [/code MOD_CODE]&#8230;&#8203;</code>
+|  <code><strong>facil</strong> delete INDEX</code></p>
+</div>
+<div class="paragraph">
+<div class="title">3+|Calendar</div>
+<p>|  <code><strong>cal</strong> find /type empty</code>
+|  <code><strong>cal</strong> view /week next</code>
+|  <code><strong>cal</strong> view /week this</code></p>
+</div>
+<div class="paragraph">
+<div class="title">2+|Command</div>
+<p>|  <code><strong>command</strong> all</code>
+|  <code><strong>command</strong> feature COMMAND_NAME</code></p>
+</div>
+<div class="paragraph">
+<div class="title">1+|Help</div>
+<p>|  <code><strong>help</strong></code></p>
+</div>
+<div class="paragraph">
+<div class="title">1+|Exit</div>
+<p>|  <code><strong>exit</strong></code></p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 15:36:16 UTC</div></div></div></body></html>

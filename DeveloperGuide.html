@@ -28,14 +28,12 @@
 </li>
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#module-feature">4.1. Module feature</a></li>
-<li><a href="#facilitator-feature">4.2. Facilitator feature</a></li>
+<li><a href="#modules-management-feature">4.1. Modules Management Feature</a></li>
+<li><a href="#facilitators-management-feature">4.2. Facilitators Management Feature</a></li>
 <li><a href="#calendar-feature">4.3. Calendar Feature</a></li>
-<li><a href="#class-feature">4.4. Class feature</a></li>
-<li><a href="#proposed-undo-redo-feature">4.5. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">4.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.8. Configuration</a></li>
+<li><a href="#classes-management-feature">4.4. Classes Management feature</a></li>
+<li><a href="#logging">4.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -95,19 +93,6 @@
 </div>
 <div class="paragraph">
 <p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/tree/master/docs/diagrams/">diagrams</a> folder.
-Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
@@ -176,13 +161,13 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components generically interact with each other for the scenario where the user issues the command <code>some command</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<div class="title">Figure 3. Component interactions for <code>some command</code> command</div>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -250,27 +235,6 @@ The following class plays an important role at the architecture level:</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
-</div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
@@ -278,7 +242,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 6. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -302,20 +266,6 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
-<br>
-<span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
-</td>
-</tr>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
@@ -323,7 +273,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/StorageClassDiagram1.png" alt="StorageClassDiagram1">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 7. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -357,7 +307,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="module-feature"><a class="link" href="#module-feature">4.1. Module feature</a></h3>
+<h3 id="modules-management-feature"><a class="link" href="#modules-management-feature">4.1. Modules Management Feature</a></h3>
 <div class="paragraph">
 <p>The module feature manages the modules in Mod Manager and is represented by the <code>Module</code> class.
 A module has a <code>ModuleCode</code> and an optional <code>Description</code>.</p>
@@ -385,7 +335,7 @@ A module has a <code>ModuleCode</code> and an optional <code>Description</code>.
 </ul>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.1. Implementation</a></h4>
+<h4 id="implementation-details"><a class="link" href="#implementation-details">4.1.1. Implementation Details</a></h4>
 <div class="sect4">
 <h5 id="adding-a-module"><a class="link" href="#adding-a-module">Adding a module</a></h5>
 <div class="paragraph">
@@ -425,7 +375,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#addM
 <div class="content">
 <img src="images/ModuleAddSequenceDiagram.png" alt="ModuleAddSequenceDiagram">
 </div>
-<div class="title">Figure 9. Sequence diagram for <code>mod add</code> command</div>
+<div class="title">Figure 8. Sequence diagram for <code>mod add</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -447,7 +397,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/ModuleAddActivityDiagram.png" alt="ModuleAddActivityDiagram">
 </div>
-<div class="title">Figure 10. Activity diagram for <code>mod add</code> command</div>
+<div class="title">Figure 9. Activity diagram for <code>mod add</code> command</div>
 </div>
 </div>
 <div class="sect4">
@@ -483,7 +433,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="images/ModuleListSequenceDiagram.png" alt="ModuleListSequenceDiagram">
 </div>
-<div class="title">Figure 11. Sequence diagram for <code>mod list</code> command</div>
+<div class="title">Figure 10. Sequence diagram for <code>mod list</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -505,12 +455,12 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/ModuleListActivityDiagram.png" alt="ModuleListActivityDiagram">
 </div>
-<div class="title">Figure 12. Activity diagram for <code>mod list</code> command</div>
+<div class="title">Figure 11. Activity diagram for <code>mod list</code> command</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-whether-to-support-editing-of-module-code"><a class="link" href="#aspect-whether-to-support-editing-of-module-code">Aspect: Whether to support editing of module code</a></h5>
 <div class="ulist">
@@ -547,7 +497,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect2">
-<h3 id="facilitator-feature"><a class="link" href="#facilitator-feature">4.2. Facilitator feature</a></h3>
+<h3 id="facilitators-management-feature"><a class="link" href="#facilitators-management-feature">4.2. Facilitators Management Feature</a></h3>
 <div class="paragraph">
 <p>The facilitator feature manages the facilitators in Mod Manager and is represented by the <code>Facilitator</code> class.
 A facilitator has a <code>Name</code>, an optional <code>Phone</code>, an optional <code>Email</code>, and optional <code>Office</code> and one or more <code>ModuleCode</code>.
@@ -576,7 +526,7 @@ A <code>Module</code> with the <code>ModuleCode</code> of the facilitator should
 </ul>
 </div>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.1. Implementation</a></h4>
+<h4 id="implementation-details-2"><a class="link" href="#implementation-details-2">4.2.1. Implementation Details</a></h4>
 <div class="sect4">
 <h5 id="adding-a-facilitator"><a class="link" href="#adding-a-facilitator">Adding a facilitator</a></h5>
 <div class="paragraph">
@@ -616,7 +566,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#addF
 <div class="content">
 <img src="images/FacilitatorAddSequenceDiagram.png" alt="FacilitatorAddSequenceDiagram">
 </div>
-<div class="title">Figure 13. Sequence diagram for <code>facil add</code> command</div>
+<div class="title">Figure 12. Sequence diagram for <code>facil add</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -638,7 +588,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorAddActivityDiagram.png" alt="FacilitatorAddActivityDiagram">
 </div>
-<div class="title">Figure 14. Activity diagram for <code>facil add</code> command</div>
+<div class="title">Figure 13. Activity diagram for <code>facil add</code> command</div>
 </div>
 </div>
 <div class="sect4">
@@ -674,7 +624,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="images/FacilitatorListSequenceDiagram.png" alt="FacilitatorListSequenceDiagram">
 </div>
-<div class="title">Figure 15. Sequence diagram for <code>facil list</code> command</div>
+<div class="title">Figure 14. Sequence diagram for <code>facil list</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -696,7 +646,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorListActivityDiagram.png" alt="FacilitatorListActivityDiagram">
 </div>
-<div class="title">Figure 16. Activity diagram for <code>facil list</code> command</div>
+<div class="title">Figure 15. Activity diagram for <code>facil list</code> command</div>
 </div>
 </div>
 <div class="sect4">
@@ -732,7 +682,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="images/FacilitatorFindSequenceDiagram.png" alt="FacilitatorFindSequenceDiagram">
 </div>
-<div class="title">Figure 17. Sequence diagram for <code>facil find</code> command</div>
+<div class="title">Figure 16. Sequence diagram for <code>facil find</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -754,7 +704,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorFindActivityDiagram.png" alt="FacilitatorFindActivityDiagram">
 </div>
-<div class="title">Figure 18. Activity diagram for <code>facil find</code> command</div>
+<div class="title">Figure 17. Activity diagram for <code>facil find</code> command</div>
 </div>
 </div>
 <div class="sect4">
@@ -802,7 +752,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#setF
 <div class="content">
 <img src="images/FacilitatorEditSequenceDiagram.png" alt="FacilitatorEditSequenceDiagram">
 </div>
-<div class="title">Figure 19. Sequence diagram for <code>facil edit</code> command</div>
+<div class="title">Figure 18. Sequence diagram for <code>facil edit</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -824,7 +774,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorEditActivityDiagram.png" alt="FacilitatorEditActivityDiagram">
 </div>
-<div class="title">Figure 20. Activity diagram for <code>facil edt</code> command</div>
+<div class="title">Figure 19. Activity diagram for <code>facil edt</code> command</div>
 </div>
 </div>
 <div class="sect4">
@@ -863,7 +813,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 <div class="content">
 <img src="images/FacilitatorDeleteSequenceDiagram.png" alt="FacilitatorDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 21. Sequence diagram for <code>facil delete</code> command</div>
+<div class="title">Figure 20. Sequence diagram for <code>facil delete</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -885,12 +835,12 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorDeleteActivityDiagram.png" alt="FacilitatorDeleteActivityDiagram">
 </div>
-<div class="title">Figure 22. Activity diagram for <code>facil delete</code> command</div>
+<div class="title">Figure 21. Activity diagram for <code>facil delete</code> command</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-the-facilitator-is-edited"><a class="link" href="#aspect-how-the-facilitator-is-edited">Aspect: How the facilitator is edited</a></h5>
 <div class="ulist">
@@ -978,7 +928,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </ul>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
+<h4 id="implementation-details-3"><a class="link" href="#implementation-details-3">4.3.1. Implementation Details</a></h4>
 <div class="sect4">
 <h5 id="viewing-the-calendar"><a class="link" href="#viewing-the-calendar">Viewing the calendar</a></h5>
 <div class="paragraph">
@@ -1020,7 +970,7 @@ This feature is facilitated by <code>CalCommandParser</code>, <code>CalViewComma
 <div class="content">
 <img src="images/CalViewSequenceDiagram.png" alt="CalViewSequenceDiagram">
 </div>
-<div class="title">Figure 23. Sequence diagram for <code>cal view</code> command</div>
+<div class="title">Figure 22. Sequence diagram for <code>cal view</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1041,7 +991,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="images/CalViewActivityDiagram.png" alt="CalViewActivityDiagram">
 </div>
-<div class="title">Figure 24. Activity diagram for 'cal view command'</div>
+<div class="title">Figure 23. Activity diagram for 'cal view command'</div>
 </div>
 </div>
 <div class="sect4">
@@ -1072,7 +1022,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="images/CalFindSequenceDiagram.png" alt="CalFindSequenceDiagram">
 </div>
-<div class="title">Figure 25. Sequence diagram for <code>cal find</code> command</div>
+<div class="title">Figure 24. Sequence diagram for <code>cal find</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1093,25 +1043,25 @@ The lifeline for CalCommandParser, CalFindCommandParser and CalFindCommand shoul
 <div class="content">
 <img src="images/CalFindActivityDiagram.png" alt="CalFindActivityDiagram">
 </div>
-<div class="title">Figure 26. Activity diagram for <code>cal find command</code></div>
+<div class="title">Figure 25. Activity diagram for <code>cal find command</code></div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-calendar-appearance"><a class="link" href="#aspect-calendar-appearance">Aspect: Calendar appearance</a></h5>
 <div class="imageblock">
 <div class="content">
 <img src="images/NewCalendar.png" alt="NewCalendar">
 </div>
-<div class="title">Figure 27. New design for calendar appearance (alternative 1)</div>
+<div class="title">Figure 26. New design for calendar appearance (alternative 1)</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/OldCalendar.png" alt="OldCalendar">
 </div>
-<div class="title">Figure 28. Old design for calendar appearnce (alternative 2)</div>
+<div class="title">Figure 27. Old design for calendar appearnce (alternative 2)</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1190,7 +1140,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 </div>
 </div>
 <div class="sect2">
-<h3 id="class-feature"><a class="link" href="#class-feature">4.4. Class feature</a></h3>
+<h3 id="classes-management-feature"><a class="link" href="#classes-management-feature">4.4. Classes Management feature</a></h3>
 <div class="paragraph">
 <p>The class feature manages the classes in Mod Manager and is represented by the <code>Lesson</code> class.
 A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code> which is a <code>DayOfWeek</code> object, <code>startTime</code>, <code>endTime</code> which are <code>LocalTime</code> objects and <code>venue</code> which is a <code>String</code>.</p>
@@ -1215,7 +1165,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
+<h4 id="implementation-details-4"><a class="link" href="#implementation-details-4">4.4.1. Implementation Details</a></h4>
 <div class="sect4">
 <h5 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h5>
 <div class="paragraph">
@@ -1247,7 +1197,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code>
 <div class="content">
 <img src="images/LessonAddSequenceDiagram.png" alt="LessonAddSequenceDiagram">
 </div>
-<div class="title">Figure 29. Sequence diagram for <code>class add</code> command</div>
+<div class="title">Figure 28. Sequence diagram for <code>class add</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1268,12 +1218,12 @@ The lifeline for LessonCommandParser, LessonAddCommandParser and LessonAddComman
 <div class="content">
 <img src="images/LessonAddActivityDiagram.png" alt="LessonAddActivityDiagram">
 </div>
-<div class="title">Figure 30. Activity diagram for <code>class add</code> command</div>
+<div class="title">Figure 29. Activity diagram for <code>class add</code> command</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-prefix-of-day-and-time"><a class="link" href="#aspect-prefix-of-day-and-time">Aspect: Prefix of day and time</a></h5>
 <div class="ulist">
@@ -1310,234 +1260,14 @@ The lifeline for LessonCommandParser, LessonAddCommandParser and LessonAddComman
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">4.5. [Proposed] Undo/Redo feature</a></h3>
-<div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.5.1. Proposed Implementation</a></h4>
-<div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th facilitator in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new facilitator. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the facilitator was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the facilitator being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.7. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1568,7 +1298,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.8. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2841,4 +2571,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 11:52:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 15:36:16 UTC</div></div></div></body></html>
