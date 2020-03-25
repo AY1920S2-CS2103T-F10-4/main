@@ -152,6 +152,126 @@
 </tbody>
 </table>
 <div class="sect2">
+<h3 id="class-feature"><a class="link" href="#class-feature">Class feature</a></h3>
+<div class="paragraph">
+<p>The class feature manages the classes in Mod Manager and is represented by the <code>Lesson</code> class.
+A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code> which is a <code>DayOfWeek</code> object, <code>startTime</code>, <code>endTime</code> which are <code>LocalTime</code> objects and <code>venue</code> which is a <code>String</code>.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>add - Adds a class to Mod Manager.</p>
+</li>
+<li>
+<p>list - Lists all classes in Mod Manager.</p>
+</li>
+<li>
+<p>edit - Edits a class in Mod Manager.</p>
+</li>
+<li>
+<p>delete - Deletes a class in Mod Manager.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="sect4">
+<h5 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h5>
+<div class="paragraph">
+<p>The add class command allows user to add a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the lesson add mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the lesson add command and provides the module code, lesson type, day, start time, end time and venue of the lesson to be added.</p>
+</li>
+<li>
+<p><code>LessonAddCommandParser</code> creates a new <code>Lesson</code>, then a new <code>LessonAddCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>LessonAddCommand</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> adds the <code>Lesson</code> to <code>LessonList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the lesson add command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonAddSequenceDiagram.png" alt="LessonAddSequenceDiagram">
+</div>
+<div class="title">Figure 1. Sequence diagram for <code>class add</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for LessonCommandParser, LessonAddCommandParser and LessonAddCommand should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a lesson add command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonAddActivityDiagram.png" alt="LessonAddActivityDiagram">
+</div>
+<div class="title">Figure 2. Activity diagram for <code>class add</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-prefix-of-day-and-time"><a class="link" href="#aspect-prefix-of-day-and-time">Aspect: Prefix of day and time</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice)</strong> Have one prefix for all three <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: User types less.</p>
+</li>
+<li>
+<p>Cons: When user wants to edit one field only, user have to key in other unnecessary details.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Have one prefix each for <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to parse and less invalid inputs to take note of. User can also edit any field.</p>
+</li>
+<li>
+<p>Cons: More prefixes to remember and command will be very lengthy.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">[Proposed] Undo/Redo feature</a></h3>
 <div class="sect3">
 <h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">Proposed Implementation</a></h4>
@@ -296,7 +416,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -381,4 +501,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 04:04:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 11:52:31 UTC</div></div></div></body></html>

@@ -30,10 +30,12 @@
 <ul class="sectlevel2">
 <li><a href="#module-feature">4.1. Module feature</a></li>
 <li><a href="#facilitator-feature">4.2. Facilitator feature</a></li>
-<li><a href="#proposed-undo-redo-feature">4.3. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">4.4. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">4.5. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.6. Configuration</a></li>
+<li><a href="#calendar-feature">4.3. Calendar Feature</a></li>
+<li><a href="#class-feature">4.4. Class feature</a></li>
+<li><a href="#proposed-undo-redo-feature">4.5. [Proposed] Undo/Redo feature</a></li>
+<li><a href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">4.7. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.8. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -198,7 +200,7 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>HelpWindow</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
@@ -232,7 +234,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>ModManagerParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -290,10 +292,10 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores the Mod Manager data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;Facilitator&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -392,7 +394,7 @@ This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleAdd
 The operation is exposed in the <code>Model</code> interface as <code>Model#addModule()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the module add mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the module add mechanism behaves at each step:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -456,7 +458,7 @@ This feature is facilitated by <code>ModuleCommandParser</code> and <code>Module
 The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredModuleList()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the module list mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the module list mechanism behaves at each step:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -583,7 +585,7 @@ This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilAddCo
 The operation is exposed in the <code>Model</code> interface as <code>Model#addFacilitator()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the facilitator add mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the facilitator add mechanism behaves at each step:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -647,7 +649,7 @@ This feature is facilitated by <code>FacilCommandParser</code> and <code>FacilLi
 The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredFacilitatorList()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the facilitator list mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the facilitator list mechanism behaves at each step:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -705,7 +707,7 @@ This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilFindC
 The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredFacilitatorList()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the facilitator find mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the facilitator find mechanism behaves at each step:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -763,7 +765,7 @@ This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilEditC
 The operation is exposed in the <code>Model</code> interface as <code>Model#setFacilitator()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the facilitator edit mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the facilitator edit mechanism behaves at each step:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -833,7 +835,7 @@ This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilDelet
 The operation is exposed in the <code>Model</code> interface as <code>Model#deleteFacilitator()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the facilitator delete mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the facilitator delete mechanism behaves at each step:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -958,9 +960,359 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">4.3. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.3. Calendar Feature</a></h3>
+<div class="paragraph">
+<p>The calendar feature manages the calendar in Mod Manager and is represented by the Calendar class. A calendar has a LocalDate.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>view - Views the schedules and tasks in a whole week in Mod Manager.</p>
+</li>
+<li>
+<p>find - Finds empty slots in a week from current day to end of the week in Mod Manager.</p>
+</li>
+</ul>
+</div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.3.1. Proposed Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
+<div class="sect4">
+<h5 id="viewing-the-calendar"><a class="link" href="#viewing-the-calendar">Viewing the calendar</a></h5>
+<div class="paragraph">
+<p>The view calendar feature allows users to view the calendar for a week in Mod Manager.
+This feature is facilitated by <code>CalCommandParser</code>, <code>CalViewCommandParser</code> and <code>CalViewCommand</code>. The calendar is exposed in the <code>Model</code> interface in <code>Module#updateCalendar()</code> and it is retrieved in <code>MainWindow</code> to show the timeline for the specified week to users.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the calendar view mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the calendar view command and provides which week to be viewed. The week to be viewed can be this or next week.</p>
+</li>
+<li>
+<p><code>CalViewCommandParser</code> creates a new <code>Calendar</code> based on the specified week.</p>
+</li>
+<li>
+<p><code>CalViewCommandParser</code> creates a new <code>CalViewCommand</code> based on the <code>Calendar</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>CalViewCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the calendar in <code>ModelManager</code>.</p>
+</li>
+<li>
+<p><code>MainWindow</code> retrieves the calendar from <code>LogicManager</code> which retrieves from <code>ModelManager</code>.</p>
+</li>
+<li>
+<p><code>MainWindow</code> shows the calendar.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the calendar view command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CalViewSequenceDiagram.png" alt="CalViewSequenceDiagram">
+</div>
+<div class="title">Figure 23. Sequence diagram for <code>cal view</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code> and <code>CalViewCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a calendar view command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CalViewActivityDiagram.png" alt="CalViewActivityDiagram">
+</div>
+<div class="title">Figure 24. Activity diagram for 'cal view command'</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="finding-empty-slots-in-calendar"><a class="link" href="#finding-empty-slots-in-calendar">Finding empty slots in calendar</a></h5>
+<div class="paragraph">
+<p>The find empty in calendar feature allows users to know the empty slots they have in the calendar from the current day to the end of the week in Mod Manager. This feature is facilitated by CalCommandParser, CalFindCommandParser and CalFindCommand.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the calendar find mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the calendar find command.</p>
+</li>
+<li>
+<p>CalFindCommandParser creates a new CalFindCommand.</p>
+</li>
+<li>
+<p>LogicManager executes the CalFindCommand.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the calendar find command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CalFindSequenceDiagram.png" alt="CalFindSequenceDiagram">
+</div>
+<div class="title">Figure 25. Sequence diagram for <code>cal find</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for CalCommandParser, CalFindCommandParser and CalFindCommand should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a calendar find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CalFindActivityDiagram.png" alt="CalFindActivityDiagram">
+</div>
+<div class="title">Figure 26. Activity diagram for <code>cal find command</code></div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-calendar-appearance"><a class="link" href="#aspect-calendar-appearance">Aspect: Calendar appearance</a></h5>
+<div class="imageblock">
+<div class="content">
+<img src="images/NewCalendar.png" alt="NewCalendar">
+</div>
+<div class="title">Figure 27. New design for calendar appearance (alternative 1)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/OldCalendar.png" alt="OldCalendar">
+</div>
+<div class="title">Figure 28. Old design for calendar appearnce (alternative 2)</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Displaying the days of a week in calendar from left to right.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The whole week can be seen on one screen without having users to scroll down for a particular day.</p>
+</li>
+<li>
+<p>Cons: Words that are long in number of characters may not be able to be displayed in a single line.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Displaying the days of a week in the calendar from top to bottom.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Tasks and schedules that have description that are long can be displayed in a single line.</p>
+</li>
+<li>
+<p>Cons: There is a need for users to scroll down to see a particular day.
+If there are many tasks and schedules in a day, the other days after it will be pushed downwards and this requires even more scrolling for users.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen as it is better that people are able to see their whole schedules and tasks for a week in one look.
+It makes better use of space than alternative 2 where the right side is usually not used.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-command-syntax-for-calendar-find-command"><a class="link" href="#aspect-command-syntax-for-calendar-find-command">Aspect: Command syntax for calendar find command</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> User is required to input <code>cal find empty</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It is short in command length.</p>
+</li>
+<li>
+<p>Cons: Since there is only one type of calendar find, <code>empty</code> may seem redundant.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> User is required to input <code>cal find /type empty</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: With the need to input <code>/type</code>, it can be clear about the type of find the command is trying to do.
+This is because without the <code>/type</code>, it is possible that users thought that the command is finding the word <code>empty</code>.</p>
+</li>
+<li>
+<p>Cons: It can be tedious for users to type <code>/type</code> and this increases the command length.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen because it is shorter than alternative 2 and hence it can be easier for users to type.
+It is easier to implement too. The word <code>empty</code> is kept to allow users to know what the find command is for.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="class-feature"><a class="link" href="#class-feature">4.4. Class feature</a></h3>
+<div class="paragraph">
+<p>The class feature manages the classes in Mod Manager and is represented by the <code>Lesson</code> class.
+A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code> which is a <code>DayOfWeek</code> object, <code>startTime</code>, <code>endTime</code> which are <code>LocalTime</code> objects and <code>venue</code> which is a <code>String</code>.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>add - Adds a class to Mod Manager.</p>
+</li>
+<li>
+<p>list - Lists all classes in Mod Manager.</p>
+</li>
+<li>
+<p>edit - Edits a class in Mod Manager.</p>
+</li>
+<li>
+<p>delete - Deletes a class in Mod Manager.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
+<div class="sect4">
+<h5 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h5>
+<div class="paragraph">
+<p>The add class command allows user to add a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the lesson add mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the lesson add command and provides the module code, lesson type, day, start time, end time and venue of the lesson to be added.</p>
+</li>
+<li>
+<p><code>LessonAddCommandParser</code> creates a new <code>Lesson</code>, then a new <code>LessonAddCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>LessonAddCommand</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> adds the <code>Lesson</code> to <code>LessonList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the lesson add command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LessonAddSequenceDiagram.png" alt="LessonAddSequenceDiagram">
+</div>
+<div class="title">Figure 29. Sequence diagram for <code>class add</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for LessonCommandParser, LessonAddCommandParser and LessonAddCommand should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a lesson add command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LessonAddActivityDiagram.png" alt="LessonAddActivityDiagram">
+</div>
+<div class="title">Figure 30. Activity diagram for <code>class add</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-prefix-of-day-and-time"><a class="link" href="#aspect-prefix-of-day-and-time">Aspect: Prefix of day and time</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice)</strong> Have one prefix for all three <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: User types less.</p>
+</li>
+<li>
+<p>Cons: When user wants to edit one field only, user have to key in other unnecessary details.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Have one prefix each for <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to parse and less invalid inputs to take note of. User can also edit any field.</p>
+</li>
+<li>
+<p>Cons: More prefixes to remember and command will be very lengthy.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">4.5. [Proposed] Undo/Redo feature</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.5.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -1102,7 +1454,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -1172,20 +1524,20 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.4. [Proposed] Data Encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.6. [Proposed] Data Encryption</a></h3>
 <div class="paragraph">
 <p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.7. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1216,7 +1568,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2248,6 +2600,43 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
+<h3 id="use-case-uc25-clear-all-entries-in-mod-manager" class="discrete">Use case: UC25 - Clear all entries in Mod Manager</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to clear all entries.</p>
+</li>
+<li>
+<p>Mod Manager clears all entries.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given input is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2452,4 +2841,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 04:04:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 11:52:31 UTC</div></div></div></body></html>
