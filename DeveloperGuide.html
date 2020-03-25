@@ -30,10 +30,11 @@
 <ul class="sectlevel2">
 <li><a href="#modules-management-feature">4.1. Modules Management Feature</a></li>
 <li><a href="#facilitators-management-feature">4.2. Facilitators Management Feature</a></li>
-<li><a href="#calendar-feature">4.3. Calendar Feature</a></li>
-<li><a href="#classes-management-feature">4.4. Classes Management feature</a></li>
-<li><a href="#logging">4.5. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.6. Configuration</a></li>
+<li><a href="#task-feature">4.3. Task feature</a></li>
+<li><a href="#calendar-feature">4.4. Calendar Feature</a></li>
+<li><a href="#classes-management-feature">4.5. Classes Management feature</a></li>
+<li><a href="#logging">4.6. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.7. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -910,7 +911,286 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.3. Calendar Feature</a></h3>
+<h3 id="task-feature"><a class="link" href="#task-feature">4.3. Task feature</a></h3>
+<div class="paragraph">
+<p>The task feature manages the tasks in Mod Manager and is represented by the <code>Task</code> abstract class with implementing class
+<code>ScheduledTask</code> for a <code>Task</code> with a time period and <code>NonScheduledTask</code> for a <code>Task</code> with no specified time period.
+A task has a <code>Description</code>, an optional <code>TaskDateTime</code>, and one and only one <code>ModuleCode</code>.
+A <code>Module</code> with that <code>ModuleCode</code> of the task should exist in Mod Manager.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>add</strong></code> - Adds a task to a <code>Module</code> in Mod Manager.</p>
+</li>
+<li>
+<p><code><strong>list</strong></code> - Shows a list of all tasks across all <code>Module</code> s in Mod Manager.</p>
+</li>
+<li>
+<p><code><strong>find</strong></code> - Finds a task in Mod Manager by its description.</p>
+</li>
+<li>
+<p><code><strong>upcoming</strong></code> - Finds upcoming tasks (for tasks with a specified time period) in Mod Manager.</p>
+</li>
+<li>
+<p><code><strong>search</strong></code>- Searches for tasks that occur on your specified date, month, or year in Mod Manager.</p>
+</li>
+<li>
+<p><code><strong>edit</strong></code> - Edits the information of a task in Mod Manager.</p>
+</li>
+<li>
+<p><code><strong>delete</strong></code> - Deletes a task from the <code>Module</code> and Mod Manager.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">4.3.1. Implementation</a></h4>
+<div class="sect4">
+<h5 id="adding-a-task"><a class="link" href="#adding-a-task">Adding a task</a></h5>
+<div class="paragraph">
+<p>The add task feature allows users to add a task to Mod Manager.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskAddCommandParser</code> and `
+TaskAddCommand`.
+The operation is exposed in the <code>Model</code> interface as <code>Model#addTask()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code><strong>task</strong> add</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the <code><strong>task</strong> add</code> command and provides the module code, the description of the task (both compulsory),
+and a time period (optional), which consists of a date (for example, <code>15/04/2020</code>) or a date and time (<code>15/04/2020</code> and <code>23:59</code>) of the task to be added.</p>
+</li>
+<li>
+<p><code>TaskAddCommandParser</code> creates a new <code>Task</code> based on the module code, description, and time period (if provided).</p>
+</li>
+<li>
+<p><code>TaskAddCommandParser</code> creates a new <code>TaskAddCommand</code> based on the task.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskAddCommand</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> adds the task to the <code>UniqueTaskList</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <code><strong>task</strong> add</code> command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskAddSequenceDiagram.png" alt="TaskAddSequenceDiagram">
+</div>
+<div class="title">Figure 22. Sequence diagram for <code>task add</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code>, <code>TaskAddCommandParser</code> and <code>TaskAddCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a <code><strong>task</strong> add</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskAddActivityDiagram.png" alt="TaskAddActivityDiagram">
+</div>
+<div class="title">Figure 23. Activity diagram for <code>task add</code> command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="search-tasks-by-date"><a class="link" href="#search-tasks-by-date">Search tasks by date</a></h5>
+<div class="paragraph">
+<p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and `
+TaskSearchCommand`.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code><strong>task</strong> search</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the <code><strong>task</strong> search</code> command and provides the day, month, or year, or any combination of which
+that they want to search for search for.</p>
+</li>
+<li>
+<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the names.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <code><strong>task</strong> search</code> command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskSearchSequenceDiagram.png" alt="TaskSearchSequenceDiagram">
+</div>
+<div class="title">Figure 24. Sequence diagram for <code><strong>task</strong> search</code> command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code>, <code>TaskSearchCommand</code> and <code>TaskSearch</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
+</div>
+<div class="title">Figure 25. Activity diagram for <code><strong>task</strong> search</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-the-optional-attribute-of-code-taskdatetime-code-is-managed"><a class="link" href="#aspect-how-the-optional-attribute-of-code-taskdatetime-code-is-managed">Aspect: How the optional attribute of <code>TaskDateTime</code> is managed</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Implement <code>Task</code> as an abstract class for Mod Manager.
+A task with a specified time period will be created as a <code>ScheduledTask</code>, while a task with no
+time period specified will be created as a <code>NonScheduledTask</code>, with both <code>ScheduledTask</code> and
+<code>NonScheduledTask</code> are concrete subclasses of <code>Task</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Utilises Object-Oriented Programming. Easy to implement <code><strong>search</strong></code> functionality,
+which we need to search for tasks that occur on a specified date, month, or year,
+and <code><strong>upcoming</strong></code> functionality, which we need to find the upcoming tasks in Mod Manager.
+For these two features, we only need to work on <code>ScheduledTask</code> instances, which reduces the
+burden of checking for <code>null</code> <code>TaskDateTime</code> instances as the second approach below.</p>
+</li>
+<li>
+<p>Cons: More difficulty in implementation due to time constraints. Moreover, command
+<code><strong>edit</strong></code> that allows us to edits the information of the task will be troublesome, when
+a user decides to add a time period to a <code>NonScheduledTask</code>.
+In this case, we have to re-create a new <code>ScheduledTask</code> with the same description and its time provided.
+If we need to maintain a <code>List&lt;ScheduledTask&gt;</code> or <code>List&lt;Task&gt;</code> somewhere in the code, for example,
+in our <code>Module</code> instance, we also have to update the list contents in our <code>Module</code> s too.
+This requires the association between <code>Module</code> and <code>Task</code> to be bi-directional, which
+increases content and data coupling and make it harder for us to maintain and conduct tests. There is also extra overhead time
+communicating and collaborating with another member in our team who is doing the <code>Module</code> component, Because of these challenges,
+we decide to weaken the association between <code>Task</code> and <code>Module</code>, which is elaborated in our next aspect.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Implement <code>Task</code> as a concrete class in Mod Manager. <code>Task</code> s without a specified time period
+will have its <code>TaskDateTime</code> set to <code>null</code>, while <code>Task</code> s with a given time period will be assign a <code>TaskDateTime</code> attribute, which
+is a wrapper class for Java&#8217;s <code>LocalDateTime</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement, as we only need to create one class <code>Task</code>.</p>
+</li>
+<li>
+<p>Cons: We must handle <code>null</code> cases every time we query something about the time of a <code>Task</code>.
+For example, it&#8217;s more challenging to implement the <code><strong>search</strong></code> and <code><strong>upcoming</strong></code> command, since we have to handle the cases when the <code>TaskDateTime</code> instance is <code>null</code>.
+It&#8217;s very complex to implement the method <code>compareTo</code> of <code>Comparable</code> interface for <code>Task</code> to compare the time between tasks,
+when one, or both of the <code>TaskDateTime</code> attributes can be <code>null</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-the-association-between-code-module-code-and-code-task-code"><a class="link" href="#aspect-the-association-between-code-module-code-and-code-task-code">Aspect: The association between <code>Module</code> and <code>Task</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Aggregation: Each <code>Task</code> can have an unique <code>ModuleCode</code> tag, which uniquely identifies which <code>Module</code> the task belongs to.
+This is a aggregation relationship, which is weaker than composition in our second approach.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleTaskAggregationDiagram.png" alt="ModuleTaskAggregationDiagram">
+</div>
+<div class="title">Figure 26. Class diagram, a <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implementation, and weak coupling with <code>Module</code> implementation. The <code>Module</code> need not
+to be aware that there are a list of <code>Task</code> s for it.</p>
+</li>
+<li>
+<p>Cons: The association between <code>Module</code> and <code>Task</code> cannot be extensive and fully descriptive as in
+our second approach, but this is a trade-off given the time constraints.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 2:</strong> Composition: each <code>Module</code> has a list of <code>Task</code> s corresponding to it.
+If the <code>Module</code> is deleted, all of the related <code>Task</code> s for the <code>Module</code> will also be removed.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleTaskCompositionDiagram.png" alt="ModuleTaskCompositionDiagram">
+</div>
+<div class="title">Figure 27. Class diagram, a <code>Module</code> consists of <code>Task</code> objects.</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: This design choice better simulates the real-life interactions between <code>Module</code> and <code>Task</code>.
+For example, if we drop a <code>Module</code> in NUS, we will also drop all the <code>Task</code> s related to the <code>Module</code>,
+such as assignments, homework, term tests, and exams.</p>
+</li>
+<li>
+<p>Cons: Difficulty in implementation due to time constraints, as well as strong content and data coupling. More overhead in communicating
+and collaborating with the team member responsible for the <code>Module</code> component, as mentioned above.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.4. Calendar Feature</a></h3>
 <div class="paragraph">
 <p>The calendar feature manages the calendar in Mod Manager and is represented by the Calendar class. A calendar has a LocalDate.</p>
 </div>
@@ -928,7 +1208,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </ul>
 </div>
 <div class="sect3">
-<h4 id="implementation-details-3"><a class="link" href="#implementation-details-3">4.3.1. Implementation Details</a></h4>
+<h4 id="implementation-details-3"><a class="link" href="#implementation-details-3">4.4.1. Implementation Details</a></h4>
 <div class="sect4">
 <h5 id="viewing-the-calendar"><a class="link" href="#viewing-the-calendar">Viewing the calendar</a></h5>
 <div class="paragraph">
@@ -970,7 +1250,7 @@ This feature is facilitated by <code>CalCommandParser</code>, <code>CalViewComma
 <div class="content">
 <img src="images/CalViewSequenceDiagram.png" alt="CalViewSequenceDiagram">
 </div>
-<div class="title">Figure 22. Sequence diagram for <code>cal view</code> command</div>
+<div class="title">Figure 28. Sequence diagram for <code>cal view</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -991,7 +1271,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="images/CalViewActivityDiagram.png" alt="CalViewActivityDiagram">
 </div>
-<div class="title">Figure 23. Activity diagram for 'cal view command'</div>
+<div class="title">Figure 29. Activity diagram for 'cal view command'</div>
 </div>
 </div>
 <div class="sect4">
@@ -1022,7 +1302,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="images/CalFindSequenceDiagram.png" alt="CalFindSequenceDiagram">
 </div>
-<div class="title">Figure 24. Sequence diagram for <code>cal find</code> command</div>
+<div class="title">Figure 30. Sequence diagram for <code>cal find</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1043,25 +1323,25 @@ The lifeline for CalCommandParser, CalFindCommandParser and CalFindCommand shoul
 <div class="content">
 <img src="images/CalFindActivityDiagram.png" alt="CalFindActivityDiagram">
 </div>
-<div class="title">Figure 25. Activity diagram for <code>cal find command</code></div>
+<div class="title">Figure 31. Activity diagram for <code>cal find command</code></div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-calendar-appearance"><a class="link" href="#aspect-calendar-appearance">Aspect: Calendar appearance</a></h5>
 <div class="imageblock">
 <div class="content">
 <img src="images/NewCalendar.png" alt="NewCalendar">
 </div>
-<div class="title">Figure 26. New design for calendar appearance (alternative 1)</div>
+<div class="title">Figure 32. New design for calendar appearance (alternative 1)</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/OldCalendar.png" alt="OldCalendar">
 </div>
-<div class="title">Figure 27. Old design for calendar appearance (alternative 2)</div>
+<div class="title">Figure 33. Old design for calendar appearance (alternative 2)</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1140,7 +1420,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 </div>
 </div>
 <div class="sect2">
-<h3 id="classes-management-feature"><a class="link" href="#classes-management-feature">4.4. Classes Management feature</a></h3>
+<h3 id="classes-management-feature"><a class="link" href="#classes-management-feature">4.5. Classes Management feature</a></h3>
 <div class="paragraph">
 <p>The class feature manages the classes in Mod Manager and is represented by the <code>Lesson</code> class.
 A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code> which is a <code>DayOfWeek</code> object, <code>startTime</code>, <code>endTime</code> which are <code>LocalTime</code> objects and <code>venue</code> which is a <code>String</code>.</p>
@@ -1165,7 +1445,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="implementation-details-4"><a class="link" href="#implementation-details-4">4.4.1. Implementation Details</a></h4>
+<h4 id="implementation-details-4"><a class="link" href="#implementation-details-4">4.5.1. Implementation Details</a></h4>
 <div class="sect4">
 <h5 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h5>
 <div class="paragraph">
@@ -1197,7 +1477,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code>
 <div class="content">
 <img src="images/LessonAddSequenceDiagram.png" alt="LessonAddSequenceDiagram">
 </div>
-<div class="title">Figure 28. Sequence diagram for <code>class add</code> command</div>
+<div class="title">Figure 34. Sequence diagram for <code>class add</code> command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1218,12 +1498,12 @@ The lifeline for LessonCommandParser, LessonAddCommandParser and LessonAddComman
 <div class="content">
 <img src="images/LessonAddActivityDiagram.png" alt="LessonAddActivityDiagram">
 </div>
-<div class="title">Figure 29. Activity diagram for <code>class add</code> command</div>
+<div class="title">Figure 35. Activity diagram for <code>class add</code> command</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-prefix-of-day-and-time"><a class="link" href="#aspect-prefix-of-day-and-time">Aspect: Prefix of day and time</a></h5>
 <div class="ulist">
@@ -1260,14 +1540,14 @@ The lifeline for LessonCommandParser, LessonAddCommandParser and LessonAddComman
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.5. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.6. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.7, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1298,7 +1578,7 @@ The lifeline for LessonCommandParser, LessonAddCommandParser and LessonAddComman
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.7. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2571,4 +2851,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 15:48:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 22:35:56 UTC</div></div></div></body></html>
