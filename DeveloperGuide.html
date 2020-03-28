@@ -272,7 +272,7 @@ The following class plays an important role at the architecture level:</p>
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage Component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/StorageClassDiagram1.png" alt="StorageClassDiagram1">
+<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
 <div class="title">Figure 7. Structure of the Storage Component</div>
 </div>
@@ -493,6 +493,9 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen as it gives users more flexibility and is more user-friendly.</p>
 </div>
 </div>
 </div>
@@ -1273,6 +1276,9 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Alternative 1 is chosen to preserve the immutability of the Facilitator object to avoid unintentional modification.</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="aspect-storage-of-facilitators"><a class="link" href="#aspect-storage-of-facilitators">Aspect: Storage of facilitators</a></h5>
@@ -1306,6 +1312,9 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Alternative 1 is chosen as the design is simpler without the need to maintain multiple lists and can also avoid duplicates in the storage.</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="aspect-reference-of-code-modulecode-code-in-code-facilitator-code-object"><a class="link" href="#aspect-reference-of-code-modulecode-code-in-code-facilitator-code-object">Aspect: Reference of <code>ModuleCode</code> in <code>Facilitator</code> object</a></h5>
@@ -1338,6 +1347,9 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen because of ease of implementation due to time constraint.</p>
 </div>
 </div>
 </div>
@@ -2884,4 +2896,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-28 03:19:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-28 05:55:10 UTC</div></div></div></body></html>
