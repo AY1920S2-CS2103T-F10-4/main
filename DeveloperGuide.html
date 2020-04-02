@@ -1009,7 +1009,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="search-tasks-by-date"><a class="link" href="#search-tasks-by-date">Search tasks by date</a></h5>
+<h5 id="searching-tasks-by-date"><a class="link" href="#searching-tasks-by-date">Searching tasks by date</a></h5>
 <div class="paragraph">
 <p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
 This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and `
@@ -1066,6 +1066,74 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <img src="images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
 </div>
 <div class="title">Figure 27. Activity Diagram for <code><strong>task</strong> search</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h5>
+<div class="paragraph">
+<p>The <code>task edit</code> command allows user to edit a task in <code>ModManager</code>.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#setTask()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>task edit</code> mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the <code>task edit</code> command and provides the <code>moduleCode</code> and the <code>taskNum</code> of the task to edit,
+and the fields to be edited.</p>
+</li>
+<li>
+<p><code>TaskEditCommandParser</code> creates a new <code>EditTaskDescriptor</code> with the fields to be edited.</p>
+</li>
+<li>
+<p><code>TaskEditCommandParser</code> creates a new <code>TaskEditCommand</code> based on the <code>moduleCode</code> and <code>taskNum</code>, and <code>EditTaskDescriptor</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskEditCommand</code>.</p>
+</li>
+<li>
+<p><code>TaskEditCommand</code> retrieves the <code>moduleCode</code> and <code>taskNum</code> of the <code>task</code> to be edited, and then retrieves the actual <code>task</code>
+from <code>ModManager</code>.</p>
+</li>
+<li>
+<p><code>TaskEditCommand</code> creates a new <code>Task</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> sets the existing <code>task</code> to the new <code>task</code> in the <code>UniqueTaskList</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="deleting-a-task"><a class="link" href="#deleting-a-task">Deleting a task</a></h5>
+<div class="paragraph">
+<p>The delete task feature allows users to delete a task from Mod Manager.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskDeleteCommandParser</code> and <code>TaskDeleteCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#deleteTask()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task delete mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the task delete command and provides the <code>moduleCode</code> and <code>taskNum</code> of the task to be deleted.</p>
+</li>
+<li>
+<p><code>TaskDeleteCommandParser</code> creates a new <code>TaskDeleteCommand</code> based on the <code>moduleCode</code> and <code>taskNum</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskDeleteCommand</code>.</p>
+</li>
+<li>
+<p><code>TaskDeleteCommand</code> retrieves the task to be deleted.</p>
+</li>
+<li>
+<p><code>ModManager</code> deletes the task from the <code>UniqueTaskList</code>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -3166,4 +3234,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 15:04:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 15:35:50 UTC</div></div></div></body></html>

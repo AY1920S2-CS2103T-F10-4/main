@@ -823,19 +823,55 @@ match only tasks that are on 10 April in any year.</p>
 <div class="sect3">
 <h4 id="editing-a-task"><a class="link" href="#editing-a-task">4.4.9. Editing a task</a></h4>
 <div class="paragraph">
-<p>Edits the information of a task.</p>
+<p>From here on, you will be introduced to Mod Manager&#8217;s task ID system.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>A task can be uniquely identified in the system by two things: its associated module and a 3-digit number.</p>
+</li>
+<li>
+<p>A complete task ID will consist of two elements: <code>MOD_CODE</code> and <code>ID_NUMBER</code>.</p>
+</li>
+<li>
+<p>Examples of valid task ID: <code>CS2103T 848</code>, <code>CS4231 132</code>.</p>
+</li>
+<li>
+<p>You can find out a task&#8217;s ID by looking at the general task list - can be viewed with <code>task list</code>
+(section 4.4.3) , or the task list of a specific module - can be viewed with <code>mod view</code> (section 4.2.3).</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE/non] [/at TIME]</code></p>
+<p>You can edit a task&#8217;s description, its date and time details, or both.</p>
 </div>
 <div class="paragraph">
-<p>Example: <code><strong>task</strong> edit CS2103T 848 /desc UG submission /on 12/04/2020 /at 23:59</code> or <code><strong>task</strong> edit CS2103T 848 /on non</code></p>
+<p>Format: <code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE] [/at TIME]</code></p>
+</div>
+<div class="paragraph">
+<p>Mod Manager will find the task associated with the task ID number provided and update the information correspondingly.</p>
+</div>
+<div class="paragraph">
+<p>Example: <code><strong>task</strong> edit CS2103T 848 /desc UG submission /on 12/04/2020 /at 23:59</code></p>
+</div>
+<div class="paragraph">
+<p>Since you may want to remove the date and time of a task, Mod Manager provides you a way to do so.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] /on non</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code><strong>task</strong> edit CS2103T 848 /on non</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-task"><a class="link" href="#deleting-a-task">4.4.10. Deleting a task</a></h4>
 <div class="paragraph">
-<p>Deletes a task from the module.</p>
+<p>You can delete a task from Mod Manager&#8217;s system.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>task</strong> delete MOD_CODE ID_NUMBER</code></p>
@@ -1334,7 +1370,8 @@ Hence, you do not need to save manually.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> delete MOD_CODE ID_NUMBER</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE/non] [/at TIME]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE] [/at TIME]</code><br>
+   <code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] /on non</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> find [/date DATE] [/month MONTH] [/year YEAR]</code><br>
@@ -1347,4 +1384,4 @@ Hence, you do not need to save manually.</p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 15:04:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 15:35:50 UTC</div></div></div></body></html>
