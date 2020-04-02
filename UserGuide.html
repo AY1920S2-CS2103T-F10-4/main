@@ -42,12 +42,15 @@
 <li><a href="#managing-tasks-code-task-code">4.4. Managing tasks : <code>task</code></a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-task">4.4.1. Adding a task</a></li>
-<li><a href="#viewing-all-tasks">4.4.2. Viewing all tasks</a></li>
-<li><a href="#finding-a-task-by-description">4.4.3. Finding a task by description</a></li>
-<li><a href="#search-tasks-by-date">4.4.4. Search tasks by date</a></li>
-<li><a href="#finding-upcoming-tasks">4.4.5. Finding upcoming tasks</a></li>
-<li><a href="#editing-a-task">4.4.6. Editing a task</a></li>
-<li><a href="#deleting-a-task">4.4.7. Deleting a task</a></li>
+<li><a href="#marking-a-task-as-done">4.4.2. Marking a task as done</a></li>
+<li><a href="#viewing-all-tasks-across-modules-in-modmanger">4.4.3. Viewing all tasks across modules in ModManger</a></li>
+<li><a href="#viewing-tasks-for-a-specific-module-in-modmanger">4.4.4. Viewing tasks for a specific module in ModManger</a></li>
+<li><a href="#viewing-all-undone-tasks">4.4.5. Viewing all undone tasks</a></li>
+<li><a href="#finding-a-task-by-description">4.4.6. Finding a task by description</a></li>
+<li><a href="#searching-tasks-by-date">4.4.7. Searching tasks by date</a></li>
+<li><a href="#finding-upcoming-tasks">4.4.8. Finding upcoming tasks</a></li>
+<li><a href="#editing-a-task">4.4.9. Editing a task</a></li>
+<li><a href="#deleting-a-task">4.4.10. Deleting a task</a></li>
 </ul>
 </li>
 <li><a href="#managing-facilitators-code-facil-code">4.5. Managing facilitators : <code>facil</code></a>
@@ -692,16 +695,36 @@ these tasks cannot be in the same time period, for example, in the same day.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-all-tasks"><a class="link" href="#viewing-all-tasks">4.4.2. Viewing all tasks</a></h4>
+<h4 id="marking-a-task-as-done"><a class="link" href="#marking-a-task-as-done">4.4.2. Marking a task as done</a></h4>
 <div class="paragraph">
-<p>Shows a list of all tasks across all modules in the Mod Manager.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code><strong>task</strong> list</code></p>
+<p>Marks a task as done in the module.
+Format: <code><strong>task</strong> done /code MOD_CODE /id ID_NUMBER</code><br>
+Example: <code><strong>task</strong> done /code CS2103T /task 979</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-a-task-by-description"><a class="link" href="#finding-a-task-by-description">4.4.3. Finding a task by description</a></h4>
+<h4 id="viewing-all-tasks-across-modules-in-modmanger"><a class="link" href="#viewing-all-tasks-across-modules-in-modmanger">4.4.3. Viewing all tasks across modules in ModManger</a></h4>
+<div class="paragraph">
+<p>Shows a list of all tasks across all modules in the Mod Manager.<br>
+Format: <code><strong>task</strong> list</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-tasks-for-a-specific-module-in-modmanger"><a class="link" href="#viewing-tasks-for-a-specific-module-in-modmanger">4.4.4. Viewing tasks for a specific module in ModManger</a></h4>
+<div class="paragraph">
+<p>Shows a list of tasks for a particular module in the Mod Manager.<br>
+Format: <code><strong>task</strong> module /code CS2103T</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-all-undone-tasks"><a class="link" href="#viewing-all-undone-tasks">4.4.5. Viewing all undone tasks</a></h4>
+<div class="paragraph">
+<p>Shows a list of all tasks that are not yet done across all modules in the Mod Manager.<br>
+Format: <code><strong>task</strong> undone</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-a-task-by-description"><a class="link" href="#finding-a-task-by-description">4.4.6. Finding a task by description</a></h4>
 <div class="paragraph">
 <p>With this command, you can find tasks that contain any of the given keywords in their description.</p>
 </div>
@@ -717,6 +740,9 @@ these tasks cannot be in the same time period, for example, in the same day.</p>
 <ul>
 <li>
 <p>The search works across modules, and no <code>/code</code> commands are required. For example, you may want to find all the <code>assignment</code> currently due.</p>
+</li>
+<li>
+<p>If no descriptions are supplied, no tasks will be found.</p>
 </li>
 <li>
 <p>Search for description is case insensitive. e.g <code>programming</code> will match <code>Programming</code>.</p>
@@ -739,7 +765,7 @@ these tasks cannot be in the same time period, for example, in the same day.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="search-tasks-by-date"><a class="link" href="#search-tasks-by-date">4.4.4. Search tasks by date</a></h4>
+<h4 id="searching-tasks-by-date"><a class="link" href="#searching-tasks-by-date">4.4.7. Searching tasks by date</a></h4>
 <div class="paragraph">
 <p>Searches all tasks that occur on your specified date, month, or year.</p>
 </div>
@@ -784,36 +810,36 @@ match only tasks that are on 10 April in any year.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-upcoming-tasks"><a class="link" href="#finding-upcoming-tasks">4.4.5. Finding upcoming tasks</a></h4>
+<h4 id="finding-upcoming-tasks"><a class="link" href="#finding-upcoming-tasks">4.4.8. Finding upcoming tasks</a></h4>
 <div class="paragraph">
 <p>Finds upcoming tasks.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>task find /upcoming</code></p>
+<p>Format: <code><strong>task</strong> find /upcoming</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-task"><a class="link" href="#editing-a-task">4.4.6. Editing a task</a></h4>
+<h4 id="editing-a-task"><a class="link" href="#editing-a-task">4.4.9. Editing a task</a></h4>
 <div class="paragraph">
 <p>Edits the information of a task.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>task edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE/non] [/at TIME]</code></p>
+<p>Format: <code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE/non] [/at TIME]</code></p>
 </div>
 <div class="paragraph">
-<p>Example: <code>task edit CS2103T 848 /desc UG submission /on 12/04/2020 /at 23:59</code> or <code>task edit CS2103T 848 /on non</code></p>
+<p>Example: <code><strong>task</strong> edit CS2103T 848 /desc UG submission /on 12/04/2020 /at 23:59</code> or <code>task edit CS2103T 848 /on non</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-task"><a class="link" href="#deleting-a-task">4.4.7. Deleting a task</a></h4>
+<h4 id="deleting-a-task"><a class="link" href="#deleting-a-task">4.4.10. Deleting a task</a></h4>
 <div class="paragraph">
 <p>Deletes a task from the module.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>task delete /code MOD_CODE /task TASK_NAME</code></p>
+<p>Format: <code><strong>task</strong> delete MOD_CODE TASK_ID_NUMBER</code></p>
 </div>
 <div class="paragraph">
-<p>Example: <code>task delete /code CS2103T /task IP week 4</code></p>
+<p>Example: <code><strong>task</strong> delete CS2103T 973</code></p>
 </div>
 </div>
 </div>
@@ -1269,4 +1295,4 @@ There is no need to save manually.</p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-01 05:47:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 12:57:54 UTC</div></div></div></body></html>
