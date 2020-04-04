@@ -490,7 +490,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ModuleCiewSequenceDiagram.png" alt="ModuleCiewSequenceDiagram">
+<img src="images/ModuleViewSequenceDiagram.png" alt="ModuleViewSequenceDiagram">
 </div>
 <div class="title">Figure 12. Sequence Diagram for <code>mod view</code> Command</div>
 </div>
@@ -515,6 +515,146 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <img src="images/ModuleViewActivityDiagram.png" alt="ModuleViewActivityDiagram">
 </div>
 <div class="title">Figure 13. Activity Diagram for <code>mod view</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="editing-a-module"><a class="link" href="#editing-a-module">Editing a module</a></h5>
+<div class="paragraph">
+<p>The edit module feature allows users to edit a module from Mod Manager.
+This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleEditCommandParser</code> and <code>ModuleEditCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#setModule()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the module edit mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the module edit command and provides the index or module code of the module to be edited and the fields to be edited.</p>
+</li>
+<li>
+<p><code>ModuleEditCommandParser</code> creates a new <code>EditModuleDescriptor</code> with the fields to be edited.</p>
+</li>
+<li>
+<p><code>ModuleEditCommandParser</code> creates a new <code>ModuleEditCommand</code> based on the index or module code and <code>EditModuleDescriptor</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>ModuleEditCommand</code>.</p>
+</li>
+<li>
+<p><code>ModuleEditCommand</code> retrieves the module to be edited.</p>
+</li>
+<li>
+<p><code>ModuleEditCommand</code> creates a new <code>Module</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> sets the existing module to the new module in the <code>UniqueModuleList</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredModules</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the module edit command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleEditSequenceDiagram.png" alt="ModuleEditSequenceDiagram">
+</div>
+<div class="title">Figure 14. Sequence Diagram for <code>mod edit</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>ModuleCommandParser</code>, <code>ModuleEditCommandParser</code>, <code>EditModuleDescriptor</code> and <code>ModuleEditCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a module edit command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleEditActivityDiagram.png" alt="ModuleEditActivityDiagram">
+</div>
+<div class="title">Figure 15. Activity Diagram for <code>mod edit</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="deleting-a-module"><a class="link" href="#deleting-a-module">Deleting a module</a></h5>
+<div class="paragraph">
+<p>The delete module feature allows users to delete a module from Mod Manager.
+This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleDeleteCommandParser</code> and <code>ModuleDeleteCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#deleteModule()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the module delete mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the module delete command and provides the index or module code of the module to be deleted.</p>
+</li>
+<li>
+<p><code>ModuleDeleteCommandParser</code> creates a new <code>ModuleDeleteCommand</code> based on the index or module code.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>ModuleDeleteCommand</code>.</p>
+</li>
+<li>
+<p><code>ModuleDeleteCommand</code> retrieves the module to be deleted.</p>
+</li>
+<li>
+<p><code>ModManager</code> deletes the module from the <code>UniqueModuleList</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> deletes facilitators of the module from the <code>UniqueFacilitatorList</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> deletes tasks of the module from the <code>UniqueTaskList</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> deletes lessons of the module from the <code>LessonList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the module delete command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleDeleteSequenceDiagram.png" alt="ModuleDeleteSequenceDiagram">
+</div>
+<div class="title">Figure 16. Sequence Diagram for <code>mod delete</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>ModuleCommandParser</code>, <code>ModuleDeleteCommandParser</code> and <code>ModuleDeleteCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a module delete command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModuleDeleteActivityDiagram.png" alt="ModuleDeleteActivityDiagram">
+</div>
+<div class="title">Figure 17. Activity Diagram for <code>mod delete</code> Command</div>
 </div>
 </div>
 </div>
@@ -616,7 +756,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code>
 <div class="content">
 <img src="images/LessonAddSequenceDiagram.png" alt="LessonAddSequenceDiagram">
 </div>
-<div class="title">Figure 14. Sequence Diagram for <code>class add</code> Command</div>
+<div class="title">Figure 18. Sequence Diagram for <code>class add</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -637,7 +777,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser<
 <div class="content">
 <img src="images/LessonAddActivityDiagram.png" alt="LessonAddActivityDiagram">
 </div>
-<div class="title">Figure 15. Activity Diagram for <code>class add</code> Command</div>
+<div class="title">Figure 19. Activity Diagram for <code>class add</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -668,7 +808,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser<
 <div class="content">
 <img src="images/LessonListSequenceDiagram.png" alt="LessonListSequenceDiagram">
 </div>
-<div class="title">Figure 16. Sequence Diagram for <code>class list</code> Command</div>
+<div class="title">Figure 20. Sequence Diagram for <code>class list</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -689,7 +829,7 @@ The lifeline for <code>LessonCommandParser</code> and <code>LessonListCommand</c
 <div class="content">
 <img src="images/LessonListActivityDiagram.png" alt="LessonListActivityDiagram">
 </div>
-<div class="title">Figure 17. Activity Diagram for <code>class list</code> Command</div>
+<div class="title">Figure 21. Activity Diagram for <code>class list</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -720,7 +860,7 @@ The lifeline for <code>LessonCommandParser</code> and <code>LessonListCommand</c
 <div class="content">
 <img src="images/LessonFindSequenceDiagram.png" alt="LessonFindSequenceDiagram">
 </div>
-<div class="title">Figure 18. Sequence Diagram for <code>class find</code> Command</div>
+<div class="title">Figure 22. Sequence Diagram for <code>class find</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -741,7 +881,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser
 <div class="content">
 <img src="images/LessonFindActivityDiagram.png" alt="LessonFindActivityDiagram">
 </div>
-<div class="title">Figure 19. Activity Diagram for <code>class find</code> Command</div>
+<div class="title">Figure 23. Activity Diagram for <code>class find</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -784,7 +924,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser
 <div class="content">
 <img src="images/LessonEditSequenceDiagram.png" alt="LessonEditSequenceDiagram">
 </div>
-<div class="title">Figure 20. Sequence Diagram for <code>class edit</code> Command</div>
+<div class="title">Figure 24. Sequence Diagram for <code>class edit</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -805,7 +945,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser
 <div class="content">
 <img src="images/LessonEditActivityDiagram.png" alt="LessonEditActivityDiagram">
 </div>
-<div class="title">Figure 21. Activity Diagram for <code>class edit</code> Command</div>
+<div class="title">Figure 25. Activity Diagram for <code>class edit</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -842,7 +982,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser
 <div class="content">
 <img src="images/LessonDeleteSequenceDiagram.png" alt="LessonDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 22. Sequence Diagram for <code>class delete</code> Command</div>
+<div class="title">Figure 26. Sequence Diagram for <code>class delete</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -863,7 +1003,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonDeleteCommandPars
 <div class="content">
 <img src="images/LessonDeleteActivityDiagram.png" alt="LessonDeleteActivityDiagram">
 </div>
-<div class="title">Figure 23. Activity Diagram for <code>class delete</code> Command</div>
+<div class="title">Figure 27. Activity Diagram for <code>class delete</code> Command</div>
 </div>
 </div>
 </div>
@@ -983,7 +1123,7 @@ and a time period (optional), which consists of a date (for example, <code>15/04
 <div class="content">
 <img src="images/TaskAddSequenceDiagram.png" alt="TaskAddSequenceDiagram">
 </div>
-<div class="title">Figure 24. Sequence Diagram for <code>task add</code> Command</div>
+<div class="title">Figure 28. Sequence Diagram for <code>task add</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1005,7 +1145,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/TaskAddActivityDiagram.png" alt="TaskAddActivityDiagram">
 </div>
-<div class="title">Figure 25. Activity Diagram for <code>task add</code> Command</div>
+<div class="title">Figure 29. Activity Diagram for <code>task add</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1043,7 +1183,7 @@ that they want to search for search for.</p>
 <div class="content">
 <img src="images/TaskSearchSequenceDiagram.png" alt="TaskSearchSequenceDiagram">
 </div>
-<div class="title">Figure 26. Sequence Diagram for <code><strong>task</strong> search</code> Command</div>
+<div class="title">Figure 30. Sequence Diagram for <code><strong>task</strong> search</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1065,7 +1205,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
 </div>
-<div class="title">Figure 27. Activity Diagram for <code><strong>task</strong> search</code> Command</div>
+<div class="title">Figure 31. Activity Diagram for <code><strong>task</strong> search</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1207,7 +1347,7 @@ This is a aggregation relationship, which is weaker than composition in our seco
 <div class="content">
 <img src="images/ModuleTaskAggregationDiagram.png" alt="ModuleTaskAggregationDiagram">
 </div>
-<div class="title">Figure 28. Class Diagram: A <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
+<div class="title">Figure 32. Class Diagram: A <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1233,7 +1373,7 @@ If the <code>Module</code> is deleted, all of the related <code>Task</code> s fo
 <div class="content">
 <img src="images/ModuleTaskCompositionDiagram.png" alt="ModuleTaskCompositionDiagram">
 </div>
-<div class="title">Figure 29. Class Diagram: A <code>Module</code> consists of <code>Task</code> objects.</div>
+<div class="title">Figure 33. Class Diagram: A <code>Module</code> consists of <code>Task</code> objects.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1321,7 +1461,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#addF
 <div class="content">
 <img src="images/FacilitatorAddSequenceDiagram.png" alt="FacilitatorAddSequenceDiagram">
 </div>
-<div class="title">Figure 30. Sequence Diagram for <code>facil add</code> Command</div>
+<div class="title">Figure 34. Sequence Diagram for <code>facil add</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1343,7 +1483,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorAddActivityDiagram.png" alt="FacilitatorAddActivityDiagram">
 </div>
-<div class="title">Figure 31. Activity Diagram for <code>facil add</code> Command</div>
+<div class="title">Figure 35. Activity Diagram for <code>facil add</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1379,7 +1519,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="images/FacilitatorListSequenceDiagram.png" alt="FacilitatorListSequenceDiagram">
 </div>
-<div class="title">Figure 32. Sequence Diagram for `facil list`Command</div>
+<div class="title">Figure 36. Sequence Diagram for `facil list`Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1401,7 +1541,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorListActivityDiagram.png" alt="FacilitatorListActivityDiagram">
 </div>
-<div class="title">Figure 33. Activity Diagram for <code>facil list</code> Command</div>
+<div class="title">Figure 37. Activity Diagram for <code>facil list</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1437,7 +1577,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="images/FacilitatorFindSequenceDiagram.png" alt="FacilitatorFindSequenceDiagram">
 </div>
-<div class="title">Figure 34. Sequence Diagram for <code>facil find</code> Command</div>
+<div class="title">Figure 38. Sequence Diagram for <code>facil find</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1459,7 +1599,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorFindActivityDiagram.png" alt="FacilitatorFindActivityDiagram">
 </div>
-<div class="title">Figure 35. Activity Diagram for <code>facil find</code> Command</div>
+<div class="title">Figure 39. Activity Diagram for <code>facil find</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1501,13 +1641,13 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#setF
 </ol>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the facilitator edits command works:</p>
+<p>The following sequence diagram shows how the facilitator edit command works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilitatorEditSequenceDiagram.png" alt="FacilitatorEditSequenceDiagram">
 </div>
-<div class="title">Figure 36. Sequence Diagram for <code>facil edit</code> Command</div>
+<div class="title">Figure 40. Sequence Diagram for <code>facil edit</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1529,7 +1669,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorEditActivityDiagram.png" alt="FacilitatorEditActivityDiagram">
 </div>
-<div class="title">Figure 37. Activity Diagram for <code>facil edit</code> Command</div>
+<div class="title">Figure 41. Activity Diagram for <code>facil edit</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1568,7 +1708,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 <div class="content">
 <img src="images/FacilitatorDeleteSequenceDiagram.png" alt="FacilitatorDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 38. Sequence Diagram for <code>facil delete</code> Command</div>
+<div class="title">Figure 42. Sequence Diagram for <code>facil delete</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1590,7 +1730,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorDeleteActivityDiagram.png" alt="FacilitatorDeleteActivityDiagram">
 </div>
-<div class="title">Figure 39. Activity Diagram for <code>facil delete</code> Command</div>
+<div class="title">Figure 43. Activity Diagram for <code>facil delete</code> Command</div>
 </div>
 </div>
 </div>
@@ -1767,7 +1907,7 @@ This feature is facilitated by <code>CalCommandParser</code>, <code>CalViewComma
 <div class="content">
 <img src="images/CalViewSequenceDiagram.png" alt="CalViewSequenceDiagram">
 </div>
-<div class="title">Figure 40. Sequence Diagram for <code>cal view</code> Command</div>
+<div class="title">Figure 44. Sequence Diagram for <code>cal view</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1788,7 +1928,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="images/CalViewActivityDiagram.png" alt="CalViewActivityDiagram">
 </div>
-<div class="title">Figure 41. Activity Diagram for <code>cal view</code> Command</div>
+<div class="title">Figure 45. Activity Diagram for <code>cal view</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1819,7 +1959,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="images/CalFindSequenceDiagram.png" alt="CalFindSequenceDiagram">
 </div>
-<div class="title">Figure 42. Sequence Diagram for <code>cal find</code> Command</div>
+<div class="title">Figure 46. Sequence Diagram for <code>cal find</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1840,7 +1980,7 @@ The lifeline for CalCommandParser, CalFindCommandParser and CalFindCommand shoul
 <div class="content">
 <img src="images/CalFindActivityDiagram.png" alt="CalFindActivityDiagram">
 </div>
-<div class="title">Figure 43. Activity Diagram for <code>cal find</code> Command</div>
+<div class="title">Figure 47. Activity Diagram for <code>cal find</code> Command</div>
 </div>
 </div>
 </div>
@@ -1852,13 +1992,13 @@ The lifeline for CalCommandParser, CalFindCommandParser and CalFindCommand shoul
 <div class="content">
 <img src="images/NewCalendar.png" alt="NewCalendar">
 </div>
-<div class="title">Figure 44. New Design for Calendar Appearance (Alternative 1)</div>
+<div class="title">Figure 48. New Design for Calendar Appearance (Alternative 1)</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/OldCalendar.png" alt="OldCalendar">
 </div>
-<div class="title">Figure 45. Old Design for Calendar Appearance (Alternative 2)</div>
+<div class="title">Figure 49. Old Design for Calendar Appearance (Alternative 2)</div>
 </div>
 <div class="ulist">
 <ul>
@@ -3234,4 +3374,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 06:59:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 13:38:28 UTC</div></div></div></body></html>
