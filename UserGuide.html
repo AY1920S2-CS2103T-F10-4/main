@@ -76,8 +76,8 @@
 </ul>
 </li>
 <li><a href="#automatic-command-guidance">4.8. Automatic command guidance</a></li>
-<li><a href="#clearing-all-entries-code-clear-code">4.9. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">4.10. Exiting the program : <code>exit</code></a></li>
+<li><a href="#clearing-all-entries-code-strong-clear-strong-code">4.9. Clearing all entries : <code><strong>clear</strong></code></a></li>
+<li><a href="#exiting-the-program-code-strong-exit-strong-code">4.10. Exiting the program : <code><strong>exit</strong></code></a></li>
 <li><a href="#upcoming-code-coming-in-v2-0-code">4.11. Upcoming <code>[coming in v2.0]</code></a>
 <ul class="sectlevel3">
 <li><a href="#using-indexing-command-system-code-coming-in-v2-0-code">4.11.1. Using indexing command system <code>[coming in v2.0]</code></a></li>
@@ -169,7 +169,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>class add /code CS2103T /type LEC /at FRIDAY 14:00 16:00 /venue i3-Aud</code></strong> : adds a class to the module CS2103T.</p>
 </li>
 <li>
-<p><strong><code>task add /code CS2103T /task Complete tP tasks</code></strong>: adds a task to the module CS2103T.</p>
+<p><strong><code>task add /code CS2103T /desc Complete tP tasks</code></strong>: adds a task to the module CS2103T.</p>
 </li>
 <li>
 <p><strong><code>facil add /name Akshay Narayan /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T</code></strong>: adds a facilitator to the module CS2103T. If you are rushing to write an e-mail to your lecturer, you can refer to this conveniently.</p>
@@ -288,7 +288,7 @@ It also shows the list of modules you currently have.</p>
 <p>Parameters can be in any order.</p>
 </li>
 <li>
-<p>Module codes are case-insensitive.</p>
+<p>Module code and facilitator name are case-insensitive.</p>
 </li>
 </ul>
 </div>
@@ -305,13 +305,24 @@ It also shows the list of modules you currently have.</p>
 </div>
 <div class="sect2">
 <h3 id="managing-modules-code-strong-mod-strong-code"><a class="link" href="#managing-modules-code-strong-mod-strong-code">4.2. Managing modules : <code><strong>mod</strong></code></a></h3>
+<div class="paragraph">
+<p>The commands in this section carry out operations on the module list in Mod Manager.
+Executing these commands will bring you to the module tab.</p>
+</div>
 <div class="sect3">
 <h4 id="adding-a-module"><a class="link" href="#adding-a-module">4.2.1. Adding a module</a></h4>
 <div class="paragraph">
-<p>Adds a module to the module list.</p>
+<p>You can add a module to Mod Manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>mod</strong> add /code MOD_CODE [/desc DESCRIPTION]</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>mod</strong> add /code MOD_CODE [/desc DESCRIPTION]</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Parameter constraints:</p>
@@ -321,7 +332,7 @@ It also shows the list of modules you currently have.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>MOD_CODE should be 2-3 letters followed by 4 numbers (and a letter) with no spaces and should not exceed 10 characters.</p>
+<p>MOD_CODE should be 2-3 letters followed by 4 numbers (and a letter) with no spaces.</p>
 </li>
 <li>
 <p>DESCRIPTION should not exceed 64 characters.</p>
@@ -333,59 +344,173 @@ It also shows the list of modules you currently have.</p>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>mod</strong> add /code CS2103T /desc Software Engineering</code><br>
-Adds a module with the module code CS2103T and description Software Engineering to Mod Manager.</p>
-</li>
-<li>
-<p><code><strong>mod</strong> add /code CS2101</code><br>
-Adds a module with the module code CS2101 to Mod Manager.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>You can add a module to the module list.
+To add a module with the module code <code>CS2103T</code> and description <code>Software Engineering</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> add /code CS2103T /desc Software Engineering</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModAddBefore1.png" alt="ModAddBefore1">
+</div>
+<div class="title">Figure 7. Before <code><strong>mod</strong> add /code CS2103T /desc Software Engineering</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModAddAfter1.png" alt="ModAddAfter1">
+</div>
+<div class="title">Figure 8. After <code><strong>mod</strong> add /code CS2103T /desc Software Engineering</code></div>
+</div>
+<div class="paragraph">
+<p>You can also add a module without description.
+To add a module with the module code <code>CS2101</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code>mod add /code CS2101</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModAddBefore2.png" alt="ModAddBefore2">
+</div>
+<div class="title">Figure 9. Before <code><strong>mod</strong> add /code CS2101</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModAddAfter2.png" alt="ModAddAfter2">
+</div>
+<div class="title">Figure 10. After <code><strong>mod</strong> add /code CS2101</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="viewing-all-modules"><a class="link" href="#viewing-all-modules">4.2.2. Viewing all modules</a></h4>
 <div class="paragraph">
-<p>Shows you a list of modules.</p>
+<p>You can view a list of all modules.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>mod</strong> list</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>mod</strong> list</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You can view all modules in Mod Manager.
+To see a list of all modules,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> list</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModListAfter1.png" alt="ModListAfter1">
+</div>
+<div class="title">Figure 11. After <code><strong>mod</strong> list</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="viewing-information-of-a-module"><a class="link" href="#viewing-information-of-a-module">4.2.3. Viewing information of a module</a></h4>
 <div class="paragraph">
-<p>Shows you all classes, tasks and facilitators for a module.</p>
+<p>You can view all classes, tasks and facilitators for a module.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>mod</strong> view INDEX</code> or <code><strong>mod</strong> view MOD_CODE</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
+<p>Format:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>mod</strong> view 1</code><br>
-Shows all classes, tasks and facilitators for the first module in the module list.</p>
+<p><code><strong>mod</strong> view INDEX</code></p>
 </li>
 <li>
-<p><code><strong>mod</strong> view CS2103T</code>
-Shows all classes, tasks and facilitators for the module CS2103T.</p>
+<p><code><strong>mod</strong> view MOD_CODE</code></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Views the module at the specified <code>INDEX</code> or with the specified <code>MOD_CODE</code>. The index refers to the index number shown in the displayed module list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p>You can view a module using the index in the module list.
+To view all classes, tasks and facilitators for the second module in the module list,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> view 2</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModViewBefore1.png" alt="ModViewBefore1">
+</div>
+<div class="title">Figure 12. Before <code><strong>mod</strong> view 2</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModViewAfter1.png" alt="ModViewAfter1">
+</div>
+<div class="title">Figure 13. After <code><strong>mod</strong> view 2</code></div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can view a module using the module code.
+To view all classes, tasks and facilitators for the module <code>CS2103T</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> view CS2103T</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModViewBefore2.png" alt="ModViewBefore2">
+</div>
+<div class="title">Figure 14. Before <code><strong>mod</strong> view CS2103T</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModViewAfter2.png" alt="ModViewAfter2">
+</div>
+<div class="title">Figure 15. After <code><strong>mod</strong> view CS2103T</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="editing-a-module"><a class="link" href="#editing-a-module">4.2.4. Editing a module</a></h4>
 <div class="paragraph">
-<p>Edits the information of the module.</p>
+<p>You can edit the information of a module.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>mod</strong> edit INDEX [/code NEW_MODE_CODE] [/desc DESCRIPTION]</code> or <code><strong>mod</strong> edit MOD_CODE [/code NEW_MODE_CODE] [/desc DESCRIPTION]</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>mod</strong> edit INDEX [/code NEW_MODE_CODE] [/desc DESCRIPTION]</code></p>
+</li>
+<li>
+<p><code><strong>mod</strong> edit MOD_CODE [/code NEW_MODE_CODE] [/desc DESCRIPTION]</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Parameter constraints:</p>
@@ -404,13 +529,13 @@ Shows all classes, tasks and facilitators for the module CS2103T.</p>
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>* MOD_CODE should be 2-3 letters followed by 4 numbers (and a letter) with no spaces and should not exceed 10 characters.</p>
+<p>MOD_CODE should be 2-3 letters followed by 4 numbers (and a letter) with no spaces.</p>
 </li>
 <li>
 <p>DESCRIPTION should not exceed 64 characters.</p>
 </li>
 <li>
-<p>You can remove description linked to the facilitator by typing <code>/desc</code> without specifying any input after it.</p>
+<p>You can remove the description linked to the module by typing <code>/desc</code> without specifying any input after it.</p>
 </li>
 </ul>
 </div>
@@ -419,26 +544,85 @@ Shows all classes, tasks and facilitators for the module CS2103T.</p>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>mod</strong> edit 1 /code CS2113T</code><br>
-Updates the module code of the first module in the module list to CS2113T.</p>
-</li>
-<li>
-<p><code><strong>mod</strong> edit CS2103T /desc Software Engineering</code><br>
-Updates the description of the module CS2103T to Software Engineering.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>You can edit a module using the index in the module list.
+To update the module code of the first module in the module list to <code>CS2113T</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> edit 1 /code CS2113T</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModEditBefore1.png" alt="ModEditBefore1">
+</div>
+<div class="title">Figure 16. Before <code><strong>mod</strong> edit 1 /code CS2113T</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModEditAfter1.png" alt="ModEditAfter1">
+</div>
+<div class="title">Figure 17. After <code><strong>mod</strong> edit 1 /code CS2113T</code></div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can edit a module using the module code.
+To update the description of the module <code>CS2101</code> to <code>Effective Communication for Computing Professionals</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> edit CS2101 /desc Effective Communication for Computing Professionals</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModEditBefore2.png" alt="ModEditBefore2">
+</div>
+<div class="title">Figure 18. Before <code><strong>mod</strong> edit CS2101 /desc Effective Communication for Computing Professionals</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModEditAfter2.png" alt="ModEditAfter2">
+</div>
+<div class="title">Figure 19. After <code><strong>mod</strong> edit CS2101 /desc Effective Communication for Computing Professionals</code></div>
+</div>
+<div class="paragraph">
+<p>You can also remove the description of a module without specifying any input after the prefix <code>/desc</code>.
+To remove the description of the third module in the module list,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> edit 3 /desc</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModEditBefore3.png" alt="ModEditBefore3">
+</div>
+<div class="title">Figure 20. Before <code><strong>mod</strong> edit 3 /desc</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModEditAfter3.png" alt="ModEditAfter3">
+</div>
+<div class="title">Figure 21. After <code><strong>mod</strong> edit 3 /desc</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-module"><a class="link" href="#deleting-a-module">4.2.5. Deleting a module</a></h4>
 <div class="paragraph">
-<p>Deletes the module, along with classes, facilitators and tasks for that module.</p>
+<p>You can delete a module from Mod Manager.
+All classes, tasks and facilitators for that module will also be deleted.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>mod</strong> delete INDEX</code> or <code><strong>mod</strong> delete MOD_CODE</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>mod</strong> delete INDEX</code></p>
+</li>
+<li>
+<p><code><strong>mod</strong> delete MOD_CODE</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Parameter constraints:</p>
@@ -457,17 +641,45 @@ Updates the description of the module CS2103T to Software Engineering.</p>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>mod</strong> delete 2</code><br>
-Deletes the second module in the module list.</p>
-</li>
-<li>
-<p><code><strong>mod</strong> delete CS2103T</code><br>
-Deletes the module with the module code CS2103T.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>You can delete a module using the index in the module list.
+To delete the second module in the module list,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> delete 2</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModDeleteBefore1.png" alt="ModDeleteBefore1">
+</div>
+<div class="title">Figure 22. Before <code><strong>mod</strong> delete 2</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModDeleteAfter1.png" alt="ModDeleteAfter1">
+</div>
+<div class="title">Figure 23. After <code><strong>mod</strong> delete 2</code></div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can delete a module using the module code.
+To delete the module with the module code <code>CS2103T</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> delete CS2103T</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModDeleteBefore2.png" alt="ModDeleteBefore2">
+</div>
+<div class="title">Figure 24. Before <code><strong>mod</strong> delete CS2103T</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModDeleteAfter2.png" alt="ModDeleteAfter2">
+</div>
+<div class="title">Figure 25. After <code><strong>mod</strong> delete CS2103T</code></div>
 </div>
 </div>
 </div>
@@ -602,7 +814,7 @@ Deletes the module with the module code CS2103T.</p>
 <p>Deletes the class from the module. There are 2 ways you can delete a class.</p>
 </div>
 <div class="paragraph">
-<p>Selects a class to be deleted by its index in the full class list. You can view the full class list by using <code>class list</code> as stated in section 3.3.2.</p>
+<p>Selects a class to be deleted by its index in the full class list. You can view the full class list by using <code><strong>class</strong> list</code> as stated in section 3.3.2.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>class</strong> delete INDEX</code></p>
@@ -625,7 +837,7 @@ Deletes the module with the module code CS2103T.</p>
 <p>Example: <code><strong>class</strong> delete 1</code></p>
 </div>
 <div class="paragraph">
-<p>Selects a class to be deleted by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code>mod view MOD_CODE</code> as stated in section 3.2.3.</p>
+<p>Selects a class to be deleted by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>class</strong> delete INDEX /code MOD_CODE</code></p>
@@ -701,7 +913,7 @@ these tasks cannot be in the same time period, for example, in the same day.</p>
 <div class="paragraph">
 <p>Marks a task as done in the module.
 Format: <code><strong>task</strong> done /code MOD_CODE /id ID_NUMBER</code><br>
-Example: <code><strong>task</strong> done /code CS2103T /task 979</code></p>
+Example: <code><strong>task</strong> done /code CS2103T /id 979</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -839,8 +1051,8 @@ match only tasks that are on 10 April in any year.</p>
 <p>Examples of valid task ID: <code>CS2103T 848</code>, <code>CS4231 132</code>.</p>
 </li>
 <li>
-<p>You can find out a task&#8217;s ID by looking at the general task list - can be viewed with <code>task list</code>
-(section 4.4.3) , or the task list of a specific module - can be viewed with <code>mod view</code> (section 4.2.3).</p>
+<p>You can find out a task&#8217;s ID by looking at the general task list - can be viewed with <code><strong>task</strong> list</code>
+(section 4.4.3) , or the task list of a specific module - can be viewed with <code><strong>mod</strong> view</code> (section 4.2.3).</p>
 </li>
 </ul>
 </div>
@@ -883,14 +1095,27 @@ match only tasks that are on 10 April in any year.</p>
 </div>
 <div class="sect2">
 <h3 id="managing-facilitators-code-strong-facil-strong-code"><a class="link" href="#managing-facilitators-code-strong-facil-strong-code">4.5. Managing facilitators : <code><strong>facil</strong></code></a></h3>
+<div class="paragraph">
+<p>The commands in this section carry out operations on the facilitator list in Mod Manager.
+Executing these commands will bring you to the facilitators tab.</p>
+</div>
 <div class="sect3">
 <h4 id="adding-a-facilitator"><a class="link" href="#adding-a-facilitator">4.5.1. Adding a facilitator</a></h4>
 <div class="paragraph">
-<p>Adds a facilitator to the module.</p>
+<p>You can add a facilitator to Mod Manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [MORE_MOD_CODES]&#8230;&#8203;</code>
-or <code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [MORE_MOD_CODES]&#8230;&#8203;</code></p>
+</li>
+<li>
+<p><code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/email EMAIL] [/office OFFICE] /code MOD_CODE [/code MORE_MOD_CODES]&#8230;&#8203;</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Parameter constraints:</p>
@@ -903,7 +1128,10 @@ or <code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/emai
 <p>At least one of the optional fields (phone, email, office) must be provided.</p>
 </li>
 <li>
-<p>A facilitator can be linked to one or more modules.</p>
+<p>A facilitator can be linked to one or more modules. A module with the module code provided must exist in Mod Manager.</p>
+</li>
+<li>
+<p>To add multiple module codes, you can include the prefix <code>/code</code> once before all module codes (e.g. <code>/code CS2103T CS3243</code>) or multiple times once before each module code (e.g. <code>/code CS2103T /code CS3243</code>).</p>
 </li>
 </ul>
 </div>
@@ -912,35 +1140,94 @@ or <code><strong>facil</strong> add /name FACILITATOR_NAME [/phone PHONE] [/emai
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>facil</strong> add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS3243</code><br>
-Adds a facilitator with the name Akshay Narayan, phone 98765432 and email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> to the modules CS2103T and CS3243.</p>
-</li>
-<li>
-<p><code><strong>facil</strong> add /name Aaron Tan /email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> /office COM1-0312 /code CS1231 /code CS2100</code><br>
-Adds a facilitator with the name Aaron Tan, email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> and office COM1-0312 to the modules CS1231 and CS2100.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>You can add a facilitator to the facilitator list.
+To add a facilitator with the name <code>Akshay Narayan</code>, phone <code>98765432</code> and email <code>dcsaksh@nus.edu.sg</code> to the modules <code>CS2103T</code> and <code>CS3243</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS3243</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilAddBefore1.png" alt="FacilAddBefore1">
+</div>
+<div class="title">Figure 26. Before <code><strong>facil</strong> add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS3243</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilAddAfter1.png" alt="FacilAddAfter1">
+</div>
+<div class="title">Figure 27. After <code><strong>facil</strong> add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS3243</code></div>
+</div>
+<div class="paragraph">
+<p>You can also add a facilitator to multiple modules by typing the prefix <code>/code</code> multiple times.
+To add a facilitator with the name <code>Aaron Tan</code>, email <code>tantc@comp.nus.edu.sg</code> and office <code>COM1-0312</code> to the modules <code>CS1231</code> and <code>CS2100</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> add /name Aaron Tan /email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> /office COM1-0312 /code CS1231 /code CS2100</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilAddBefore2.png" alt="FacilAddBefore2">
+</div>
+<div class="title">Figure 28. Before <code><strong>facil</strong> add /name Aaron Tan /email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> /office COM1-0312 /code CS1231 /code CS2100</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilAddAfter2.png" alt="FacilAddAfter2">
+</div>
+<div class="title">Figure 29. After <code><strong>facil</strong> add /name Aaron Tan /email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> /office COM1-0312 /code CS1231 /code CS2100</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="viewing-all-facilitators"><a class="link" href="#viewing-all-facilitators">4.5.2. Viewing all facilitators</a></h4>
 <div class="paragraph">
-<p>Shows you a list of all facilitators sorted in alphabetical order.</p>
+<p>You can view a list of all facilitators sorted in alphabetical order.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>facil</strong> list</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>facil</strong> list</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You can view all facilitators in Mod Manager.
+To see a list of all facilitators sorted in alphabetical order,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> list</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilListAfter1.png" alt="FacilListAfter1">
+</div>
+<div class="title">Figure 30. After <code><strong>facil</strong> list</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="finding-a-facilitator-by-name"><a class="link" href="#finding-a-facilitator-by-name">4.5.3. Finding a facilitator by name</a></h4>
 <div class="paragraph">
-<p>Finds facilitators whose names contain the given name.</p>
+<p>You can find facilitators by name.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>facil</strong> find FACILITATOR_NAME [MORE_FACILITATOR_NAMES]&#8230;&#8203;</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>facil</strong> find FACILITATOR_NAME [MORE_FACILITATOR_NAMES]&#8230;&#8203;</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Parameter constraints:</p>
@@ -971,27 +1258,64 @@ Adds a facilitator with the name Aaron Tan, email <a href="mailto:tantc@comp.nus
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>facil</strong> find Akshay</code><br>
-Find all facilitators whose name contains Akshay.</p>
-</li>
-<li>
-<p><code><strong>facil</strong> find yan tan</code><br>
-Find all facilitators whose name contains yan or tan.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>You can search for facilitators by name.
+To view all facilitators whose name contains <code>Akshay</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> find Akshay</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilFindBefore1.png" alt="FacilFindBefore1">
+</div>
+<div class="title">Figure 31. Before <code><strong>facil</strong> find Akshay</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilFindAfter1.png" alt="FacilFindAfter1">
+</div>
+<div class="title">Figure 32. After <code><strong>facil</strong> find Akshay</code></div>
+</div>
+<div class="paragraph">
+<p>You can also search for multiple facilitators or search with partial names.
+To view a list of facilitators whose name contains <code>yan</code> or <code>tan</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> find yan tan</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilFindBefore2.png" alt="FacilFindBefore2">
+</div>
+<div class="title">Figure 33. Before <code><strong>facil</strong> find yan tan</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilFindAfter2.png" alt="FacilFindAfter2">
+</div>
+<div class="title">Figure 34. After <code><strong>facil</strong> find yan tan</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="editing-a-facilitator"><a class="link" href="#editing-a-facilitator">4.5.4. Editing a facilitator</a></h4>
 <div class="paragraph">
-<p>Edits the information of a facilitator.</p>
+<p>You can edit the information of a facilitator.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code>
-or <code><strong>facil</strong> edit FACILITATOR_NAME [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>facil</strong> edit INDEX [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code></p>
+</li>
+<li>
+<p><code><strong>facil</strong> edit FACILITATOR_NAME [/name FACILITATOR_NAME] [/phone PHONE] [/email EMAIL] [/office OFFICE] [/code MOD_CODE&#8230;&#8203;]</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Parameter constraints:</p>
@@ -1013,7 +1337,10 @@ or <code><strong>facil</strong> edit FACILITATOR_NAME [/name FACILITATOR_NAME] [
 <p>When editing module codes, the existing module codes of the facilitator will be removed i.e adding of module code is not cumulative.</p>
 </li>
 <li>
-<p>You can remove phone, email or office linked to the facilitator by typing <code>/phone</code>, <code>/email</code> or <code>/office</code> respectively without specifying any input after it.</p>
+<p>A module with the module code provided must exist in Mod Manager.</p>
+</li>
+<li>
+<p>You can remove the phone, email or office linked to the facilitator by typing <code>/phone</code>, <code>/email</code> or <code>/office</code> respectively without specifying any input after it.</p>
 </li>
 </ul>
 </div>
@@ -1022,30 +1349,84 @@ or <code><strong>facil</strong> edit FACILITATOR_NAME [/name FACILITATOR_NAME] [
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>facil</strong> edit 1 /name Akshay /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code><br>
-Updates the name and email of the first facilitator in the last shown facilitator list in the facilitator tab to Akshay and <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a> respectively.</p>
-</li>
-<li>
-<p><code><strong>facil</strong> edit Akshay Narayan /office COM2-0203</code><br>
-Updates the office of the facilitator with name Akshay Narayan to COM2-0203.</p>
-</li>
-<li>
-<p><code><strong>facil</strong> edit 2 /phone</code><br>
-Removes the phone of the second facilitator in the last shown facilitator list in the facilitator tab.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>You can edit the information of a facilitator using the index in the last shown facilitator list.
+To update the name and email of the first facilitator in the last shown facilitator list in the facilitator tab to <code>Akshay</code> and <code>hisnewemail@nus.edu.sg</code> respectively,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> edit 1 /name Akshay /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilEditBefore1.png" alt="FacilEditBefore1">
+</div>
+<div class="title">Figure 35. Before <code><strong>facil</strong> edit 1 /name Akshay /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilEditAfter1.png" alt="FacilEditAfter1">
+</div>
+<div class="title">Figure 36. After <code><strong>facil</strong> edit 1 /name Akshay /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can edit the information of a facilitator using the name of the facilitator.
+To update the office of the facilitator with the name <code>Akshay Narayan</code> to <code>COM2-0203</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> edit Akshay Narayan /office COM2-0203</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilEditBefore2.png" alt="FacilEditBefore2">
+</div>
+<div class="title">Figure 37. Before <code><strong>facil</strong> edit Akshay Narayan /office COM2-0203</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilEditAfter2.png" alt="FacilEditAfter2">
+</div>
+<div class="title">Figure 38. After <code><strong>facil</strong> edit Akshay Narayan /office COM2-0203</code></div>
+</div>
+<div class="paragraph">
+<p>You can also remove the information of a facilitator without specifying any input after the prefix <code>/phone</code>, <code>/email</code> or <code>/office</code>.
+To remove the phone of the second facilitator in the last shown facilitator list in the facilitator tab,
+type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> edit 2 /phone</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilEditBefore3.png" alt="FacilEditBefore3">
+</div>
+<div class="title">Figure 39. Before <code><strong>facil</strong> edit 2 /phone</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilEditAfter3.png" alt="FacilEditAfter3">
+</div>
+<div class="title">Figure 40. After <code><strong>facil</strong> edit 2 /phone</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-facilitator"><a class="link" href="#deleting-a-facilitator">4.5.5. Deleting a facilitator</a></h4>
 <div class="paragraph">
-<p>Deletes a facilitator from the module.</p>
+<p>You can delete a facilitator from Mod Manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>facil</strong> delete INDEX</code> or <code><strong>facil</strong> delete FACILITATOR_NAME</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>facil</strong> delete INDEX</code></p>
+</li>
+<li>
+<p><code><strong>facil</strong> delete FACILITATOR_NAME</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Parameter constraints:</p>
@@ -1064,17 +1445,45 @@ Removes the phone of the second facilitator in the last shown facilitator list i
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>facil</strong> delete 2</code><br>
-Deletes the second facilitator in the last shown facilitator list in the facilitator tab.</p>
-</li>
-<li>
-<p><code><strong>facil</strong> delete Akshay Narayan</code><br>
-Deletes the facilitator with the name Akshay Narayan.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>You can delete a facilitator using the index in the last shown facilitator list.
+To delete the first facilitator in the last shown facilitator list in the facilitator tab,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> delete 1</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilDeleteBefore1.png" alt="FacilDeleteBefore1">
+</div>
+<div class="title">Figure 41. Before <code><strong>facil</strong> delete 1</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilDeleteAfter1.png" alt="FacilDeleteAfter1">
+</div>
+<div class="title">Figure 42. After <code><strong>facil</strong> delete 1</code></div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can delete a facilitator using the name of the facilitator.
+To delete the facilitator with the name <code>Akshay Narayan</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>facil</strong> delete Akshay Narayan</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilDeleteBefore2.png" alt="FacilDeleteBefore2">
+</div>
+<div class="title">Figure 43. Before <code><strong>facil</strong> delete Akshay Narayan</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FacilDeleteAfter2.png" alt="FacilDeleteAfter2">
+</div>
+<div class="title">Figure 44. After <code><strong>facil</strong> delete Akshay Narayan</code></div>
 </div>
 </div>
 </div>
@@ -1097,7 +1506,7 @@ The yellow boxes represents the tasks you have while the blue boxes represents t
 <div class="content">
 <img src="images/CalView1.png" alt="CalView1">
 </div>
-<div class="title">Figure 7. Outcome of <code><strong>cal</strong> view /week this</code></div>
+<div class="title">Figure 45. Outcome of <code><strong>cal</strong> view /week this</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -1117,7 +1526,7 @@ The yellow boxes represents the tasks you have while the blue boxes represents t
 <div class="content">
 <img src="images/CalView2.png" alt="CalView2">
 </div>
-<div class="title">Figure 8. Outcome of <code><strong>cal</strong> view /week next</code></div>
+<div class="title">Figure 46. Outcome of <code><strong>cal</strong> view /week next</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -1136,7 +1545,7 @@ Mod Manager brings you to the Calendar tab and lists to you the list of empty sl
 <div class="content">
 <img src="images/CalFind1.png" alt="CalFind1">
 </div>
-<div class="title">Figure 9. Outcome of <code><strong>cal</strong> find empty</code></div>
+<div class="title">Figure 47. Outcome of <code><strong>cal</strong> find empty</code></div>
 </div>
 <div class="paragraph">
 <p>The full message in the result display box in the above figure is:</p>
@@ -1192,7 +1601,7 @@ The command(s) closest to your mistyped one will be shown: both the syntax forma
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.9. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-strong-clear-strong-code"><a class="link" href="#clearing-all-entries-code-strong-clear-strong-code">4.9. Clearing all entries : <code><strong>clear</strong></code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from Mod Manager.</p>
 </div>
@@ -1201,7 +1610,7 @@ The command(s) closest to your mistyped one will be shown: both the syntax forma
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.10. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-strong-exit-strong-code"><a class="link" href="#exiting-the-program-code-strong-exit-strong-code">4.10. Exiting the program : <code><strong>exit</strong></code></a></h3>
 <div class="paragraph">
 <p>Exits the program.</p>
 </div>
@@ -1386,4 +1795,4 @@ Hence, you do not need to save manually.</p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 02:07:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 03:10:03 UTC</div></div></div></body></html>
