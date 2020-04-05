@@ -3,49 +3,75 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mod Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-F10-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Ng Zi Xin - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-mod-manager"><a class="link" href="#project-mod-manager">PROJECT: Mod Manager</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mod Manager is for those who prefer to use a desktop app for managing tasks for modules in a semester. More importantly, Mod Manager is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Mod Manager can get your management of tasks done faster than traditional GUI apps.</p>
+<p>Mod Manager is a desktop application that assists students in managing schedules and contacts for their modules. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 25 kLoC.</p>
+</div>
+<div class="paragraph">
+<p>Mod Manager is morphed from existing desktop Java application <a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3">Address Book (Level 3)</a> over a period of 8 weeks by my team of 5 software engineering students.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Given below is a summary of my contributions to Mod Manager.</p>
+</div>
+<div class="paragraph">
+<p><strong>Major enhancement</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p>Implemented the module management feature.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does: This feature allows users to add, view, edit and delete modules.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: This feature improves the product as it enables users to manage modules easily. It gathers all the information for each module and displays them to the user.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Highlights: This enhancement required integration of the other features. It required an in-depth analysis of design alternatives. The implementation was challenging as it required updating the classes, tasks and facilitators when a module is edited or deleted.</p>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Minor enhancement</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p>Refactored person in Address Book to facilitator in Mod Manager.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Implemented the ability to bring users to the relevant tabs when commands are executed.</p>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
+<p>[<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+is%3Aclosed+author%3Azixinn">Functional code</a>] [<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+is%3Aclosed+author%3Azixinn+test">Test code</a>] [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=zixinn&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Reposense</a>]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p><strong>Other contributions</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -53,7 +79,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Managed issue tracker and milestones for team repo</p>
+</li>
+<li>
+<p>Merged pull requests</p>
 </li>
 </ul>
 </div>
@@ -63,10 +92,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Wrote additional tests to increase coverage from 60% to 66%: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/121">#121</a></p>
 </li>
 </ul>
 </div>
@@ -76,7 +102,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated introduction, about and upcoming section of User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/24">#24</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/126">#126</a></p>
+</li>
+<li>
+<p>Added module and facilitator feature of User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/10">#10</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/174">#174</a></p>
+</li>
+<li>
+<p>Updated storage component, non functional requirements and testing of general features of Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/24">#24</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/103">#103</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/121">#121</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/180">#180</a></p>
+</li>
+<li>
+<p>Added implementation, use cases and testing of module and facilitator management feature of Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/24">#24</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/103">#103</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/121">#121</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/126">#126</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/176">#176</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/180">#180</a></p>
 </li>
 </ul>
 </div>
@@ -86,16 +121,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/81">#81</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/98">#98</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/128">#128</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/139">#139</a></p>
 </li>
 </ul>
 </div>
@@ -105,60 +131,563 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Integrated Travis, AppVeyor, Coveralls and Codacy to the team repo</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</p>
+</div>
+<div class="sect2">
+<h3 id="about"><a class="link" href="#about">About</a></h3>
+<div class="paragraph">
+<p>This user guide helps you to master how to use Mod Manager.
+It explains the features and commands supported by Mod Manager, with examples to illustrate how the application works.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="managing-modules-code-strong-mod-strong-code"><a class="link" href="#managing-modules-code-strong-mod-strong-code">Managing modules : <code><strong>mod</strong></code></a></h3>
+<div class="paragraph">
+<p>The commands in this section carry out operations on the module list in Mod Manager.
+Executing these commands will bring you to the Module tab.</p>
+</div>
+<div class="sect3">
+<h4 id="viewing-information-of-a-module"><a class="link" href="#viewing-information-of-a-module">Viewing information of a module</a></h4>
+<div class="paragraph">
+<p>You can view all classes, tasks and facilitators for a module.</p>
+</div>
+<div class="paragraph">
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>mod</strong> view INDEX</code></p>
+</li>
+<li>
+<p><code><strong>mod</strong> view MOD_CODE</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameter constraints:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Views the module at the specified <code>INDEX</code> or with the specified <code>MOD_CODE</code>. The index refers to the index number shown in the displayed module list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p>You can view a module using the index in the module list.
+To view all classes, tasks and facilitators for the second module in the module list,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> view 2</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModViewBefore1.png" alt="ModViewBefore1">
+</div>
+<div class="title">Figure 1. Before <code><strong>mod</strong> view 2</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModViewAfter1.png" alt="ModViewAfter1">
+</div>
+<div class="title">Figure 2. After <code><strong>mod</strong> view 2</code></div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can view a module using the module code.
+To view all classes, tasks and facilitators for the module <code>CS2103T</code>,
+you can type the following command:</p>
+</div>
+<div class="paragraph">
+<p><code><strong>mod</strong> view CS2103T</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModViewBefore2.png" alt="ModViewBefore2">
+</div>
+<div class="title">Figure 3. Before <code><strong>mod</strong> view CS2103T</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModViewAfter2.png" alt="ModViewAfter2">
+</div>
+<div class="title">Figure 4. After <code><strong>mod</strong> view CS2103T</code></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
+<div class="paragraph">
+<p>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</p>
+</div>
+<div class="sect2">
+<h3 id="storage-component"><a class="link" href="#storage-component">Storage Component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram">
+</div>
+<div class="title">Figure 5. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can save the Mod Manager data in json format and read it back.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-management-feature"><a class="link" href="#module-management-feature">Module Management Feature</a></h3>
+<div class="paragraph">
+<p>The module feature manages the modules in Mod Manager and is represented by the <code>Module</code> class.
+A module has a <code>ModuleCode</code> and an optional <code>Description</code>.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>add - Adds a module to Mod Manager.</p>
+</li>
+<li>
+<p>list - Lists all modules in Mod Manager.</p>
+</li>
+<li>
+<p>view - View information of a module in Mod Manager.</p>
+</li>
+<li>
+<p>edit - Edits a module in Mod Manager.</p>
+</li>
+<li>
+<p>delete - Deletes a module in Mod Manager.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="implementation-details"><a class="link" href="#implementation-details">Implementation Details</a></h4>
+<div class="sect4">
+<h5 id="adding-a-module"><a class="link" href="#adding-a-module">Adding a module</a></h5>
+<div class="paragraph">
+<p>The add module feature allows users to add a module to Mod Manager.
+This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleAddCommandParser</code> and <code>ModuleAddCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#addModule()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the module add mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the module add command and provides the module code and description of the module to be added.</p>
+</li>
+<li>
+<p><code>ModuleAddCommandParser</code> creates a new <code>Module</code> based on the module code and description.</p>
+</li>
+<li>
+<p><code>ModuleAddCommandParser</code> creates a new <code>ModuleAddCommand</code> based on the module.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>ModuleAddCommand</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> adds the module to the <code>UniqueModuleList</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredModules</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the module add command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleAddSequenceDiagram.png" alt="ModuleAddSequenceDiagram">
+</div>
+<div class="title">Figure 6. Sequence Diagram for <code>mod add</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>ModuleCommandParser</code>, <code>ModuleAddCommandParser</code> and <code>ModuleAddCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
 </tr>
-</tbody>
 </table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>The following activity diagram summarizes what happens when a user executes a module add command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleAddActivityDiagram.png" alt="ModuleAddActivityDiagram">
+</div>
+<div class="title">Figure 7. Activity Diagram for <code>mod add</code> Command</div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 02:49:34 UTC</div></div></div></body></html>
+</div>
+</div>
+<div class="sect2">
+<h3 id="facilitator-management-feature"><a class="link" href="#facilitator-management-feature">Facilitator Management Feature</a></h3>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-mutability-of-code-facilitator-code-object"><a class="link" href="#aspect-mutability-of-code-facilitator-code-object">Aspect: Mutability of <code>Facilitator</code> object</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Create a new facilitator with the edited fields and replace the existing facilitator with the new facilitator.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Preserves immutability of the <code>Facilitator</code> object.</p>
+</li>
+<li>
+<p>Cons: Overhead in creating a new <code>Facilitator</code> object for every edit operation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Modify the existing facilitator directly.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More convenient and lower overhead to edit a facilitator by setting the relevant fields without creating a new <code>Facilitator</code> object.</p>
+</li>
+<li>
+<p>Cons: Unintentional modification of the <code>Facilitator</code> object.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen to preserve the immutability of the Facilitator object to avoid unintentional modification.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-storage-of-facilitators"><a class="link" href="#aspect-storage-of-facilitators">Aspect: Storage of facilitators</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Store all facilitators in a single facilitator list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Will not have to maintain multiple lists. Less memory usage as each facilitator is represented once. Will not have to iterate through multiple lists to find all instances of a particular facilitator when executing facilitator commands.</p>
+</li>
+<li>
+<p>Cons: Have to iterate through the whole list to find facilitators for a particular module when executing module commands.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store facilitators for each module in a separate list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Able to find facilitators for a particular module easily when executing module commands.</p>
+</li>
+<li>
+<p>Cons: May contain duplicates as some facilitators may have multiple module codes. Have to iterate through multiple lists when executing facilitator commands.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen as the design is simpler without the need to maintain multiple lists and can also avoid duplicates in the storage.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-reference-of-code-modulecode-code-in-code-facilitator-code-object"><a class="link" href="#aspect-reference-of-code-modulecode-code-in-code-facilitator-code-object">Aspect: Reference of <code>ModuleCode</code> in <code>Facilitator</code> object</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Create a new <code>ModuleCode</code> object for each <code>Facilitator</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement.</p>
+</li>
+<li>
+<p>Cons: Existence of multiple identical <code>ModuleCode</code> objects.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Reference each <code>Facilitator</code> to the <code>ModuleCode</code> in the <code>Module</code> list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Only require one <code>ModuleCode</code> object per unique <code>ModuleCode</code>. Can support editing of module codes more easily.</p>
+</li>
+<li>
+<p>Cons: Have to iterate through the module list to find the module code for the facilitator.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen because of ease of implementation due to time constraint.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appendix-c-use-cases"><a class="link" href="#appendix-c-use-cases">Appendix C: Use Cases</a></h3>
+<h3 id="use-case-uc04-edit-module" class="discrete">Use case: UC04 - Edit module</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to edit a module and provides the index or module code and the new description.</p>
+</li>
+<li>
+<p>Mod Manager edits the module.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given index or module code is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. The new description is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc05-delete-module" class="discrete">Use case: UC05 - Delete module</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a module and provides the index or module code.</p>
+</li>
+<li>
+<p>Mod Manager deletes the module.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given index or module code is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appendix-d-non-functional-requirements"><a class="link" href="#appendix-d-non-functional-requirements">Appendix D: Non Functional Requirements</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+</li>
+<li>
+<p>Should work on different screen sizes.</p>
+</li>
+<li>
+<p>Should be able to hold up to 250 classes, 250 tasks and 250 facilitators.</p>
+</li>
+<li>
+<p>Response time for each command should be within 3 seconds.</p>
+</li>
+<li>
+<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+</li>
+<li>
+<p>A user should be able to navigate from one tab to another by typing or clicking.</p>
+</li>
+<li>
+<p>Should work without any internet required.</p>
+</li>
+<li>
+<p>Rate of failure should not exceed 5%.</p>
+</li>
+<li>
+<p>User data should be protected and should not be accessible to other users.</p>
+</li>
+<li>
+<p>Should be intuitive and easy to use, and users should become proficient within an hour.</p>
+</li>
+<li>
+<p>Should not conflict with other applications or processes.</p>
+</li>
+<li>
+<p>A developer with one year of experience should be able to add a new feature, including source code modifications and testing, with no more than one week of labour.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing-of-general-features"><a class="link" href="#testing-of-general-features">Testing of General Features</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Launching the application.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Download the jar file and copy into an empty folder. Double-click the jar file.<br>
+Expected: Shows the <a href="#gui">GUI</a> with a set of sample modules, classes, tasks and facilitators. The window size may not be optimum.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Exiting the application.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Type <code>exit</code> in the command box and press <kbd>Enter</kbd>.<br>
+Expected: Closes the application window and saves data.</p>
+</li>
+<li>
+<p>Click on the close button on the application window.<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving data.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Delete the data file if it exists. Double-click the jar file.<br>
+Expected: Shows the <a href="#gui">GUI</a> with a set of sample modules, classes, tasks and facilitators.</p>
+</li>
+<li>
+<p>Edit the data file to contain duplicate modules. Double-click the jar file.<br>
+Expected: Shows the <a href="#gui">GUI</a> with an empty set of modules, classes, tasks and facilitators.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing-of-module-feature"><a class="link" href="#testing-of-module-feature">Testing of Module Feature</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing a module.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all modules using the <code>mod list</code> command. Multiple modules in the list.</p>
+</li>
+<li>
+<p>Test case: <code>mod edit 1 /desc SE</code><br>
+Expected: Description of the first module in the list is updated to <code>SE</code>. Details of the edited module shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>mod edit 0</code><br>
+Expected: No module is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect mod edit commands to try: <code>mod edit</code>, <code>mod edit x</code> (where x is any value), <code>mod edit x /desc SE</code> (where x is negative, 0 or larger than the list size), <code>mod edit 1 /code x</code> (where a module with module code x exists)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 07:56:02 UTC</div></div></div></body></html>

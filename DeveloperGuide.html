@@ -48,9 +48,9 @@
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-facilitator-2">G.2. Deleting a Facilitator</a></li>
-<li><a href="#saving-data">G.3. Saving Data</a></li>
+<li><a href="#testing-of-general-features">G.1. Testing of General Features</a></li>
+<li><a href="#testing-of-module-feature">G.2. Testing of Module Feature</a></li>
+<li><a href="#testing-of-facilitator-feature">G.3. Testing of Facilitator Feature</a></li>
 </ul>
 </li>
 </ul>
@@ -2229,19 +2229,19 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add modules I am taking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a module I am taking</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the information related to the module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a class</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the classes I have for a particular module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a task</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the tasks I have for a particular module</p></td>
 </tr>
 <tr>
@@ -2271,13 +2271,13 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit a module’s description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">modify the module’s description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update the module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a class</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep my classes up to date</p></td>
 </tr>
 <tr>
@@ -2339,12 +2339,6 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view commands for a specific feature</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">learn how to use them</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">get reminded about how commands work</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">recall the commands</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -2507,19 +2501,6 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. The list of modules is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
 <h3 id="use-case-uc03-view-module" class="discrete">Use case: UC03 - View module</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
@@ -2527,7 +2508,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to view a module and provides the module code.</p>
+<p>User requests to view a module and provides the index or module code.</p>
 </li>
 <li>
 <p>Mod Manager shows all information related to the module.</p>
@@ -2543,7 +2524,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. The given module code is invalid.</p>
+<p>1a. The given index or module code is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -2697,19 +2678,6 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. The list of classes is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
 </div>
 <h3 id="use-case-uc08-find-class-by-day" class="discrete">Use case: UC08 - Find class by day</h3>
 <div class="paragraph">
@@ -2928,19 +2896,6 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. The list of facilitators is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
 </div>
 <h3 id="use-case-uc20-find-facilitator" class="discrete">Use case: UC20 - Find facilitator</h3>
 <div class="paragraph">
@@ -3195,19 +3150,37 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
 </li>
 <li>
-<p>Should be able to hold up to 250 classes, 250 tasks and 250 facilitators and without a noticeable sluggishness in performance for typical usage.</p>
+<p>Should work on different screen sizes.</p>
+</li>
+<li>
+<p>Should be able to hold up to 250 classes, 250 tasks and 250 facilitators.</p>
+</li>
+<li>
+<p>Response time for each command should be within 3 seconds.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 <li>
+<p>A user should be able to navigate from one tab to another by typing or clicking.</p>
+</li>
+<li>
 <p>Should work without any internet required.</p>
 </li>
 <li>
-<p>Should be for a single user.</p>
+<p>Rate of failure should not exceed 5%.</p>
 </li>
 <li>
-<p>Data should be stored locally and should be in a human editable file.</p>
+<p>User data should be protected and should not be accessible to other users.</p>
+</li>
+<li>
+<p>Should be intuitive and easy to use, and users should become proficient within an hour.</p>
+</li>
+<li>
+<p>Should not conflict with other applications or processes.</p>
+</li>
+<li>
+<p>A developer with one year of experience should be able to add a new feature, including source code modifications and testing, with no more than one week of labour.</p>
 </li>
 </ol>
 </div>
@@ -3298,50 +3271,96 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="testing-of-general-features"><a class="link" href="#testing-of-general-features">G.1. Testing of General Features</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Initial launch</p>
+<p>Launching the application.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Download the jar file and copy into an empty folder</p>
-</li>
-<li>
-<p>Double-click the jar file<br>
+<p>Download the jar file and copy into an empty folder. Double-click the jar file.<br>
 Expected: Shows the <a href="#gui">GUI</a> with a set of sample modules, classes, tasks and facilitators. The window size may not be optimum.</p>
 </li>
 </ol>
 </div>
 </li>
-</ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-facilitator-2"><a class="link" href="#deleting-a-facilitator-2">G.2. Deleting a Facilitator</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
-<p>Deleting a facilitator while all facilitators are listed</p>
+<p>Exiting the application.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all facilitators using the <code>facil list</code> command. Multiple facilitators in the list.</p>
+<p>Type <code>exit</code> in the command box and press <kbd>Enter</kbd>.<br>
+Expected: Closes the application window and saves data.</p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First facilitator is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Click on the close button on the application window.<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No facilitator is deleted. Error details shown in the status message. Status bar remains the same.</p>
+<p>Saving data.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Delete the data file if it exists. Double-click the jar file.<br>
+Expected: Shows the <a href="#gui">GUI</a> with a set of sample modules, classes, tasks and facilitators.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Edit the data file to contain duplicate modules. Double-click the jar file.<br>
+Expected: Shows the <a href="#gui">GUI</a> with an empty set of modules, classes, tasks and facilitators.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing-of-module-feature"><a class="link" href="#testing-of-module-feature">G.2. Testing of Module Feature</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a module.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all modules using the <code>mod list</code> command. Module <code>CS1101S</code> does not exist in Mod Manager.</p>
+</li>
+<li>
+<p>Test case: <code>mod add /code CS1101S /desc Programming Methodology</code><br>
+Expected: A module with the module code <code>CS1101S</code> and description <code>Programming Methodology</code> is added to the list. Details of the added module shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>mod add /desc Programming Methodology</code><br>
+Expected: No module is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect mod add commands to try: <code>mod add</code>, <code>mod add /code</code>, <code>mod add /code x</code> (where module x already exists in Mod Manager), <code>mod add /code CS1101S /desc</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Viewing a module.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all modules using the <code>mod list</code> command. Module <code>CS2103T</code> exists in Mod Manager.</p>
+</li>
+<li>
+<p>Test case: <code>mod view CS2103T</code><br>
+Expected: Classes, tasks and facilitators of the module <code>CS2103T</code> shown. Details of the viewed module shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>mod view 0</code><br>
+Expected: No module is viewed. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect mod view commands to try: <code>mod view</code>, <code>mod view x</code> (where x is negative, 0 or larger than the list size), <code>mod view x</code> (where no module with module code x exists)<br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -3349,29 +3368,149 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving Data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
+<p>Editing a module.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Prerequisites: List all modules using the <code>mod list</code> command. Multiple modules in the list.</p>
+</li>
+<li>
+<p>Test case: <code>mod edit 1 /desc SE</code><br>
+Expected: Description of the first module in the list is updated to <code>SE</code>. Details of the edited module shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>mod edit 0</code><br>
+Expected: No module is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect mod edit commands to try: <code>mod edit</code>, <code>mod edit x</code> (where x is any value), <code>mod edit x /desc SE</code> (where x is negative, 0 or larger than the list size), <code>mod edit 1 /code x</code> (where a module with module code x exists)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a module.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all modules using the <code>mod list</code> command. Multiple modules in the list.</p>
+</li>
+<li>
+<p>Test case: <code>mod delete 1</code><br>
+Expected: First module is deleted from the list. Details of the deleted module shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>mod delete 0</code><br>
+Expected: No module is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect mod delete commands to try: <code>mod delete</code>, <code>mod delete x</code> (where x is negative, 0 or larger than the list size), <code>mod delete x</code> (where no module with module code x exists)<br>
+Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="testing-of-facilitator-feature"><a class="link" href="#testing-of-facilitator-feature">G.3. Testing of Facilitator Feature</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a facilitator while all facilitators are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all facilitators using the <code>facil list</code> command. A facilitator with the name <code>Akshay Narayan</code> does not exist in Mod Manager. Module <code>CS2103T</code> exists in Mod Manager. Module <code>CS1101S</code> does not exist in Mod Manager.</p>
+</li>
+<li>
+<p>Test case: <code>facil add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T</code><br>
+Expected: A facilitator with the name <code>Akshay Narayan</code>, phone <code>98765432</code> and email <code>dcsaksh@nus.edu.sg</code> and module <code>CS2103T</code> is added to the list. Details of the added facilitator shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>facil add /name Akshay Narayan /phone 98765432 /code CS1101S</code><br>
+Expected: No facilitator is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect facil add commands to try: <code>facil add</code>, <code>facil add /name Akshay Narayan</code>, <code>facil add /name Akshay Narayan /office /code cs2103T</code>, <code>facil add /name Akshay Narayan /email abcde /code cs2103T</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Finding a facilitator while all facilitators are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all facilitators using the <code>facil list</code> command. Multiple facilitators in the list. A facilitator with the name <code>Akshay Narayan</code> exists in Mod Manager. No other facilitator’s name contains <code>Akshay</code>.</p>
+</li>
+<li>
+<p>Test case: <code>facil find Akshay</code><br>
+Expected: Only the facilitator with the name <code>Akshay Narayan</code> is shown. Number of facilitators listed shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>facil find</code><br>
+Expected: No facilitator is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing a facilitator while all facilitators are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all facilitators using the <code>facil list</code> command. Multiple facilitators in the list.</p>
+</li>
+<li>
+<p>Test case: <code>facil edit 1 /office COM2-0202</code><br>
+Expected: Office of the first facilitator in the list is updated to <code>COM2-0202</code>. Details of the edited facilitator shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>facil edit 2 /phone</code><br>
+Expected: Phone of the second facilitator in the list is removed. Details of the edited facilitator shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>facil edit 0</code><br>
+Expected: No facilitator is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect facil edit commands to try: <code>facil edit</code>, <code>facil edit x</code> (where x is any value), <code>facil edit x /phone 87654321</code> (where x is negative, 0 or larger than the list size)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a facilitator while all facilitators are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all facilitators using the <code>facil list</code> command. Multiple facilitators in the list.</p>
+</li>
+<li>
+<p>Test case: <code>facil delete 1</code><br>
+Expected: First facilitator is deleted from the list. Details of the deleted facilitator shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>facil delete 0</code><br>
+Expected: No facilitator is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect facil delete commands to try: <code>facil delete</code>, <code>facil delete x</code> (where x is negative, 0 or larger than the list size), <code>facil delete x</code> (where no facilitator with name x exists)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 02:49:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 07:56:02 UTC</div></div></div></body></html>
