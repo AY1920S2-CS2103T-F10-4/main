@@ -3,47 +3,77 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mod Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-F10-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Ang Lu Shing - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-mod-manager"><a class="link" href="#project-mod-manager">PROJECT: Mod Manager</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mod Manager is for those who prefer to use a desktop app for managing tasks for modules in a semester. More importantly, Mod Manager is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Mod Manager can get your management of tasks done faster than traditional GUI apps.</p>
+<p>This portfolio documents my contribution to Mod Manager, a software engineering project that my team of 4 and I have built under the module, CS2103T Software Engineering. Over the span of 8 weeks, Mod Manager is morphed from <a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3">Address Book Level 3 (AB3)</a> and it aims to assist students in managing schedules and facilitators' contact details for their modules in a semester. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 25 kLoC.</p>
+</div>
+<div class="paragraph">
+<p>Below are some relevant contributions I have made to the development of Mod Manager.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section shows a summary of my contributions to Mod Manager.</p>
+</div>
+<div class="paragraph">
+<p><strong>Major enhancement</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p>Implemented the calendar feature</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows users to view their schedules for the current week and upcoming week.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
-</li>
-<li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Allows users to find time periods where the user will be free.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p>Justification: This feature improves the product because users may need a better visualisation of the many tasks and classes they have in each day in a week and know the time periods where they are free. This then allows users to better plan their schedules.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Highlights: This enhancement has some dependency on other features. It required an in-depth analysis of design alternatives. The implementation is hard because the calendar has to be updated whenever classes and tasks are updated due to other commands.</p>
 </li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Minor enhancement</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sorted the facilitators in facilitators list by their name in alphabetical order.</p>
+</li>
+<li>
+<p>Design and implement the Ui for module tab.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>:</p>
+</div>
+<div class="ulist https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+author%3Aalushingg+is%3Aclosed[Functional code]] [https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=alushingg&sort=groupTitle&sortWithin=title&since=2020-02-14&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false&tabOpen=true&tabType=zoom&zA=undefined&zR=undefined&zACS=undefined&zS=undefined&zU=undefined&zMG=false&zFTF=undefined&zFGS=undefined&zSO=undefined&zSWO=undefined&zSD=false&zSWD=false[Reposense]">
+<ul class="https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+author%3Aalushingg+is%3Aclosed[Functional code]] [https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=alushingg&sort=groupTitle&sortWithin=title&since=2020-02-14&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false&tabOpen=true&tabType=zoom&zA=undefined&zR=undefined&zACS=undefined&zS=undefined&zU=undefined&zMG=false&zFTF=undefined&zFGS=undefined&zSO=undefined&zSWO=undefined&zSD=false&zSWD=false[Reposense]">
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
@@ -53,20 +83,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
-</li>
-</ul>
-</div>
+<p>Managed releases <code>v1.3</code> on GitHub</p>
 </li>
 <li>
-<p>Enhancements to existing features:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Merged pull requests</p>
 </li>
 </ul>
 </div>
@@ -76,7 +96,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated exit and clear command of User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/133">#133</a></p>
+</li>
+<li>
+<p>Added calendar feature of User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/9">#9</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/110">#110</a></p>
+</li>
+<li>
+<p>Added implementation, use cases and testing of calendar feature of Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/23">#23</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/105">#105</a></p>
 </li>
 </ul>
 </div>
@@ -86,29 +112,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/81">#81</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/98">#98</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/128">#128</a></p>
 </li>
 </ul>
 </div>
@@ -117,9 +121,6 @@
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -136,6 +137,111 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="managing-calendar-code-strong-cal-strong-code"><a class="link" href="#managing-calendar-code-strong-cal-strong-code">Managing calendar : <code><strong>cal</strong></code></a></h3>
+<div class="paragraph">
+<p>The commands in this section carry out operations related to the calendar in Mod Manager.
+Executing these commands will bring you to the Calendar tab.</p>
+</div>
+<div class="sect3">
+<h4 id="viewing-calendar-for-current-week"><a class="link" href="#viewing-calendar-for-current-week">Viewing calendar for current week</a></h4>
+<div class="paragraph">
+<p>You can view the calendar for the current week. It displays the tasks and classes you have in the current week.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>cal</strong> view /week this</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+You can view the calendar for the current week by typing the above command.
+The yellow boxes represents the tasks you have while the blue boxes represents the lessons you have in the current week.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalView1.png" alt="CalView1">
+</div>
+<div class="title">Figure 1. Outcome of <code><strong>cal</strong> view /week this</code></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-calendar-for-next-week"><a class="link" href="#viewing-calendar-for-next-week">Viewing calendar for next week</a></h4>
+<div class="paragraph">
+<p>You can view the calendar for next week. It displays the tasks and classes you have in next week.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>cal</strong> view /week next</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+You can view the calendar for the next week by typing the above command.
+The yellow boxes represents the tasks you have while the blue boxes represents the lessons you have in next week.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalView2.png" alt="CalView2">
+</div>
+<div class="title">Figure 2. Outcome of <code><strong>cal</strong> view /week next</code></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-empty-slots"><a class="link" href="#finding-empty-slots">Finding empty slots</a></h4>
+<div class="paragraph">
+<p>You can find the empty slots from current day to end of the week of the current day.
+The empty slots are time periods where you do not have classes or tasks.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>cal</strong> find empty</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+You can get the list of empty slots by typing the above command. The list will be displayed in the result display box.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalFind1.png" alt="CalFind1">
+</div>
+<div class="title">Figure 3. Outcome of <code><strong>cal</strong> find empty</code></div>
+</div>
+<div class="paragraph">
+<p>The full message in the result display box in the above figure is:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Here&#8217;s the list of empty slots from today to Sunday:<br>
+WEDNESDAY:<br>
+00:00-12:00  12:00-14:00  16:00-23:59<br>
+THURSDAY:<br>
+00:00-08:00  11:00-23:59<br>
+FRIDAY:<br>
+00:00-10:00  11:00-14:00  16:00-23:59<br>
+SATURDAY:<br>
+00:00-23:59<br>
+SUNDAY:<br>
+00:00-23:59</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-strong-clear-strong-code"><a class="link" href="#clearing-all-entries-code-strong-clear-strong-code">Clearing all entries : <code><strong>clear</strong></code></a></h3>
+<div class="paragraph">
+<p>You can clear all entries from Mod Manager. All the lists of modules, classes, facilitators and tasks that you have will be cleared.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>clear</strong></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-strong-exit-strong-code"><a class="link" href="#exiting-the-program-code-strong-exit-strong-code">Exiting the program : <code><strong>exit</strong></code></a></h3>
+<div class="paragraph">
+<p>You can exit the program. Upon closing the application, the Mod Manager data will be saved automatically in your hard disk.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>exit</strong></code></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -151,14 +257,380 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">Calendar Feature</a></h3>
+<div class="paragraph">
+<p>The calendar feature manages the calendar in Mod Manager and is represented by the Calendar class. A calendar has a LocalDate.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>view - Views the schedules and tasks in a whole week in Mod Manager.</p>
+</li>
+<li>
+<p>find - Finds empty slots in a week from current day to end of the week in Mod Manager.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="implementation-details"><a class="link" href="#implementation-details">Implementation Details</a></h4>
+<div class="sect4">
+<h5 id="viewing-the-calendar"><a class="link" href="#viewing-the-calendar">Viewing the calendar</a></h5>
+<div class="paragraph">
+<p>The view calendar feature allows users to view the calendar for a week in Mod Manager.
+This feature is facilitated by <code>CalCommandParser</code>, <code>CalViewCommandParser</code> and <code>CalViewCommand</code>. The calendar is exposed in the <code>Model</code> interface in <code>Module#updateCalendar()</code> and it is retrieved in <code>MainWindow</code> to show the timeline for the specified week to users.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the calendar view mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the calendar view command and provides which week to be viewed. The week to be viewed can be this or next week.</p>
+</li>
+<li>
+<p><code>CalViewCommandParser</code> creates a new <code>Calendar</code> based on the specified week.</p>
+</li>
+<li>
+<p><code>CalViewCommandParser</code> creates a new <code>CalViewCommand</code> based on the <code>Calendar</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>CalViewCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the calendar in <code>ModelManager</code>.</p>
+</li>
+<li>
+<p><code>MainWindow</code> retrieves the calendar from <code>LogicManager</code> which retrieves from <code>ModelManager</code>.</p>
+</li>
+<li>
+<p><code>MainWindow</code> shows the calendar.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the calendar view command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalViewSequenceDiagram.png" alt="CalViewSequenceDiagram">
+</div>
+<div class="title">Figure 4. Sequence Diagram for <code>cal view</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code> and <code>CalViewCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a calendar view command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalViewActivityDiagram.png" alt="CalViewActivityDiagram">
+</div>
+<div class="title">Figure 5. Activity Diagram for <code>cal view</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="finding-empty-slots-in-calendar"><a class="link" href="#finding-empty-slots-in-calendar">Finding empty slots in calendar</a></h5>
+<div class="paragraph">
+<p>The find empty in calendar feature allows users to know the empty slots they have in the calendar from the current day to the end of the week in Mod Manager. This feature is facilitated by CalCommandParser, CalFindCommandParser and CalFindCommand.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the calendar find mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the calendar find command.</p>
+</li>
+<li>
+<p>CalFindCommandParser creates a new CalFindCommand.</p>
+</li>
+<li>
+<p>LogicManager executes the CalFindCommand.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the calendar find command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalFindSequenceDiagram.png" alt="CalFindSequenceDiagram">
+</div>
+<div class="title">Figure 6. Sequence Diagram for <code>cal find</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for CalCommandParser, CalFindCommandParser and CalFindCommand should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a calendar find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalFindActivityDiagram.png" alt="CalFindActivityDiagram">
+</div>
+<div class="title">Figure 7. Activity Diagram for <code>cal find</code> Command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-calendar-appearance"><a class="link" href="#aspect-calendar-appearance">Aspect: Calendar appearance</a></h5>
+<div class="imageblock">
+<div class="content">
+<img src="../images/NewCalendar.png" alt="NewCalendar">
+</div>
+<div class="title">Figure 8. New Design for Calendar Appearance (Alternative 1)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/OldCalendar.png" alt="OldCalendar">
+</div>
+<div class="title">Figure 9. Old Design for Calendar Appearance (Alternative 2)</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Displaying the days of a week in calendar from left to right.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The whole week can be seen on one screen without having users to scroll down for a particular day.</p>
+</li>
+<li>
+<p>Cons: Words that are long in number of characters may not be able to be displayed in a single line.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Displaying the days of a week in the calendar from top to bottom.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Tasks and schedules that have description that are long can be displayed in a single line.</p>
+</li>
+<li>
+<p>Cons: There is a need for users to scroll down to see a particular day.
+If there are many tasks and schedules in a day, the other days after it will be pushed downwards and this requires even more scrolling for users.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen as it is better that people are able to see their whole schedules and tasks for a week in one look.
+It makes better use of space than alternative 2 where the right side is usually not used.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-command-syntax-for-calendar-find-command"><a class="link" href="#aspect-command-syntax-for-calendar-find-command">Aspect: Command syntax for calendar find command</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> User is required to input <code>cal find empty</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It is short in command length.</p>
+</li>
+<li>
+<p>Cons: Since there is only one type of calendar find, <code>empty</code> may seem redundant.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> User is required to input <code>cal find /type empty</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: With the need to input <code>/type</code>, it can be clear about the type of find the command is trying to do.
+This is because without the <code>/type</code>, it is possible that users thought that the command is finding the word <code>empty</code>.</p>
+</li>
+<li>
+<p>Cons: It can be tedious for users to type <code>/type</code> and this increases the command length.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen because it is shorter than alternative 2 and hence it can be easier for users to type.
+It is easier to implement too. The word <code>empty</code> is kept to allow users to know what the find command is for.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appendix-c-use-cases"><a class="link" href="#appendix-c-use-cases">Appendix C: Use Cases</a></h3>
+<h3 id="use-case-uc26-view-calendar" class="discrete">Use case: UC26 - View calendar</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view the calendar for a specified week.</p>
+</li>
+<li>
+<p>Mod Manager shows the calendar for the specified week.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The specified week is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc27-find-empty-slots-in-calendar" class="discrete">Use case: UC27 - Find empty slots in calendar</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find empty slots in the calendar.</p>
+</li>
+<li>
+<p>Mod Manager shows the list of empty slots available.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given input is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list of empty slots is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="appendix-e-glossary"><a class="link" href="#appendix-e-glossary">Appendix E: Glossary</a></h2>
 <div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="cli"></a> CLI</dt>
+<dd>
+<p>Command-line interface: processes commands to a computer program in the form of lines of text</p>
+</dd>
+<dt class="hdlist1"><a id="extensions"></a> Extensions</dt>
+<dd>
+<p>"Add-on"s to the <a href="#mss">MSS</a> that describe exceptional or alternative flow of events, describe variations of the scenario that can happen if certain things are not as expected by the <a href="#mss">MSS</a></p>
+</dd>
+<dt class="hdlist1"><a id="gui"></a> GUI</dt>
+<dd>
+<p>Graphical user interface: a form of user interface that allows user to interact with electronic devices through graphical icons</p>
+</dd>
+<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
+<dd>
+<p>Windows, Linux, Unix, OS-X</p>
+</dd>
+<dt class="hdlist1"><a id="mss"></a> MSS</dt>
+<dd>
+<p>Main Success Scenario: describes the most straightforwards interaction for a given use case, which assumes that nothing goes wrong</p>
+</dd>
+</dl>
+</div>
+<div class="sect2">
+<h3 id="testing-of-calendar-feature"><a class="link" href="#testing-of-calendar-feature">Testing of Calendar Feature</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the calendar.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The classes and tasks with date within the current week exist.</p>
+</li>
+<li>
+<p>Test case: <code>cal view /week this</code><br>
+Expected: Classes and tasks appear in the correct day in the calendar and sorted according to time.</p>
+</li>
+<li>
+<p>Test case: <code>cal view /week that</code><br>
+Expected: Error message shown in the result display.</p>
+</li>
+<li>
+<p>Other incorrect cal view commands to try: <code>cal view</code>, `cal view /week `<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-05 15:40:30 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-06 14:21:38 UTC</div></div></div></body></html>
