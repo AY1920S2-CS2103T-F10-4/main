@@ -684,16 +684,25 @@ you can type the following command:</p>
 </div>
 <div class="sect2">
 <h3 id="managing-classes-code-strong-class-strong-code"><a class="link" href="#managing-classes-code-strong-class-strong-code">4.3. Managing classes : <code><strong>class</strong></code></a></h3>
+<div class="paragraph">
+<p>You can add, find, edit or delete classes within ModManager.<br>
+When managing your classes, you should take note of the following areas in the main viewing area as stated in section 3.1:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClassExplain.png" alt="ClassExplain">
+</div>
+</div>
 <div class="sect3">
 <h4 id="adding-a-class"><a class="link" href="#adding-a-class">4.3.1. Adding a class</a></h4>
 <div class="paragraph">
-<p>Adds a class to a module.</p>
+<p>You can add a class to a module.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code><br></p>
 </div>
 <div class="paragraph">
-<p>Parameter constraints:</p>
+<p>Command properties:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -719,19 +728,35 @@ you can type the following command:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Example: <code><strong>class</strong> add /code CS2103T /type LEC /at FRIDAY 14:00 16:00 /venue i3-Aud</code></p>
+<p>Example:<br>
+You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, ModManager looks like what you see in the figure below.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClassAddBefore.png" alt="ClassAddBefore">
+</div>
+</div>
+<div class="paragraph">
+<p>To add that class, you can type:<br>
+<code><strong>class</strong> add /code CS2103T /type LEC /at FRIDAY 14:00 16:00 /venue i3-Aud</code>.<br>
+You will see a new class added to the module CS2103T as shown in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClassAddAfter.png" alt="ClassAddAfter">
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="finding-classes-by-day"><a class="link" href="#finding-classes-by-day">4.3.2. Finding classes by day</a></h4>
 <div class="paragraph">
-<p>Finds classes occurring on a particular day.</p>
+<p>You can find classes occurring on a particular day.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>class</strong> find /at DAY</code></p>
 </div>
 <div class="paragraph">
-<p>Parameter constraints:</p>
+<p>Command properties:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -745,28 +770,41 @@ you can type the following command:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Example: <code><strong>class</strong> find /at MONDAY</code></p>
+<p>Example:<br>
+To know what classes you have on Friday, you can type <code><strong>class</strong> find /at friday</code> and you will be able to see the classes in the result display box as shown in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClassFindDay.png" alt="ClassFindDay">
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="finding-next-class"><a class="link" href="#finding-next-class">4.3.3. Finding next class</a></h4>
 <div class="paragraph">
-<p>Finds the next class that will start soon.</p>
+<p>You can find the next class that will start soon.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> find /next</code></p>
+<p>Format: <code><strong>class</strong> find /next</code><br>
+Example:<br>
+After typing <code><strong>class</strong> find /next</code>, you will be directed to the module&#8217;s page and you will see the class as shown in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClassFindNext.png" alt="ClassFindNext">
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="editing-a-class"><a class="link" href="#editing-a-class">4.3.4. Editing a class</a></h4>
 <div class="paragraph">
-<p>Edits the information of the class. Class is selected by its index in the class list of a module.</p>
+<p>You can edit the information of the class. The class to be edited is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>class</strong> edit INDEX /code MOD_CODE [/code NEW_MOD_CODE] [/type CLASS_TYPE] [/at DAY START_TIME END_TIME] [/venue VENUE]</code><br></p>
 </div>
 <div class="paragraph">
-<p>Parameter constraints:</p>
+<p>Command properties:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -795,19 +833,25 @@ you can type the following command:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Example: <code><strong>class</strong> edit 1 /code CS9000 /venue Home</code></p>
+<p>Example:<br>
+Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. ModManager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClassEdit.png" alt="ClassEdit">
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-class"><a class="link" href="#deleting-a-class">4.3.5. Deleting a class</a></h4>
 <div class="paragraph">
-<p>Deletes the class from the module. Selects a class to be deleted by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
+<p>You can delete the class from the module. The class to be deleted is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code><strong>class</strong> delete INDEX /code MOD_CODE</code></p>
 </div>
 <div class="paragraph">
-<p>Parameter constraints:</p>
+<p>Command properties:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -821,7 +865,13 @@ you can type the following command:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Example: <code><strong>class</strong> delete 1 /code CS2103T</code></p>
+<p>Example:<br>
+You can delete the CS2103T lecture by typing <code><strong>class</strong> delete 1 /code CS2103T</code>. The class will not appear in the class list as seen below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ClassDelete.png" alt="ClassDelete">
+</div>
 </div>
 </div>
 </div>
@@ -1762,4 +1812,4 @@ The command(s) closest to your mistyped one will be shown: both the syntax forma
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 10:31:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 15:31:35 UTC</div></div></div></body></html>

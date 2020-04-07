@@ -3,49 +3,80 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mod Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-F10-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Chan Heidi - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-mod-manager"><a class="link" href="#project-mod-manager">PROJECT: Mod Manager</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mod Manager is for those who prefer to use a desktop app for managing tasks for modules in a semester. More importantly, Mod Manager is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Mod Manager can get your management of tasks done faster than traditional GUI apps.</p>
+<p>For this software engineering project, my team and I were tasked with morphing <a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3">Address Book Level 3 (AB3)</a> application into a better and different product. We decided to make ModManager, which aims to help students in managing module related information such as modules, classes, tasks and facilitators. Mod Manager is made for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). It is written in Java and has about 25kLoC.</p>
+</div>
+<div class="paragraph">
+<p>Below is an example of what ModManager looks like:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="800">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section summarizes my contribution to ModManager.</p>
+</div>
+<div class="paragraph">
+<p><strong>Major enhancement</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p>Implemented the class management feature</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does: allows the user to add, view, edit and delete classes.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: This feature improves the product because a user can manage their classes and find upcoming class, which allow the user to better prioritize their time and prepare for their classes.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Highlights: There is some dependency between this feature and other features. It required an in-depth analysis of design alternatives. The implementation was tough due to parsing. Since there were various arguments and command formats considered, parsing was tougher than usual.</p>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Minor enhancement</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p>Sorted the classes by time.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Enhanced the aesthetics of the GUI.</p>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
+<p>[<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+is%3Aclosed+author%3Aheidicrq">Functional code</a>] [<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+is%3Aclosed+author%3Aheidicrq+test">Test code</a>] [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=heidicrq&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Reposense</a>]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p><strong>Other contributions</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -53,7 +84,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Merged pull requests</p>
 </li>
 </ul>
 </div>
@@ -63,10 +94,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Updated the GUI color scheme (Pull requests <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/117">#117</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Wrote additional tests for existing features to increase coverage from 50% to 62% (Pull requests <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/115">#115</a>)</p>
 </li>
 </ul>
 </div>
@@ -76,7 +107,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated contact us, about us and readme file : <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/5">#5</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/22">#22</a></p>
+</li>
+<li>
+<p>Updated introduction, user profile, value proposition and user stories of Developer Guide : <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/22">#22</a></p>
+</li>
+<li>
+<p>Added class feature of User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/12">#12</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/181">#181</a></p>
+</li>
+<li>
+<p>Added implementation and use cases of class management feature of Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/22">#22</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/124">#124</a></p>
 </li>
 </ul>
 </div>
@@ -86,40 +126,12 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>PRs reviewed (with non-trivial review comments) : <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/95">#95</a></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -136,6 +148,199 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="managing-classes-code-strong-class-strong-code"><a class="link" href="#managing-classes-code-strong-class-strong-code">Managing classes : <code><strong>class</strong></code></a></h3>
+<div class="paragraph">
+<p>You can add, find, edit or delete classes within ModManager.<br>
+When managing your classes, you should take note of the following areas in the main viewing area as stated in section 3.1:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClassExplain.png" alt="ClassExplain">
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h4>
+<div class="paragraph">
+<p>You can add a class to a module.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Command properties:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>MOD_CODE must be an existing and valid module code in the list of modules.</p>
+</li>
+<li>
+<p>CLASS_TYPE available for use are LEC, TUT, SEC, REC and LAB.</p>
+</li>
+<li>
+<p>DAY available for use are MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY and SUNDAY.</p>
+</li>
+<li>
+<p>START_TIME and END_TIME should be in 24 hour HH:mm format.</p>
+</li>
+<li>
+<p>VENUE is optional</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, ModManager looks like what you see in the figure below.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClassAddBefore.png" alt="ClassAddBefore">
+</div>
+</div>
+<div class="paragraph">
+<p>To add that class, you can type:<br>
+<code><strong>class</strong> add /code CS2103T /type LEC /at FRIDAY 14:00 16:00 /venue i3-Aud</code>.<br>
+You will see a new class added to the module CS2103T as shown in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClassAddAfter.png" alt="ClassAddAfter">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-classes-by-day"><a class="link" href="#finding-classes-by-day">Finding classes by day</a></h4>
+<div class="paragraph">
+<p>You can find classes occurring on a particular day.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>class</strong> find /at DAY</code></p>
+</div>
+<div class="paragraph">
+<p>Command properties:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>DAY available for use are MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY and SUNDAY.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+To know what classes you have on Friday, you can type <code><strong>class</strong> find /at friday</code> and you will be able to see the classes in the result display box as shown in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClassFindDay.png" alt="ClassFindDay">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="finding-next-class"><a class="link" href="#finding-next-class">Finding next class</a></h4>
+<div class="paragraph">
+<p>You can find the next class that will start soon.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>class</strong> find /next</code><br>
+Example:<br>
+After typing <code><strong>class</strong> find /next</code>, you will be directed to the module&#8217;s page and you will see the class as shown in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClassFindNext.png" alt="ClassFindNext">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-class"><a class="link" href="#editing-a-class">Editing a class</a></h4>
+<div class="paragraph">
+<p>You can edit the information of the class. The class to be edited is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>class</strong> edit INDEX /code MOD_CODE [/code NEW_MOD_CODE] [/type CLASS_TYPE] [/at DAY START_TIME END_TIME] [/venue VENUE]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Command properties:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the displayed module list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>MOD_CODE must be an existing and valid module code in the list of modules.</p>
+</li>
+<li>
+<p>CLASS_TYPE available for use are LEC, TUT, SEC, REC and LAB.</p>
+</li>
+<li>
+<p>DAY available for use are MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY and SUNDAY.</p>
+</li>
+<li>
+<p>START_TIME and END_TIME should be in 24 hour HH:mm format.</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. ModManager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClassEdit.png" alt="ClassEdit">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-class"><a class="link" href="#deleting-a-class">Deleting a class</a></h4>
+<div class="paragraph">
+<p>You can delete the class from the module. The class to be deleted is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code><strong>class</strong> delete INDEX /code MOD_CODE</code></p>
+</div>
+<div class="paragraph">
+<p>Command properties:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+You can delete the CS2103T lecture by typing <code><strong>class</strong> delete 1 /code CS2103T</code>. The class will not appear in the class list as seen below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ClassDelete.png" alt="ClassDelete">
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -151,14 +356,724 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="class-management-feature"><a class="link" href="#class-management-feature">Class Management Feature</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="class-management-feature-2"><a class="link" href="#class-management-feature-2">Class Management Feature</a></h3>
+<div class="paragraph">
+<p>The class feature manages the classes in Mod Manager and is represented by the <code>Lesson</code> class.
+A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code> which is a <code>DayOfWeek</code> object, <code>startTime</code>, <code>endTime</code> which are <code>LocalTime</code> objects and <code>venue</code> which is a <code>String</code>.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>add - Adds a class to Mod Manager.</p>
+</li>
+<li>
+<p>list - Lists all classes in Mod Manager.</p>
+</li>
+<li>
+<p>edit - Edits a class in Mod Manager.</p>
+</li>
+<li>
+<p>delete - Deletes a class in Mod Manager.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="implementation-details"><a class="link" href="#implementation-details">Implementation Details</a></h4>
+<div class="sect4">
+<h5 id="adding-a-class-2"><a class="link" href="#adding-a-class-2">Adding a class</a></h5>
+<div class="paragraph">
+<p>The add class command allows user to add a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the lesson add mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the lesson add command and provides the module code, lesson type, day, start time, end time and venue of the lesson to be added.</p>
+</li>
+<li>
+<p><code>LessonAddCommandParser</code> creates a new <code>Lesson</code>, then a new <code>LessonAddCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>LessonAddCommand</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> adds the <code>Lesson</code> to <code>LessonList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the lesson add command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonAddSequenceDiagram.png" alt="LessonAddSequenceDiagram">
+</div>
+<div class="title">Figure 1. Sequence Diagram for <code>class add</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a lesson add command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonAddActivityDiagram.png" alt="LessonAddActivityDiagram">
+</div>
+<div class="title">Figure 2. Activity Diagram for <code>class add</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="finding-a-class"><a class="link" href="#finding-a-class">Finding a class</a></h5>
+<div class="paragraph">
+<p>The find class command allows user to find a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonFindCommandParser</code> and <code>LessonFindCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#findNextLesson()</code> and <code>Model#findLessonByDay</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the lesson find mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the lesson find command with the <code>next</code> prefix.</p>
+</li>
+<li>
+<p><code>LessonFindCommandParser</code> creates a new <code>LessonFindCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>LessonFindCommand</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the lesson find command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonFindSequenceDiagram.png" alt="LessonFindSequenceDiagram">
+</div>
+<div class="title">Figure 3. Sequence Diagram for <code>class find</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser</code>, <code>LessonFindCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a lesson find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonFindActivityDiagram.png" alt="LessonFindActivityDiagram">
+</div>
+<div class="title">Figure 4. Activity Diagram for <code>class find</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="editing-a-class-2"><a class="link" href="#editing-a-class-2">Editing a class</a></h5>
+<div class="paragraph">
+<p>The edit class command allows user to edit a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonEditCommandParser</code> and <code>LessonEditCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#setLesson()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the lesson edit mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the lesson edit command and provides the index of the lesson to be edited, the module code of the lesson and the fields to be edited.</p>
+</li>
+<li>
+<p><code>LessonEditCommandParser</code> creates a new <code>EditLessonDescriptor</code> with the fields to be edited.</p>
+</li>
+<li>
+<p><code>LessonEditCommandParser</code> creates a new <code>LessonEditCommand</code> based on the index and module code, and <code>EditLessonDescriptor</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>LessonEditCommand</code>.</p>
+</li>
+<li>
+<p><code>LessonEditCommand</code> retrieves the <code>lesson</code> to be edited.</p>
+</li>
+<li>
+<p><code>LessonEditCommand</code> creates a new <code>Lesson</code>.</p>
+</li>
+<li>
+<p><code>ModManager</code> sets the existing <code>lesson</code> to the new <code>lesson</code> in the <code>LessonList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the lesson edit command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonEditSequenceDiagram.png" alt="LessonEditSequenceDiagram">
+</div>
+<div class="title">Figure 5. Sequence Diagram for <code>class edit</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser</code>, <code>EditLessonDescriptor</code> and <code>LessonEditCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a lesson edit command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonEditActivityDiagram.png" alt="LessonEditActivityDiagram">
+</div>
+<div class="title">Figure 6. Activity Diagram for <code>class edit</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="deleting-a-class-2"><a class="link" href="#deleting-a-class-2">Deleting a class</a></h5>
+<div class="paragraph">
+<p>The delete class command allows user to add a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonDeleteCommandParser</code> and <code>LessonDeleteCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#removeLesson()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the lesson delete mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the lesson delete command and provides the index of the lesson to be deleted.</p>
+</li>
+<li>
+<p><code>LessonDeleteCommandParser</code> creates a new <code>LessonDeleteCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>LessonDeleteCommand</code>.</p>
+</li>
+<li>
+<p><code>LessonDeleteCommand</code> retrieves the <code>lesson</code> to be deleted.</p>
+</li>
+<li>
+<p><code>ModManager</code> deletes the <code>Lesson</code> from <code>LessonList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the lesson delete command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonDeleteSequenceDiagram.png" alt="LessonDeleteSequenceDiagram">
+</div>
+<div class="title">Figure 7. Sequence Diagram for <code>class delete</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>LessonCommandParser</code>, <code>LessonDeleteCommandParser</code> and <code>LessonDeleteCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a lesson delete command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LessonDeleteActivityDiagram.png" alt="LessonDeleteActivityDiagram">
+</div>
+<div class="title">Figure 8. Activity Diagram for <code>class delete</code> Command</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-prefix-of-day-and-time"><a class="link" href="#aspect-prefix-of-day-and-time">Aspect: Prefix of day and time</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice)</strong> Have one prefix for all three <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: User types less.</p>
+</li>
+<li>
+<p>Cons: When user wants to edit one field only, user have to key in other unnecessary details.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Have one prefix each for <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to parse and less invalid inputs to take note of. User can also edit any field.</p>
+</li>
+<li>
+<p>Cons: More prefixes to remember and command will be very lengthy.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appendix-b-user-stories"><a class="link" href="#appendix-b-user-stories">Appendix B: User Stories</a></h3>
+
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix A: User Stories</a></h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 23%;">
+<col style="width: 25%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a module I am taking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the information related to the module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the classes I have for a particular module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the tasks I have for a particular module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add facilitators' information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the information of the facilitators</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view information related to a module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for each module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">complete them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view facilitators' information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contact them when I need help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update the module</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep my classes up to date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep my tasks up to date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit a facilitator’s information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep their contact details up to date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use the App for different semesters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove classes that I am no longer in</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove tasks that I no longer need to track</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a facilitator’s information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove information that I no longer need</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view schedule for the current week</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view schedule for the upcoming week</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">learn how to use them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view commands for a specific feature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">learn how to use them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">import and export data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily migrate the data to another computer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a facilitator by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of facilitators without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of tasks on a particular date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find upcoming tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prioritise them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find empty slots in my schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my time easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark a task as done</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not take note of them anymore</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a priority level to a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prioritise my tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag my tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">categorise them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see countdown timers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be reminded of deadlines</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">receive reminders about deadlines and events the next day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">take note of them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mass delete the modules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete them quickly once the semester is over</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">advanced user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use shorter versions of a command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type a command faster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">careless user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo my commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo the mistakes in my command</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">visual user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see a clear <a href="#gui">GUI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navigate the App more easily</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="appendix-c-use-cases"><a class="link" href="#appendix-c-use-cases">Appendix C: Use Cases</a></h3>
+<h3 id="use-case-uc06-add-class" class="discrete">Use case: UC06 - Add class</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to add a class and provides the details of the new class.</p>
+</li>
+<li>
+<p>Mod Manager adds a class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Compulsory fields are not provided or fields provided are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc07-find-class-by-day" class="discrete">Use case: UC07 - Find class by day</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to list all the classes by day and provides the day.</p>
+</li>
+<li>
+<p>Mod Manager replies with the list of classes.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Day provided is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. No class on the day provided.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc08-find-next-class" class="discrete">Use case: UC08 - Find next class</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to find the next class.</p>
+</li>
+<li>
+<p>Mod Manager replies with the next class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. No next class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc09-edit-class" class="discrete">Use case: UC09 - Edit class</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User request to edit a class and provides the index and necessary details to be edited.</p>
+</li>
+<li>
+<p>Mod Manager edits the class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Index is not provided or invalid, or details are not provided or invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc10-delete-class" class="discrete">Use case: UC10 - Delete class</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a class and provides the index.</p>
+</li>
+<li>
+<p>Mod Manager deletes the class.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Index is not provided or is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 10:31:12 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 15:31:35 UTC</div></div></div></body></html>
