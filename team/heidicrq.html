@@ -149,7 +149,7 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="managing-classes-code-strong-class-strong-code"><a class="link" href="#managing-classes-code-strong-class-strong-code">Managing classes : <code><strong>class</strong></code></a></h3>
+<h3 id="class-feature-code-strong-class-strong-code"><a class="link" href="#class-feature-code-strong-class-strong-code">Class feature : <code><strong>class</strong></code></a></h3>
 <div class="paragraph">
 <p>You can add, find, edit or delete classes within ModManager.<br>
 When managing your classes, you should take note of the following areas in the main viewing area as stated in section 3.1:</p>
@@ -165,7 +165,14 @@ When managing your classes, you should take note of the following areas in the m
 <p>You can add a class to a module.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code><br></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code><br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -187,15 +194,17 @@ When managing your classes, you should take note of the following areas in the m
 <p>START_TIME and END_TIME should be in 24 hour HH:mm format.</p>
 </li>
 <li>
-<p>VENUE is optional</p>
+<p>VENUE is optional.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, ModManager looks like what you see in the figure below.<br></p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, ModManager looks like what you see in the figure below.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -219,7 +228,14 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <p>You can find classes occurring on a particular day.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> find /at DAY</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> find /at DAY</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -236,8 +252,10 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 </div>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-To know what classes you have on Friday, you can type <code><strong>class</strong> find /at friday</code> and you will be able to see the classes in the result display box as shown in the figure below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>To know what classes you have on Friday, you can type <code><strong>class</strong> find /at friday</code> and you will be able to see the classes in the result display box as shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -251,11 +269,20 @@ To know what classes you have on Friday, you can type <code><strong>class</stron
 <p>You can find the next class that will start soon.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> find /next</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> find /next</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-After typing <code><strong>class</strong> find /next</code>, you will be directed to the module&#8217;s page and you will see the class as shown in the figure below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>After typing <code><strong>class</strong> find /next</code>, you will be directed to the module&#8217;s page and you will see the class as shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -269,7 +296,14 @@ After typing <code><strong>class</strong> find /next</code>, you will be directe
 <p>You can edit the information of the class. The class to be edited is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> edit INDEX /code MOD_CODE [/code NEW_MOD_CODE] [/type CLASS_TYPE] [/at DAY START_TIME END_TIME] [/venue VENUE]</code><br></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> edit INDEX /code MOD_CODE [/code NEW_MOD_CODE] [/type CLASS_TYPE] [/at DAY START_TIME END_TIME] [/venue VENUE]</code><br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -301,8 +335,10 @@ After typing <code><strong>class</strong> find /next</code>, you will be directe
 </div>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. ModManager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. ModManager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -316,7 +352,14 @@ Let&#8217;s say that the venue of the CS2103T lecture you just added changed to 
 <p>You can delete the class from the module. The class to be deleted is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> delete INDEX /code MOD_CODE</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> delete INDEX /code MOD_CODE</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -333,8 +376,10 @@ Let&#8217;s say that the venue of the CS2103T lecture you just added changed to 
 </div>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-You can delete the CS2103T lecture by typing <code><strong>class</strong> delete 1 /code CS2103T</code>. The class will not appear in the class list as seen below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You can delete the CS2103T lecture by typing <code><strong>class</strong> delete 1 /code CS2103T</code>. The class will not appear in the class list as seen below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1078,4 +1123,4 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonDeleteCommandPars
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 12:01:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:54:25 UTC</div></div></div></body></html>

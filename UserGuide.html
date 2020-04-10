@@ -22,13 +22,15 @@
 <li><a href="#general">4.1. General</a>
 <ul class="sectlevel3">
 <li><a href="#viewing-help-code-strong-help-strong-code">4.1.1. Viewing help : <code><strong>help</strong></code></a></li>
-<li><a href="#listing-commands-code-strong-cmd-strong-code">4.1.2. Listing commands : <code><strong>cmd</strong></code></a></li>
-<li><a href="#automatic-command-guidance">4.1.3. Automatic command guidance</a></li>
-<li><a href="#clearing-all-entries-code-strong-clear-strong-code">4.1.4. Clearing all entries : <code><strong>clear</strong></code></a></li>
-<li><a href="#exiting-the-program-code-strong-exit-strong-code">4.1.5. Exiting the program : <code><strong>exit</strong></code></a></li>
+<li><a href="#undoing-previous-commands-code-strong-undo-strong-code">4.1.2. Undoing previous commands : <code><strong>undo</strong></code></a></li>
+<li><a href="#redoing-previously-undone-commands-code-strong-redo-strong-code">4.1.3. Redoing previously undone commands : <code><strong>redo</strong></code></a></li>
+<li><a href="#listing-commands-code-strong-cmd-strong-code">4.1.4. Listing commands : <code><strong>cmd</strong></code></a></li>
+<li><a href="#automatic-command-guidance">4.1.5. Automatic command guidance</a></li>
+<li><a href="#clearing-all-entries-code-strong-clear-strong-code">4.1.6. Clearing all entries : <code><strong>clear</strong></code></a></li>
+<li><a href="#exiting-the-program-code-strong-exit-strong-code">4.1.7. Exiting the program : <code><strong>exit</strong></code></a></li>
 </ul>
 </li>
-<li><a href="#managing-modules-code-strong-mod-strong-code">4.2. Managing modules : <code><strong>mod</strong></code></a>
+<li><a href="#module-feature-code-strong-mod-strong-code">4.2. Module feature : <code><strong>mod</strong></code></a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-module">4.2.1. Adding a module</a></li>
 <li><a href="#viewing-all-modules">4.2.2. Viewing all modules</a></li>
@@ -37,7 +39,7 @@
 <li><a href="#deleting-a-module">4.2.5. Deleting a module</a></li>
 </ul>
 </li>
-<li><a href="#managing-classes-code-strong-class-strong-code">4.3. Managing classes : <code><strong>class</strong></code></a>
+<li><a href="#class-feature-code-strong-class-strong-code">4.3. Class feature : <code><strong>class</strong></code></a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-class">4.3.1. Adding a class</a></li>
 <li><a href="#finding-classes-by-day">4.3.2. Finding classes by day</a></li>
@@ -46,7 +48,7 @@
 <li><a href="#deleting-a-class">4.3.5. Deleting a class</a></li>
 </ul>
 </li>
-<li><a href="#managing-tasks-code-strong-task-strong-code">4.4. Managing tasks : <code><strong>task</strong></code></a>
+<li><a href="#task-feature-code-strong-task-strong-code">4.4. Task feature : <code><strong>task</strong></code></a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-task">4.4.1. Adding a task</a></li>
 <li><a href="#editing-a-task">4.4.2. Editing a task</a></li>
@@ -59,7 +61,7 @@
 <li><a href="#searching-tasks-by-date">4.4.9. Searching tasks by date</a></li>
 </ul>
 </li>
-<li><a href="#managing-facilitators-code-strong-facil-strong-code">4.5. Managing facilitators : <code><strong>facil</strong></code></a>
+<li><a href="#facilitator-feature-code-strong-facil-strong-code">4.5. Facilitator feature : <code><strong>facil</strong></code></a>
 <ul class="sectlevel3">
 <li><a href="#adding-a-facilitator">4.5.1. Adding a facilitator</a></li>
 <li><a href="#viewing-all-facilitators">4.5.2. Viewing all facilitators</a></li>
@@ -68,7 +70,7 @@
 <li><a href="#deleting-a-facilitator">4.5.5. Deleting a facilitator</a></li>
 </ul>
 </li>
-<li><a href="#managing-calendar-code-strong-cal-strong-code">4.6. Managing calendar : <code><strong>cal</strong></code></a>
+<li><a href="#calendar-feature-code-strong-cal-strong-code">4.6. Calendar feature : <code><strong>cal</strong></code></a>
 <ul class="sectlevel3">
 <li><a href="#viewing-calendar-for-current-week">4.6.1. Viewing calendar for current week</a></li>
 <li><a href="#viewing-calendar-for-next-week">4.6.2. Viewing calendar for next week</a></li>
@@ -77,12 +79,11 @@
 </li>
 <li><a href="#upcoming-code-coming-in-v2-0-code">4.7. Upcoming <code>[coming in v2.0]</code></a>
 <ul class="sectlevel3">
-<li><a href="#undoing-previous-command-code-coming-in-v2-0-code">4.7.1. Undoing previous command <code>[coming in v2.0]</code></a></li>
-<li><a href="#categorising-tasks-code-coming-in-v2-0-code">4.7.2. Categorising tasks <code>[coming in v2.0]</code></a></li>
-<li><a href="#adding-a-priority-level-to-a-task-code-coming-in-v2-0-code">4.7.3. Adding a priority level to a task <code>[coming in v2.0]</code></a></li>
-<li><a href="#receiving-reminders-code-coming-in-v2-0-code">4.7.4. Receiving reminders <code>[coming in v2.0]</code></a></li>
-<li><a href="#finding-upcoming-tasks-code-coming-in-v2-0-code">4.7.5. Finding upcoming tasks <code>[coming in v2.0]</code></a></li>
-<li><a href="#individual-view-of-the-recently-edited-element-after-an-code-add-code-code-edit-code-or-code-delete-code-command-code-coming-in-v2-0-code">4.7.6. Individual view of the recently edited element after an <code>add</code>, <code>edit</code> or <code>delete</code> command <code>[coming in v2.0]</code></a></li>
+<li><a href="#categorising-tasks-code-coming-in-v2-0-code">4.7.1. Categorising tasks <code>[coming in v2.0]</code></a></li>
+<li><a href="#adding-a-priority-level-to-a-task-code-coming-in-v2-0-code">4.7.2. Adding a priority level to a task <code>[coming in v2.0]</code></a></li>
+<li><a href="#receiving-reminders-code-coming-in-v2-0-code">4.7.3. Receiving reminders <code>[coming in v2.0]</code></a></li>
+<li><a href="#finding-upcoming-tasks-code-coming-in-v2-0-code">4.7.4. Finding upcoming tasks <code>[coming in v2.0]</code></a></li>
+<li><a href="#viewing-of-the-recently-edited-item-after-an-code-add-code-code-edit-code-or-code-delete-code-command-code-coming-in-v2-0-code">4.7.5. Viewing of the recently edited item after an <code>add</code>, <code>edit</code> or <code>delete</code> command <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 </ul>
@@ -124,6 +125,30 @@
 <p>This user guide helps you to master how to use Mod Manager.
 It explains the features and commands supported by Mod Manager, with examples to illustrate how the application works.</p>
 </div>
+<div class="paragraph">
+<p>Note the following symbols and formatting used in this document:</p>
+</div>
+<table class="tableblock frame-all grid-all">
+<caption class="title">Table 1. Symbols used in this User Guide</caption>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Symbol</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Meaning</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>Enter</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The enter button on the keyboard.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="images/InfoIcon.png" alt="InfoIcon" width="40"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information that you need to know.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -166,7 +191,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code><strong>cmd</strong> all</code> : lists all available commands in our Mod Manager.</p>
 </li>
 <li>
-<p><code><strong>mod</strong> add /code CS3233 /desc Competitive Programming</code>* : adds the module CS3233 to the module list.</p>
+<p><code><strong>mod</strong> add /code CS3233 /desc Competitive Programming</code> : adds the module CS3233 to the module list.</p>
 </li>
 <li>
 <p><code><strong>class</strong> add /code CS3233 /type LEC /at FRIDAY 14:00 16:00 /venue i3-Aud</code> : adds a lecture class to the module CS3233.</p>
@@ -234,7 +259,7 @@ It also shows the list of modules you currently have.</p>
 <div class="content">
 <img src="images/Ui.png" alt="Ui">
 </div>
-<div class="title">Figure 3. Module tab</div>
+<div class="title">Figure 3. <strong>Module</strong> tab</div>
 </div>
 </li>
 <li>
@@ -243,7 +268,7 @@ It also shows the list of modules you currently have.</p>
 <div class="content">
 <img src="images/Facil.png" alt="Facil">
 </div>
-<div class="title">Figure 4. Facilitators tab</div>
+<div class="title">Figure 4. <strong>Facilitators</strong> tab</div>
 </div>
 </li>
 <li>
@@ -253,7 +278,7 @@ are shown in green, whereas the rest are uncompleted tasks.</p>
 <div class="content">
 <img src="images/Task.png" alt="Task">
 </div>
-<div class="title">Figure 5. Tasks tab</div>
+<div class="title">Figure 5. <strong>Tasks</strong> tab</div>
 </div>
 </li>
 <li>
@@ -262,7 +287,7 @@ are shown in green, whereas the rest are uncompleted tasks.</p>
 <div class="content">
 <img src="images/Calendar.png" alt="Calendar">
 </div>
-<div class="title">Figure 6. Calendar tab</div>
+<div class="title">Figure 6. <strong>Calendar</strong> tab</div>
 </div>
 </li>
 </ul>
@@ -282,22 +307,22 @@ are shown in green, whereas the rest are uncompleted tasks.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="#general">General</a> features</p>
+<p><a href="#general">General</a> feature</p>
 </li>
 <li>
-<p><a href="#managing-modules-code-strong-mod-strong-code">Module</a> features</p>
+<p><a href="#module-feature-code-strong-mod-strong-code">Module</a> feature</p>
 </li>
 <li>
-<p><a href="#managing-classes-code-strong-class-strong-code">Class</a> features</p>
+<p><a href="#class-feature-code-strong-class-strong-code">Class</a> feature</p>
 </li>
 <li>
-<p><a href="#managing-facilitators-code-strong-facil-strong-code">Facilitator</a> features</p>
+<p><a href="#facilitator-feature-code-strong-facil-strong-code">Facilitator</a> feature</p>
 </li>
 <li>
-<p><a href="#managing-tasks-code-strong-task-strong-code">Task</a> features</p>
+<p><a href="#task-feature-code-strong-task-strong-code">Task</a> feature</p>
 </li>
 <li>
-<p><a href="#managing-calendar-code-strong-cal-strong-code">Calendar</a> features</p>
+<p><a href="#calendar-feature-code-strong-cal-strong-code">Calendar</a> feature</p>
 </li>
 </ol>
 </div>
@@ -326,7 +351,7 @@ e.g <code>/code MOD_CODE [/desc DESCRIPTION]</code> can be used as
 <code>/code CS2103T /desc Software Engineering</code> or as <code>/code CS2103T</code>.</p>
 </li>
 <li>
-<p>Items with <code>&#8230;&#8203;</code>​ after them can be used multiple times, including zero times.<br>
+<p>Items with <code>&#8230;&#8203;</code>​ after them can be used multiple times, including 0 times.<br>
 e.g. <code>[MORE_DESCRIPTIONS]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times),
 <code>Software</code> (once), <code>Software Engineering</code> (twice),
 <code>SWE AI Algorithms</code> etc.</p>
@@ -343,7 +368,7 @@ e.g. if the command specifies <code>/code MOD_CODE /desc DESCRIPTION</code>,
 <div class="sect2">
 <h3 id="general"><a class="link" href="#general">4.1. General</a></h3>
 <div class="paragraph">
-<p>The following commands carry out general operations in Mark.</p>
+<p>The following commands carry out general operations in Mod Manager.</p>
 </div>
 <div class="sect3">
 <h4 id="viewing-help-code-strong-help-strong-code"><a class="link" href="#viewing-help-code-strong-help-strong-code">4.1.1. Viewing help : <code><strong>help</strong></code></a></h4>
@@ -351,11 +376,50 @@ e.g. if the command specifies <code>/code MOD_CODE /desc DESCRIPTION</code>,
 <p>You can open the help window that displays a link to our user guide.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>help</strong></code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>help</strong></code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-commands-code-strong-cmd-strong-code"><a class="link" href="#listing-commands-code-strong-cmd-strong-code">4.1.2. Listing commands : <code><strong>cmd</strong></code></a></h4>
+<h4 id="undoing-previous-commands-code-strong-undo-strong-code"><a class="link" href="#undoing-previous-commands-code-strong-undo-strong-code">4.1.2. Undoing previous commands : <code><strong>undo</strong></code></a></h4>
+<div class="paragraph">
+<p>You can restore the Mod Manager to the state before the previous undoable command was executed.</p>
+</div>
+<div class="paragraph">
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>undo</strong></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="redoing-previously-undone-commands-code-strong-redo-strong-code"><a class="link" href="#redoing-previously-undone-commands-code-strong-redo-strong-code">4.1.3. Redoing previously undone commands : <code><strong>redo</strong></code></a></h4>
+<div class="paragraph">
+<p>You can reverse your undone actions.</p>
+</div>
+<div class="paragraph">
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>redo</strong></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-commands-code-strong-cmd-strong-code"><a class="link" href="#listing-commands-code-strong-cmd-strong-code">4.1.4. Listing commands : <code><strong>cmd</strong></code></a></h4>
 <div class="paragraph">
 <p><strong>Listing all commands</strong>:</p>
 </div>
@@ -367,7 +431,14 @@ e.g. if the command specifies <code>/code MOD_CODE /desc DESCRIPTION</code>,
 These include: <code><strong>facil</strong>, <strong>mod</strong>, <strong>task</strong>, &#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>cmd</strong> all</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>cmd</strong> all</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong>Listing commands for a specific feature</strong>:</p>
@@ -376,40 +447,83 @@ These include: <code><strong>facil</strong>, <strong>mod</strong>, <strong>task<
 <p>Lists commands for a specific group.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>cmd</strong> group COMMAND_WORD</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>cmd</strong> group COMMAND_WORD</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example: <code><strong>cmd</strong> group task</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="automatic-command-guidance"><a class="link" href="#automatic-command-guidance">4.1.3. Automatic command guidance</a></h4>
+<h4 id="automatic-command-guidance"><a class="link" href="#automatic-command-guidance">4.1.5. Automatic command guidance</a></h4>
 <div class="paragraph">
 <p>Provides guidance for mistyped commands by showing a list of possible valid commands.<br>
 The command(s) closest to your mistyped one will be shown: both the syntax format(s) and context-dependent examples.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-strong-clear-strong-code"><a class="link" href="#clearing-all-entries-code-strong-clear-strong-code">4.1.4. Clearing all entries : <code><strong>clear</strong></code></a></h4>
+<h4 id="clearing-all-entries-code-strong-clear-strong-code"><a class="link" href="#clearing-all-entries-code-strong-clear-strong-code">4.1.6. Clearing all entries : <code><strong>clear</strong></code></a></h4>
 <div class="paragraph">
 <p>You can clear all entries from Mod Manager. All the lists of modules, classes, facilitators and tasks that you have will be cleared.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>clear</strong></code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>clear</strong></code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>Suppose your semester has ended and you do not want to see any information related to those modules you have taken in that semester anymore.
+You can type <code><strong>clear</strong></code> as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/BeforeClear.png" alt="BeforeClear">
+</div>
+<div class="title">Figure 7. Before <code><strong>clear</strong></code></div>
+</div>
+<div class="paragraph">
+<p>After pressing <kbd>Enter</kbd>, Mod Manager is empty. All the entries you have are cleared.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AfterClear.png" alt="AfterClear">
+</div>
+<div class="title">Figure 8. After <code><strong>clear</strong></code></div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-strong-exit-strong-code"><a class="link" href="#exiting-the-program-code-strong-exit-strong-code">4.1.5. Exiting the program : <code><strong>exit</strong></code></a></h4>
+<h4 id="exiting-the-program-code-strong-exit-strong-code"><a class="link" href="#exiting-the-program-code-strong-exit-strong-code">4.1.7. Exiting the program : <code><strong>exit</strong></code></a></h4>
 <div class="paragraph">
 <p>You can exit the program. Upon closing the application, the Mod Manager data will be saved automatically in your hard disk.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>exit</strong></code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>exit</strong></code></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="managing-modules-code-strong-mod-strong-code"><a class="link" href="#managing-modules-code-strong-mod-strong-code">4.2. Managing modules : <code><strong>mod</strong></code></a></h3>
+<h3 id="module-feature-code-strong-mod-strong-code"><a class="link" href="#module-feature-code-strong-mod-strong-code">4.2. Module feature : <code><strong>mod</strong></code></a></h3>
 <div class="paragraph">
 <p>The commands in this section carry out operations on the module list in Mod Manager.
 Executing these commands will bring you to the Module tab.</p>
@@ -461,13 +575,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModAddBefore1.png" alt="ModAddBefore1">
 </div>
-<div class="title">Figure 7. Before <code><strong>mod</strong> add /code CS2103T /desc Software Engineering</code></div>
+<div class="title">Figure 9. Before <code><strong>mod</strong> add /code CS2103T /desc Software Engineering</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModAddAfter1.png" alt="ModAddAfter1">
 </div>
-<div class="title">Figure 8. After <code><strong>mod</strong> add /code CS2103T /desc Software Engineering</code></div>
+<div class="title">Figure 10. After <code><strong>mod</strong> add /code CS2103T /desc Software Engineering</code></div>
 </div>
 <div class="paragraph">
 <p>You can also add a module without description.
@@ -481,13 +595,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModAddBefore2.png" alt="ModAddBefore2">
 </div>
-<div class="title">Figure 9. Before <code><strong>mod</strong> add /code CS2101</code></div>
+<div class="title">Figure 11. Before <code><strong>mod</strong> add /code CS2101</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModAddAfter2.png" alt="ModAddAfter2">
 </div>
-<div class="title">Figure 10. After <code><strong>mod</strong> add /code CS2101</code></div>
+<div class="title">Figure 12. After <code><strong>mod</strong> add /code CS2101</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -520,7 +634,7 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModListAfter1.png" alt="ModListAfter1">
 </div>
-<div class="title">Figure 11. After <code><strong>mod</strong> list</code></div>
+<div class="title">Figure 13. After <code><strong>mod</strong> list</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -570,13 +684,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModViewBefore1.png" alt="ModViewBefore1">
 </div>
-<div class="title">Figure 12. Before <code><strong>mod</strong> view 2</code></div>
+<div class="title">Figure 14. Before <code><strong>mod</strong> view 2</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModViewAfter1.png" alt="ModViewAfter1">
 </div>
-<div class="title">Figure 13. After <code><strong>mod</strong> view 2</code></div>
+<div class="title">Figure 15. After <code><strong>mod</strong> view 2</code></div>
 </div>
 <div class="paragraph">
 <p>Alternatively, you can view a module using the module code.
@@ -590,13 +704,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModViewBefore2.png" alt="ModViewBefore2">
 </div>
-<div class="title">Figure 14. Before <code><strong>mod</strong> view CS2103T</code></div>
+<div class="title">Figure 16. Before <code><strong>mod</strong> view CS2103T</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModViewAfter2.png" alt="ModViewAfter2">
 </div>
-<div class="title">Figure 15. After <code><strong>mod</strong> view CS2103T</code></div>
+<div class="title">Figure 17. After <code><strong>mod</strong> view CS2103T</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -661,13 +775,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModEditBefore1.png" alt="ModEditBefore1">
 </div>
-<div class="title">Figure 16. Before <code><strong>mod</strong> edit 1 /code CS2113T</code></div>
+<div class="title">Figure 18. Before <code><strong>mod</strong> edit 1 /code CS2113T</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModEditAfter1.png" alt="ModEditAfter1">
 </div>
-<div class="title">Figure 17. After <code><strong>mod</strong> edit 1 /code CS2113T</code></div>
+<div class="title">Figure 19. After <code><strong>mod</strong> edit 1 /code CS2113T</code></div>
 </div>
 <div class="paragraph">
 <p>Alternatively, you can edit a module using the module code.
@@ -681,13 +795,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModEditBefore2.png" alt="ModEditBefore2">
 </div>
-<div class="title">Figure 18. Before <code><strong>mod</strong> edit CS2101 /desc Effective Communication for Computing Professionals</code></div>
+<div class="title">Figure 20. Before <code><strong>mod</strong> edit CS2101 /desc Effective Communication for Computing Professionals</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModEditAfter2.png" alt="ModEditAfter2">
 </div>
-<div class="title">Figure 19. After <code><strong>mod</strong> edit CS2101 /desc Effective Communication for Computing Professionals</code></div>
+<div class="title">Figure 21. After <code><strong>mod</strong> edit CS2101 /desc Effective Communication for Computing Professionals</code></div>
 </div>
 <div class="paragraph">
 <p>You can also remove the description of a module without specifying any input after the prefix <code>/desc</code>.
@@ -701,13 +815,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModEditBefore3.png" alt="ModEditBefore3">
 </div>
-<div class="title">Figure 20. Before <code><strong>mod</strong> edit 3 /desc</code></div>
+<div class="title">Figure 22. Before <code><strong>mod</strong> edit 3 /desc</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModEditAfter3.png" alt="ModEditAfter3">
 </div>
-<div class="title">Figure 21. After <code><strong>mod</strong> edit 3 /desc</code></div>
+<div class="title">Figure 23. After <code><strong>mod</strong> edit 3 /desc</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -758,13 +872,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModDeleteBefore1.png" alt="ModDeleteBefore1">
 </div>
-<div class="title">Figure 22. Before <code><strong>mod</strong> delete 2</code></div>
+<div class="title">Figure 24. Before <code><strong>mod</strong> delete 2</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModDeleteAfter1.png" alt="ModDeleteAfter1">
 </div>
-<div class="title">Figure 23. After <code><strong>mod</strong> delete 2</code></div>
+<div class="title">Figure 25. After <code><strong>mod</strong> delete 2</code></div>
 </div>
 <div class="paragraph">
 <p>Alternatively, you can delete a module using the module code.
@@ -778,18 +892,18 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/ModDeleteBefore2.png" alt="ModDeleteBefore2">
 </div>
-<div class="title">Figure 24. Before <code><strong>mod</strong> delete CS2103T</code></div>
+<div class="title">Figure 26. Before <code><strong>mod</strong> delete CS2103T</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModDeleteAfter2.png" alt="ModDeleteAfter2">
 </div>
-<div class="title">Figure 25. After <code><strong>mod</strong> delete CS2103T</code></div>
+<div class="title">Figure 27. After <code><strong>mod</strong> delete CS2103T</code></div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="managing-classes-code-strong-class-strong-code"><a class="link" href="#managing-classes-code-strong-class-strong-code">4.3. Managing classes : <code><strong>class</strong></code></a></h3>
+<h3 id="class-feature-code-strong-class-strong-code"><a class="link" href="#class-feature-code-strong-class-strong-code">4.3. Class feature : <code><strong>class</strong></code></a></h3>
 <div class="paragraph">
 <p>You can add, find, edit or delete classes within ModManager.<br>
 When managing your classes, you should take note of the following areas in the main viewing area as stated in section 3.1:</p>
@@ -805,7 +919,14 @@ When managing your classes, you should take note of the following areas in the m
 <p>You can add a class to a module.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code><br></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code><br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -827,15 +948,17 @@ When managing your classes, you should take note of the following areas in the m
 <p>START_TIME and END_TIME should be in 24 hour HH:mm format.</p>
 </li>
 <li>
-<p>VENUE is optional</p>
+<p>VENUE is optional.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, ModManager looks like what you see in the figure below.<br></p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, ModManager looks like what you see in the figure below.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -859,7 +982,14 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <p>You can find classes occurring on a particular day.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> find /at DAY</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> find /at DAY</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -876,8 +1006,10 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 </div>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-To know what classes you have on Friday, you can type <code><strong>class</strong> find /at friday</code> and you will be able to see the classes in the result display box as shown in the figure below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>To know what classes you have on Friday, you can type <code><strong>class</strong> find /at friday</code> and you will be able to see the classes in the result display box as shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -891,11 +1023,20 @@ To know what classes you have on Friday, you can type <code><strong>class</stron
 <p>You can find the next class that will start soon.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> find /next</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> find /next</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-After typing <code><strong>class</strong> find /next</code>, you will be directed to the module&#8217;s page and you will see the class as shown in the figure below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>After typing <code><strong>class</strong> find /next</code>, you will be directed to the module&#8217;s page and you will see the class as shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -909,7 +1050,14 @@ After typing <code><strong>class</strong> find /next</code>, you will be directe
 <p>You can edit the information of the class. The class to be edited is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> edit INDEX /code MOD_CODE [/code NEW_MOD_CODE] [/type CLASS_TYPE] [/at DAY START_TIME END_TIME] [/venue VENUE]</code><br></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> edit INDEX /code MOD_CODE [/code NEW_MOD_CODE] [/type CLASS_TYPE] [/at DAY START_TIME END_TIME] [/venue VENUE]</code><br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -941,8 +1089,10 @@ After typing <code><strong>class</strong> find /next</code>, you will be directe
 </div>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. ModManager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. ModManager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -956,7 +1106,14 @@ Let&#8217;s say that the venue of the CS2103T lecture you just added changed to 
 <p>You can delete the class from the module. The class to be deleted is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>class</strong> delete INDEX /code MOD_CODE</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>class</strong> delete INDEX /code MOD_CODE</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -973,8 +1130,10 @@ Let&#8217;s say that the venue of the CS2103T lecture you just added changed to 
 </div>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-You can delete the CS2103T lecture by typing <code><strong>class</strong> delete 1 /code CS2103T</code>. The class will not appear in the class list as seen below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You can delete the CS2103T lecture by typing <code><strong>class</strong> delete 1 /code CS2103T</code>. The class will not appear in the class list as seen below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -984,10 +1143,10 @@ You can delete the CS2103T lecture by typing <code><strong>class</strong> delete
 </div>
 </div>
 <div class="sect2">
-<h3 id="managing-tasks-code-strong-task-strong-code"><a class="link" href="#managing-tasks-code-strong-task-strong-code">4.4. Managing tasks : <code><strong>task</strong></code></a></h3>
+<h3 id="task-feature-code-strong-task-strong-code"><a class="link" href="#task-feature-code-strong-task-strong-code">4.4. Task feature : <code><strong>task</strong></code></a></h3>
 <div class="paragraph">
 <p>The commands in this section carry out operations on the task list in Mod Manager.
-Executing these commands will bring you to the Task tab.</p>
+Executing these commands will bring you to the Tasks tab.</p>
 </div>
 <div class="sect3">
 <h4 id="adding-a-task"><a class="link" href="#adding-a-task">4.4.1. Adding a task</a></h4>
@@ -995,7 +1154,14 @@ Executing these commands will bring you to the Task tab.</p>
 <p>Adds a task to a module.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> add /code MOD_CODE /desc DESCRIPTION [/on DATE] [/at TIME]</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> add /code MOD_CODE /desc DESCRIPTION [/on DATE] [/at TIME]</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example: <code><strong>task</strong> add /code CS3230 /desc Programming Assignment 2 /on 20/02/2020 /at 23:59</code></p>
@@ -1064,7 +1230,14 @@ tasks within a same module must have different descriptions. They can occupy the
 <p>You can edit a task&#8217;s description, its date and time details, or both.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE] [/at TIME]</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE] [/at TIME]</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Mod Manager will find the task associated with the task ID number provided and update the information correspondingly.</p>
@@ -1076,7 +1249,14 @@ tasks within a same module must have different descriptions. They can occupy the
 <p>Since you may want to remove the date and time of a task, Mod Manager provides you a way to do so.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] /on non</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] /on non</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example: <code><strong>task</strong> edit CS2103T 848 /on non</code></p>
@@ -1088,7 +1268,14 @@ tasks within a same module must have different descriptions. They can occupy the
 <p>You can delete a task from Mod Manager&#8217;s system.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> delete MOD_CODE ID_NUMBER</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> delete MOD_CODE ID_NUMBER</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example: <code><strong>task</strong> delete CS2103T 973</code></p>
@@ -1118,8 +1305,7 @@ A newly added task as above will be considered as not done by default.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Editing a task will not change the done/not done status of the task, unless
-the <code>undo</code> command is used.
+Editing a task will not change the done/not done status of the task.
 </td>
 </tr>
 </table>
@@ -1131,14 +1317,20 @@ the <code>undo</code> command is used.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Tasks that are already marked as done cannot be re-marked as done. It&#8217;s also
-not possible to "undone" a completed task, unless the <code>undo</code> command is used.
+Tasks that are already marked as done cannot be re-marked as done.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> done /code MOD_CODE /id ID_NUMBER</code><br></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> done /code MOD_CODE /id ID_NUMBER</code><br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -1158,8 +1350,10 @@ not possible to "undone" a completed task, unless the <code>undo</code> command 
 </div>
 </div>
 <div class="paragraph">
-<p>Example:
-You can mark a task as done in the module. To mark the task with
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You can mark a task as done in the module. To mark the task with
 task ID <code>ID_NUMBER</code> in module <code>MOD_CODE</code> to be done, you can type in the following command:</p>
 </div>
 <div class="paragraph">
@@ -1170,13 +1364,13 @@ and hit <kbd>Enter</kbd></p>
 <div class="content">
 <img src="images/TaskDoneBeforeCloseUp.png" alt="TaskDoneBeforeCloseUp">
 </div>
-<div class="title">Figure 26. Before <code><strong>task</strong> done /code CS2105 /id 224</code></div>
+<div class="title">Figure 28. Before <code><strong>task</strong> done /code CS2105 /id 224</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/TaskDoneAfterCloseUp.png" alt="TaskDoneAfterCloseUp">
 </div>
-<div class="title">Figure 27. After <code><strong>task</strong> done /code CS2105 /id 224</code></div>
+<div class="title">Figure 29. After <code><strong>task</strong> done /code CS2105 /id 224</code></div>
 </div>
 <div class="paragraph">
 <p>The task card has changed to green; which means our task has been marked as done.
@@ -1191,7 +1385,17 @@ This is great when you need an overview of all tasks that you need to complete
 at present.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> list</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> list</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
 </div>
 <div class="paragraph">
 <p>By typing the command above, you should see the following:</p>
@@ -1200,7 +1404,7 @@ at present.</p>
 <div class="content">
 <img src="images/TaskList.png" alt="TaskList">
 </div>
-<div class="title">Figure 28. <code><strong>task</strong> list</code> shows a list of all tasks in Mod Manager</div>
+<div class="title">Figure 30. <code><strong>task</strong> list</code> shows a list of all tasks in Mod Manager</div>
 </div>
 </div>
 <div class="sect3">
@@ -1209,7 +1413,14 @@ at present.</p>
 <p>If you want to find tasks for a specific module in Mod Manager, this is the command for you to use!</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> module /code CS2103T</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> module /code CS2103T</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -1232,28 +1443,30 @@ at present.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Alternatively, you can also view the tasks for a specific module in the <code>Module</code> tab (main dashboard).
+Alternatively, you can also view the tasks for a specific module in the Module tab (main dashboard).
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Example:
-If you want a list of current tasks for the module <code>CS3230</code>, you can type in the following command:</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>If you want a list of current tasks for the module <code>CS3230</code>, you can type in the following command:</p>
 </div>
 <div class="paragraph">
 <p><code><strong>task</strong> module /code CS3230</code>
 and hit <kbd>Enter</kbd></p>
 </div>
 <div class="paragraph">
-<p>It is not compulsory for you to be at the <code>Tasks</code> tab before typing in this command.
-Mod Manager will automatically redirect you to the <code>Tasks</code> tab if you are currently at another tab.</p>
+<p>It is not compulsory for you to be at the Tasks tab before typing in this command.
+Mod Manager will automatically redirect you to the Tasks tab if you are currently at another tab.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/TaskListModule.png" alt="TaskListModule">
 </div>
-<div class="title">Figure 29. All tasks belonging to the module <code>CS3230</code> are listed`</div>
+<div class="title">Figure 31. All tasks belonging to the module <code>CS3230</code> are listed</div>
 </div>
 </div>
 <div class="sect3">
@@ -1264,13 +1477,20 @@ and plan our tasks better. Now, with this command, you can see all the
 tasks that have not yet been completed (not done).</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> not-done</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> not-done</code></p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/TaskListNotDoneBefore.png" alt="TaskListNotDoneBefore">
 </div>
-<div class="title">Figure 30. Before <code><strong>task</strong> not-done</code>, all tasks are listed</div>
+<div class="title">Figure 32. Before <code><strong>task</strong> not-done</code>, all tasks are listed</div>
 </div>
 <div class="paragraph">
 <p>By typing the command above and hit <kbd>Enter</kbd> , you should only see uncompleted tasks,
@@ -1280,7 +1500,7 @@ which are in dark red color:</p>
 <div class="content">
 <img src="images/TaskListNotDoneAfter.png" alt="TaskListNotDoneAfter">
 </div>
-<div class="title">Figure 31. Only uncompleted tasks are shown</div>
+<div class="title">Figure 33. Only uncompleted tasks are shown</div>
 </div>
 </div>
 <div class="sect3">
@@ -1298,7 +1518,14 @@ If you remember multiple words in your wanted tasks, you may also type in multip
 Tasks that meet at least one of the keywords you provided will be shown to you.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> find DESCRIPTION [MORE_DESCRIPTIONS]&#8230;&#8203;</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> find DESCRIPTION [MORE_DESCRIPTIONS]&#8230;&#8203;</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -1330,7 +1557,10 @@ Tasks that meet at least one of the keywords you provided will be shown to you.<
 </div>
 </div>
 <div class="paragraph">
-<p>Examples: To find tasks that contain the word <code>oral</code>, <code>assign</code>, or <code>tut</code> in their description,
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p>To find tasks that contain the word <code>oral</code>, <code>assign</code>, or <code>tut</code> in their description,
 you can type in the following command:</p>
 </div>
 <div class="paragraph">
@@ -1340,7 +1570,7 @@ you can type in the following command:</p>
 <div class="content">
 <img src="images/TaskFindAfter.png" alt="TaskFindAfter">
 </div>
-<div class="title">Figure 32. After <code><strong>task</strong> find oral assign tut</code>, all matching tasks are displayed.</div>
+<div class="title">Figure 34. After <code><strong>task</strong> find oral assign tut</code>, all matching tasks are displayed.</div>
 </div>
 <div class="paragraph">
 <p>Explanation:<br>
@@ -1388,7 +1618,14 @@ will not be found in this list.
 </table>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>task</strong> search [/date DATE] [/month MONTH] [/year YEAR]</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>task</strong> search [/date DATE] [/month MONTH] [/year YEAR]</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Command properties:</p>
@@ -1440,7 +1677,10 @@ only match tasks that are in May 2020.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Example: You can search for tasks that are due on the submission date of CS2103T for AY19/20 S2
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You can search for tasks that are due on the submission date of CS2103T for AY19/20 S2
 (13 April). To find tasks happening on 13 April,
 you can type <code><strong>task</strong> search /date 13 /month 4</code> and press <kbd>Enter</kbd>. This will return all tasks
 that are happening on 13 April.</p>
@@ -1449,7 +1689,7 @@ that are happening on 13 April.</p>
 <div class="content">
 <img src="images/TaskSearchBefore.png" alt="TaskSearchBefore">
 </div>
-<div class="title">Figure 33. Before <code><strong>task</strong> search /date 13 /month 4</code>, all tasks are listed</div>
+<div class="title">Figure 35. Before <code><strong>task</strong> search /date 13 /month 4</code>, all tasks are listed</div>
 </div>
 <div class="paragraph">
 <p>Note that the content above may be different from what is currently on your Mod Manager. You may <code>add</code>
@@ -1459,7 +1699,7 @@ or <code>edit</code> the tasks to match we have above</p>
 <div class="content">
 <img src="images/TaskSearchAfter.png" alt="TaskSearchAfter">
 </div>
-<div class="title">Figure 34. After <code><strong>task</strong> search /date 13 /month 4</code>, only matching tasks are listed</div>
+<div class="title">Figure 36. After <code><strong>task</strong> search /date 13 /month 4</code>, only matching tasks are listed</div>
 </div>
 <div class="paragraph">
 <p>Explanation: the two tasks both have date as <code>13</code> and month as <code>4</code>.</p>
@@ -1492,7 +1732,7 @@ Searches for all tasks happening on 14/02/2021.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="managing-facilitators-code-strong-facil-strong-code"><a class="link" href="#managing-facilitators-code-strong-facil-strong-code">4.5. Managing facilitators : <code><strong>facil</strong></code></a></h3>
+<h3 id="facilitator-feature-code-strong-facil-strong-code"><a class="link" href="#facilitator-feature-code-strong-facil-strong-code">4.5. Facilitator feature : <code><strong>facil</strong></code></a></h3>
 <div class="paragraph">
 <p>The commands in this section carry out operations on the facilitator list in Mod Manager.
 Executing these commands will bring you to the Facilitators tab.</p>
@@ -1550,13 +1790,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilAddBefore1.png" alt="FacilAddBefore1">
 </div>
-<div class="title">Figure 35. Before <code><strong>facil</strong> add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS3243</code></div>
+<div class="title">Figure 37. Before <code><strong>facil</strong> add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS3243</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilAddAfter1.png" alt="FacilAddAfter1">
 </div>
-<div class="title">Figure 36. After <code><strong>facil</strong> add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS3243</code></div>
+<div class="title">Figure 38. After <code><strong>facil</strong> add /name Akshay Narayan /phone 98765432 /email <a href="mailto:dcsaksh@nus.edu.sg">dcsaksh@nus.edu.sg</a> /code CS2103T CS3243</code></div>
 </div>
 <div class="paragraph">
 <p>You can also add a facilitator to multiple modules by typing the prefix <code>/code</code> multiple times.
@@ -1570,13 +1810,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilAddBefore2.png" alt="FacilAddBefore2">
 </div>
-<div class="title">Figure 37. Before <code><strong>facil</strong> add /name Aaron Tan /email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> /office COM1-0312 /code CS1231 /code CS2100</code></div>
+<div class="title">Figure 39. Before <code><strong>facil</strong> add /name Aaron Tan /email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> /office COM1-0312 /code CS1231 /code CS2100</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilAddAfter2.png" alt="FacilAddAfter2">
 </div>
-<div class="title">Figure 38. After <code><strong>facil</strong> add /name Aaron Tan /email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> /office COM1-0312 /code CS1231 /code CS2100</code></div>
+<div class="title">Figure 40. After <code><strong>facil</strong> add /name Aaron Tan /email <a href="mailto:tantc@comp.nus.edu.sg">tantc@comp.nus.edu.sg</a> /office COM1-0312 /code CS1231 /code CS2100</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -1609,7 +1849,7 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilListAfter1.png" alt="FacilListAfter1">
 </div>
-<div class="title">Figure 39. After <code><strong>facil</strong> list</code></div>
+<div class="title">Figure 41. After <code><strong>facil</strong> list</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -1668,13 +1908,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilFindBefore1.png" alt="FacilFindBefore1">
 </div>
-<div class="title">Figure 40. Before <code><strong>facil</strong> find Akshay</code></div>
+<div class="title">Figure 42. Before <code><strong>facil</strong> find Akshay</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilFindAfter1.png" alt="FacilFindAfter1">
 </div>
-<div class="title">Figure 41. After <code><strong>facil</strong> find Akshay</code></div>
+<div class="title">Figure 43. After <code><strong>facil</strong> find Akshay</code></div>
 </div>
 <div class="paragraph">
 <p>You can also search for multiple facilitators or search with partial names.
@@ -1688,13 +1928,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilFindBefore2.png" alt="FacilFindBefore2">
 </div>
-<div class="title">Figure 42. Before <code><strong>facil</strong> find yan tan</code></div>
+<div class="title">Figure 44. Before <code><strong>facil</strong> find yan tan</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilFindAfter2.png" alt="FacilFindAfter2">
 </div>
-<div class="title">Figure 43. After <code><strong>facil</strong> find yan tan</code></div>
+<div class="title">Figure 45. After <code><strong>facil</strong> find yan tan</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -1723,7 +1963,7 @@ you can type the following command:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the facilitator at the specified <code>INDEX</code>. The index refers to the index number shown in the last displayed facilitator list in the facilitator tab. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Edits the facilitator at the specified <code>INDEX</code>. The index refers to the index number shown in the last displayed facilitator list in the Facilitators tab. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -1749,7 +1989,7 @@ you can type the following command:</p>
 </div>
 <div class="paragraph">
 <p>You can edit the information of a facilitator using the index in the last shown facilitator list.
-To update the name and email of the first facilitator in the last shown facilitator list in the facilitator tab to <code>Akshay</code> and <code>hisnewemail@nus.edu.sg</code> respectively,
+To update the name and email of the first facilitator in the last shown facilitator list in the Facilitators tab to <code>Akshay</code> and <code>hisnewemail@nus.edu.sg</code> respectively,
 you can type the following command:</p>
 </div>
 <div class="paragraph">
@@ -1759,13 +1999,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilEditBefore1.png" alt="FacilEditBefore1">
 </div>
-<div class="title">Figure 44. Before <code><strong>facil</strong> edit 1 /name Akshay /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></div>
+<div class="title">Figure 46. Before <code><strong>facil</strong> edit 1 /name Akshay /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilEditAfter1.png" alt="FacilEditAfter1">
 </div>
-<div class="title">Figure 45. After <code><strong>facil</strong> edit 1 /name Akshay /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></div>
+<div class="title">Figure 47. After <code><strong>facil</strong> edit 1 /name Akshay /email <a href="mailto:hisnewemail@nus.edu.sg">hisnewemail@nus.edu.sg</a></code></div>
 </div>
 <div class="paragraph">
 <p>Alternatively, you can edit the information of a facilitator using the name of the facilitator.
@@ -1779,17 +2019,17 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilEditBefore2.png" alt="FacilEditBefore2">
 </div>
-<div class="title">Figure 46. Before <code><strong>facil</strong> edit Akshay Narayan /office COM2-0203</code></div>
+<div class="title">Figure 48. Before <code><strong>facil</strong> edit Akshay Narayan /office COM2-0203</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilEditAfter2.png" alt="FacilEditAfter2">
 </div>
-<div class="title">Figure 47. After <code><strong>facil</strong> edit Akshay Narayan /office COM2-0203</code></div>
+<div class="title">Figure 49. After <code><strong>facil</strong> edit Akshay Narayan /office COM2-0203</code></div>
 </div>
 <div class="paragraph">
 <p>You can also remove the information of a facilitator without specifying any input after the prefix <code>/phone</code>, <code>/email</code> or <code>/office</code>.
-To remove the phone of the second facilitator in the last shown facilitator list in the facilitator tab,
+To remove the phone of the second facilitator in the last shown facilitator list in the Facilitators tab,
 type the following command:</p>
 </div>
 <div class="paragraph">
@@ -1799,13 +2039,13 @@ type the following command:</p>
 <div class="content">
 <img src="images/FacilEditBefore3.png" alt="FacilEditBefore3">
 </div>
-<div class="title">Figure 48. Before <code><strong>facil</strong> edit 2 /phone</code></div>
+<div class="title">Figure 50. Before <code><strong>facil</strong> edit 2 /phone</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilEditAfter3.png" alt="FacilEditAfter3">
 </div>
-<div class="title">Figure 49. After <code><strong>facil</strong> edit 2 /phone</code></div>
+<div class="title">Figure 51. After <code><strong>facil</strong> edit 2 /phone</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -1834,7 +2074,7 @@ type the following command:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the facilitator at the specified <code>INDEX</code>. The index refers to the index number shown in the last displayed facilitator list in the facilitator tab. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Deletes the facilitator at the specified <code>INDEX</code>. The index refers to the index number shown in the last displayed facilitator list in the Facilitators tab. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 </ul>
 </div>
@@ -1845,7 +2085,7 @@ type the following command:</p>
 </div>
 <div class="paragraph">
 <p>You can delete a facilitator using the index in the last shown facilitator list.
-To delete the first facilitator in the last shown facilitator list in the facilitator tab,
+To delete the first facilitator in the last shown facilitator list in the Facilitators tab,
 you can type the following command:</p>
 </div>
 <div class="paragraph">
@@ -1855,13 +2095,13 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilDeleteBefore1.png" alt="FacilDeleteBefore1">
 </div>
-<div class="title">Figure 50. Before <code><strong>facil</strong> delete 1</code></div>
+<div class="title">Figure 52. Before <code><strong>facil</strong> delete 1</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilDeleteAfter1.png" alt="FacilDeleteAfter1">
 </div>
-<div class="title">Figure 51. After <code><strong>facil</strong> delete 1</code></div>
+<div class="title">Figure 53. After <code><strong>facil</strong> delete 1</code></div>
 </div>
 <div class="paragraph">
 <p>Alternatively, you can delete a facilitator using the name of the facilitator.
@@ -1875,18 +2115,18 @@ you can type the following command:</p>
 <div class="content">
 <img src="images/FacilDeleteBefore2.png" alt="FacilDeleteBefore2">
 </div>
-<div class="title">Figure 52. Before <code><strong>facil</strong> delete Akshay Narayan</code></div>
+<div class="title">Figure 54. Before <code><strong>facil</strong> delete Akshay Narayan</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilDeleteAfter2.png" alt="FacilDeleteAfter2">
 </div>
-<div class="title">Figure 53. After <code><strong>facil</strong> delete Akshay Narayan</code></div>
+<div class="title">Figure 55. After <code><strong>facil</strong> delete Akshay Narayan</code></div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="managing-calendar-code-strong-cal-strong-code"><a class="link" href="#managing-calendar-code-strong-cal-strong-code">4.6. Managing calendar : <code><strong>cal</strong></code></a></h3>
+<h3 id="calendar-feature-code-strong-cal-strong-code"><a class="link" href="#calendar-feature-code-strong-cal-strong-code">4.6. Calendar feature : <code><strong>cal</strong></code></a></h3>
 <div class="paragraph">
 <p>The commands in this section carry out operations related to the calendar in Mod Manager.
 Executing these commands will bring you to the Calendar tab.</p>
@@ -1897,38 +2137,56 @@ Executing these commands will bring you to the Calendar tab.</p>
 <p>You can view the calendar for the current week. It displays the tasks and classes you have in the current week.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>cal</strong> view /week this</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>cal</strong> view /week this</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-After typing <code><strong>cal</strong> view /week this</code>, the calendar for the current week will be displayed to you as shown below.
-The red boxes represents the tasks you have not done, the green boxes represents the tasks you have already done and the blue boxes represents the lessons you have in the current week.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>After typing <code><strong>cal</strong> view /week this</code>, the calendar for the current week will be displayed to you as shown below.
+The red cards represent the tasks you have not done, the green cards represent the tasks you have already done and the blue cards represent the classes you have in the current week.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/CalView1.png" alt="CalView1">
 </div>
-<div class="title">Figure 54. Outcome of <code><strong>cal</strong> view /week this</code></div>
+<div class="title">Figure 56. Outcome of <code><strong>cal</strong> view /week this</code></div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="viewing-calendar-for-next-week"><a class="link" href="#viewing-calendar-for-next-week">4.6.2. Viewing calendar for next week</a></h4>
 <div class="paragraph">
-<p>You can view the calendar for next week. It displays the tasks and classes you have in next week.</p>
+<p>You can view the calendar for next week. It displays the tasks and classes you have in the next week.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>cal</strong> view /week next</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>cal</strong> view /week next</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-After typing <code><strong>cal</strong> view /week next</code>, the calendar for the next week will be displayed to you as shown below.
-The red boxes represents the tasks you have not done, the green boxes represents the tasks you have already done and the blue boxes represents the lessons you have in next week.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>After typing <code><strong>cal</strong> view /week next</code>, the calendar for the next week will be displayed to you as shown below.
+The red cards represent the tasks you have not done, the green cards represent the tasks you have already done and the blue cards represent the classes you have in next week.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/CalView2.png" alt="CalView2">
 </div>
-<div class="title">Figure 55. Outcome of <code><strong>cal</strong> view /week next</code></div>
+<div class="title">Figure 57. Outcome of <code><strong>cal</strong> view /week next</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -1938,17 +2196,27 @@ The red boxes represents the tasks you have not done, the green boxes represents
 The empty slots are time periods where you do not have classes or tasks.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code><strong>cal</strong> find empty</code></p>
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>cal</strong> find empty</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-You can get the list of empty slots after typing <code><strong>cal</strong> find empty</code>. The list will be displayed in the result display box as seen below.</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You can get the list of empty slots after typing <code><strong>cal</strong> find empty</code>. The list will be displayed in the result display box as seen below.
+The command will not change the week of the calendar you are viewing.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/CalFind1.png" alt="CalFind1">
 </div>
-<div class="title">Figure 56. Outcome of <code><strong>cal</strong> find empty</code></div>
+<div class="title">Figure 58. Outcome of <code><strong>cal</strong> find empty</code></div>
 </div>
 <div class="paragraph">
 <p>The full message in the result display box in the above figure is:</p>
@@ -1976,43 +2244,35 @@ SUNDAY:<br>
 <p>These features will be available in the next version of Mod Manager.</p>
 </div>
 <div class="sect3">
-<h4 id="undoing-previous-command-code-coming-in-v2-0-code"><a class="link" href="#undoing-previous-command-code-coming-in-v2-0-code">4.7.1. Undoing previous command <code>[coming in v2.0]</code></a></h4>
-<div class="paragraph">
-<p>You can restore the Mod Manager to the state before the previous undoable command was executed.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="categorising-tasks-code-coming-in-v2-0-code"><a class="link" href="#categorising-tasks-code-coming-in-v2-0-code">4.7.2. Categorising tasks <code>[coming in v2.0]</code></a></h4>
+<h4 id="categorising-tasks-code-coming-in-v2-0-code"><a class="link" href="#categorising-tasks-code-coming-in-v2-0-code">4.7.1. Categorising tasks <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>You can add tags to a task.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-priority-level-to-a-task-code-coming-in-v2-0-code"><a class="link" href="#adding-a-priority-level-to-a-task-code-coming-in-v2-0-code">4.7.3. Adding a priority level to a task <code>[coming in v2.0]</code></a></h4>
+<h4 id="adding-a-priority-level-to-a-task-code-coming-in-v2-0-code"><a class="link" href="#adding-a-priority-level-to-a-task-code-coming-in-v2-0-code">4.7.2. Adding a priority level to a task <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>You can add a priority level to a task.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="receiving-reminders-code-coming-in-v2-0-code"><a class="link" href="#receiving-reminders-code-coming-in-v2-0-code">4.7.4. Receiving reminders <code>[coming in v2.0]</code></a></h4>
+<h4 id="receiving-reminders-code-coming-in-v2-0-code"><a class="link" href="#receiving-reminders-code-coming-in-v2-0-code">4.7.3. Receiving reminders <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>You can receive reminders for deadlines and events the next day.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-upcoming-tasks-code-coming-in-v2-0-code"><a class="link" href="#finding-upcoming-tasks-code-coming-in-v2-0-code">4.7.5. Finding upcoming tasks <code>[coming in v2.0]</code></a></h4>
+<h4 id="finding-upcoming-tasks-code-coming-in-v2-0-code"><a class="link" href="#finding-upcoming-tasks-code-coming-in-v2-0-code">4.7.4. Finding upcoming tasks <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>You can find upcoming tasks.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="individual-view-of-the-recently-edited-element-after-an-code-add-code-code-edit-code-or-code-delete-code-command-code-coming-in-v2-0-code"><a class="link" href="#individual-view-of-the-recently-edited-element-after-an-code-add-code-code-edit-code-or-code-delete-code-command-code-coming-in-v2-0-code">4.7.6. Individual view of the recently edited element after an <code>add</code>, <code>edit</code> or <code>delete</code> command <code>[coming in v2.0]</code></a></h4>
+<h4 id="viewing-of-the-recently-edited-item-after-an-code-add-code-code-edit-code-or-code-delete-code-command-code-coming-in-v2-0-code"><a class="link" href="#viewing-of-the-recently-edited-item-after-an-code-add-code-code-edit-code-or-code-delete-code-command-code-coming-in-v2-0-code">4.7.5. Viewing of the recently edited item after an <code>add</code>, <code>edit</code> or <code>delete</code> command <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
 <p>After an <code>add</code>, <code>edit</code>, or <code>delete</code> operation, the view will be scrolled to
-that particular recently created/modified element,
-so that the user can refer to the information easier. The newly <code>add</code>-ed
-or <code>edit</code>-ed details will be highlighted and focused so the user can know
-which one has just been <code>add</code>-ed, <code>edit</code>-ed, or <code>delete</code>-d.</p>
+that recently created or modified item, so that you can refer to the information easily.
+The newly created or modified details will be highlighted and focused so that you know what has been changed.</p>
 </div>
 </div>
 </div>
@@ -2040,10 +2300,7 @@ the data of your previous Mod Manager folder.</p>
 <dl>
 <dt class="hdlist1"><a id="dashboard"></a> Dashboard</dt>
 <dd>
-<p>The default tab in view when the application starts. The dashboard
-contains a help section (command summary), favorite tags, current
-reminders, and a view of the folder hierarchy for bookmarks.
-&lt;picture&gt;</p>
+<p>The default tab in view when the application starts (i.e. Module tab).</p>
 </dd>
 <dt class="hdlist1"><a id="taskcard"></a> Task card</dt>
 <dd>
@@ -2074,7 +2331,7 @@ description, and time period (if provided upon creation).</p>
 <h2 id="command-summary"><a class="link" href="#command-summary">7. Command Summary</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all">
-<caption class="title">Table 1. Summary of command formats</caption>
+<caption class="title">Table 2. Summary of command formats</caption>
 <colgroup>
 <col>
 <col>
@@ -2168,17 +2425,22 @@ description, and time period (if provided upon creation).</p>
    <code><strong>mod</strong> view MOD_CODE</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock">Task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> add /code MOD_CODE /desc DESCRIPTION [/on DATE] [/at TIME]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>redo</strong></code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE] [/at TIME]</code><br></p></td>
+<td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock">Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> add /code MOD_CODE /desc DESCRIPTION [/on DATE] [/at TIME]</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> delete MOD_CODE ID_NUMBER</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> done /code MOD_CODE /id ID_NUMBER</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] [/on DATE] [/at TIME]</code><br>
+   <code><strong>task</strong> edit MOD_CODE ID_NUMBER [/desc DESCRIPTION] /on non</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> list</code></p></td>
@@ -2190,17 +2452,19 @@ description, and time period (if provided upon creation).</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> not-done</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> find DESCRIPTION [MORE_DESCRIPTIONS]&#8230;&#8203;</code><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> find DESCRIPTION [MORE_DESCRIPTIONS]&#8230;&#8203;</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> search [/date DATE] [/month MONTH] [/year YEAR]</code></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>undo</strong></code></p></td>
+</tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>..Summary of common command parameters</p>
-</div>
 <table class="tableblock frame-all grid-all">
+<caption class="title">Table 3. Summary of common command parameters</caption>
 <colgroup>
 <col>
 <col>
@@ -2222,4 +2486,4 @@ description, and time period (if provided upon creation).</p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 12:01:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:54:25 UTC</div></div></div></body></html>

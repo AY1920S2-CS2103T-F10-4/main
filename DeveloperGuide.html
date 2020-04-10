@@ -1344,7 +1344,7 @@ and collaborating with the team member responsible for the <code>Module</code> c
 <h3 id="facilitator-management-feature"><a class="link" href="#facilitator-management-feature">4.4. Facilitator Management Feature</a></h3>
 <div class="paragraph">
 <p>The facilitator feature manages the facilitators in Mod Manager and is represented by the <code>Facilitator</code> class.
-A facilitator has a <code>Name</code>, an optional <code>Phone</code>, an optional <code>Email</code>, and optional <code>Office</code> and one or more <code>ModuleCode</code>.
+A facilitator has a <code>Name</code>, an optional <code>Phone</code>, an optional <code>Email</code>, an optional <code>Office</code> and one or more <code>ModuleCode</code>.
 A <code>Module</code> with the <code>ModuleCode</code> of the facilitator should exist in Mod Manager.</p>
 </div>
 <div class="paragraph">
@@ -1359,7 +1359,7 @@ A <code>Module</code> with the <code>ModuleCode</code> of the facilitator should
 <p>list - Lists all facilitators in Mod Manager.</p>
 </li>
 <li>
-<p>view - Finds a facilitator in Mod Manager by name.</p>
+<p>find - Finds a facilitator in Mod Manager by name.</p>
 </li>
 <li>
 <p>edit - Edits a facilitator in Mod Manager.</p>
@@ -1883,7 +1883,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="sect4">
 <h5 id="finding-empty-slots-in-calendar"><a class="link" href="#finding-empty-slots-in-calendar">Finding empty slots in calendar</a></h5>
 <div class="paragraph">
-<p>The find empty in calendar feature allows users to know the empty slots they have in the calendar from the current day to the end of the week in Mod Manager. This feature is facilitated by CalCommandParser, CalFindCommandParser and CalFindCommand.</p>
+<p>The find empty in calendar feature allows users to know the empty slots they have in the calendar from the current day to the end of the week in Mod Manager. This feature is facilitated by <code>CalCommandParser</code>, <code>CalFindCommandParser</code> and <code>CalFindCommand</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the calendar find mechanism behaves at each step:</p>
@@ -1894,10 +1894,10 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <p>The user executes the calendar find command.</p>
 </li>
 <li>
-<p>CalFindCommandParser creates a new CalFindCommand.</p>
+<p><code>CalFindCommandParser</code> creates a new <code>CalFindCommand</code>.</p>
 </li>
 <li>
-<p>LogicManager executes the CalFindCommand.</p>
+<p><code>LogicManager</code> executes the <code>CalFindCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -1917,7 +1917,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for CalCommandParser, CalFindCommandParser and CalFindCommand should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+The lifeline for <code>CalCommandParser</code>, <code>CalFindCommandParser</code> and <code>CalFindCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
 </td>
 </tr>
 </table>
@@ -3594,4 +3594,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 12:01:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:54:25 UTC</div></div></div></body></html>
