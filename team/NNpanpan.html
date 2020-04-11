@@ -10,42 +10,113 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mod Manager is for those who prefer to use a desktop app for managing tasks for modules in a semester. More importantly, Mod Manager is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Mod Manager can get your management of tasks done faster than traditional GUI apps.</p>
+<p>This portfolio summarizes my contribution to Mod Manager, a software developed by a team of me and 4 other fellow CS2103T students.
+Over a period of 8 weeks, we have managed to morph <a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3">Address Book Level 3 (AB3)</a>
+into a CLI application that aims to assist students with managing information related to the modules they&#8217;re taking -
+classes, tasks, and facilitators. Mod Manager takes commands from users through a Command Line Interface (CLI), and displays
+information with a Graphic User Interface (GUI). It is written in Java, and has about 25 kLoc.</p>
+</div>
+<div class="paragraph">
+<p>Below are my contributions to the project.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><strong>Major enhancements</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p>Added the ability to undo/redo previous commands</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows the user to undo previous commands that caused changes to the database.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
-</li>
-<li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Allows the user to reverse previous undo commands via the redo command.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Highlights: This enhancement affects almost all existing commands and any commands implemented in the future.
+Despite the challenge of having to understand the entire system, its implementation has been kept to be as convenient as possible, i.e.
+requiring very minor changes to other commands. A pattern has been constructed to help future commands integrate well with this enhancement.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
+<p>Added the Task ID number system</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows the user to manage tasks across all modules without relying on visible lists.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Justification: Without a Task ID number, the user must always view the list of tasks before doing anything with a particular task.
+With this enhancement, a user can edit, delete, or mark as done a task anytime as long as they know its ID number.</p>
+</li>
+<li>
+<p>Highlights: This enhancement imposes a visible constraint on the maximum number of tasks for each module, which can be helpful to
+understanding the system. There could have been many ways to implement the enhancement, but the current one was chosen due to its
+simpler nature and being easy to upgrade in the future.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Minor enhancements</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Added an internal command history that allows the user to navigate to previous commands using up/down keys.</p>
+</li>
+<li>
+<p>Re-designed the calendar UI to the current version.</p>
+</li>
+<li>
+<p>Added the ability to edit/delete modules, facilitators and tasks using module codes, facilitator names and task ID numbers respectively.</p>
+</li>
+<li>
+<p>Refactored AB3 parser code to provide better abstraction, and be a pattern for other commands' implementations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+author%3ANNpanpan+is%3Aclosed+">Functional code</a>][<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=NNpanpan&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=zoom&amp;zA=undefined&amp;zR=undefined&amp;zACS=undefined&amp;zS=undefined&amp;zU=undefined&amp;zMG=false&amp;zFTF=undefined&amp;zFGS=undefined&amp;zSO=undefined&amp;zSWO=undefined&amp;zSD=false&amp;zSWD=false">Reposense</a>]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p><strong>Other contributions</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -53,20 +124,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Enhancements to existing features:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Reviewed and merged pull requests on Github.</p>
 </li>
 </ul>
 </div>
@@ -76,7 +134,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Added the task edit/delete sections of the User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/135">#135</a></p>
 </li>
 </ul>
 </div>
@@ -86,40 +144,15 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PR reviews (with non-trivial comments): <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/189">#189</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Reformatted .puml settings for the team: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/109">#109</a></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -154,11 +187,294 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="general-features"><a class="link" href="#general-features">General Features</a></h2>
 <div class="sectionbody">
-<hr>
+<div class="sect4">
+<h5 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo Feature</a></h5>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>Each add/edit/delete action is captured as a <code>DoableAction</code>. Every time a <code>DoableAction</code> is performed, it will be recorded
+to the <code>DoableActionList</code>. Thus, after each add/edit/delete command execution, a suitable <code>DoableAction</code> will be be
+created and recorded. Other sections might not mention this again.</p>
+</div>
+<div class="paragraph">
+<p><code>DoableActionList</code> stores two <code>Stacks</code> of <code>DoableAction</code> called <code>primary</code> and <code>secondary</code>.</p>
+</div>
+<div class="paragraph">
+<p>The mechanism of <code>undo</code> is given below. For <code>redo</code>, it is exactly the same.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the <code>undo</code> command. The <code>UndoCommandParser</code> creates an <code>UndoCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>UndoCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> calls <code>undo</code> method of <code>DoableActionList</code> to reverse the effect of the most previous <code>DoableAction</code>.</p>
+</li>
+</ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:54:25 UTC</div></div></div></body></html>
+<div class="sect4">
+<h5 id="navigating-through-past-commands-with-up-down-keys"><a class="link" href="#navigating-through-past-commands-with-up-down-keys">Navigating Through Past Commands With Up/Down Keys</a></h5>
+<div class="paragraph">
+<p>This feature applies to each usage session. The mechanism is below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Each time the user types anything and presses Enter in the <code>CommandBox</code>, the input will be save the to <code>UserInputHistory</code>.</p>
+</li>
+<li>
+<p>When an <code>up</code> key is pressed, the latest previous input will be retrieved from <code>UserInputHistory</code> and display at the
+<code>CommandBox</code>. If there are no previous inputs to show, the <code>CommandBox</code> will either stay the same or become empty.</p>
+</li>
+<li>
+<p>When a <code>down</code> key is pressed, the most previously input seen by pressing <code>up</code> will be shown at the <code>CommandBox</code>. When
+there are no inputs to show, the <code>CommandBox</code> will become empty.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-undo-redo-implementation"><a class="link" href="#aspect-undo-redo-implementation">Aspect: Undo/Redo Implementation</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Saves the entire database every time an add/edit/delete action occurs.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: High memory consumption during a usage session, and potentially causing lag if the database is huge.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (current choice):</strong> Each feature that involves adding/editing/deleting data to the database would have
+a corresponding class extending <code>DoableAction</code>. For example, Module Management feature would have a <code>ModuleAction</code> class
+that extends <code>DoableAction</code>. This special class will contain specific details on how to revert the effect of each
+add/edit/delete action.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Low memory consumption during a usage session, leading to potentially more consistent performance.</p>
+</li>
+<li>
+<p>Cons: Difficult to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternative 2 was chosen as it could provide better performance with a huge database, and partly because our team enjoyed
+some extra challenge.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview-of-code-task-code"><a class="link" href="#overview-of-code-task-code">Overview of <code>Task</code></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The task management feature manages the tasks in Mod Manager and is represented by the <code>Task</code> abstract class with implementing class
+<code>ScheduledTask</code> for a <code>Task</code> with a time period and <code>NonScheduledTask</code> for a <code>Task</code> with no specified time period.
+A task has a <code>Description</code>, an optional <code>TaskDateTime</code>, and exactly one <code>ModuleCode</code>.
+A <code>Module</code> with that <code>ModuleCode</code> of the task should exist in Mod Manager.</p>
+</div>
+<div class="paragraph">
+<p>A <code>Task</code> object also has a unique ID number specified by its <code>ModuleCode</code> and a 3-digit number ranging from
+100 to 999. Since part of the ID is the <code>ModuleCode</code>, a <code>Task</code> object only needs to store an extra <code>taskNum</code>.
+Generating task number is done through static calls to methods of <code>TaskNumManager</code>.</p>
+</div>
+<div class="paragraph">
+<p>It supports the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code> - Adds a task to a <code>Module</code> in Mod Manager.</p>
+</li>
+<li>
+<p><code>list</code> - Shows a list of all tasks across all <code>Module</code> s in Mod Manager.</p>
+</li>
+<li>
+<p><code>find</code> - Finds a task in Mod Manager by its description.</p>
+</li>
+<li>
+<p><code>upcoming</code> - Finds upcoming tasks (for tasks with a specified time period) in Mod Manager.</p>
+</li>
+<li>
+<p><code>search</code>- Searches for tasks that occur on your specified date, month, or year in Mod Manager.</p>
+</li>
+<li>
+<p><code>edit</code> - Edits the information of a task in Mod Manager.</p>
+</li>
+<li>
+<p><code>delete</code> - Deletes a task from the <code>Module</code> and Mod Manager.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="code-task-edit-code"><a class="link" href="#code-task-edit-code"><code>task edit</code></a></h2>
+<div class="sectionbody">
+<div class="sect4">
+<h5 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h5>
+<div class="paragraph">
+<p>The <code>task edit</code> command allows user to edit a task in <code>ModManager</code>. The fields that can be edited are: description and time.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#setTask()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>task edit</code> mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the <code>task edit</code> command and provides the <code>moduleCode</code> and the <code>taskNum</code> of the task to edit,
+and the fields to be edited.</p>
+</li>
+<li>
+<p><code>TaskEditCommandParser</code> creates a new <code>EditTaskDescriptor</code> with the fields to be edited.</p>
+</li>
+<li>
+<p><code>TaskEditCommandParser</code> creates a new <code>TaskEditCommand</code> based on the <code>moduleCode</code> and <code>taskNum</code>, and <code>EditTaskDescriptor</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskEditCommand</code>.</p>
+</li>
+<li>
+<p><code>TaskEditCommand</code> retrieves the <code>moduleCode</code> and <code>taskNum</code> of the <code>task</code> to be edited, and then retrieves the actual <code>task</code>
+from <code>ModManager</code>.</p>
+</li>
+<li>
+<p><code>TaskEditCommand</code> creates a new <code>Task</code>. Since the user can use <code>task edit</code> to remove a task&#8217;s date/time, a special <code>TaskDateTime</code> has been set to <code>01/01/1970</code> to
+help with the <code>edit</code> command. Essentially, if the <code>EditTaskDescription</code> carries such date, the newly created <code>Task</code> will
+not have a <code>TaskDateTime</code> and be of type <code>NonScheduledTask</code>. An assumption about user inputs is made here: no one will
+actually input <code>01/01/1970</code> as a date.</p>
+</li>
+<li>
+<p><code>ModManager</code> sets the existing <code>task</code> to the new <code>task</code> in the <code>UniqueTaskList</code>.</p>
+</li>
+<li>
+<p>The <code>edit</code> action is recorded in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how a <code>TaskEditCommand</code> is created after the parsing steps:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/TaskEditCommandSequenceDiagram.png" alt="TaskEditCommandSequenceDiagram">
+</div>
+<div class="title">Figure 1. Sequence Diagram for <code>TaskEditCommand</code> creation steps</div>
+</div>
+<div class="paragraph">
+<p>The execution of a <code>TaskEditCommand</code> is described below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>List&lt;Task&gt; current</code> is retrieved by calling <code>model.getFilteredTaskList</code>.</p>
+</li>
+<li>
+<p>Retrieve the correct <code>taskToEdit</code> from <code>current</code> by turning it into a <code>stream</code> and use the <code>reduce</code> method.</p>
+</li>
+<li>
+<p>The <code>editedTask</code> is created using method <code>createEditedTask</code>.</p>
+</li>
+<li>
+<p><code>model</code> sets <code>taskToEdit</code> to <code>editedTask</code> in the <code>UniqueTaskList</code> via calls to <code>ModManager</code>.</p>
+</li>
+<li>
+<p>An <code>editTaskAction</code> is created and added to <code>model</code>.</p>
+</li>
+<li>
+<p>A <code>CommandResult</code> is returned.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="code-task-delete-code"><a class="link" href="#code-task-delete-code"><code>task delete</code></a></h2>
+<div class="sectionbody">
+<div class="sect4">
+<h5 id="deleting-a-task"><a class="link" href="#deleting-a-task">Deleting a task</a></h5>
+<div class="paragraph">
+<p>The delete task feature allows user to delete a task from Mod Manager.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskDeleteCommandParser</code> and <code>TaskDeleteCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#deleteTask()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task delete mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the task delete command and provides the <code>moduleCode</code> and <code>taskNum</code> of the task to be deleted.</p>
+</li>
+<li>
+<p><code>TaskDeleteCommandParser</code> creates a new <code>TaskDeleteCommand</code> based on the <code>moduleCode</code> and <code>taskNum</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskDeleteCommand</code>.</p>
+</li>
+<li>
+<p><code>TaskDeleteCommand</code> retrieves the task to be deleted.</p>
+</li>
+<li>
+<p><code>ModManager</code> deletes the task from the <code>UniqueTaskList</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how a <code>TaskDeleteCommand</code> is created after the parsing  steps:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/TaskDeleteCommandSequenceDiagram.png" alt="TaskDeleteCommandSequenceDiagram">
+</div>
+<div class="title">Figure 2. Sequence Diagram for <code>TaskDeleteCommand</code> creation steps</div>
+</div>
+<div class="paragraph">
+<p>The execution of a <code>TaskDeleteCommand</code> is described below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>List&lt;Task&gt; current</code> is retrieved by calling <code>model.getFilteredTaskList</code>.</p>
+</li>
+<li>
+<p>Retrieve the correct <code>taskToDelete</code> from <code>current</code> by turning it into a <code>stream</code> and use the <code>reduce</code> method.</p>
+</li>
+<li>
+<p>The <code>taskNum</code> of <code>taskToDelete</code> is removed from the system via <code>TaskNumManager</code>.</p>
+</li>
+<li>
+<p><code>model</code> deletes <code>taskToDelete</code> in the <code>UniqueTaskList</code> via calls to <code>ModManager</code>.</p>
+</li>
+<li>
+<p>A <code>deleteTaskAction</code> is created and added to <code>model</code>.</p>
+</li>
+<li>
+<p>A <code>CommandResult</code> is returned.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 02:17:26 UTC</div></div></div></body></html>
