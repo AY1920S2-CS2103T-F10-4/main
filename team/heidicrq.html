@@ -152,12 +152,13 @@
 <h3 id="class-feature-code-strong-class-strong-code"><a class="link" href="#class-feature-code-strong-class-strong-code">Class feature : <code><strong>class</strong></code></a></h3>
 <div class="paragraph">
 <p>You can add, find, edit or delete classes within ModManager.<br>
-When managing your classes, you should take note of the following areas in the main viewing area as stated in section 3.1:</p>
+When managing your classes, you should take note of the following areas in the main viewing area. To find the main viewing area, you can refer to section 3.1.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ClassExplain.png" alt="ClassExplain">
 </div>
+<div class="title">Figure 1. Explanation of how to look at classes</div>
 </div>
 <div class="sect3">
 <h4 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h4>
@@ -210,6 +211,7 @@ When managing your classes, you should take note of the following areas in the m
 <div class="content">
 <img src="../images/ClassAddBefore.png" alt="ClassAddBefore">
 </div>
+<div class="title">Figure 2. Before adding a class</div>
 </div>
 <div class="paragraph">
 <p>To add that class, you can type:<br>
@@ -220,6 +222,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <div class="content">
 <img src="../images/ClassAddAfter.png" alt="ClassAddAfter">
 </div>
+<div class="title">Figure 3. After adding a class</div>
 </div>
 </div>
 <div class="sect3">
@@ -261,6 +264,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <div class="content">
 <img src="../images/ClassFindDay.png" alt="ClassFindDay">
 </div>
+<div class="title">Figure 4. After finding class by day</div>
 </div>
 </div>
 <div class="sect3">
@@ -288,6 +292,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <div class="content">
 <img src="../images/ClassFindNext.png" alt="ClassFindNext">
 </div>
+<div class="title">Figure 5. After finding next class</div>
 </div>
 </div>
 <div class="sect3">
@@ -344,6 +349,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <div class="content">
 <img src="../images/ClassEdit.png" alt="ClassEdit">
 </div>
+<div class="title">Figure 6. After editing a class</div>
 </div>
 </div>
 <div class="sect3">
@@ -379,12 +385,13 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>You can delete the CS2103T lecture by typing <code><strong>class</strong> delete 1 /code CS2103T</code>. The class will not appear in the class list as seen below.</p>
+<p>You can delete the CS2103T lecture by typing <code><strong>class</strong> delete 1 /code CS2103T</code>. The class will not appear in the class list under the module CS2103T as seen below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ClassDelete.png" alt="ClassDelete">
 </div>
+<div class="title">Figure 7. After deleting a class</div>
 </div>
 </div>
 </div>
@@ -411,7 +418,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <h3 id="class-management-feature-2"><a class="link" href="#class-management-feature-2">Class Management Feature</a></h3>
 <div class="paragraph">
 <p>The class feature manages the classes in Mod Manager and is represented by the <code>Lesson</code> class.
-A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code> which is a <code>DayOfWeek</code> object, <code>startTime</code>, <code>endTime</code> which are <code>LocalTime</code> objects and <code>venue</code> which is a <code>String</code>.</p>
+A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>DayAndTime</code> and <code>venue</code> which is a <code>String</code>.</p>
 </div>
 <div class="paragraph">
 <p>It supports the following operations:</p>
@@ -422,7 +429,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code>
 <p><code>add</code> - Adds a class to Mod Manager.</p>
 </li>
 <li>
-<p><code>list</code> - Lists all classes in Mod Manager.</p>
+<p><code>find</code> - Finds specific classes in Mod Manager.</p>
 </li>
 <li>
 <p><code>edit</code> - Edits a class in Mod Manager.</p>
@@ -465,7 +472,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>day</code>
 <div class="content">
 <img src="../images/LessonAddSequenceDiagram.png" alt="LessonAddSequenceDiagram">
 </div>
-<div class="title">Figure 1. Sequence Diagram for <code>class add</code> Command</div>
+<div class="title">Figure 8. Sequence Diagram for <code>class add</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -486,7 +493,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser<
 <div class="content">
 <img src="../images/LessonAddActivityDiagram.png" alt="LessonAddActivityDiagram">
 </div>
-<div class="title">Figure 2. Activity Diagram for <code>class add</code> Command</div>
+<div class="title">Figure 9. Activity Diagram for <code>class add</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -517,7 +524,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser<
 <div class="content">
 <img src="../images/LessonFindSequenceDiagram.png" alt="LessonFindSequenceDiagram">
 </div>
-<div class="title">Figure 3. Sequence Diagram for <code>class find</code> Command</div>
+<div class="title">Figure 10. Sequence Diagram for <code>class find</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -538,7 +545,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser
 <div class="content">
 <img src="../images/LessonFindActivityDiagram.png" alt="LessonFindActivityDiagram">
 </div>
-<div class="title">Figure 4. Activity Diagram for <code>class find</code> Command</div>
+<div class="title">Figure 11. Activity Diagram for <code>class find</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -581,7 +588,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser
 <div class="content">
 <img src="../images/LessonEditSequenceDiagram.png" alt="LessonEditSequenceDiagram">
 </div>
-<div class="title">Figure 5. Sequence Diagram for <code>class edit</code> Command</div>
+<div class="title">Figure 12. Sequence Diagram for <code>class edit</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -602,7 +609,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser
 <div class="content">
 <img src="../images/LessonEditActivityDiagram.png" alt="LessonEditActivityDiagram">
 </div>
-<div class="title">Figure 6. Activity Diagram for <code>class edit</code> Command</div>
+<div class="title">Figure 13. Activity Diagram for <code>class edit</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -639,7 +646,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser
 <div class="content">
 <img src="../images/LessonDeleteSequenceDiagram.png" alt="LessonDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 7. Sequence Diagram for <code>class delete</code> Command</div>
+<div class="title">Figure 14. Sequence Diagram for <code>class delete</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -660,7 +667,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonDeleteCommandPars
 <div class="content">
 <img src="../images/LessonDeleteActivityDiagram.png" alt="LessonDeleteActivityDiagram">
 </div>
-<div class="title">Figure 8. Activity Diagram for <code>class delete</code> Command</div>
+<div class="title">Figure 15. Activity Diagram for <code>class delete</code> Command</div>
 </div>
 </div>
 </div>
@@ -1150,4 +1157,4 @@ Low (unlikely to have) - <code>*</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 09:34:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 09:36:34 UTC</div></div></div></body></html>
