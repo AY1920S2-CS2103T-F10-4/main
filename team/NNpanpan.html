@@ -305,22 +305,31 @@ Generating task number is done through static calls to methods of <code>TaskNumM
 <p><code>add</code> - Adds a task to a <code>Module</code> in Mod Manager.</p>
 </li>
 <li>
+<p><code>edit</code> - Edits the information of a task in Mod Manager.</p>
+</li>
+<li>
+<p><code>delete</code> - Deletes a task from the <code>Module</code> and Mod Manager.</p>
+</li>
+<li>
+<p><code>done</code> - Marks a task as done in Mod Manager</p>
+</li>
+<li>
 <p><code>list</code> - Shows a list of all tasks across all <code>Module</code> s in Mod Manager.</p>
+</li>
+<li>
+<p><code>module</code> - Shows a list of all tasks for a specified <code>Module</code> in Mod Manager.</p>
+</li>
+<li>
+<p><code>undone</code> - Shows a list of all undone tasks in Mod Manager.</p>
 </li>
 <li>
 <p><code>find</code> - Finds a task in Mod Manager by its description.</p>
 </li>
 <li>
-<p><code>upcoming</code> - Finds upcoming tasks (for tasks with a specified time period) in Mod Manager.</p>
+<p><code>search</code>- Searches for tasks that occur on the specified date, month, or year in Mod Manager.</p>
 </li>
 <li>
-<p><code>search</code>- Searches for tasks that occur on your specified date, month, or year in Mod Manager.</p>
-</li>
-<li>
-<p><code>edit</code> - Edits the information of a task in Mod Manager.</p>
-</li>
-<li>
-<p><code>delete</code> - Deletes a task from the <code>Module</code> and Mod Manager.</p>
+<p><code>upcoming</code> - Finds upcoming tasks (for tasks with a specified time period) in Mod Manager. <code>[coming in v2.0]</code></p>
 </li>
 </ul>
 </div>
@@ -332,8 +341,10 @@ Generating task number is done through static calls to methods of <code>TaskNumM
 <div class="sect4">
 <h5 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h5>
 <div class="paragraph">
-<p>The <code>task edit</code> command allows user to edit a task in <code>ModManager</code>. The fields that can be edited are: description and time.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
+<p>The <code>task edit</code> command allows user to edit a task in Mod Manager.</p>
+</div>
+<div class="paragraph">
+<p>This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#setTask()</code>.</p>
 </div>
 <div class="paragraph">
@@ -342,7 +353,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#setT
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The user executes the <code>task edit</code> command and provides the <code>moduleCode</code> and the <code>taskNum</code> of the task to edit,
+<p>The user executes the task edit command and provides the <code>moduleCode</code> and the <code>taskNum</code> of the task to edit,
 and the fields to be edited.</p>
 </li>
 <li>
@@ -477,4 +488,4 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 02:17:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 09:34:01 UTC</div></div></div></body></html>

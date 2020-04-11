@@ -42,7 +42,13 @@
 <li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-uc16-viewing-tasks-for-a-specific-module-in-mod-manger">C.1. Use case: UC16 - Viewing tasks for a specific module in Mod Manger</a></li>
+<li><a href="#use-case-uc17-viewing-undone-tasks">C.2. Use case: UC17 - Viewing undone tasks</a></li>
+<li><a href="#use-case-uc18-finding-tasks-by-description">C.3. Use case: UC18 - Finding tasks by description</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
@@ -1119,22 +1125,31 @@ Generating task number is done through static calls to methods of <code>TaskNumM
 <p><code>add</code> - Adds a task to a <code>Module</code> in Mod Manager.</p>
 </li>
 <li>
+<p><code>edit</code> - Edits the information of a task in Mod Manager.</p>
+</li>
+<li>
+<p><code>delete</code> - Deletes a task from the <code>Module</code> and Mod Manager.</p>
+</li>
+<li>
+<p><code>done</code> - Marks a task as done in Mod Manager</p>
+</li>
+<li>
 <p><code>list</code> - Shows a list of all tasks across all <code>Module</code> s in Mod Manager.</p>
+</li>
+<li>
+<p><code>module</code> - Shows a list of all tasks for a specified <code>Module</code> in Mod Manager.</p>
+</li>
+<li>
+<p><code>undone</code> - Shows a list of all undone tasks in Mod Manager.</p>
 </li>
 <li>
 <p><code>find</code> - Finds a task in Mod Manager by its description.</p>
 </li>
 <li>
-<p><code>upcoming</code> - Finds upcoming tasks (for tasks with a specified time period) in Mod Manager.</p>
+<p><code>search</code>- Searches for tasks that occur on the specified date, month, or year in Mod Manager.</p>
 </li>
 <li>
-<p><code>search</code>- Searches for tasks that occur on your specified date, month, or year in Mod Manager.</p>
-</li>
-<li>
-<p><code>edit</code> - Edits the information of a task in Mod Manager.</p>
-</li>
-<li>
-<p><code>delete</code> - Deletes a task from the <code>Module</code> and Mod Manager.</p>
+<p><code>upcoming</code> - Finds upcoming tasks (for tasks with a specified time period) in Mod Manager. <code>[coming in v2.0]</code></p>
 </li>
 </ul>
 </div>
@@ -1207,70 +1222,12 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="searching-tasks-by-date"><a class="link" href="#searching-tasks-by-date">Searching tasks by date</a></h5>
-<div class="paragraph">
-<p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and `
-TaskSearchCommand`.
-The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code><strong>task</strong> search</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user executes the <code><strong>task</strong> search</code> command and provides the day, month, or year, or any combination of which
-that they want to search for search for.</p>
-</li>
-<li>
-<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the names.</p>
-</li>
-<li>
-<p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
-</li>
-<li>
-<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the <code><strong>task</strong> search</code> command works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/TaskSearchSequenceDiagram.png" alt="TaskSearchSequenceDiagram">
-</div>
-<div class="title">Figure 28. Sequence Diagram for <code><strong>task</strong> search</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code>, <code>TaskSearchCommand</code> and <code>TaskSearch</code> should end at
-the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
-</div>
-<div class="title">Figure 29. Activity Diagram for <code><strong>task</strong> search</code> Command</div>
-</div>
-</div>
-<div class="sect4">
 <h5 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h5>
 <div class="paragraph">
-<p>The <code>task edit</code> command allows user to edit a task in <code>ModManager</code>. The fields that can be edited are: description and time.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
+<p>The <code>task edit</code> command allows user to edit a task in Mod Manager.</p>
+</div>
+<div class="paragraph">
+<p>This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#setTask()</code>.</p>
 </div>
 <div class="paragraph">
@@ -1279,7 +1236,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#setT
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The user executes the <code>task edit</code> command and provides the <code>moduleCode</code> and the <code>taskNum</code> of the task to edit,
+<p>The user executes the task edit command and provides the <code>moduleCode</code> and the <code>taskNum</code> of the task to edit,
 and the fields to be edited.</p>
 </li>
 <li>
@@ -1316,7 +1273,7 @@ actually input <code>01/01/1970</code> as a date.</p>
 <div class="content">
 <img src="images/TaskEditCommandSequenceDiagram.png" alt="TaskEditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 30. Sequence Diagram for <code>TaskEditCommand</code> creation steps</div>
+<div class="title">Figure 28. Sequence Diagram for <code>TaskEditCommand</code> creation steps</div>
 </div>
 <div class="paragraph">
 <p>The execution of a <code>TaskEditCommand</code> is described below.</p>
@@ -1380,7 +1337,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 <div class="content">
 <img src="images/TaskDeleteCommandSequenceDiagram.png" alt="TaskDeleteCommandSequenceDiagram">
 </div>
-<div class="title">Figure 31. Sequence Diagram for <code>TaskDeleteCommand</code> creation steps</div>
+<div class="title">Figure 29. Sequence Diagram for <code>TaskDeleteCommand</code> creation steps</div>
 </div>
 <div class="paragraph">
 <p>The execution of a <code>TaskDeleteCommand</code> is described below.</p>
@@ -1408,11 +1365,435 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 </ol>
 </div>
 </div>
+<div class="sect4">
+<h5 id="marking-a-task-as-done"><a class="link" href="#marking-a-task-as-done">Marking a task as done</a></h5>
+<div class="paragraph">
+<p>The marking a task as done command allows users to mark a certain <code>Task</code> in a <code>Module</code> as done,
+based on its task ID called <code>taskNum</code>.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskMarkAsDoneCommandParser</code> and <code>TaskMarkAsDoneCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#setTask()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the marking task as done mechanism behaves at each step.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the task mark as done command and provides the <code>moduleCode</code> and the <code>taskNum</code> of the
+task to be marked as done.</p>
+</li>
+<li>
+<p><code>TaskMarkAsDoneCommandParser</code> creates a new <code>TaskMarkAsDoneCommand</code> based on the <code>moduleCode</code> and <code>taskNum</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskMarkAsDoneCommand</code>.</p>
+</li>
+<li>
+<p><code>TaskMarkAsDoneCommand</code> retrieves the <code>moduleCode</code> and <code>taskNum</code> of the task to be marked as done,
+and then retrieves the current existing <code>Task</code> from <code>ModManager</code>.</p>
+</li>
+<li>
+<p><code>TaskMarkAsDoneCommand</code> creates a clone of the retrieved <code>Task</code>, then mark this new <code>Task</code> as done.</p>
+</li>
+<li>
+<p><code>ModManager</code> sets the existing task to the new task, marked as done in the <code>UniqueTaskList</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the task mark as done command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskMarkAsDoneSequenceDiagram.png" alt="TaskMarkAsDoneSequenceDiagram">
+</div>
+<div class="title">Figure 30. Sequence Diagram for <code><strong>task</strong> done /module CS2103T /id 986</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code>, <code>TaskMarkAsDoneCommandParser</code>, and <code>TaskMarkAsDoneCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes the task mark as done command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskMarkAsDoneActivityDiagram.png" alt="TaskMarkAsDoneActivityDiagram">
+</div>
+<div class="title">Figure 31. Activity Diagram for a general <code><strong>task</strong> done</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="viewing-all-tasks-across-modules-in-mod-manager"><a class="link" href="#viewing-all-tasks-across-modules-in-mod-manager">Viewing all tasks across modules in Mod Manager</a></h5>
+<div class="paragraph">
+<p>The list task feature allows users to list all tasks across all  modules in Mod Manager.
+This feature is facilitated by <code>TaskCommandParser</code> and <code>TaskListCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task list mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the task list command.</p>
+</li>
+<li>
+<p><code>TaskCommandParser</code> creates a new <code>TaskListCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskListCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the task list command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskListSequenceDiagram.png" alt="TaskListSequenceDiagram">
+</div>
+<div class="title">Figure 32. Sequence Diagram for <code><strong>task</strong> list</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code> and <code>TaskListCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a task list command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskListActivityDiagram.png" alt="TaskListActivityDiagram">
+</div>
+<div class="title">Figure 33. Activity Diagram for <code><strong>task</strong> list</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="viewing-tasks-for-a-specific-module-in-modmanger"><a class="link" href="#viewing-tasks-for-a-specific-module-in-modmanger">Viewing tasks for a specific module in ModManger</a></h5>
+<div class="paragraph">
+<p>The viewing task by module feature allows users to find all tasks belonging to a specific module in Mod Manager.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskForOneModuleCommandParser</code> and `
+TaskForOneModuleCommand`.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task search mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the task search command and provides the day, month, or year, or any combination of which
+that they want to search for.</p>
+</li>
+<li>
+<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the names.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the search tasks for a specific module command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskForModuleSequenceDiagram.png" alt="TaskForModuleSequenceDiagram">
+</div>
+<div class="title">Figure 34. Sequence Diagram for <code><strong>task</strong> module /code CS2103T</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code>, <code>TaskForOneModuleCommandParser</code>, <code>TaskForOneModuleCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskForModuleActivityDiagram.png" alt="TaskForModuleActivityDiagram">
+</div>
+<div class="title">Figure 35. Activity Diagram for a general <code><strong>task</strong> module</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="viewing-undone-tasks"><a class="link" href="#viewing-undone-tasks">Viewing undone tasks</a></h5>
+<div class="paragraph">
+<p>The viewing undone tasks only feature allows users to view only tasks that are not yet completed in their <code>Tasks</code> tab.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskListUndoneCommandParser</code> and <code>TaskListUndoneCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task view undone tasks mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the task view undone tasks command.</p>
+</li>
+<li>
+<p><code>TaskListUndoneCommandParser</code> creates a new <code>TaskListUndoneCommand</code>.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskListUndoneCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the task view undone tasks command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskListUndoneSequenceDiagram.png" alt="TaskListUndoneSequenceDiagram">
+</div>
+<div class="title">Figure 36. Sequence Diagram for <code><strong>task</strong> undone</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code>, <code>TaskListUndoneCommandParser</code>, <code>TaskListUndoneCommand</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a task view undone tasks only command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskListUndoneActivityDiagram.png" alt="TaskListUndoneActivityDiagram">
+</div>
+<div class="title">Figure 37. Activity Diagram for <code><strong>task</strong> undone</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="finding-tasks-by-description"><a class="link" href="#finding-tasks-by-description">Finding tasks by description</a></h5>
+<div class="paragraph">
+<p>The find task feature allows users to find a task by its description in Mod Manager.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskFindCommandParser</code> and <code>TaskFindCommand</code>.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task find mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the task find command and provides the descriptions of the tasks to search for.</p>
+</li>
+<li>
+<p><code>TaskFindCommandParser</code> creates a new <code>TaskFindCommand</code> based on the descriptions.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskFindCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the task find command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskFindSequenceDiagram.png" alt="TaskFindSequenceDiagram">
+</div>
+<div class="title">Figure 38. Sequence Diagram for <code><strong>task</strong> find assignment homework</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code>, <code>TaskFindCommandParser</code>, <code>TaskFindCommand</code> and <code>TaskContainsKeywordsPredicate</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskFindActivityDiagram.png" alt="TaskFindActivityDiagram">
+</div>
+<div class="title">Figure 39. Activity Diagram for a general <code><strong>task</strong> find</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="searching-tasks-by-date"><a class="link" href="#searching-tasks-by-date">Searching tasks by date</a></h5>
+<div class="paragraph">
+<p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and `
+TaskSearchCommand`.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task search mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the task search command and provides the day, month, or year, or any combination of which
+that they want to search for.</p>
+</li>
+<li>
+<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the names.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the task search command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskSearchSequenceDiagram.png" alt="TaskSearchSequenceDiagram">
+</div>
+<div class="title">Figure 40. Sequence Diagram for <code><strong>task</strong> search /date 25 /month 6</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code>, <code>TaskSearchCommand</code> and <code>TaskSearchPredicate</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
+</div>
+<div class="title">Figure 41. Activity Diagram for a general <code><strong>task</strong> search</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="searching-tasks-by-date-2"><a class="link" href="#searching-tasks-by-date-2">Searching tasks by date</a></h5>
+<div class="paragraph">
+<p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and `
+TaskSearchCommand`.
+The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code><strong>task</strong> search</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user executes the <code><strong>task</strong> search</code> command and provides the day, month, or year, or any combination of which
+that they want to search for search for.</p>
+</li>
+<li>
+<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the names.</p>
+</li>
+<li>
+<p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
+</li>
+<li>
+<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <code><strong>task</strong> search</code> command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskSearchSequenceDiagram.png" alt="TaskSearchSequenceDiagram">
+</div>
+<div class="title">Figure 42. Sequence Diagram for <code><strong>task</strong> search</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code>, <code>TaskSearchCommand</code> and <code>TaskSearch</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
+</div>
+<div class="title">Figure 43. Activity Diagram for <code><strong>task</strong> search</code> Command</div>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-the-optional-attribute-of-code-taskdatetime-code-is-managed"><a class="link" href="#aspect-how-the-optional-attribute-of-code-taskdatetime-code-is-managed">Aspect: How the optional attribute of <code>TaskDateTime</code> is managed</a></h5>
+<h5 id="aspect-a-task-may-have-a-specified-time-frame-or-not-how-do-we-implement-this-feature"><a class="link" href="#aspect-a-task-may-have-a-specified-time-frame-or-not-how-do-we-implement-this-feature">Aspect: A task may have a specified time frame, or not. How do we implement this feature?</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -1425,7 +1806,7 @@ time period specified will be created as a <code>NonScheduledTask</code>, with b
 <li>
 <p>Pros: Utilises Object-Oriented Programming. Easy to implement <code><strong>search</strong></code> functionality,
 which we need to search for tasks that occur on a specified date, month, or year,
-and <code><strong>upcoming</strong></code> functionality, which we need to find the upcoming tasks in Mod Manager.
+and <code><strong>upcoming</strong></code> functionality <code>[coming in v2.0]</code>, which we need to find the upcoming tasks in Mod Manager.
 For these two features, we only need to work on <code>ScheduledTask</code> instances, which reduces the
 burden of checking for <code>null</code> <code>TaskDateTime</code> instances as the second approach below.</p>
 </li>
@@ -1437,8 +1818,8 @@ In this case, we have to re-create a new <code>ScheduledTask</code> with the sam
 If we need to maintain a <code>List&lt;ScheduledTask&gt;</code> or <code>List&lt;Task&gt;</code> somewhere in the code, for example,
 in our <code>Module</code> instance, we also have to update the list contents in our <code>Module</code> s too.
 This requires the association between <code>Module</code> and <code>Task</code> to be bi-directional, which
-increases content and data coupling and make it harder for us to maintain and conduct tests. There is also extra overhead time
-communicating and collaborating with another member in our team who is doing the <code>Module</code> component, Because of these challenges,
+increases coupling and make it harder for us to maintain and conduct tests. There is also extra overhead time
+communicating and collaborating with another member in our team responsible for the <code>Module</code> component, Because of these challenges,
 we decide to weaken the association between <code>Task</code> and <code>Module</code>, which is elaborated in our next aspect.</p>
 </li>
 </ul>
@@ -1446,8 +1827,8 @@ we decide to weaken the association between <code>Task</code> and <code>Module</
 </li>
 <li>
 <p><strong>Alternative 2:</strong> Implement <code>Task</code> as a concrete class in Mod Manager. <code>Task</code> s without a specified time period
-will have its <code>TaskDateTime</code> set to <code>null</code>, while <code>Task</code> s with a given time period will be assign a <code>TaskDateTime</code> attribute, which
-is a wrapper class for Java&#8217;s <code>LocalDateTime</code>.</p>
+will have its time attribute <code>taskDateTime</code> set to <code>null</code>, while <code>Task</code> s with a given time period will be assign a
+non-null instance of <code>taskDateTime</code>.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1455,9 +1836,9 @@ is a wrapper class for Java&#8217;s <code>LocalDateTime</code>.</p>
 </li>
 <li>
 <p>Cons: We must handle <code>null</code> cases every time we query something about the time of a <code>Task</code>.
-For example, it&#8217;s more challenging to implement the <code><strong>search</strong></code> and <code><strong>upcoming</strong></code> command, since we have to handle the cases when the <code>TaskDateTime</code> instance is <code>null</code>.
-It&#8217;s very complex to implement the method <code>compareTo</code> of <code>Comparable</code> interface for <code>Task</code> to compare the time between tasks,
-when one, or both of the <code>TaskDateTime</code> attributes can be <code>null</code>.</p>
+For example, it&#8217;s more challenging to implement the <code><strong>search</strong></code> and <code><strong>upcoming</strong></code> command, since we have to check whether the task has a non-null <code>taskDateTime</code> or not.
+Moreover, it&#8217;s complex to implement the method <code>compareTo</code> of <code>Comparable</code> interface for <code>Task</code> to compare the time between tasks,
+when one, or both of our <code>taskDateTime</code> attributes can be <code>null</code>.</p>
 </li>
 </ul>
 </div>
@@ -1479,7 +1860,7 @@ This is a aggregation relationship, which is weaker than composition in our seco
 <div class="content">
 <img src="images/ModuleTaskAggregationDiagram.png" alt="ModuleTaskAggregationDiagram">
 </div>
-<div class="title">Figure 32. Class Diagram: A <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
+<div class="title">Figure 44. Class Diagram: A <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1505,7 +1886,7 @@ If the <code>Module</code> is deleted, all of the related <code>Task</code> s fo
 <div class="content">
 <img src="images/ModuleTaskCompositionDiagram.png" alt="ModuleTaskCompositionDiagram">
 </div>
-<div class="title">Figure 33. Class Diagram: A <code>Module</code> consists of <code>Task</code> objects.</div>
+<div class="title">Figure 45. Class Diagram: A <code>Module</code> consists of <code>Task</code> objects.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1593,7 +1974,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#addF
 <div class="content">
 <img src="images/FacilitatorAddSequenceDiagram.png" alt="FacilitatorAddSequenceDiagram">
 </div>
-<div class="title">Figure 34. Sequence Diagram for <code>facil add</code> Command</div>
+<div class="title">Figure 46. Sequence Diagram for <code>facil add</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1615,7 +1996,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorAddActivityDiagram.png" alt="FacilitatorAddActivityDiagram">
 </div>
-<div class="title">Figure 35. Activity Diagram for <code>facil add</code> Command</div>
+<div class="title">Figure 47. Activity Diagram for <code>facil add</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1651,7 +2032,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="images/FacilitatorListSequenceDiagram.png" alt="FacilitatorListSequenceDiagram">
 </div>
-<div class="title">Figure 36. Sequence Diagram for `facil list`Command</div>
+<div class="title">Figure 48. Sequence Diagram for `facil list`Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1673,7 +2054,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorListActivityDiagram.png" alt="FacilitatorListActivityDiagram">
 </div>
-<div class="title">Figure 37. Activity Diagram for <code>facil list</code> Command</div>
+<div class="title">Figure 49. Activity Diagram for <code>facil list</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1709,7 +2090,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="images/FacilitatorFindSequenceDiagram.png" alt="FacilitatorFindSequenceDiagram">
 </div>
-<div class="title">Figure 38. Sequence Diagram for <code>facil find</code> Command</div>
+<div class="title">Figure 50. Sequence Diagram for <code>facil find</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1731,7 +2112,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorFindActivityDiagram.png" alt="FacilitatorFindActivityDiagram">
 </div>
-<div class="title">Figure 39. Activity Diagram for <code>facil find</code> Command</div>
+<div class="title">Figure 51. Activity Diagram for <code>facil find</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1779,7 +2160,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#setF
 <div class="content">
 <img src="images/FacilitatorEditSequenceDiagram.png" alt="FacilitatorEditSequenceDiagram">
 </div>
-<div class="title">Figure 40. Sequence Diagram for <code>facil edit</code> Command</div>
+<div class="title">Figure 52. Sequence Diagram for <code>facil edit</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1801,7 +2182,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorEditActivityDiagram.png" alt="FacilitatorEditActivityDiagram">
 </div>
-<div class="title">Figure 41. Activity Diagram for <code>facil edit</code> Command</div>
+<div class="title">Figure 53. Activity Diagram for <code>facil edit</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1840,7 +2221,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 <div class="content">
 <img src="images/FacilitatorDeleteSequenceDiagram.png" alt="FacilitatorDeleteSequenceDiagram">
 </div>
-<div class="title">Figure 42. Sequence Diagram for <code>facil delete</code> Command</div>
+<div class="title">Figure 54. Sequence Diagram for <code>facil delete</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1862,7 +2243,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="images/FacilitatorDeleteActivityDiagram.png" alt="FacilitatorDeleteActivityDiagram">
 </div>
-<div class="title">Figure 43. Activity Diagram for <code>facil delete</code> Command</div>
+<div class="title">Figure 55. Activity Diagram for <code>facil delete</code> Command</div>
 </div>
 </div>
 </div>
@@ -2039,7 +2420,7 @@ This feature is facilitated by <code>CalCommandParser</code>, <code>CalViewComma
 <div class="content">
 <img src="images/CalViewSequenceDiagram.png" alt="CalViewSequenceDiagram">
 </div>
-<div class="title">Figure 44. Sequence Diagram for <code>cal view</code> Command</div>
+<div class="title">Figure 56. Sequence Diagram for <code>cal view</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2060,7 +2441,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="images/CalViewActivityDiagram.png" alt="CalViewActivityDiagram">
 </div>
-<div class="title">Figure 45. Activity Diagram for <code>cal view</code> Command</div>
+<div class="title">Figure 57. Activity Diagram for <code>cal view</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -2091,7 +2472,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="images/CalFindSequenceDiagram.png" alt="CalFindSequenceDiagram">
 </div>
-<div class="title">Figure 46. Sequence Diagram for <code>cal find</code> Command</div>
+<div class="title">Figure 58. Sequence Diagram for <code>cal find</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2112,7 +2493,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalFindCommandParser</code
 <div class="content">
 <img src="images/CalFindActivityDiagram.png" alt="CalFindActivityDiagram">
 </div>
-<div class="title">Figure 47. Activity Diagram for <code>cal find</code> Command</div>
+<div class="title">Figure 59. Activity Diagram for <code>cal find</code> Command</div>
 </div>
 </div>
 </div>
@@ -2124,13 +2505,13 @@ The lifeline for <code>CalCommandParser</code>, <code>CalFindCommandParser</code
 <div class="content">
 <img src="images/NewCalendar.png" alt="NewCalendar">
 </div>
-<div class="title">Figure 48. New Design for Calendar Appearance (Alternative 1)</div>
+<div class="title">Figure 60. New Design for Calendar Appearance (Alternative 1)</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/OldCalendar.png" alt="OldCalendar">
 </div>
-<div class="title">Figure 49. Old Design for Calendar Appearance (Alternative 2)</div>
+<div class="title">Figure 61. Old Design for Calendar Appearance (Alternative 2)</div>
 </div>
 <div class="ulist">
 <ul>
@@ -2332,7 +2713,10 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+<p><strong>Priorities</strong>:<br>
+High (must have) - <code>* * *</code><br>
+Medium (nice to have) - <code>* *</code><br>
+Low (unlikely to have) - <code>*</code></p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 59%;">
 <colgroup>
@@ -2345,8 +2729,8 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <tr>
 <th class="tableblock halign-left valign-top">Priority</th>
 <th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I can &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">so that &#8230;&#8203;</th>
 </tr>
 </thead>
 <tbody>
@@ -2354,205 +2738,229 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can refer to instructions when I forget how to use the App</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a module I am taking</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the information related to the module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep track of the information related to the module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the classes I have for a particular module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep track of the classes I have for a particular module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the tasks I have for a particular module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep track of the tasks I have for a particular module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add facilitators' information</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the information of the facilitators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep track of the information of the facilitators</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view information related to a module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for each module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can prepare for each module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">complete them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all tasks across all modules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can organise, plan, and manage my tasks better.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view tasks for a specific module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can manage and keep track of homework, programming assignments, and other tasks specifically for the module.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all tasks not done</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I know what tasks are not yet completed and do them.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view facilitators' information</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">contact them when I need help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can contact them when I need help</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit a module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update the module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can update the module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit a class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep my classes up to date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep my classes up to date</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit a task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep my tasks up to date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep my tasks up to date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark a task as done</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep track of what tasks I have completed and what I have not yet completed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit a facilitator’s information</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep their contact details up to date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep their contact details up to date</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete a module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">use the App for different semesters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can use the App for different semesters</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete a class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove classes that I am no longer in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can remove classes that I am no longer in</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete a task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove tasks that I no longer need to track</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can remove tasks that I no longer need to track</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete a facilitator’s information</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove information that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can remove information that I no longer need</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view schedule for the current week</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can prepare for them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view schedule for the upcoming week</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prepare for them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can prepare for them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view all commands</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">learn how to use them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can learn how to use them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view commands for a specific feature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">learn how to use them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can learn how to use them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">import and export data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">easily migrate the data to another computer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can easily migrate the data to another computer</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find a facilitator by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of facilitators without having to go through the entire list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can locate details of facilitators without having to go through the entire list</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of tasks on a particular date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can find the exact tasks that I want to do, such as a particular programming assignment on multimedia streaming.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">search tasks by its date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I know what tasks are happening today, tomorrow, this month, next month, or any other time periods.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find upcoming tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prioritise them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can prioritise them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find empty slots in my schedule</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">manage my time easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can manage my time easily</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mark a task as done</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not take note of them anymore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can not take note of them anymore</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a priority level to a task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">prioritise my tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can prioritise my tasks</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag my tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">categorise them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can categorise them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see countdown timers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">be reminded of deadlines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can be reminded of deadlines</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">receive reminders about deadlines and events the next day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can receive reminders about deadlines and events the next day</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">take note of them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mass delete the modules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete them quickly once the semester is over</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can delete them quickly once the semester is over</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">advanced user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">use shorter versions of a command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can use shorter versions of a command</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type a command faster</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">careless user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">undo my commands</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo the mistakes in my command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can undo the mistakes in my command</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">visual user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see a clear <a href="#gui">GUI</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navigate the App more easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can navigate the App more easily</p></td>
 </tr>
 </tbody>
 </table>
@@ -2568,18 +2976,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to add a module and provides the module code and description of the module.</p>
+<p>1.  User requests to add a module and provides the module code and description of the module.</p>
 </li>
 <li>
-<p>Mod Manager adds the module.</p>
+<p>2.  Mod Manager adds the module.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2593,7 +3001,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2606,7 +3014,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1b1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2618,35 +3026,35 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to list all modules.</p>
+<p>1.  User requests to list all modules.</p>
 </li>
 <li>
-<p>Mod Manager shows the list of all the modules.</p>
+<p>2.  Mod Manager shows the list of all the modules.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <h3 id="use-case-uc03-view-module" class="discrete">Use case: UC03 - View module</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to view a module and provides the index or module code.</p>
+<p>1.  User requests to view a module and provides the index or module code.</p>
 </li>
 <li>
-<p>Mod Manager shows all information related to the module.</p>
+<p>2.  Mod Manager shows all information related to the module.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2660,7 +3068,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2672,18 +3080,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to edit a module and provides the index or module code and the new description.</p>
+<p>1.  User requests to edit a module and provides the index or module code and the new description.</p>
 </li>
 <li>
-<p>Mod Manager edits the module.</p>
+<p>2.  Mod Manager edits the module.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2697,7 +3105,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2710,7 +3118,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1b1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2722,18 +3130,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to delete a module and provides the index or module code.</p>
+<p>1.  User requests to delete a module and provides the index or module code.</p>
 </li>
 <li>
-<p>Mod Manager deletes the module.</p>
+<p>2.  Mod Manager deletes the module.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2747,7 +3155,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2759,18 +3167,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User request to add a class and provides the details of the new class.</p>
+<p>1. User request to add a class and provides the details of the new class.</p>
 </li>
 <li>
-<p>Mod Manager adds a class.</p>
+<p>2. Mod Manager adds a class.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2784,7 +3192,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2796,18 +3204,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User request to list all the classes by day and provides the day.</p>
+<p>1. User request to list all the classes by day and provides the day.</p>
 </li>
 <li>
-<p>Mod Manager replies with the list of classes.</p>
+<p>2. Mod Manager replies with the list of classes.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2821,7 +3229,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2839,18 +3247,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User request to find the next class.</p>
+<p>1. User request to find the next class.</p>
 </li>
 <li>
-<p>Mod Manager replies with the next class.</p>
+<p>2. Mod Manager replies with the next class.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2869,18 +3277,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User request to edit a class and provides the index and necessary details to be edited.</p>
+<p>1. User request to edit a class and provides the index and necessary details to be edited.</p>
 </li>
 <li>
-<p>Mod Manager edits the class.</p>
+<p>2. Mod Manager edits the class.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2894,7 +3302,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2906,18 +3314,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to delete a class and provides the index.</p>
+<p>1. User requests to delete a class and provides the index.</p>
 </li>
 <li>
-<p>Mod Manager deletes the class.</p>
+<p>2. Mod Manager deletes the class.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2931,7 +3339,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2940,30 +3348,301 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 </ul>
 </div>
 <h3 id="use-case-uc11-add-task" class="discrete">Use case: UC11 - Add task</h3>
-<h3 id="use-case-uc12-mark-task-as-done" class="discrete">Use case: UC12 - Mark task as done</h3>
-<h3 id="use-case-uc13-list-tasks" class="discrete">Use case: UC13 - List tasks</h3>
-<h3 id="use-case-uc14-list-tasks-for-a-specific-module" class="discrete">Use case: UC14 - List tasks for a specific module</h3>
-<h3 id="use-case-uc15-list-undone-tasks" class="discrete">Use case: UC15 - List undone tasks</h3>
-<h3 id="use-case-uc16-find-task-by-description" class="discrete">Use case: UC16 - Find task by description</h3>
-<h3 id="use-cse-uc17-search-task-by-date" class="discrete">Use cse: UC17 - Search task by date</h3>
-<h3 id="use-case-uc18-edit-task" class="discrete">Use case: UC18 - Edit task</h3>
-<h3 id="use-case-uc19-delete-task" class="discrete">Use case: UC19 - Delete task</h3>
-<h3 id="use-case-uc20-add-facilitator" class="discrete">Use case: UC20 - Add facilitator</h3>
+<h3 id="use-case-uc12-edit-task" class="discrete">Use case: UC12 - Edit task</h3>
+<h3 id="use-case-uc13-delete-task" class="discrete">Use case: UC13 - Delete task</h3>
+<h3 id="use-case-uc14-marking-a-task-as-done" class="discrete">Use case: UC14 - Marking a task as done</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to add a facilitator and provides the details of the facilitator.</p>
+<p>1. User requests to mark a task as done and provides the module code and task ID of the task.<br></p>
 </li>
 <li>
-<p>Mod Manager adds the facilitator.</p>
+<p>2. Mod Manager marks the task as done. The corresponding task card is changed to green.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The module code and task ID provided is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. The task is already marked as done.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Mod Manager shows an error message, notifying the task is already done.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc15-viewing-all-tasks-across-modules-in-mod-manager" class="discrete">Use case: UC15 - Viewing all tasks across modules in Mod Manager</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1.  User requests to list all tasks across modules in Mod Manager.</p>
+</li>
+<li>
+<p>2.  Mod Manager shows the list of all the tasks.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. There are no tasks currently available in Mod Manager.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc16-viewing-tasks-for-a-specific-module-in-mod-manger"><a class="link" href="#use-case-uc16-viewing-tasks-for-a-specific-module-in-mod-manger">C.1. Use case: UC16 - Viewing tasks for a specific module in Mod Manger</a></h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1.  User requests to list tasks for a specific module and provides the module code.</p>
+</li>
+<li>
+<p>2.  Mod Manager shows the list of tasks belonging to the specified module.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The module code is invalid (module not available in Mod Manager).</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. There are no tasks currently available for the specified module.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc17-viewing-undone-tasks"><a class="link" href="#use-case-uc17-viewing-undone-tasks">C.2. Use case: UC17 - Viewing undone tasks</a></h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1.  User requests to list all undone tasks across modules in Mod Manager.</p>
+</li>
+<li>
+<p>2.  Mod Manager shows the list of all undone tasks.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. There are no undone tasks currently available in Mod Manager.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-uc18-finding-tasks-by-description"><a class="link" href="#use-case-uc18-finding-tasks-by-description">C.3. Use case: UC18 - Finding tasks by description</a></h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1.  User requests to find a task by its description and provides a number of keywords.</p>
+</li>
+<li>
+<p>2.  Mod Manager shows the list of tasks whose descriptions contain at least one of the keywords.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. None of the task descriptions contain any of the keywords.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. No keywords are provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc19-searching-tasks-by-date" class="discrete">Use case: UC19 - Searching tasks by date</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1. User requests to searches for a task by its date and provides the date, month, and year, or any of which.</p>
+</li>
+<li>
+<p>2. Mod Manager shows the list of tasks occurring on the specified date, month, and year, or any of which.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The date, month, or year provided is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. No parameters are provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c. There are no tasks matching the specified date, month, and year.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc20-add-facilitator" class="discrete">Use case: UC20 - Add facilitator</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1.  User requests to add a facilitator and provides the details of the facilitator.</p>
+</li>
+<li>
+<p>2.  Mod Manager adds the facilitator.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -2977,7 +3656,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -2994,7 +3673,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1b1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -3006,35 +3685,35 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to list all facilitators.</p>
+<p>1.  User requests to list all facilitators.</p>
 </li>
 <li>
-<p>Mod Manager shows the list of all the facilitators.</p>
+<p>2.  Mod Manager shows the list of all the facilitators.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <h3 id="use-case-uc22-find-facilitator" class="discrete">Use case: UC22 - Find facilitator</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to find a facilitator and provides a keyword.</p>
+<p>1.  User requests to find a facilitator and provides a number of keywords.</p>
 </li>
 <li>
-<p>Mod Manager shows the list of facilitators whose names contain the keyword.</p>
+<p>2.  Mod Manager shows the list of facilitators whose names contain at least one of the keywords.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -3042,7 +3721,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. None of the names of the facilitators contain the keyword.</p>
+<p>1a. None of the names of the facilitators contain any of the keywords.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3053,18 +3732,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to edit a facilitator and provides the index or module code and new details.</p>
+<p>1.  User requests to edit a facilitator and provides the index or module code and new details.</p>
 </li>
 <li>
-<p>Mod Manager edits the facilitator.</p>
+<p>2.  Mod Manager edits the facilitator.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -3078,7 +3757,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -3095,7 +3774,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -3107,18 +3786,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to delete a facilitator and provides the index or module code.</p>
+<p>1.  User requests to delete a facilitator and provides the index or module code.</p>
 </li>
 <li>
-<p>Mod Manager deletes the facilitator.</p>
+<p>2.  Mod Manager deletes the facilitator.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -3132,7 +3811,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -3144,18 +3823,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to view the calendar for a specified week.</p>
+<p>1. User requests to view the calendar for a specified week.</p>
 </li>
 <li>
-<p>Mod Manager shows the calendar for the specified week.</p>
+<p>2. Mod Manager shows the calendar for the specified week.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -3169,7 +3848,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -3181,18 +3860,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to find empty slots in the calendar.</p>
+<p>1. User requests to find empty slots in the calendar.</p>
 </li>
 <li>
-<p>Mod Manager shows the list of empty slots available.</p>
+<p>2. Mod Manager shows the list of empty slots available.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -3206,7 +3885,7 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
@@ -3228,18 +3907,18 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>User requests to clear all entries.</p>
+<p>1. User requests to clear all entries.</p>
 </li>
 <li>
-<p>Mod Manager clears all entries.</p>
+<p>2. Mod Manager clears all entries.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong><a href="#extensions">Extensions</a></strong></p>
@@ -3253,13 +3932,14 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <li>
 <p>1a1. Mod Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes from step 1.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -3281,13 +3961,14 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <p>Response time for each command should be within 3 seconds.</p>
 </li>
 <li>
-<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+<p>A user with above average typing speed for regular English text (i.e. not code and system admin commands)
+should be able to accomplish most of the tasks faster than doing the same task using the mouse.</p>
 </li>
 <li>
 <p>A user should be able to navigate from one tab to another by typing or clicking.</p>
 </li>
 <li>
-<p>Should work without any internet required.</p>
+<p>Should work without any internet connection.</p>
 </li>
 <li>
 <p>Rate of failure should not exceed 5%.</p>
@@ -3777,4 +4458,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 02:17:26 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 09:34:01 UTC</div></div></div></body></html>
