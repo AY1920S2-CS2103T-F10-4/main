@@ -497,7 +497,7 @@ you can type in the following command:</p>
 <div class="content">
 <img src="../images/TaskFindAfter.png" alt="TaskFindAfter">
 </div>
-<div class="title">Figure 7. After <code><strong>task</strong> find oral assign tut</code>, all matching tasks are displayed.</div>
+<div class="title">Figure 7. After <code><strong>task</strong> find oral assign tut</code>, all matching tasks are displayed</div>
 </div>
 <div class="paragraph">
 <p>Explanation:<br>
@@ -744,7 +744,7 @@ and then retrieves the current existing <code>Task</code> from <code>ModManager<
 <div class="content">
 <img src="../images/TaskMarkAsDoneSequenceDiagram.png" alt="TaskMarkAsDoneSequenceDiagram">
 </div>
-<div class="title">Figure 10. Sequence Diagram for <code><strong>task</strong> done /code CS2103T /id 986</code> Command</div>
+<div class="title">Figure 10. Sequence Diagram for <code>task done /code CS2103T /id 986</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -766,11 +766,11 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="../images/TaskMarkAsDoneActivityDiagram.png" alt="TaskMarkAsDoneActivityDiagram">
 </div>
-<div class="title">Figure 11. Activity Diagram for a general <code><strong>task</strong> done</code> Command</div>
+<div class="title">Figure 11. Activity Diagram for <code>task done</code> Command</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="viewing-all-tasks-across-modules-in-mod-manager"><a class="link" href="#viewing-all-tasks-across-modules-in-mod-manager">Viewing all tasks across modules in Mod Manager</a></h5>
+<h5 id="viewing-all-tasks-across-modules"><a class="link" href="#viewing-all-tasks-across-modules">Viewing all tasks across modules</a></h5>
 <div class="paragraph">
 <p>The list task feature allows users to list all tasks across all  modules in Mod Manager.
 This feature is facilitated by <code>TaskCommandParser</code> and <code>TaskListCommand</code>.
@@ -802,7 +802,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="../images/TaskListSequenceDiagram.png" alt="TaskListSequenceDiagram">
 </div>
-<div class="title">Figure 12. Sequence Diagram for <code><strong>task</strong> list</code> Command</div>
+<div class="title">Figure 12. Sequence Diagram for <code>task list</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -824,15 +824,14 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="../images/TaskListActivityDiagram.png" alt="TaskListActivityDiagram">
 </div>
-<div class="title">Figure 13. Activity Diagram for <code><strong>task</strong> list</code> Command</div>
+<div class="title">Figure 13. Activity Diagram for <code>task list</code> Command</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="viewing-tasks-for-a-specific-module-in-modmanger"><a class="link" href="#viewing-tasks-for-a-specific-module-in-modmanger">Viewing tasks for a specific module in ModManger</a></h5>
+<h5 id="viewing-tasks-for-a-specific-module-2"><a class="link" href="#viewing-tasks-for-a-specific-module-2">Viewing tasks for a specific module</a></h5>
 <div class="paragraph">
 <p>The viewing task by module feature allows users to find all tasks belonging to a specific module in Mod Manager.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskForOneModuleCommandParser</code> and `
-TaskForOneModuleCommand`.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskForOneModuleCommandParser</code> and <code>TaskForOneModuleCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
 </div>
 <div class="paragraph">
@@ -841,14 +840,14 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The user executes the task search command and provides the day, month, or year, or any combination of which
+<p>The user executes the find tasks by module command and provides the module code of the module
 that they want to search for.</p>
 </li>
 <li>
-<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the names.</p>
+<p><code>TaskForOneModuleCommandParser</code> creates a new <code>TaskForOneModuleCommand</code> based on the module code.</p>
 </li>
 <li>
-<p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
+<p><code>LogicManager</code> executes the <code>TaskForOneModuleCommand</code>.</p>
 </li>
 <li>
 <p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
@@ -862,7 +861,7 @@ that they want to search for.</p>
 <div class="content">
 <img src="../images/TaskForModuleSequenceDiagram.png" alt="TaskForModuleSequenceDiagram">
 </div>
-<div class="title">Figure 14. Sequence Diagram for <code><strong>task</strong> module /code CS2103T</code> Command</div>
+<div class="title">Figure 14. Sequence Diagram for <code>task module /code CS2103T</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -878,13 +877,13 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </table>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
+<p>The following activity diagram summarizes what happens when a user executes a search tasks for a specific module command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/TaskForModuleActivityDiagram.png" alt="TaskForModuleActivityDiagram">
 </div>
-<div class="title">Figure 15. Activity Diagram for a general <code><strong>task</strong> module</code> Command</div>
+<div class="title">Figure 15. Activity Diagram for <code>task module</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -920,7 +919,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="../images/TaskListUndoneSequenceDiagram.png" alt="TaskListUndoneSequenceDiagram">
 </div>
-<div class="title">Figure 16. Sequence Diagram for <code><strong>task</strong> undone</code> Command</div>
+<div class="title">Figure 16. Sequence Diagram for <code>task undone</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -936,13 +935,13 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </table>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a task view undone tasks only command:</p>
+<p>The following activity diagram summarizes what happens when a user executes a task view undone tasks command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/TaskListUndoneActivityDiagram.png" alt="TaskListUndoneActivityDiagram">
 </div>
-<div class="title">Figure 17. Activity Diagram for <code><strong>task</strong> undone</code> Command</div>
+<div class="title">Figure 17. Activity Diagram for <code>task undone</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -978,7 +977,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="../images/TaskFindSequenceDiagram.png" alt="TaskFindSequenceDiagram">
 </div>
-<div class="title">Figure 18. Sequence Diagram for <code><strong>task</strong> find assignment homework</code> Command</div>
+<div class="title">Figure 18. Sequence Diagram for <code>task find assignment homework</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1000,15 +999,14 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="../images/TaskFindActivityDiagram.png" alt="TaskFindActivityDiagram">
 </div>
-<div class="title">Figure 19. Activity Diagram for a general <code><strong>task</strong> find</code> Command</div>
+<div class="title">Figure 19. Activity Diagram for <code>task find</code> Command</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="searching-tasks-by-date-2"><a class="link" href="#searching-tasks-by-date-2">Searching tasks by date</a></h5>
 <div class="paragraph">
 <p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and `
-TaskSearchCommand`.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and <code>TaskSearchCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
 </div>
 <div class="paragraph">
@@ -1017,11 +1015,11 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The user executes the task search command and provides the day, month, or year, or any combination of which
+<p>The user executes the task search command and provides the date, month, or year, or any combination of which
 that they want to search for.</p>
 </li>
 <li>
-<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the names.</p>
+<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the date, month and year.</p>
 </li>
 <li>
 <p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
@@ -1038,7 +1036,7 @@ that they want to search for.</p>
 <div class="content">
 <img src="../images/TaskSearchSequenceDiagram.png" alt="TaskSearchSequenceDiagram">
 </div>
-<div class="title">Figure 20. Sequence Diagram for <code><strong>task</strong> search /date 25 /month 6</code> Command</div>
+<div class="title">Figure 20. Sequence Diagram for <code>task search /date 25 /month 6</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1054,73 +1052,13 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </table>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
+<p>The following activity diagram summarizes what happens when a user executes a task search command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
 </div>
-<div class="title">Figure 21. Activity Diagram for a general <code><strong>task</strong> search</code> Command</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="searching-tasks-by-date-3"><a class="link" href="#searching-tasks-by-date-3">Searching tasks by date</a></h5>
-<div class="paragraph">
-<p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and `
-TaskSearchCommand`.
-The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code><strong>task</strong> search</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user executes the <code><strong>task</strong> search</code> command and provides the day, month, or year, or any combination of which
-that they want to search for search for.</p>
-</li>
-<li>
-<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the names.</p>
-</li>
-<li>
-<p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
-</li>
-<li>
-<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the <code><strong>task</strong> search</code> command works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskSearchSequenceDiagram.png" alt="TaskSearchSequenceDiagram">
-</div>
-<div class="title">Figure 22. Sequence Diagram for <code><strong>task</strong> search</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code>, <code>TaskSearchCommand</code> and <code>TaskSearch</code> should end at
-the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a task find command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
-</div>
-<div class="title">Figure 23. Activity Diagram for <code><strong>task</strong> search</code> Command</div>
+<div class="title">Figure 21. Activity Diagram for <code>task search</code> Command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1193,7 +1131,7 @@ This is a aggregation relationship, which is weaker than composition in our seco
 <div class="content">
 <img src="../images/ModuleTaskAggregationDiagram.png" alt="ModuleTaskAggregationDiagram">
 </div>
-<div class="title">Figure 24. Class Diagram: A <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
+<div class="title">Figure 22. Class Diagram: A <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1219,7 +1157,7 @@ If the <code>Module</code> is deleted, all of the related <code>Task</code> s fo
 <div class="content">
 <img src="../images/ModuleTaskCompositionDiagram.png" alt="ModuleTaskCompositionDiagram">
 </div>
-<div class="title">Figure 25. Class Diagram: A <code>Module</code> consists of <code>Task</code> objects.</div>
+<div class="title">Figure 23. Class Diagram: A <code>Module</code> consists of <code>Task</code> objects.</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1293,7 +1231,7 @@ and collaborating with the team member responsible for the <code>Module</code> c
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc15-view-all-tasks-across-modules-in-mod-manager" class="discrete">Use case: UC15 - View all tasks across modules in Mod Manager</h3>
+<h3 id="use-case-uc15-view-all-tasks-across-modules" class="discrete">Use case: UC15 - View all tasks across modules</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1323,7 +1261,7 @@ and collaborating with the team member responsible for the <code>Module</code> c
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc16-view-tasks-for-a-specific-module-in-mod-manger" class="discrete">Use case: UC16 - View tasks for a specific module in Mod Manger</h3>
+<h3 id="use-case-uc16-view-tasks-for-a-specific-module" class="discrete">Use case: UC16 - View tasks for a specific module</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -1519,4 +1457,4 @@ and collaborating with the team member responsible for the <code>Module</code> c
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 08:10:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 08:39:27 UTC</div></div></div></body></html>
