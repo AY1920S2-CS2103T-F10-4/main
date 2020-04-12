@@ -102,13 +102,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated exit and clear command of User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/133">#133</a></p>
+<p>Updated exit and clear command of User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/133">#133</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/190">#190</a></p>
 </li>
 <li>
 <p>Added calendar feature of User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/9">#9</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/110">#110</a></p>
 </li>
 <li>
-<p>Added implementation, use cases and testing of calendar feature of Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/23">#23</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/105">#105</a></p>
+<p>Added implementation, use cases and testing of calendar feature of Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/23">#23</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/105">#105</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/182">#182</a></p>
 </li>
 </ul>
 </div>
@@ -252,61 +252,6 @@ SUNDAY:<br>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="clearing-all-entries-code-strong-clear-strong-code"><a class="link" href="#clearing-all-entries-code-strong-clear-strong-code">Clearing all entries : <code><strong>clear</strong></code></a></h4>
-<div class="paragraph">
-<p>You can clear all entries from Mod Manager. All the lists of modules, classes, facilitators and tasks that you have will be cleared.
-Please use this command cautiously, you cannot <code>undo</code> after it!</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>clear</strong></code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p>Suppose your semester has ended and you do not want to see any information related to those modules you have taken in that semester anymore.
-You can type <code><strong>clear</strong></code> as shown below.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/BeforeClear.png" alt="BeforeClear">
-</div>
-<div class="title">Figure 4. Before <code><strong>clear</strong></code></div>
-</div>
-<div class="paragraph">
-<p>After pressing <kbd>Enter</kbd>, Mod Manager is empty. All the entries you have are cleared.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/AfterClear.png" alt="AfterClear">
-</div>
-<div class="title">Figure 5. After <code><strong>clear</strong></code></div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="exiting-the-program-code-strong-exit-strong-code"><a class="link" href="#exiting-the-program-code-strong-exit-strong-code">Exiting the program : <code><strong>exit</strong></code></a></h4>
-<div class="paragraph">
-<p>You can exit the program. Upon closing the application, the Mod Manager data will be saved automatically in your hard disk.</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>exit</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -323,6 +268,31 @@ You can type <code><strong>clear</strong></code> as shown below.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="model-component"><a class="link" href="#model-component">Model Component</a></h3>
+<div class="sect3">
+<h4 id="module"><a class="link" href="#module">Module</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModulePackageClassDiagram.png" alt="ModulePackageClassDiagram">
+</div>
+<div class="title">Figure 4. Structure of the Module Package</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>Module</code> package contains a concrete class <code>Module</code>.</p>
+</li>
+<li>
+<p>A <code>Module</code> contains a <code>ModuleCode</code> and a <code>Description</code> of the module.</p>
+</li>
+<li>
+<p>A <code>UniqueModuleList</code> comprises of instances of <code>Module</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="calendar-feature"><a class="link" href="#calendar-feature">Calendar Feature</a></h3>
 <div class="paragraph">
@@ -384,7 +354,7 @@ This feature is facilitated by <code>CalCommandParser</code>, <code>CalViewComma
 <div class="content">
 <img src="../images/CalViewSequenceDiagram.png" alt="CalViewSequenceDiagram">
 </div>
-<div class="title">Figure 6. Sequence Diagram for <code>cal view</code> Command</div>
+<div class="title">Figure 5. Sequence Diagram for <code>cal view</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -405,7 +375,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="../images/CalViewActivityDiagram.png" alt="CalViewActivityDiagram">
 </div>
-<div class="title">Figure 7. Activity Diagram for <code>cal view</code> Command</div>
+<div class="title">Figure 6. Activity Diagram for <code>cal view</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -436,7 +406,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 <div class="content">
 <img src="../images/CalFindSequenceDiagram.png" alt="CalFindSequenceDiagram">
 </div>
-<div class="title">Figure 8. Sequence Diagram for <code>cal find</code> Command</div>
+<div class="title">Figure 7. Sequence Diagram for <code>cal find</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -450,15 +420,6 @@ The lifeline for <code>CalCommandParser</code>, <code>CalFindCommandParser</code
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a calendar find command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/CalFindActivityDiagram.png" alt="CalFindActivityDiagram">
-</div>
-<div class="title">Figure 9. Activity Diagram for <code>cal find</code> Command</div>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -467,15 +428,15 @@ The lifeline for <code>CalCommandParser</code>, <code>CalFindCommandParser</code
 <h5 id="aspect-calendar-appearance"><a class="link" href="#aspect-calendar-appearance">Aspect: Calendar appearance</a></h5>
 <div class="imageblock">
 <div class="content">
-<img src="../images/NewCalendar.png" alt="NewCalendar">
+<img src="../images/NewCalendar.png" alt="NewCalendar" width="400">
 </div>
-<div class="title">Figure 10. New Design for Calendar Appearance (Alternative 1)</div>
+<div class="title">Figure 8. New Design for Calendar Appearance (Alternative 1)</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/OldCalendar.png" alt="OldCalendar">
+<img src="../images/OldCalendar.png" alt="OldCalendar" width="300">
 </div>
-<div class="title">Figure 11. Old Design for Calendar Appearance (Alternative 2)</div>
+<div class="title">Figure 9. Old Design for Calendar Appearance (Alternative 2)</div>
 </div>
 <div class="ulist">
 <ul>
@@ -640,11 +601,8 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 </ul>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="appendix-e-glossary"><a class="link" href="#appendix-e-glossary">Appendix E: Glossary</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="appendix-e-glossary"><a class="link" href="#appendix-e-glossary">Appendix E: Glossary</a></h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><a id="cli"></a> CLI</dt>
@@ -668,6 +626,11 @@ It is easier to implement too. The word <code>empty</code> is kept to allow user
 <p>Main Success Scenario: describes the most straightforwards interaction for a given use case, which assumes that nothing goes wrong</p>
 </dd>
 </dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="appendix-f-instructions-for-manual-testing"><a class="link" href="#appendix-f-instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h3>
+
 </div>
 <div class="sect2">
 <h3 id="testing-of-calendar-feature"><a class="link" href="#testing-of-calendar-feature">Testing of Calendar Feature</a></h3>
@@ -699,4 +662,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 11:17:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:42:23 UTC</div></div></div></body></html>
