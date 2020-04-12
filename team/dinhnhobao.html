@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mod Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-F10-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Dinh Nho Bao - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-mod-manager"><a class="link" href="#project-mod-manager">PROJECT: Mod Manager</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
@@ -19,7 +19,7 @@ with about 6 KLoC and evolve it into our <strong>Mod Manager</strong> with more 
 The project spans over a period of eight weeks, where each of us
 idealise and design the product, utilise CI/CD for weekly project enhancements,
 implement features and functionality, write documentation (User Guide &amp; Developer Guide),
-as well as take part in Quality Assurance.</p>
+and take part in Quality Assurance.</p>
 </div>
 <div class="paragraph">
 <p>Technologies: Java, JavaFx, GitHub, Intellij IDEA</p>
@@ -36,13 +36,14 @@ as well as take part in Quality Assurance.</p>
 <ul>
 <li>
 <p><strong>Code contributed</strong>:
-I personally contributed more than 3 KLoC to Mod Manager. All my code contributions
+I personally contributed almost 4 KLoC to Mod Manager. All my code contributions
 can be found <a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=dinhnhobao&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=dinhnhobao&amp;tabRepo=AY1920S2-CS2103T-F10-4%2Fmain%5Bmaster%5D">here</a>.</p>
 </li>
 <li>
 <p><strong>Major enhancement</strong>: idealise and design the <code>Task</code> component of Mod Manager. The <code>Task</code>
 component allows NUS students to manage their tasks, such as programming assignments, homework,
-tutorials, reviewing lecture content, exam revision for their respective modules in a semester.</p>
+tutorials, reviewing lecture content, exam revision for their respective modules in a semester.
+Implement most of the commands available for the <code>Task</code> component of Mod Manager.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -73,14 +74,18 @@ input validation and data formatting is critical to avoid unexpected behaviours 
 </li>
 <li>
 <p>Credits: The idea is adapted from <a href="https://github.com/se-edu/addressbook-level3">AddressBook (Level 3)</a>
-and <a href="https://github.com/nus-cs2103-AY1920S2/duke">the Duke project</a></p>
+and <a href="https://github.com/nus-cs2103-AY1920S2/duke">the Duke project</a>. Huge thanks to my teammates who
+have gave feedback and improved on the design of the <code>Task</code>, which includes making it more OOP
+to integrate it better with the rest of the application, and adding the <code>taskId</code> feature
+to support the identification of tasks in our <code>Task</code> commands.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: design and implement the UI to represent a <code>Task</code>. The design inspired
-other components of <strong>Mod Manager</strong> to adapt a similar presentation.</p>
+<p><strong>Minor enhancement</strong>: design and implement the UI to represent a <code>Task</code>. The design is useful for the
+value proposition of the product, as it helps you to recognise what tasks are completed and
+what are not easily.</p>
 </li>
 </ul>
 </div>
@@ -107,11 +112,20 @@ other components of <strong>Mod Manager</strong> to adapt a similar presentation
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:</p>
+<p>Project management: mainly responsible for managing deadlines and deliverables for our team.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Ensure that all milestone progress are reached (which includes team-based and individual-based tasks). We managed to achieve
+more than 90% of the recommended milestone tasks, much higher than the minimum requirement
+of 60% of the class.</p>
+</li>
+<li>
+<p>Managed releases <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/releases/tag/v1.2">v1.2</a>
+and <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/releases/tag/v1.2.1">v1.2.1</a> on GitHub</p>
+</li>
+<li>
+<p>Maintained the issue tracker and milestones for team repo</p>
 </li>
 </ul>
 </div>
@@ -121,10 +135,13 @@ other components of <strong>Mod Manager</strong> to adapt a similar presentation
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Design and update the UI color scheme for a <code>Task</code> (PR <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/128/commits/96669def1decbbc8043c7e7db97d4ba775ddfd0d">#128</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Wrote extensive tests for <code>Task</code> component, maintaining test coverage of around 90% for my components as shown
+<a href="https://coveralls.io/builds/30020995/source?filename=file%3A%2Fhome%2Ftravis%2Fbuild%2FAY1920S2-CS2103T-F10-4%2Fmain%2Fsrc%2Fmain%2Fjava%2Fseedu%2Faddress%2Flogic%2Fcommands%2Ftask%2FTaskMarkAsDoneCommand.java">here</a> and
+<a href="https://coveralls.io/builds/30020995/source?filename=file%3A%2Fhome%2Ftravis%2Fbuild%2FAY1920S2-CS2103T-F10-4%2Fmain%2Fsrc%2Fmain%2Fjava%2Fseedu%2Faddress%2Flogic%2Fparser%2Ftask%2FTaskMarkAsDoneCommandParser.java">here</a>
+for a command.</p>
 </li>
 </ul>
 </div>
@@ -134,7 +151,11 @@ other components of <strong>Mod Manager</strong> to adapt a similar presentation
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Initiate the "Command Summary" section of the User Guide, and cosmetic tweaks to existing contents
+of the User Guide, PR <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/13">#13</a></p>
+</li>
+<li>
+<p>Revise sections of the Developer Guide, PR <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/204">#204</a></p>
 </li>
 </ul>
 </div>
@@ -144,29 +165,19 @@ other components of <strong>Mod Manager</strong> to adapt a similar presentation
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>Reported bugs and suggestions for other teams in the class (<a href="https://github.com/dinhnhobao/ped/issues">1</a>,
+<a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3/pull/35">2</a>, and <a href="https://github.com/nus-cs2103-AY1920S2/addressbook-level3/pull/45">3</a>)</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Resolved multiple merge conflicts when integrating code with upstream repo (PRs
+<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/204">#204</a>,
+<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/192">#192</a>,
+<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/128">#128</a>,
+<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/111">#111</a>,
+<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/107">#107</a>,
+<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/81">#81</a>,
+<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/44">#44</a>
+)</p>
 </li>
 </ul>
 </div>
@@ -175,9 +186,6 @@ other components of <strong>Mod Manager</strong> to adapt a similar presentation
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -190,8 +198,8 @@ other components of <strong>Mod Manager</strong> to adapt a similar presentation
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide.
-They comprise most of the commands for the <code>Task</code> component.
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are some sections I contributed to the User Guide.
+They comprise some of the commands for the <code>Task</code> component.
 They showcase my ability to write documentation targeting end-users.</em></p></td>
 </tr>
 </tbody>
@@ -308,125 +316,6 @@ Hooray! We just completed a task.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-all-tasks-across-all-modules"><a class="link" href="#viewing-all-tasks-across-all-modules">Viewing all tasks across all modules</a></h4>
-<div class="paragraph">
-<p>You can view a list of all tasks across all modules in Mod Manager.
-This is great when you need an overview of all tasks that you need to complete
-at present.</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>task</strong> list</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p>By typing the command above, you should see the following:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskList.png" alt="TaskList">
-</div>
-<div class="title">Figure 3. <code><strong>task</strong> list</code> shows a list of all tasks in Mod Manager</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="viewing-tasks-for-a-specific-module"><a class="link" href="#viewing-tasks-for-a-specific-module">Viewing tasks for a specific module</a></h4>
-<div class="paragraph">
-<p>If you want to find tasks for a specific module in Mod Manager, this is the command for you to use!</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>task</strong> module /code CS2103T</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Command properties:</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>MOD_CODE should belong to a valid and existing module in Mod Manager.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Alternatively, you can also view the tasks for a specific module in the Module tab (main dashboard).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p>If you want a list of current tasks for the module <code>CS3230</code>, you can type in the following command:</p>
-</div>
-<div class="paragraph">
-<p><code><strong>task</strong> module /code CS3230</code>
-and hit <kbd>Enter</kbd></p>
-</div>
-<div class="paragraph">
-<p>It is not compulsory for you to be at the Tasks tab before typing in this command.
-Mod Manager will automatically redirect you to the Tasks tab if you are currently at another tab.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskListModule.png" alt="TaskListModule">
-</div>
-<div class="title">Figure 4. All tasks belonging to the module <code>CS3230</code> are listed</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="viewing-all-tasks-not-done-finished"><a class="link" href="#viewing-all-tasks-not-done-finished">Viewing all tasks not done/finished</a></h4>
-<div class="paragraph">
-<p>Previously, we know that we can mark a task as done, so as to organise, manage,
-and plan our tasks better. Now, with this command, you can see all the
-tasks that have not yet been finished.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code><strong>task</strong> undone</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskListNotDoneBefore.png" alt="TaskListNotDoneBefore">
-</div>
-<div class="title">Figure 5. Before <code><strong>task</strong> undone</code>, all tasks are listed</div>
-</div>
-<div class="paragraph">
-<p>By typing the command above and hit <kbd>Enter</kbd>, you should only see uncompleted tasks,
-which are in dark red color:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskListNotDoneAfter.png" alt="TaskListNotDoneAfter">
-</div>
-<div class="title">Figure 6. Only uncompleted tasks are shown</div>
-</div>
-</div>
-<div class="sect3">
 <h4 id="finding-tasks-by-description"><a class="link" href="#finding-tasks-by-description">Finding tasks by description</a></h4>
 <div class="paragraph">
 <p>You are browsing through the task list. But there are too many tasks! You suddenly
@@ -493,7 +382,7 @@ you can type in the following command:</p>
 <div class="content">
 <img src="../images/TaskFindAfter.png" alt="TaskFindAfter">
 </div>
-<div class="title">Figure 7. After <code><strong>task</strong> find oral assign tut</code>, all matching tasks are displayed</div>
+<div class="title">Figure 3. After <code><strong>task</strong> find oral assign tut</code>, all matching tasks are displayed</div>
 </div>
 <div class="paragraph">
 <p>Explanation:<br>
@@ -522,146 +411,6 @@ Finds all tasks that contain the word <code>math</code> <strong>or</strong> <cod
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="searching-tasks-by-date"><a class="link" href="#searching-tasks-by-date">Searching tasks by date</a></h4>
-<div class="paragraph">
-<p>With this command, you can search for all tasks that occur on your specified date, month, or year.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Tasks are only searched for its date. Tasks that do not have dates or times
-will not be found in this list.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>task</strong> search [/date DATE] [/month MONTH] [/year YEAR]</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Command properties:</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>search</code> works across modules, so no <code>/code</code> commands are required.</p>
-</li>
-<li>
-<p>If no optional fields are provided, Mod Manager will output all tasks
-that have a specified time period.</p>
-</li>
-<li>
-<p>Invalid inputs such as <code>/date monday</code>, <code>/month December</code>, <code>/year this year</code> are not allowed.
-Please use numbers for <code>/date</code>, <code>/month</code>, and <code>/year</code> instead.</p>
-</li>
-<li>
-<p>Invalid date, month, or year is not allowed. For example:<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>/date 32</code>, <code>/date 0</code>: <code>date</code> can only range from <code>1</code> to <code>31</code>.</p>
-</li>
-<li>
-<p><code>/month 13</code>, <code>/month 0</code>: <code>month</code> can only range from <code>1</code> to <code>12</code>.</p>
-</li>
-<li>
-<p><code>/year 0</code>, <code>/year 99999</code>: the <code>search</code> only accept <code>year</code> ranging from <code>1</code> to <code>9999</code></p>
-</li>
-<li>
-<p><code>/date 30 /month 2</code>: there is no 30/2 in any year</p>
-</li>
-<li>
-<p><code>/date 29 /month 2 /year 2019</code>: this is not possible since <code>2019</code> is not a leap year.
-However, <code>/date 29 /month 2</code> (year is not provided) is okay.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tasks matching <strong>all</strong> conditions will be returned (i.e. <code>AND</code> search). e.g. <code>/month 5 /year 2020</code> will
-only match tasks that are in May 2020.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p>You can search for tasks that are due on the submission date of CS2103T for AY19/20 S2
-(13 April). To find tasks happening on 13 April,
-you can type <code><strong>task</strong> search /date 13 /month 4</code> and press <kbd>Enter</kbd>. This will return all tasks
-that are happening on 13 April.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskSearchBefore.png" alt="TaskSearchBefore">
-</div>
-<div class="title">Figure 8. Before <code><strong>task</strong> search /date 13 /month 4</code>, all tasks are listed</div>
-</div>
-<div class="paragraph">
-<p>Note that the content above may be different from what is currently on your Mod Manager. You may <code>add</code>
-or <code>edit</code> the tasks to match we have above</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskSearchAfter.png" alt="TaskSearchAfter">
-</div>
-<div class="title">Figure 9. After <code><strong>task</strong> search /date 13 /month 4</code>, only matching tasks are listed</div>
-</div>
-<div class="paragraph">
-<p>Explanation: the two tasks both have date as <code>13</code> and month as <code>4</code>.</p>
-</div>
-<div class="paragraph">
-<p>Other examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>task</strong> search /date 1</code><br>
-Searches for all tasks happening on the first day of the month, in any year. Who wants
-to study on New Year&#8217;s Day really?</p>
-</li>
-<li>
-<p><code><strong>task</strong> search /month 4 /year 2020</code><br>
-Searches for all tasks in the current month (at the time of writing, April 2020).</p>
-</li>
-<li>
-<p><code><strong>task</strong> search /year 2020</code><br>
-Searches for all tasks in this year (at the time of writing). This will be useful
-if Mod Manager is used over a long period of time.</p>
-</li>
-<li>
-<p><code><strong>task</strong> search /date 14 /month 2 /year 2021</code><br>
-Searches for all tasks happening on 14/02/2021.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="finding-upcoming-tasks-code-coming-in-v2-0-code"><a class="link" href="#finding-upcoming-tasks-code-coming-in-v2-0-code">Finding upcoming tasks <code>[coming in v2.0]</code></a></h4>
-<div class="paragraph">
-<p>You can find upcoming tasks, such as assignment submission and final exam in Mod Manager.</p>
-</div>
-<div class="paragraph">
-<p>I also contributed to some sessions of the User Guide for the entire Mod Manager.</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -673,26 +422,12 @@ Searches for all tasks happening on 14/02/2021.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I idealise and design the <code>Task</code> component of <strong>Mod Manager</strong>. I implemented most of the commands
-for this <code>Task</code> component, the remaining are CRUD commands which are based on my initiated <code>Task</code> design.</p>
-<p class="tableblock">Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I idealised and designed the <code>Task</code> component, and then implemented most of the commands
+for this component.</p>
+<p class="tableblock">Given below are some sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-For your easier understanding of the content below, every <code>Task</code> in a <code>Module</code> has an <code>ID</code>,
-which uniquely identifies the task in the module. The <code>ID</code> is important for us to differentiate a task
-from the others in the <code>Module</code>, since two <code>Task</code> s may have the same description and time frame.
-</td>
-</tr>
-</table>
-</div>
 <div class="sect2">
 <h3 id="implementation-task-component"><a class="link" href="#implementation-task-component">Implementation, Task Component</a></h3>
 <div class="sect4">
@@ -740,7 +475,7 @@ and then retrieves the current existing <code>Task</code> from <code>ModManager<
 <div class="content">
 <img src="../images/TaskMarkAsDoneSequenceDiagram.png" alt="TaskMarkAsDoneSequenceDiagram">
 </div>
-<div class="title">Figure 10. Sequence Diagram for <code>task done /code CS2103T /id 986</code> Command</div>
+<div class="title">Figure 4. Sequence Diagram for <code>task done /code CS2103T /id 986</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -762,182 +497,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="../images/TaskMarkAsDoneActivityDiagram.png" alt="TaskMarkAsDoneActivityDiagram">
 </div>
-<div class="title">Figure 11. Activity Diagram for <code>task done</code> Command</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="viewing-all-tasks-across-modules-in-mod-manager"><a class="link" href="#viewing-all-tasks-across-modules-in-mod-manager">Viewing all tasks across modules in Mod Manager</a></h5>
-<div class="paragraph">
-<p>The list task feature allows users to list all tasks across all  modules in Mod Manager.
-This feature is facilitated by <code>TaskCommandParser</code> and <code>TaskListCommand</code>.
-The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the task list mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user executes the task list command.</p>
-</li>
-<li>
-<p><code>TaskCommandParser</code> creates a new <code>TaskListCommand</code>.</p>
-</li>
-<li>
-<p><code>LogicManager</code> executes the <code>TaskListCommand</code>.</p>
-</li>
-<li>
-<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the task list command works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskListSequenceDiagram.png" alt="TaskListSequenceDiagram">
-</div>
-<div class="title">Figure 12. Sequence Diagram for <code>task list</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>TaskCommandParser</code> and <code>TaskListCommand</code> should end at
-the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a task list command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskListActivityDiagram.png" alt="TaskListActivityDiagram">
-</div>
-<div class="title">Figure 13. Activity Diagram for <code>task list</code> Command</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="viewing-tasks-for-a-specific-module-2"><a class="link" href="#viewing-tasks-for-a-specific-module-2">Viewing tasks for a specific module</a></h5>
-<div class="paragraph">
-<p>The viewing task by module feature allows users to find all tasks belonging to a specific module in Mod Manager.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskForOneModuleCommandParser</code> and <code>TaskForOneModuleCommand</code>.
-The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the task search mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user executes the find tasks by module command and provides the module code of the module
-that they want to search for.</p>
-</li>
-<li>
-<p><code>TaskForOneModuleCommandParser</code> creates a new <code>TaskForOneModuleCommand</code> based on the module code.</p>
-</li>
-<li>
-<p><code>LogicManager</code> executes the <code>TaskForOneModuleCommand</code>.</p>
-</li>
-<li>
-<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the search tasks for a specific module command works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskForModuleSequenceDiagram.png" alt="TaskForModuleSequenceDiagram">
-</div>
-<div class="title">Figure 14. Sequence Diagram for <code>task module /code CS2103T</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>TaskCommandParser</code>, <code>TaskForOneModuleCommandParser</code>, <code>TaskForOneModuleCommand</code> should end at
-the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a search tasks for a specific module command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskForModuleActivityDiagram.png" alt="TaskForModuleActivityDiagram">
-</div>
-<div class="title">Figure 15. Activity Diagram for <code>task module</code> Command</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="viewing-undone-tasks"><a class="link" href="#viewing-undone-tasks">Viewing undone tasks</a></h5>
-<div class="paragraph">
-<p>The viewing undone tasks only feature allows users to view only tasks that are not yet completed in their <code>Tasks</code> tab.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskListUndoneCommandParser</code> and <code>TaskListUndoneCommand</code>.
-The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the task view undone tasks mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user executes the task view undone tasks command.</p>
-</li>
-<li>
-<p><code>TaskListUndoneCommandParser</code> creates a new <code>TaskListUndoneCommand</code>.</p>
-</li>
-<li>
-<p><code>LogicManager</code> executes the <code>TaskListUndoneCommand</code>.</p>
-</li>
-<li>
-<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the task view undone tasks command works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskListUndoneSequenceDiagram.png" alt="TaskListUndoneSequenceDiagram">
-</div>
-<div class="title">Figure 16. Sequence Diagram for <code>task undone</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>TaskCommandParser</code>, <code>TaskListUndoneCommandParser</code>, <code>TaskListUndoneCommand</code> should end at
-the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a view undone tasks command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskListUndoneActivityDiagram.png" alt="TaskListUndoneActivityDiagram">
-</div>
-<div class="title">Figure 17. Activity Diagram for <code>task undone</code> Command</div>
+<div class="title">Figure 5. Activity Diagram for <code>task done</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -973,7 +533,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <div class="content">
 <img src="../images/TaskFindSequenceDiagram.png" alt="TaskFindSequenceDiagram">
 </div>
-<div class="title">Figure 18. Sequence Diagram for <code>task find assignment homework</code> Command</div>
+<div class="title">Figure 6. Sequence Diagram for <code>task find assignment homework</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -995,455 +555,8 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="content">
 <img src="../images/TaskFindActivityDiagram.png" alt="TaskFindActivityDiagram">
 </div>
-<div class="title">Figure 19. Activity Diagram for <code>task find</code> Command</div>
+<div class="title">Figure 7. Activity Diagram for <code>task find</code> Command</div>
 </div>
-</div>
-<div class="sect4">
-<h5 id="searching-tasks-by-date-2"><a class="link" href="#searching-tasks-by-date-2">Searching tasks by date</a></h5>
-<div class="paragraph">
-<p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and <code>TaskSearchCommand</code>.
-The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the task search mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user executes the task search command and provides the date, month, or year, or any combination of which
-that they want to search for.</p>
-</li>
-<li>
-<p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the date, month and year.</p>
-</li>
-<li>
-<p><code>LogicManager</code> executes the <code>TaskSearchCommand</code>.</p>
-</li>
-<li>
-<p><code>ModelManager</code> updates the <code>filteredTasks</code> in <code>ModelManager</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the task search command works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskSearchSequenceDiagram.png" alt="TaskSearchSequenceDiagram">
-</div>
-<div class="title">Figure 20. Sequence Diagram for <code>task search /date 25 /month 6</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code>, <code>TaskSearchCommand</code> and <code>TaskSearchPredicate</code> should end at
-the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of the diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a task search command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskSearchActivityDiagram.png" alt="TaskSearchActivityDiagram">
-</div>
-<div class="title">Figure 21. Activity Diagram for <code>task search</code> Command</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-a-task-may-have-a-specified-time-period-or-not-how-do-we-implement-this-feature"><a class="link" href="#aspect-a-task-may-have-a-specified-time-period-or-not-how-do-we-implement-this-feature">Aspect: A task may have a specified time period, or not. How do we implement this feature?</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Implement <code>Task</code> as an abstract class for Mod Manager.
-A task with a specified time period will be created as a <code>ScheduledTask</code>, while a task with no
-time period specified will be created as a <code>NonScheduledTask</code>, with both <code>ScheduledTask</code> and
-<code>NonScheduledTask</code> are concrete subclasses of <code>Task</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Utilises Object-Oriented Programming. Easy to implement <code><strong>search</strong></code> functionality,
-which we need to search for tasks that occur on a specified date, month, or year,
-and <code><strong>upcoming</strong></code> functionality <code>[coming in v2.0]</code>, which we need to find the upcoming tasks in Mod Manager.
-For these two features, we only need to work on <code>ScheduledTask</code> instances, which reduces the
-burden of checking for <code>null</code> <code>TaskDateTime</code> instances as the second approach below.</p>
-</li>
-<li>
-<p>Cons: More difficulty in implementation due to time constraints. Moreover, command
-<code><strong>edit</strong></code> that allows us to edits the information of the task will be troublesome, when
-a user decides to add a time period to a <code>NonScheduledTask</code>.
-In this case, we have to re-create a new <code>ScheduledTask</code> with the same description and its time provided.
-If we need to maintain a <code>List&lt;ScheduledTask&gt;</code> or <code>List&lt;Task&gt;</code> somewhere in the code, for example,
-in our <code>Module</code> instance, we also have to update the list contents in our <code>Module</code> s too.
-This requires the association between <code>Module</code> and <code>Task</code> to be bi-directional, which
-increases coupling and make it harder for us to maintain and conduct tests. There is also extra overhead time
-communicating and collaborating with another member in our team responsible for the <code>Module</code> component, Because of these challenges,
-we decide to weaken the association between <code>Task</code> and <code>Module</code>, which is elaborated in our next aspect.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Implement <code>Task</code> as a concrete class in Mod Manager. <code>Task</code> s without a specified time period
-will have its time attribute <code>taskDateTime</code> set to <code>null</code>, while <code>Task</code> s with a given time period will be assign a
-non-null instance of <code>taskDateTime</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easier to implement, as we only need to create one class <code>Task</code>.</p>
-</li>
-<li>
-<p>Cons: We must handle <code>null</code> cases every time we query something about the time of a <code>Task</code>.
-For example, it&#8217;s more challenging to implement the <code><strong>search</strong></code> and <code><strong>upcoming</strong></code> command, since we have to check whether the task has a non-null <code>taskDateTime</code> or not.
-Moreover, it&#8217;s complex to implement the method <code>compareTo</code> of <code>Comparable</code> interface for <code>Task</code> to compare the time between tasks,
-when one, or both of our <code>taskDateTime</code> attributes can be <code>null</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-the-association-between-code-module-code-and-code-task-code"><a class="link" href="#aspect-the-association-between-code-module-code-and-code-task-code">Aspect: The association between <code>Module</code> and <code>Task</code></a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Aggregation: Each <code>Task</code> can have an unique <code>ModuleCode</code> tag, which uniquely identifies which <code>Module</code> the task belongs to.
-This is a aggregation relationship, which is weaker than composition in our second approach.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ModuleTaskAggregationDiagram.png" alt="ModuleTaskAggregationDiagram">
-</div>
-<div class="title">Figure 22. Class Diagram: A <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easier to implementation, and weak coupling with <code>Module</code> implementation. The <code>Module</code> need not
-to be aware that there are a list of <code>Task</code> s for it.</p>
-</li>
-<li>
-<p>Cons: The association between <code>Module</code> and <code>Task</code> cannot be extensive and fully descriptive as in
-our second approach, but this is a trade-off given the time constraints.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 2:</strong> Composition: each <code>Module</code> has a list of <code>Task</code> s corresponding to it.
-If the <code>Module</code> is deleted, all of the related <code>Task</code> s for the <code>Module</code> will also be removed.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ModuleTaskCompositionDiagram.png" alt="ModuleTaskCompositionDiagram">
-</div>
-<div class="title">Figure 23. Class Diagram: A <code>Module</code> consists of <code>Task</code> objects.</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: This design choice better simulates the real-life interactions between <code>Module</code> and <code>Task</code>.
-For example, if we drop a <code>Module</code> in NUS, we will also drop all the <code>Task</code> s related to the <code>Module</code>,
-such as assignments, homework, term tests, and exams.</p>
-</li>
-<li>
-<p>Cons: Difficulty in implementation due to time constraints, as well as strong content and data coupling. More overhead in communicating
-and collaborating with the team member responsible for the <code>Module</code> component, as mentioned above.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="appendix-c-use-cases"><a class="link" href="#appendix-c-use-cases">Appendix C: Use Cases</a></h3>
-<h3 id="use-case-uc14-mark-a-task-as-done" class="discrete">Use case: UC14 - Mark a task as done</h3>
-<div class="paragraph">
-<p><strong><a href="#mss">MSS</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1. User requests to mark a task as done and provides the module code and task ID of the task.<br></p>
-</li>
-<li>
-<p>2. Mod Manager marks the task as done. The corresponding task card is changed to green.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. The module code and task ID provided is invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. Mod Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes from step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b. The task is already marked as done.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b1. Mod Manager shows an error message, notifying the task is already done.</p>
-<div class="paragraph">
-<p>Use case resumes from step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-uc15-view-all-tasks-across-modules" class="discrete">Use case: UC15 - View all tasks across modules</h3>
-<div class="paragraph">
-<p><strong><a href="#mss">MSS</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1.  User requests to list all tasks across modules in Mod Manager.</p>
-</li>
-<li>
-<p>2.  Mod Manager shows the list of all the tasks.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. There are no tasks currently available in Mod Manager.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-uc16-view-tasks-for-a-specific-module" class="discrete">Use case: UC16 - View tasks for a specific module</h3>
-<div class="paragraph">
-<p><strong><a href="#mss">MSS</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1.  User requests to list tasks for a specific module and provides the module code.</p>
-</li>
-<li>
-<p>2.  Mod Manager shows the list of tasks belonging to the specified module.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. The module code is invalid (module not available in Mod Manager).</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. Mod Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes from step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b. There are no tasks currently available for the specified module.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-uc17-view-undone-tasks" class="discrete">Use case: UC17 - View undone tasks</h3>
-<div class="paragraph">
-<p><strong><a href="#mss">MSS</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1.  User requests to list all undone tasks across modules in Mod Manager.</p>
-</li>
-<li>
-<p>2.  Mod Manager shows the list of all undone tasks.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. There are no undone tasks currently available in Mod Manager.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-uc18-find-tasks-by-description" class="discrete">Use case: UC18 - Find tasks by description</h3>
-<div class="paragraph">
-<p><strong><a href="#mss">MSS</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1.  User requests to find a task by its description and provides a number of keywords.</p>
-</li>
-<li>
-<p>2.  Mod Manager shows the list of tasks whose descriptions contain at least one of the keywords.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. None of the task descriptions contain any of the keywords.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b. No keywords are provided.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b1. Mod Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes from step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-uc19-search-for-tasks-by-date" class="discrete">Use case: UC19 - Search for tasks by date</h3>
-<div class="paragraph">
-<p><strong><a href="#mss">MSS</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1. User requests to searches for a task by its date and provides the date, month, and year, or any of which.</p>
-</li>
-<li>
-<p>2. Mod Manager shows the list of tasks occurring on the specified date, month, and year, or any of which.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong><a href="#extensions">Extensions</a></strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. The date, month, or year provided is invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. Mod Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes from step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b. No parameters are provided.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b1. Mod Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes from step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1c. There are no tasks matching the specified date, month, and year.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -1453,4 +566,4 @@ and collaborating with the team member responsible for the <code>Module</code> c
 <div class="sectionbody">
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:44:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 16:53:06 UTC</div></div></div></body></html>
