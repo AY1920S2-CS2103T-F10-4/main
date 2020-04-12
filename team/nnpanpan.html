@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Mod Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-F10-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Nguyen Dang Phuc Nhat - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-mod-manager"><a class="link" href="#project-mod-manager">PROJECT: Mod Manager</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
@@ -110,7 +110,7 @@ simpler nature and being easy to upgrade in the future.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>[<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+author%3ANNpanpan+is%3Aclosed+">Functional code</a>][<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=NNpanpan&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=zoom&amp;zA=undefined&amp;zR=undefined&amp;zACS=undefined&amp;zS=undefined&amp;zU=undefined&amp;zMG=false&amp;zFTF=undefined&amp;zFGS=undefined&amp;zSO=undefined&amp;zSWO=undefined&amp;zSD=false&amp;zSWD=false">Reposense</a>]</p>
+<p>[<a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pulls?q=is%3Apr+author%3ANNpanpan+is%3Aclosed+">Functional code</a>][<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=NNpanpan&amp;sort=totalCommits%20dsc&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Reposense</a>]</p>
 </li>
 </ul>
 </div>
@@ -134,7 +134,7 @@ simpler nature and being easy to upgrade in the future.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Wrote the task edit/delete and undo/redo sections of the User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/135">#135</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/196">#196</a></p>
+<p>Wrote the task edit/delete, and part of general features sections of the User Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/135">#135</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/196">#196</a></p>
 </li>
 <li>
 <p>Wrote the general features and task edit/delete sections of the Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-F10-4/main/pull/196">#196</a></p>
@@ -175,109 +175,7 @@ simpler nature and being easy to upgrade in the future.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="undo-redo-features"><a class="link" href="#undo-redo-features">Undo/Redo features</a></h2>
-<div class="sectionbody">
-<div class="sect3">
-<h4 id="undoing-previous-commands-code-strong-undo-strong-code"><a class="link" href="#undoing-previous-commands-code-strong-undo-strong-code">Undoing previous commands : <code><strong>undo</strong></code></a></h4>
-<div class="paragraph">
-<p>During a usage session with Mod Manager, you may make mistakes while adding/editing/deleting an entry. It
-would be nice if you can reverse the effect in a neat way. The <code><strong>undo</strong></code> command is here to give you that
-convenience.</p>
-</div>
-<div class="paragraph">
-<p>All of your commands are recorded, so with <code><strong>undo</strong></code>, you can reverse the effect of previous add/edit/delete commands one by one,
-starting with the most previous command.</p>
-</div>
-<div class="paragraph">
-<p>As of the current version, you can only use <code><strong>undo</strong></code> to reverse the effects of add/edit/delete commands.</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>undo</strong></code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s say you are editing a task of module ST2334 with ID number 401. It is the task highlighted with the red box. Don&#8217;t
-bother with the command if you haven&#8217;t read the section on <a href="#Task feature : <code><strong>task</strong></code>">Task feature</a> yet. This is just a quick demonstration.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/undo-1.png" alt="undo 1">
-</div>
-<div class="title">Figure 1. Editing a task as per usual</div>
-</div>
-<div class="paragraph">
-<p>After that, you realize you didn&#8217;t mean to make this change, so you type <code><strong>undo</strong></code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/undo-2.png" alt="undo 2">
-</div>
-<div class="title">Figure 2. Before <code>undo</code></div>
-</div>
-<div class="paragraph">
-<p>After you press <kbd>Enter</kbd>, the effect will be reverted and the change is undone. The task is back to before your
-editing.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/undo-3.png" alt="undo 3">
-</div>
-<div class="title">Figure 3. After <code>undo</code></div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="redoing-previously-undone-commands-code-strong-redo-strong-code"><a class="link" href="#redoing-previously-undone-commands-code-strong-redo-strong-code">Redoing previously undone commands : <code><strong>redo</strong></code></a></h4>
-<div class="paragraph">
-<p>We understand that you can change your mind right after undo-ing, so we give have the <code><strong>redo</strong></code> command to assist you.</p>
-</div>
-<div class="paragraph">
-<p>You can reverse the effect of the most previous <code><strong>undo</strong></code> command with <code><strong>redo</strong></code>.</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>redo</strong></code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s say you have just used <code><strong>undo</strong></code> to a task edit command.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/redo-1.png" alt="redo 1">
-</div>
-<div class="title">Figure 4. Before <code>redo</code></div>
-</div>
-<div class="paragraph">
-<p>After you press <kbd>Enter</kbd>, the previously undone effect will come back.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/redo-2.png" alt="redo 2">
-</div>
-<div class="title">Figure 5. After <code>redo</code></div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="code-task-edit-code-and-code-task-delete-code-commands"><a class="link" href="#code-task-edit-code-and-code-task-delete-code-commands"><code>task edit</code> and <code>task delete</code> commands</a></h2>
+<h2 id="task-feature"><a class="link" href="#task-feature">Task feature</a></h2>
 <div class="sectionbody">
 <div class="sect3">
 <h4 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h4>
@@ -334,7 +232,7 @@ The properties of <code>DESCRIPTION</code>, <code>DATE</code> and <code>TIME</co
 <div class="content">
 <img src="../images/task-edit-1.png" alt="task edit 1">
 </div>
-<div class="title">Figure 6. Before <code><strong>task</strong> edit</code></div>
+<div class="title">Figure 1. Before <code><strong>task</strong> edit</code></div>
 </div>
 <div class="paragraph">
 <p>After pressing <kbd>Enter</kbd>, you will see that the task has been edited.</p>
@@ -343,7 +241,7 @@ The properties of <code>DESCRIPTION</code>, <code>DATE</code> and <code>TIME</co
 <div class="content">
 <img src="../images/task-edit-2.png" alt="task edit 2">
 </div>
-<div class="title">Figure 7. After <code><strong>task</strong> edit</code></div>
+<div class="title">Figure 2. After <code><strong>task</strong> edit</code></div>
 </div>
 <div class="paragraph">
 <p>Since you may want to remove the date and time of a task, Mod Manager provides you a way to do so. Note that if you try
@@ -366,7 +264,7 @@ to remove the date and time from a task without these values,</p>
 <div class="content">
 <img src="../images/task-edit-3.png" alt="task edit 3">
 </div>
-<div class="title">Figure 8. A task whose date and time that you want to remove</div>
+<div class="title">Figure 3. A task whose date and time that you want to remove</div>
 </div>
 <div class="paragraph">
 <p>Again, press <kbd>Enter</kbd> and you will see its date and time has been removed. Its order in the list may be changed due to
@@ -376,7 +274,7 @@ the sorting property of the <a href="#Viewing all tasks across all modules in Mo
 <div class="content">
 <img src="../images/task-edit-4.png" alt="task edit 4">
 </div>
-<div class="title">Figure 9. The task&#8217;s date and time removed</div>
+<div class="title">Figure 4. The task&#8217;s date and time removed</div>
 </div>
 </div>
 <div class="sect3">
@@ -401,7 +299,7 @@ the sorting property of the <a href="#Viewing all tasks across all modules in Mo
 <div class="content">
 <img src="../images/task-delete-1.png" alt="task delete 1">
 </div>
-<div class="title">Figure 10. The task to delete</div>
+<div class="title">Figure 5. The task to delete</div>
 </div>
 <div class="paragraph">
 <p>Press <kbd>Enter</kbd> and the task will be gone from the list.</p>
@@ -410,7 +308,7 @@ the sorting property of the <a href="#Viewing all tasks across all modules in Mo
 <div class="content">
 <img src="../images/task-delete-2.png" alt="task delete 2">
 </div>
-<div class="title">Figure 11. Task deleted from the list</div>
+<div class="title">Figure 6. Task deleted from the list</div>
 </div>
 </div>
 </div>
@@ -428,11 +326,31 @@ the sorting property of the <a href="#Viewing all tasks across all modules in Mo
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="model-component"><a class="link" href="#model-component">Model Component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DoableActionClassDiagram.png" alt="DoableActionClassDiagram">
+</div>
+<div class="title">Figure 7. Structure of the Action Package</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DoableAction</code> is an interface of actions that can be undone/redone in Mod Manager, stored in the <code>Action</code> package.</p>
+</li>
+<li>
+<p>Actual implementations of <code>DoableAction</code> are <code>ModuleAction</code>, <code>LessonAction</code>, <code>FacilAction</code>, and <code>TaskAction</code>, each of which
+has a <code>DoableActionType</code> value to assist how the undo/redo process is carried out.</p>
+</li>
+<li>
+<p>A <code>DoableActionList</code> comprises of instances of classes mentioned above.</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="sect1">
-<h2 id="general-features"><a class="link" href="#general-features">General Features</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="general-features"><a class="link" href="#general-features">General Features</a></h3>
 <div class="sect4">
 <h5 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo Feature</a></h5>
 <div class="paragraph">
@@ -548,10 +466,8 @@ some extra challenge.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="code-task-edit-code"><a class="link" href="#code-task-edit-code"><code>task edit</code></a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="task-management-feature"><a class="link" href="#task-management-feature">Task Management Feature</a></h3>
 <div class="sect4">
 <h5 id="editing-a-task-2"><a class="link" href="#editing-a-task-2">Editing a task</a></h5>
 <div class="paragraph">
@@ -603,7 +519,7 @@ actually input <code>01/01/1970</code> as a date.</p>
 <div class="content">
 <img src="../images/TaskEditCommandSequenceDiagram.png" alt="TaskEditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 12. Sequence Diagram for <code>TaskEditCommand</code> Creation Steps</div>
+<div class="title">Figure 8. Sequence Diagram for <code>TaskEditCommand</code> Creation Steps</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -646,85 +562,4 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="code-task-delete-code"><a class="link" href="#code-task-delete-code"><code>task delete</code></a></h2>
-<div class="sectionbody">
-<div class="sect4">
-<h5 id="deleting-a-task-2"><a class="link" href="#deleting-a-task-2">Deleting a task</a></h5>
-<div class="paragraph">
-<p>The delete task feature allows user to delete a task from Mod Manager.
-This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskDeleteCommandParser</code> and <code>TaskDeleteCommand</code>.
-The operation is exposed in the <code>Model</code> interface as <code>Model#deleteTask()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the task delete mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The user executes the task delete command and provides the <code>moduleCode</code> and <code>taskNum</code> of the task to be deleted.</p>
-</li>
-<li>
-<p><code>TaskDeleteCommandParser</code> creates a new <code>TaskDeleteCommand</code> based on the <code>moduleCode</code> and <code>taskNum</code>.</p>
-</li>
-<li>
-<p><code>LogicManager</code> executes the <code>TaskDeleteCommand</code>.</p>
-</li>
-<li>
-<p><code>TaskDeleteCommand</code> retrieves the task to be deleted.</p>
-</li>
-<li>
-<p><code>ModManager</code> deletes the task from the <code>UniqueTaskList</code>.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how a <code>TaskDeleteCommand</code> is created after the parsing steps:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/TaskDeleteCommandSequenceDiagram.png" alt="TaskDeleteCommandSequenceDiagram">
-</div>
-<div class="title">Figure 13. Sequence Diagram for <code>TaskDeleteCommand</code> Creation Steps</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>TaskCommandParser</code> and <code>TaskDeleteCommandParser</code> should end at
-the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The execution of a <code>TaskDeleteCommand</code> is described below.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>List&lt;Task&gt; current</code> is retrieved by calling <code>model.getFilteredTaskList</code>.</p>
-</li>
-<li>
-<p>The correct <code>taskToDelete</code> is retrieved from <code>current</code> by turning it into a <code>stream</code> and use the <code>reduce</code> method.</p>
-</li>
-<li>
-<p>The <code>taskNum</code> of <code>taskToDelete</code> is removed from the system via <code>TaskNumManager</code>.</p>
-</li>
-<li>
-<p><code>model</code> deletes <code>taskToDelete</code> in the <code>UniqueTaskList</code> via calls to <code>ModManager</code>.</p>
-</li>
-<li>
-<p>A <code>deleteTaskAction</code> is created and added to <code>model</code>.</p>
-</li>
-<li>
-<p>A <code>CommandResult</code> is returned.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:53:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:44:38 UTC</div></div></div></body></html>

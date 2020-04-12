@@ -51,8 +51,9 @@
 <li><a href="#testing-of-general-features">F.1. Testing of General Features</a></li>
 <li><a href="#testing-of-module-feature">F.2. Testing of Module Feature</a></li>
 <li><a href="#testing-of-class-feature">F.3. Testing of Class Feature</a></li>
-<li><a href="#testing-of-facilitator-feature">F.4. Testing of Facilitator Feature</a></li>
-<li><a href="#testing-of-calendar-feature">F.5. Testing of Calendar Feature</a></li>
+<li><a href="#testing-of-task-features">F.4. Testing of Task Features</a></li>
+<li><a href="#testing-of-facilitator-feature">F.5. Testing of Facilitator Feature</a></li>
+<li><a href="#testing-of-calendar-feature">F.6. Testing of Calendar Feature</a></li>
 </ul>
 </li>
 </ul>
@@ -378,15 +379,9 @@ The design provides good abstraction for the developers without cluttering a par
 <p>Any <code>Task</code> would contain a <code>ModuleCode</code> to indicate which <code>Module</code> it is a task of.</p>
 </li>
 <li>
-<p>A <code>UniqueTaskList</code> comprises of instances of <code>NonScheduledTask</code> and <code>ScheduledTask</code>.</p>
+<p>A <code>UniqueTaskList</code> comprises of instances of <code>NonScheduledTask</code> and <code>ScheduledTask</code>.
+==== Calendar</p>
 </li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="calendar"><a class="link" href="#calendar">3.4.5. Calendar</a></h4>
-<div class="ulist">
-<ul>
 <li>
 <p>The <code>Calendar</code> package contains a concrete class <code>Calendar</code> which represents a calendar date.</p>
 </li>
@@ -394,7 +389,7 @@ The design provides good abstraction for the developers without cluttering a par
 </div>
 </div>
 <div class="sect3">
-<h4 id="doableaction"><a class="link" href="#doableaction">3.4.6. DoableAction</a></h4>
+<h4 id="doableaction"><a class="link" href="#doableaction">3.4.5. DoableAction</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/DoableActionClassDiagram.png" alt="DoableActionClassDiagram">
@@ -1637,7 +1632,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="viewing-all-tasks-across-modules"><a class="link" href="#viewing-all-tasks-across-modules">Viewing all tasks across modules</a></h5>
+<h5 id="viewing-all-tasks-across-modules-in-mod-manager"><a class="link" href="#viewing-all-tasks-across-modules-in-mod-manager">Viewing all tasks across modules in Mod Manager</a></h5>
 <div class="paragraph">
 <p>The list task feature allows users to list all tasks across all  modules in Mod Manager.
 This feature is facilitated by <code>TaskCommandParser</code> and <code>TaskListCommand</code>.
@@ -1802,7 +1797,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </table>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a task view undone tasks command:</p>
+<p>The following activity diagram summarizes what happens when a user executes a view undone tasks command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1932,7 +1927,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-a-task-may-have-a-specified-time-frame-or-not-how-do-we-implement-this-feature"><a class="link" href="#aspect-a-task-may-have-a-specified-time-frame-or-not-how-do-we-implement-this-feature">Aspect: A task may have a specified time frame, or not. How do we implement this feature?</a></h5>
+<h5 id="aspect-a-task-may-have-a-specified-time-period-or-not-how-do-we-implement-this-feature"><a class="link" href="#aspect-a-task-may-have-a-specified-time-period-or-not-how-do-we-implement-this-feature">Aspect: A task may have a specified time period, or not. How do we implement this feature?</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -4330,41 +4325,50 @@ Low (unlikely to have) - <code>*</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+<p>The product should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
 </li>
 <li>
-<p>Should work on different screen sizes.</p>
+<p>The product should be able to render its layout to different screen sizes.</p>
 </li>
 <li>
-<p>Should be able to hold up to 250 classes, 250 tasks and 250 facilitators.</p>
+<p>The product should be able to support up to 250 modules, 250 classes, 250 facilitators, and 250 tasks.</p>
 </li>
 <li>
-<p>Response time for each command should be within 3 seconds.</p>
+<p>The response to any command should become visible within 3 seconds.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code and system admin commands)
 should be able to accomplish most of the tasks faster than doing the same task using the mouse.</p>
 </li>
 <li>
-<p>A user should be able to navigate from one tab to another by typing or clicking.</p>
+<p>The product should work without any internet connection.</p>
 </li>
 <li>
-<p>Should work without any internet connection.</p>
+<p>The system failure rate should be less than 5 failure per 100 commands.</p>
 </li>
 <li>
-<p>Rate of failure should not exceed 5%.</p>
+<p>Mod Manager&#8217;s internal storage can be transferred to other Mod Manager instances on other systems.</p>
 </li>
 <li>
-<p>User data should be protected and should not be accessible to other users.</p>
+<p>The product should be intuitive and easy to use for a novice who has never used similar Task Management applications.</p>
 </li>
 <li>
-<p>Should be intuitive and easy to use, and users should become proficient within an hour.</p>
+<p>A developer with one year of experience should be able to add a new feature,
+including source code modifications and testing, with no more than one week of labour.</p>
 </li>
 <li>
-<p>Should not conflict with other applications or processes.</p>
+<p>The product should not conflict with other applications or processes.</p>
 </li>
 <li>
-<p>A developer with one year of experience should be able to add a new feature, including source code modifications and testing, with no more than one week of labour.</p>
+<p>The product is free and open source.</p>
+</li>
+<li>
+<p>The product is not required to handle non-NUS modules, or academic programmes at NUS
+not following a modular system.</p>
+</li>
+<li>
+<p>The product is not required to handle non-English characters for modules, classes, facilitators, and
+tasks' content.</p>
 </li>
 </ol>
 </div>
@@ -4377,25 +4381,51 @@ should be able to accomplish most of the tasks faster than doing the same task u
 <dl>
 <dt class="hdlist1"><a id="cli"></a> CLI</dt>
 <dd>
-<p>Command-line interface: processes commands to a computer program in the form of lines of text</p>
-</dd>
-<dt class="hdlist1"><a id="extensions"></a> Extensions</dt>
-<dd>
-<p>"Add-on"s to the <a href="#mss">MSS</a> that describe exceptional or alternative flow of events, describe variations of the scenario that can happen if certain things are not as expected by the <a href="#mss">MSS</a></p>
-</dd>
-<dt class="hdlist1"><a id="gui"></a> GUI</dt>
-<dd>
-<p>Graphical user interface: a form of user interface that allows user to interact with electronic devices through graphical icons</p>
-</dd>
-<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
-<dd>
-<p>Windows, Linux, Unix, OS-X</p>
+<p>Command-line interface: processes commands to a computer program in the form of lines of text.</p>
 </dd>
 <dt class="hdlist1"><a id="mss"></a> MSS</dt>
 <dd>
-<p>Main Success Scenario: describes the most straightforwards interaction for a given use case, which assumes that nothing goes wrong</p>
+<p>Main Success Scenario: describes the most straightforwards interaction for a given use case, which assumes that nothing goes wrong.</p>
+</dd>
+<dt class="hdlist1"><a id="extensions"></a> Extensions</dt>
+<dd>
+<p>"Add-on"s to the <a href="#mss">MSS</a> that describe exceptional or alternative flow of events, describe variations of the scenario
+that can happen if certain things are not as expected by the <a href="#mss">MSS</a>.</p>
+</dd>
+<dt class="hdlist1"><a id="gui"></a> GUI</dt>
+<dd>
+<p>Graphical user interface: a form of user interface that allows user to interact with electronic devices through graphical icons.</p>
+</dd>
+<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
+<dd>
+<p>Windows, Linux, Unix, OS-X.</p>
 </dd>
 </dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="taskcard"></a> Task card</dt>
+<dd>
+<p>A task card represents a task with details such as the module it belongs to,
+description, and time period (if provided upon creation).</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>A dark red card represents a task that is not yet done.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskCardNotDone.png" alt="TaskCardNotDone">
+</div>
+</div>
+<div class="paragraph">
+<p>A green card represents a done task.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskCardDone.png" alt="TaskCardDone">
+</div>
 </div>
 </div>
 </div>
@@ -4462,6 +4492,10 @@ Expected: Shows the <a href="#gui">GUI</a> with an empty set of modules, classes
 </ol>
 </div>
 </li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Undo/Redo commands.</p>
 <div class="olist loweralpha">
@@ -4697,7 +4731,113 @@ Expected: No class is deleted. Error details shown in the status message.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="testing-of-facilitator-feature"><a class="link" href="#testing-of-facilitator-feature">F.4. Testing of Facilitator Feature</a></h3>
+<h3 id="testing-of-task-features"><a class="link" href="#testing-of-task-features">F.4. Testing of Task Features</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing all tasks across all modules in Mod Manager.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Some tasks are already available in Mod Manager.</p>
+</li>
+<li>
+<p>Test case: <code>task list</code><br>
+Expected: All of the tasks across all modules are shown.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Marking a task as done in Mod Manager.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all tasks using the <code>task list</code> command.
+Module <code>CS2103T</code> exists in Mod Manager. You have this <a href="#taskcard">task card</a> below in
+your task list:
+<span class="image"><img src="images/appendixMarkAsDoneExample.png" alt="appendixMarkAsDoneExample"></span>
+However, if you do not have the above task, or module <code>CS2103T</code> in your Mod Manager,
+you may choose any of the tasks already
+available and take note of its module code and task ID. Use that module code and task ID instead of
+our module code example of <code>CS2103T</code> and  task ID example of <code>986</code> as below.</p>
+</li>
+<li>
+<p>Test case: <code>task done /code CS2103T /id 986</code><br>
+   Expected: The corresponding <a href="#taskcard">task card</a> changed to green. Our task has
+been marked as done successfully! You can try with other tasks using
+a different module code (currently <code>CS2103T</code>) and a valid task ID (currently <code>986</code>).</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Viewing tasks for a specific <code>Module</code>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all tasks using the <code>task list</code> command.
+Module <code>CS2103T</code> exists in Mod Manager.</p>
+</li>
+<li>
+<p>Test case: <code>task module /code CS2103T</code><br>
+Expected: All of the tasks for module <code>CS2103T</code> are shown.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Viewing undone tasks</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all tasks using the <code>task list</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>task undone</code><br>
+Expected: All of the undone tasks are shown. Undone tasks are shown in dark red
+as in <a href="#taskcard">here</a>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Finding tasks by description.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all tasks using the <code>task list</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>task find assign home</code><br>
+   Expected: All of the tasks that contain the keyword <code>assign</code> or <code>home</code> in
+their description are shown. For example, you may see tasks with descriptions such as
+<code>assignment</code>, <code>Homework</code> or
+<code>Programming Assignment 2</code>. Partial match and case in-sensitive is allowed.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Searching tasks by date.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all tasks using the <code>task list</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>task search /month 4 /year 2020</code><br>
+   Expected: All of the tasks happening on <code>April 2020</code> are shown. You now know what tasks
+are due this month (at the time of writing)!</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing-of-facilitator-feature"><a class="link" href="#testing-of-facilitator-feature">F.5. Testing of Facilitator Feature</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4792,7 +4932,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="testing-of-calendar-feature"><a class="link" href="#testing-of-calendar-feature">F.5. Testing of Calendar Feature</a></h3>
+<h3 id="testing-of-calendar-feature"><a class="link" href="#testing-of-calendar-feature">F.6. Testing of Calendar Feature</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4821,4 +4961,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:53:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:44:38 UTC</div></div></div></body></html>
