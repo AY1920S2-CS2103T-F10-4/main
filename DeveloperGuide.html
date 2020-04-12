@@ -44,9 +44,9 @@
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a>
 <ul class="sectlevel2">
-<li><a href="#use-case-uc16-viewing-tasks-for-a-specific-module-in-mod-manger">C.1. Use case: UC16 - Viewing tasks for a specific module in Mod Manger</a></li>
-<li><a href="#use-case-uc17-viewing-undone-tasks">C.2. Use case: UC17 - Viewing undone tasks</a></li>
-<li><a href="#use-case-uc18-finding-tasks-by-description">C.3. Use case: UC18 - Finding tasks by description</a></li>
+<li><a href="#use-case-uc16-view-tasks-for-a-specific-module-in-mod-manger">C.1. Use case: UC16 - View tasks for a specific module in Mod Manger</a></li>
+<li><a href="#use-case-uc17-view-undone-tasks">C.2. Use case: UC17 - View undone tasks</a></li>
+<li><a href="#use-case-uc18-find-tasks-by-description">C.3. Use case: UC18 - Find tasks by description</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
@@ -231,6 +231,10 @@ The following class plays an important role at the architecture level:</p>
 <p><code>Logic</code> uses the <code>ModManagerParser</code> class to parse the user command.</p>
 </li>
 <li>
+<p><code>ModManagerParser</code> will then create the appropriate parser object to continue parsing the command. This parser object will then
+determine the specific kind of the user command and let a subtype parser of it do the rest of the parsing work.</p>
+</li>
+<li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
@@ -243,6 +247,10 @@ The following class plays an important role at the architecture level:</p>
 <p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>This logic component design is chosen because we have many commands that can be grouped with the same keyword (e.g. <code>mod</code>, <code>task</code>, <code>lesson</code>, etc).
+The design provides good abstraction for the developers without cluttering a particular parser class.</p>
 </div>
 </div>
 <div class="sect2">
@@ -265,15 +273,57 @@ The following class plays an important role at the architecture level:</p>
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
+<p>stores a <code>DoableActionList</code> capturing effects of user commands that can add/edit/delete entities, i.e. what is added, edited, or deleted.</p>
+</li>
+<li>
 <p>stores the Mod Manager data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Facilitator&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes many unmodifiable <code>ObservableList</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>More detailed designs of important sub-components are below.</p>
+</div>
+<div class="sect3">
+<h4 id="module"><a class="link" href="#module">3.4.1. Module</a></h4>
+<div class="paragraph">
+<p>Place-holder</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="facilitator"><a class="link" href="#facilitator">3.4.2. Facilitator</a></h4>
+<div class="paragraph">
+<p>Place-holder</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="lesson"><a class="link" href="#lesson">3.4.3. Lesson</a></h4>
+<div class="paragraph">
+<p>Place-holder</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="task"><a class="link" href="#task">3.4.4. Task</a></h4>
+<div class="paragraph">
+<p>Place-holder</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calendar"><a class="link" href="#calendar">3.4.5. Calendar</a></h4>
+<div class="paragraph">
+<p>Place-holder</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="doableaction"><a class="link" href="#doableaction">3.4.6. DoableAction</a></h4>
+<div class="paragraph">
+<p>Place-holder</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -321,7 +371,7 @@ The following class plays an important role at the architecture level:</p>
 <p>There are a few general features implemented to help users improve their workflow with Mod Manager.</p>
 </div>
 <div class="paragraph">
-<p>These are: <code>undo</code> and <code>redo</code> feature, and navigating through past commands with up/down keys.</p>
+<p>These are: <code>undo</code> and <code>redo</code> feature, navigating through past commands with up/down keys, <code>clear</code> command, and <code>help</code> command.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-details"><a class="link" href="#implementation-details">4.1.1. Implementation Details</a></h4>
@@ -375,7 +425,30 @@ there are no inputs to show, the <code>CommandBox</code> will become empty.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<h4 id="clear-command"><a class="link" href="#clear-command">4.1.2. Clear command</a></h4>
+<div class="paragraph">
+<p>This command simply clears all the data from the system. The action is not undo-able. Its mechanism is simple.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user inputs a clear command.</p>
+</li>
+<li>
+<p><code>ModelManager</code> will replace the current <code>ModManager</code> instance with a newly created one that doesn&#8217;t contain any data.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="help-command"><a class="link" href="#help-command">4.1.3. Help command</a></h4>
+<div class="paragraph">
+<p>This command will pop up a window showing a link to the User Guide. The user simply inputs a help command and the window
+will appear.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.4. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-undo-redo-implementation"><a class="link" href="#aspect-undo-redo-implementation">Aspect: Undo/Redo Implementation</a></h5>
 <div class="ulist">
@@ -1237,7 +1310,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <h5 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h5>
 <div class="paragraph">
 <p>The <code>task edit</code> command allows user to edit a task in Mod Manager.
-The fields that can be edited are: description and time.
+The fields that can be edited are: description, and task date and time.
 This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#setTask()</code>.</p>
 </div>
@@ -1284,7 +1357,20 @@ actually input <code>01/01/1970</code> as a date.</p>
 <div class="content">
 <img src="images/TaskEditCommandSequenceDiagram.png" alt="TaskEditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 28. Sequence Diagram for <code>TaskEditCommand</code> creation steps</div>
+<div class="title">Figure 28. Sequence Diagram for <code>TaskEditCommand</code> Creation Steps</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code> and <code>TaskEditCommandParser</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The execution of a <code>TaskEditCommand</code> is described below.</p>
@@ -1295,7 +1381,7 @@ actually input <code>01/01/1970</code> as a date.</p>
 <p><code>List&lt;Task&gt; current</code> is retrieved by calling <code>model.getFilteredTaskList</code>.</p>
 </li>
 <li>
-<p>Retrieve the correct <code>taskToEdit</code> from <code>current</code> by turning it into a <code>stream</code> and use the <code>reduce</code> method.</p>
+<p>The correct <code>taskToEdit</code> is retrieved from <code>current</code> by turning it into a <code>stream</code> and use the <code>reduce</code> method.</p>
 </li>
 <li>
 <p>The <code>editedTask</code> is created using method <code>createEditedTask</code>.</p>
@@ -1348,7 +1434,20 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 <div class="content">
 <img src="images/TaskDeleteCommandSequenceDiagram.png" alt="TaskDeleteCommandSequenceDiagram">
 </div>
-<div class="title">Figure 29. Sequence Diagram for <code>TaskDeleteCommand</code> creation steps</div>
+<div class="title">Figure 29. Sequence Diagram for <code>TaskDeleteCommand</code> Creation Steps</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>TaskCommandParser</code> and <code>TaskDeleteCommandParser</code> should end at
+the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The execution of a <code>TaskDeleteCommand</code> is described below.</p>
@@ -1359,7 +1458,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 <p><code>List&lt;Task&gt; current</code> is retrieved by calling <code>model.getFilteredTaskList</code>.</p>
 </li>
 <li>
-<p>Retrieve the correct <code>taskToDelete</code> from <code>current</code> by turning it into a <code>stream</code> and use the <code>reduce</code> method.</p>
+<p>The correct <code>taskToDelete</code> is retrieved from <code>current</code> by turning it into a <code>stream</code> and use the <code>reduce</code> method.</p>
 </li>
 <li>
 <p>The <code>taskNum</code> of <code>taskToDelete</code> is removed from the system via <code>TaskNumManager</code>.</p>
@@ -2803,19 +2902,19 @@ Low (unlikely to have) - <code>*</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view all tasks across all modules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can organise, plan, and manage my tasks better.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can organise, plan, and manage my tasks better</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view tasks for a specific module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can manage and keep track of homework, programming assignments, and other tasks specifically for the module.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can manage and keep track of homework, programming assignments, and other tasks specifically for the module</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view all tasks not done</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I know what tasks are not yet completed and do them.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I know what tasks are not yet completed and do them</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -2845,7 +2944,7 @@ Low (unlikely to have) - <code>*</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mark a task as done</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep track of what tasks I have completed and what I have not yet completed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can keep track of what tasks I have completed and what I have not yet completed</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -2908,6 +3007,12 @@ Low (unlikely to have) - <code>*</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I can easily migrate the data to another computer</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo or redo my commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can save time from trying to fix my mistakes</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find a facilitator by name</p></td>
@@ -2917,13 +3022,13 @@ Low (unlikely to have) - <code>*</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can find the exact tasks that I want to do, such as a particular programming assignment on multimedia streaming.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can find the exact tasks that I want to do, such as a particular programming assignment on multimedia streaming</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">search tasks by its date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I know what tasks are happening today, tomorrow, this month, next month, or any other time periods.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I know what tasks are happening today, tomorrow, this month, next month, or any other time periods</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -2936,6 +3041,12 @@ Low (unlikely to have) - <code>*</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">busy student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find empty slots in my schedule</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I can manage my time easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see my past commands quickly</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can re-use a command without having to type it again</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
@@ -3377,9 +3488,151 @@ Low (unlikely to have) - <code>*</code></p>
 </ul>
 </div>
 <h3 id="use-case-uc11-add-task" class="discrete">Use case: UC11 - Add task</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1. User request to add a task and provides the details of the new task.</p>
+</li>
+<li>
+<p>2. Mod Manager adds a task.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Compulsory fields are not provided or fields provided are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. No optional fields are provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <h3 id="use-case-uc12-edit-task" class="discrete">Use case: UC12 - Edit task</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1.  User requests to edit a task and provides the task ID (with a module code and a task number) and the new details.</p>
+</li>
+<li>
+<p>2.  Mod Manager edits the task.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given module code is invalid or the task num doesn&#8217;t exist in Mod Manager.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Fields provided are invalid or no optional fields are provided.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <h3 id="use-case-uc13-delete-task" class="discrete">Use case: UC13 - Delete task</h3>
-<h3 id="use-case-uc14-marking-a-task-as-done" class="discrete">Use case: UC14 - Marking a task as done</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1.  User requests to delete a task and provides the task ID (with a module code and a task number).</p>
+</li>
+<li>
+<p>2.  Mod Manager deletes the task.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given module code is invalid or the task num doesn&#8217;t exist in Mod Manager.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc14-mark-a-task-as-done" class="discrete">Use case: UC14 - Mark a task as done</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -3433,7 +3686,7 @@ Low (unlikely to have) - <code>*</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc15-viewing-all-tasks-across-modules-in-mod-manager" class="discrete">Use case: UC15 - Viewing all tasks across modules in Mod Manager</h3>
+<h3 id="use-case-uc15-view-all-tasks-across-modules-in-mod-manager" class="discrete">Use case: UC15 - View all tasks across modules in Mod Manager</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -3464,7 +3717,7 @@ Low (unlikely to have) - <code>*</code></p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="use-case-uc16-viewing-tasks-for-a-specific-module-in-mod-manger"><a class="link" href="#use-case-uc16-viewing-tasks-for-a-specific-module-in-mod-manger">C.1. Use case: UC16 - Viewing tasks for a specific module in Mod Manger</a></h3>
+<h3 id="use-case-uc16-view-tasks-for-a-specific-module-in-mod-manger"><a class="link" href="#use-case-uc16-view-tasks-for-a-specific-module-in-mod-manger">C.1. Use case: UC16 - View tasks for a specific module in Mod Manger</a></h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -3513,7 +3766,7 @@ Low (unlikely to have) - <code>*</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-uc17-viewing-undone-tasks"><a class="link" href="#use-case-uc17-viewing-undone-tasks">C.2. Use case: UC17 - Viewing undone tasks</a></h3>
+<h3 id="use-case-uc17-view-undone-tasks"><a class="link" href="#use-case-uc17-view-undone-tasks">C.2. Use case: UC17 - View undone tasks</a></h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -3545,7 +3798,7 @@ Low (unlikely to have) - <code>*</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-uc18-finding-tasks-by-description"><a class="link" href="#use-case-uc18-finding-tasks-by-description">C.3. Use case: UC18 - Finding tasks by description</a></h3>
+<h3 id="use-case-uc18-find-tasks-by-description"><a class="link" href="#use-case-uc18-find-tasks-by-description">C.3. Use case: UC18 - Find tasks by description</a></h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -3592,7 +3845,7 @@ Low (unlikely to have) - <code>*</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc19-searching-tasks-by-date" class="discrete">Use case: UC19 - Searching tasks by date</h3>
+<h3 id="use-case-uc19-search-for-tasks-by-date" class="discrete">Use case: UC19 - Search for tasks by date</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -3932,7 +4185,81 @@ Low (unlikely to have) - <code>*</code></p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc27-clear-all-entries-in-mod-manager" class="discrete">Use case: UC27 - Clear all entries in Mod Manager</h3>
+<h3 id="use-case-uc27-undo-a-command" class="discrete">Use case: UC27 - Undo a command</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1. User requests to undo.</p>
+</li>
+<li>
+<p>2. Mod Manager undoes the most previous command.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. There are no commands that can be undone.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error messsage.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc28-redo-a-command" class="discrete">Use case: UC28 - Redo a command</h3>
+<div class="paragraph">
+<p><strong><a href="#mss">MSS</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1. User requests to redo.</p>
+</li>
+<li>
+<p>2. Mod Manager redoes the most previously undone command.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><a href="#extensions">Extensions</a></strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. There are no commands that can be redone.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Mod Manager shows an error messsage.</p>
+<div class="paragraph">
+<p>Use case resumes from step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc29-clear-all-entries-in-mod-manager" class="discrete">Use case: UC29 - Clear all entries in Mod Manager</h3>
 <div class="paragraph">
 <p><strong><a href="#mss">MSS</a></strong></p>
 </div>
@@ -4122,7 +4449,7 @@ Expected: Shows the <a href="#gui">GUI</a> with a set of sample modules, classes
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Type <code>exit</code> in the command box and press <kbd>Enter</kbd>.<br>
+<p>Type <code>exit</code> in the command box and press Enter.<br>
 Expected: Closes the application window and saves data.</p>
 </li>
 <li>
@@ -4143,6 +4470,25 @@ Expected: Shows the <a href="#gui">GUI</a> with a set of sample modules, classes
 <li>
 <p>Edit the data file to contain duplicate modules. Double-click the jar file.<br>
 Expected: Shows the <a href="#gui">GUI</a> with an empty set of modules, classes, tasks and facilitators.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Undo/Redo commands.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Type any valid command that adds/edits/deletes an entry of Mod Manager that can successfully execute and press Enter.<br>
+Expected: Mod Manager behaves as specified for that command.</p>
+</li>
+<li>
+<p>Type undo and press Enter.<br>
+Expected: Mod Manager returns to the state before the the add/edit/delete command was executed.</p>
+</li>
+<li>
+<p>Type redo and press Enter.<br>
+Expected: The previously undone command is executed again.</p>
 </li>
 </ol>
 </div>
@@ -4487,4 +4833,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:10:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:43:13 UTC</div></div></div></body></html>
