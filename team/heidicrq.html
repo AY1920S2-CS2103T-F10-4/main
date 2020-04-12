@@ -151,7 +151,7 @@
 <div class="sect2">
 <h3 id="class-feature-code-strong-class-strong-code"><a class="link" href="#class-feature-code-strong-class-strong-code">Class feature : <code><strong>class</strong></code></a></h3>
 <div class="paragraph">
-<p>You can add, find, edit or delete classes within ModManager.<br>
+<p>You can add, find, edit or delete classes within Mod Manager.<br>
 When managing your classes, you should take note of the following areas in the main viewing area. To find the main viewing area, you can refer to section 3.1.</p>
 </div>
 <div class="imageblock">
@@ -205,7 +205,7 @@ When managing your classes, you should take note of the following areas in the m
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, ModManager looks like what you see in the figure below.<br></p>
+<p>You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, Mod Manager looks like what you see in the figure below.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -343,7 +343,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. ModManager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
+<p>Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. Mod Manager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -444,7 +444,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>DayAndTime
 <div class="sect4">
 <h5 id="adding-a-class-2"><a class="link" href="#adding-a-class-2">Adding a class</a></h5>
 <div class="paragraph">
-<p>The add class command allows user to add a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
+<p>The add class command allows user to add a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the lesson add mechanism behaves at each step.</p>
@@ -499,7 +499,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser<
 <div class="sect4">
 <h5 id="finding-a-class"><a class="link" href="#finding-a-class">Finding a class</a></h5>
 <div class="paragraph">
-<p>The find class command allows user to find a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonFindCommandParser</code> and <code>LessonFindCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#findNextLesson()</code> and <code>Model#findLessonByDay</code>.</p>
+<p>The find class command allows user to find a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonFindCommandParser</code> and <code>LessonFindCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#findNextLesson()</code> and <code>Model#findLessonByDay</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the lesson find mechanism behaves at each step.</p>
@@ -551,7 +551,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser
 <div class="sect4">
 <h5 id="editing-a-class-2"><a class="link" href="#editing-a-class-2">Editing a class</a></h5>
 <div class="paragraph">
-<p>The edit class command allows user to edit a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonEditCommandParser</code> and <code>LessonEditCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#setLesson()</code>.</p>
+<p>The edit class command allows user to edit a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonEditCommandParser</code> and <code>LessonEditCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#setLesson()</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the lesson edit mechanism behaves at each step.</p>
@@ -615,7 +615,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser
 <div class="sect4">
 <h5 id="deleting-a-class-2"><a class="link" href="#deleting-a-class-2">Deleting a class</a></h5>
 <div class="paragraph">
-<p>The delete class command allows user to add a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonDeleteCommandParser</code> and <code>LessonDeleteCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#removeLesson()</code>.</p>
+<p>The delete class command allows user to add a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonDeleteCommandParser</code> and <code>LessonDeleteCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#removeLesson()</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the lesson delete mechanism behaves at each step.</p>
@@ -1157,4 +1157,4 @@ Low (unlikely to have) - <code>*</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 13:49:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:10:04 UTC</div></div></div></body></html>

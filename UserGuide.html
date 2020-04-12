@@ -19,7 +19,7 @@
 </li>
 <li><a href="#Features">4. Features</a>
 <ul class="sectlevel2">
-<li><a href="#general">4.1. General</a>
+<li><a href="#general-features">4.1. General Features</a>
 <ul class="sectlevel3">
 <li><a href="#viewing-help-code-strong-help-strong-code">4.1.1. Viewing help : <code><strong>help</strong></code></a></li>
 <li><a href="#undoing-previous-commands-code-strong-undo-strong-code">4.1.2. Undoing previous commands : <code><strong>undo</strong></code></a></li>
@@ -54,8 +54,8 @@
 <li><a href="#editing-a-task">4.4.2. Editing a task</a></li>
 <li><a href="#deleting-a-task">4.4.3. Deleting a task</a></li>
 <li><a href="#marking-a-task-as-done">4.4.4. Marking a task as done</a></li>
-<li><a href="#viewing-all-tasks-across-all-modules-in-modmanger">4.4.5. Viewing all tasks across all modules in ModManger</a></li>
-<li><a href="#viewing-tasks-for-a-specific-module-in-modmanger">4.4.6. Viewing tasks for a specific module in ModManger</a></li>
+<li><a href="#viewing-all-tasks-across-all-modules">4.4.5. Viewing all tasks across all modules</a></li>
+<li><a href="#viewing-tasks-for-a-specific-module">4.4.6. Viewing tasks for a specific module</a></li>
 <li><a href="#viewing-all-tasks-not-done-finished">4.4.7. Viewing all tasks not done/finished</a></li>
 <li><a href="#finding-tasks-by-description">4.4.8. Finding tasks by description</a></li>
 <li><a href="#searching-tasks-by-date">4.4.9. Searching tasks by date</a></li>
@@ -77,7 +77,7 @@
 <li><a href="#finding-empty-slots">4.6.3. Finding empty slots</a></li>
 </ul>
 </li>
-<li><a href="#upcoming-code-coming-in-v2-0-code">4.7. Upcoming <code>[coming in v2.0]</code></a>
+<li><a href="#upcoming-features-code-coming-in-v2-0-code">4.7. Upcoming Features <code>[coming in v2.0]</code></a>
 <ul class="sectlevel3">
 <li><a href="#categorising-tasks-code-coming-in-v2-0-code">4.7.1. Categorising tasks <code>[coming in v2.0]</code></a></li>
 <li><a href="#adding-a-priority-level-to-a-task-code-coming-in-v2-0-code">4.7.2. Adding a priority level to a task <code>[coming in v2.0]</code></a></li>
@@ -90,7 +90,7 @@
 </li>
 <li><a href="#faq">5. FAQ</a>
 <ul class="sectlevel2">
-<li><a href="#how-do-i-transfer-my-data-to-another-computer">5.1. How do I transfer my data to another Computer?</a></li>
+<li><a href="#how-do-i-transfer-my-data-to-another-computer">5.1. How do I transfer my data to another computer?</a></li>
 </ul>
 </li>
 <li><a href="#glossary">6. Glossary</a></li>
@@ -126,7 +126,7 @@
 It explains the features and commands supported by Mod Manager, with examples to illustrate how the application works.</p>
 </div>
 <div class="paragraph">
-<p>Note the following symbols and formatting used in this document:</p>
+<p>Note the following symbols used in this document:</p>
 </div>
 <table class="tableblock frame-all grid-all">
 <caption class="title">Table 1. Symbols used in this User Guide</caption>
@@ -140,7 +140,7 @@ It explains the features and commands supported by Mod Manager, with examples to
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Meaning</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>Enter</kbd></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Enter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The enter button on the keyboard.</p></td>
 </tr>
 <tr>
@@ -180,8 +180,8 @@ It explains the features and commands supported by Mod Manager, with examples to
 </div>
 </li>
 <li>
-<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+<p>Type the command in the command box and press Enter to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing Enter will open the help window.</p>
 <div class="paragraph">
 <p>Here are some example commands that you can try:</p>
 </div>
@@ -200,7 +200,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code><strong>task</strong> add /code CS3233 /desc Complete Pset 10 /on 30/04/2020 /at 23:59</code>: adds a task to the module CS3233.</p>
 </li>
 <li>
-<p><code><strong>facil</strong> add /name Steven Halim /email <a href="mailto:stevenha@comp.nus.edu.sg">stevenha@comp.nus.edu.sg</a> /code CS3233</code>: adds a facilitator to the module CS3233. If you are rushing to write an e-mail to your lecturer, you can refer to this conveniently.</p>
+<p><code><strong>facil</strong> add /name Steven Halim /email <a href="mailto:stevenha@comp.nus.edu.sg">stevenha@comp.nus.edu.sg</a> /code CS3233</code>: adds a facilitator to the module CS3233. If you are rushing to write an email to your lecturer, you can refer to this conveniently.</p>
 </li>
 <li>
 <p><code><strong>cal</strong> view /week this</code> : views your schedules for the current week. You should see the CS3233 lecture group
@@ -307,7 +307,7 @@ are shown in green, whereas the rest are uncompleted tasks.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="#general">General</a> feature</p>
+<p><a href="#General">General</a> feature</p>
 </li>
 <li>
 <p><a href="#module-feature-code-strong-mod-strong-code">Module</a> feature</p>
@@ -327,7 +327,7 @@ are shown in green, whereas the rest are uncompleted tasks.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Additionally, the <a href="#upcoming-code-coming-in-v2-0-code">upcoming</a> features section offers a
+<p>Additionally, the <a href="#Upcoming <code>[coming in v2.0]</code>">upcoming</a> features section offers a
 preview of what you can expect in <strong>Mod Manager v2.0</strong>.</p>
 </div>
 <div class="exampleblock">
@@ -366,7 +366,7 @@ e.g. if the command specifies <code>/code MOD_CODE /desc DESCRIPTION</code>,
 </div>
 </div>
 <div class="sect2">
-<h3 id="general"><a class="link" href="#general">4.1. General</a></h3>
+<h3 id="general-features"><a class="link" href="#general-features">4.1. General Features</a></h3>
 <div class="paragraph">
 <p>The following commands carry out general operations in Mod Manager.</p>
 </div>
@@ -427,7 +427,7 @@ e.g. if the command specifies <code>/code MOD_CODE /desc DESCRIPTION</code>,
 <p>Lists all valid command groups.</p>
 </div>
 <div class="paragraph">
-<p>The command groups available in <code>ModManager</code> are the words in bold you have seen throughout this document.
+<p>The command groups available in Mod Manager are the words in bold you have seen throughout this document.
 These include: <code><strong>facil</strong>, <strong>mod</strong>, <strong>task</strong>, &#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
@@ -496,7 +496,7 @@ You can type <code><strong>clear</strong></code> as shown below.</p>
 <div class="title">Figure 7. Before <code><strong>clear</strong></code></div>
 </div>
 <div class="paragraph">
-<p>After pressing <kbd>Enter</kbd>, Mod Manager is empty. All the entries you have are cleared.</p>
+<p>After pressing Enter, Mod Manager is empty. All the entries you have are cleared.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -905,7 +905,7 @@ you can type the following command:</p>
 <div class="sect2">
 <h3 id="class-feature-code-strong-class-strong-code"><a class="link" href="#class-feature-code-strong-class-strong-code">4.3. Class feature : <code><strong>class</strong></code></a></h3>
 <div class="paragraph">
-<p>You can add, find, edit or delete classes within ModManager.<br>
+<p>You can add, find, edit or delete classes within Mod Manager.<br>
 When managing your classes, you should take note of the following areas in the main viewing area. To find the main viewing area, you can refer to section 3.1.</p>
 </div>
 <div class="imageblock">
@@ -959,7 +959,7 @@ When managing your classes, you should take note of the following areas in the m
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, ModManager looks like what you see in the figure below.<br></p>
+<p>You have a CS2103T lecture on Friday from 14:00 to 16:00 at i3-Aud. Before adding that class, Mod Manager looks like what you see in the figure below.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1097,7 +1097,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. ModManager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
+<p>Let&#8217;s say that the venue of the CS2103T lecture you just added changed to Home. You can edit the class by typing <code><strong>class</strong> edit 1 /code CS2103T /venue Home</code>. Mod Manager will direct you to the module&#8217;s page and it will reflect the updated venue as seen below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1365,7 +1365,7 @@ task ID <code>ID_NUMBER</code> in module <code>MOD_CODE</code> to be done, you c
 </div>
 <div class="paragraph">
 <p><code><strong>task</strong> done /code CS2105 /id 224</code>
-and hit <kbd>Enter</kbd></p>
+and hit Enter</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1385,7 +1385,7 @@ Hooray! We just completed a task.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-all-tasks-across-all-modules-in-modmanger"><a class="link" href="#viewing-all-tasks-across-all-modules-in-modmanger">4.4.5. Viewing all tasks across all modules in ModManger</a></h4>
+<h4 id="viewing-all-tasks-across-all-modules"><a class="link" href="#viewing-all-tasks-across-all-modules">4.4.5. Viewing all tasks across all modules</a></h4>
 <div class="paragraph">
 <p>You can view a list of all tasks across all modules in Mod Manager.
 This is great when you need an overview of all tasks that you need to complete
@@ -1415,7 +1415,7 @@ at present.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-tasks-for-a-specific-module-in-modmanger"><a class="link" href="#viewing-tasks-for-a-specific-module-in-modmanger">4.4.6. Viewing tasks for a specific module in ModManger</a></h4>
+<h4 id="viewing-tasks-for-a-specific-module"><a class="link" href="#viewing-tasks-for-a-specific-module">4.4.6. Viewing tasks for a specific module</a></h4>
 <div class="paragraph">
 <p>If you want to find tasks for a specific module in Mod Manager, this is the command for you to use!</p>
 </div>
@@ -1463,7 +1463,7 @@ Alternatively, you can also view the tasks for a specific module in the Module t
 </div>
 <div class="paragraph">
 <p><code><strong>task</strong> module /code CS3230</code>
-and hit <kbd>Enter</kbd></p>
+and hit Enter</p>
 </div>
 <div class="paragraph">
 <p>It is not compulsory for you to be at the Tasks tab before typing in this command.
@@ -1493,7 +1493,7 @@ tasks that have not yet been finished.</p>
 <div class="title">Figure 39. Before <code><strong>task</strong> undone</code>, all tasks are listed</div>
 </div>
 <div class="paragraph">
-<p>By typing the command above and hit <kbd>Enter</kbd> , you should only see uncompleted tasks,
+<p>By typing the command above and hit Enter, you should only see uncompleted tasks,
 which are in dark red color:</p>
 </div>
 <div class="imageblock">
@@ -1564,7 +1564,7 @@ Tasks that meet at least one of the keywords you provided will be shown to you.<
 you can type in the following command:</p>
 </div>
 <div class="paragraph">
-<p><code><strong>task</strong> find oral assign tut</code> and press <kbd>Enter</kbd></p>
+<p><code><strong>task</strong> find oral assign tut</code> and press Enter</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1580,7 +1580,7 @@ you can type in the following command:</p>
 - As long as a task&#8217;s description matches <strong>one</strong> of the keywords provided, it will be shown.<br></p>
 </div>
 <div class="paragraph">
-<p>You can try typing in <code><strong>task</strong> find assign tut oral</code> and press <kbd>Enter</kbd>. This will return the same list
+<p>You can try typing in <code><strong>task</strong> find assign tut oral</code> and press Enter. This will return the same list
 of tasks, since the ordering of the keywords does not matter.</p>
 </div>
 <div class="paragraph">
@@ -1682,7 +1682,7 @@ only match tasks that are in May 2020.</p>
 <div class="paragraph">
 <p>You can search for tasks that are due on the submission date of CS2103T for AY19/20 S2
 (13 April). To find tasks happening on 13 April,
-you can type <code><strong>task</strong> search /date 13 /month 4</code> and press <kbd>Enter</kbd>. This will return all tasks
+you can type <code><strong>task</strong> search /date 13 /month 4</code> and press Enter. This will return all tasks
 that are happening on 13 April.</p>
 </div>
 <div class="imageblock">
@@ -2239,7 +2239,7 @@ SUNDAY:<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="upcoming-code-coming-in-v2-0-code"><a class="link" href="#upcoming-code-coming-in-v2-0-code">4.7. Upcoming <code>[coming in v2.0]</code></a></h3>
+<h3 id="upcoming-features-code-coming-in-v2-0-code"><a class="link" href="#upcoming-features-code-coming-in-v2-0-code">4.7. Upcoming Features <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>These features will be available in the next version of Mod Manager.</p>
 </div>
@@ -2270,7 +2270,7 @@ SUNDAY:<br>
 <div class="sect3">
 <h4 id="viewing-of-the-recently-edited-item-after-an-code-add-code-code-edit-code-or-code-delete-code-command-code-coming-in-v2-0-code"><a class="link" href="#viewing-of-the-recently-edited-item-after-an-code-add-code-code-edit-code-or-code-delete-code-command-code-coming-in-v2-0-code">4.7.5. Viewing of the recently edited item after an <code>add</code>, <code>edit</code> or <code>delete</code> command <code>[coming in v2.0]</code></a></h4>
 <div class="paragraph">
-<p>After an <code>add</code>, <code>edit</code>, or <code>delete</code> operation, the view will be scrolled to
+<p>After an <code>add</code>, <code>edit</code> or <code>delete</code> operation, the view will be scrolled to
 that recently created or modified item, so that you can refer to the information easily.
 The newly created or modified details will be highlighted and focused so that you know what has been changed.</p>
 </div>
@@ -2282,7 +2282,7 @@ The newly created or modified details will be highlighted and focused so that yo
 <h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="how-do-i-transfer-my-data-to-another-computer"><a class="link" href="#how-do-i-transfer-my-data-to-another-computer">5.1. How do I transfer my data to another Computer?</a></h3>
+<h3 id="how-do-i-transfer-my-data-to-another-computer"><a class="link" href="#how-do-i-transfer-my-data-to-another-computer">5.1. How do I transfer my data to another computer?</a></h3>
 <div class="paragraph">
 <p>Install the app in the other computer and overwrite the empty data file it creates with the file that contains
 the data of your previous Mod Manager folder.</p>
@@ -2354,7 +2354,7 @@ description, and time period (if provided upon creation).</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cal</strong> view /week this</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock">Class</p></td>
+<td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Class</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> add /code MOD_CODE /type CLASS_TYPE /at DAY START_TIME END_TIME [/venue VENUE]</code></p></td>
 </tr>
 <tr>
@@ -2364,23 +2364,10 @@ description, and time period (if provided upon creation).</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> edit INDEX /code MOD_CODE [/code NEW_MOD_CODE] [/type CLASS_TYPE] [/at DAY START_TIME END_TIME] [/venue VENUE]</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> find /at DAY</code><br>
-   <code><strong>class</strong> find /next</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> find /at DAY</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Clear</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>clear</strong></code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Command</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cmd</strong> all</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cmd</strong> group COMMAND_WORD</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>exit</strong></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>class</strong> find /next</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Facilitator</p></td>
@@ -2402,8 +2389,26 @@ description, and time period (if provided upon creation).</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>facil</strong> list</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Help</p></td>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock">General</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>clear</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cmd</strong> all</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>cmd</strong> group COMMAND_WORD</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>exit</strong></code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>help</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>redo</strong></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>undo</strong></code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock">Module</p></td>
@@ -2423,10 +2428,6 @@ description, and time period (if provided upon creation).</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>mod</strong> view INDEX</code><br>
    <code><strong>mod</strong> view MOD_CODE</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Redo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>redo</strong></code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="9"><p class="tableblock">Task</p></td>
@@ -2457,10 +2458,6 @@ description, and time period (if provided upon creation).</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>task</strong> undone</code></p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Undo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>undo</strong></code></p></td>
-</tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all">
@@ -2486,4 +2483,4 @@ description, and time period (if provided upon creation).</p>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 13:49:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:10:04 UTC</div></div></div></body></html>

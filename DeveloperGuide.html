@@ -476,7 +476,10 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#addM
 <p><code>ModManager</code> adds the module to the <code>UniqueModuleList</code>.</p>
 </li>
 <li>
-<p><code>ModelManager</code> updates the <code>filteredModules</code> in <code>ModelManager</code>.</p>
+<p><code>ModuleAddCommand</code> creates a new <code>ModuleAction</code> based on the module to be added.</p>
+</li>
+<li>
+<p><code>ModelManager</code> adds the <code>ModuleAction</code> to the <code>DoableActionList</code>.</p>
 </li>
 </ol>
 </div>
@@ -662,7 +665,10 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#setM
 <p><code>ModManager</code> sets the existing module to the new module in the <code>UniqueModuleList</code>.</p>
 </li>
 <li>
-<p><code>ModelManager</code> updates the <code>filteredModules</code> in <code>ModelManager</code>.</p>
+<p><code>ModuleEditCommand</code> creates a new <code>ModuleAction</code> based on the module to be edited and the new module.</p>
+</li>
+<li>
+<p><code>ModelManager</code> adds the <code>ModuleAction</code> to the <code>DoableActionList</code>.</p>
 </li>
 </ol>
 </div>
@@ -733,6 +739,12 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 </li>
 <li>
 <p><code>ModManager</code> deletes lessons of the module from the <code>LessonList</code>.</p>
+</li>
+<li>
+<p><code>ModuleDeleteCommand</code> creates a new <code>ModuleAction</code> based on the module to be deleted.</p>
+</li>
+<li>
+<p><code>ModelManager</code> adds the <code>ModuleAction</code> to the <code>DoableActionList</code>.</p>
 </li>
 </ol>
 </div>
@@ -839,7 +851,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>DayAndTime
 <div class="sect4">
 <h5 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h5>
 <div class="paragraph">
-<p>The add class command allows user to add a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
+<p>The add class command allows user to add a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the lesson add mechanism behaves at each step.</p>
@@ -894,7 +906,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser<
 <div class="sect4">
 <h5 id="finding-a-class"><a class="link" href="#finding-a-class">Finding a class</a></h5>
 <div class="paragraph">
-<p>The find class command allows user to find a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonFindCommandParser</code> and <code>LessonFindCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#findNextLesson()</code> and <code>Model#findLessonByDay</code>.</p>
+<p>The find class command allows user to find a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonFindCommandParser</code> and <code>LessonFindCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#findNextLesson()</code> and <code>Model#findLessonByDay</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the lesson find mechanism behaves at each step.</p>
@@ -946,7 +958,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser
 <div class="sect4">
 <h5 id="editing-a-class"><a class="link" href="#editing-a-class">Editing a class</a></h5>
 <div class="paragraph">
-<p>The edit class command allows user to edit a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonEditCommandParser</code> and <code>LessonEditCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#setLesson()</code>.</p>
+<p>The edit class command allows user to edit a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonEditCommandParser</code> and <code>LessonEditCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#setLesson()</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the lesson edit mechanism behaves at each step.</p>
@@ -1010,7 +1022,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser
 <div class="sect4">
 <h5 id="deleting-a-class"><a class="link" href="#deleting-a-class">Deleting a class</a></h5>
 <div class="paragraph">
-<p>The delete class command allows user to add a class to ModManager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonDeleteCommandParser</code> and <code>LessonDeleteCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#removeLesson()</code>.</p>
+<p>The delete class command allows user to add a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonDeleteCommandParser</code> and <code>LessonDeleteCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#removeLesson()</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the lesson delete mechanism behaves at each step.</p>
@@ -1224,10 +1236,9 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="sect4">
 <h5 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h5>
 <div class="paragraph">
-<p>The <code>task edit</code> command allows user to edit a task in Mod Manager.</p>
-</div>
-<div class="paragraph">
-<p>This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
+<p>The <code>task edit</code> command allows user to edit a task in Mod Manager.
+The fields that can be edited are: description and time.
+This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskEditCommandParser</code> and <code>TaskEditCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#setTask()</code>.</p>
 </div>
 <div class="paragraph">
@@ -1923,7 +1934,7 @@ A <code>Module</code> with the <code>ModuleCode</code> of the facilitator should
 <p><code>list</code> - Lists all facilitators in Mod Manager.</p>
 </li>
 <li>
-<p><code>view</code> - Finds a facilitator in Mod Manager by name.</p>
+<p><code>find</code> - Finds a facilitator in Mod Manager by name.</p>
 </li>
 <li>
 <p><code>edit</code> - Edits a facilitator in Mod Manager.</p>
@@ -1964,6 +1975,12 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#addF
 </li>
 <li>
 <p><code>ModelManager</code> updates the <code>filteredFacilitators</code> in <code>ModelManager</code>.</p>
+</li>
+<li>
+<p><code>FacilAddCommand</code> creates a new <code>FacilAction</code> based on the facilitator to be added.</p>
+</li>
+<li>
+<p><code>ModelManager</code> adds the <code>FacilAction</code> to the <code>DoableActionList</code>.</p>
 </li>
 </ol>
 </div>
@@ -2151,6 +2168,12 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#setF
 <li>
 <p><code>ModelManager</code> updates the <code>filteredFacilitators</code> in <code>ModelManager</code>.</p>
 </li>
+<li>
+<p><code>FacilEditCommand</code> creates a new <code>FacilAction</code> based on the facilitator to be edited and the new facilitator.</p>
+</li>
+<li>
+<p><code>ModelManager</code> adds the <code>FacilAction</code> to the <code>DoableActionList</code>.</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -2211,6 +2234,12 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#dele
 </li>
 <li>
 <p><code>ModManager</code> deletes the facilitator from the <code>UniqueFacilitatorList</code>.</p>
+</li>
+<li>
+<p><code>FacilDeleteCommand</code> creates a new <code>FacilAction</code> based on the facilitator to be deleted.</p>
+</li>
+<li>
+<p><code>ModelManager</code> adds the <code>FacilAction</code> to the <code>DoableActionList</code>.</p>
 </li>
 </ol>
 </div>
@@ -4229,7 +4258,7 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: View the module using the <code>mod view CS2103T</code> command. Module CS2103T exists in ModManager and module CS1101S does not exist in ModManager.</p>
+<p>Prerequisites: View the module using the <code>mod view CS2103T</code> command. Module CS2103T exists in Mod Manager and module CS1101S does not exist in Mod Manager.</p>
 </li>
 <li>
 <p>Test case: <code>class add /code CS2103T /type lec /at friday 10:00 12:00 /venue i3-aud</code><br>
@@ -4287,7 +4316,7 @@ Expected: No class is found. Error details shown in the status message.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: View the module using the <code>mod view CS2103T</code> command. Module CS2103T exists in ModManager and module CS1101S does not exist in ModManager. Classes for CS2103T exists.</p>
+<p>Prerequisites: View the module using the <code>mod view CS2103T</code> command. Module CS2103T exists in Mod Manager and module CS1101S does not exist in Mod Manager. Classes for CS2103T exists.</p>
 </li>
 <li>
 <p>Test case: <code>class edit 1 /code cs2103t /venue Home</code><br>
@@ -4313,7 +4342,7 @@ Expected: No class is edited. Error details shown in the status message.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: View the module using the <code>mod view CS2103T</code> command. Module CS2103T exists in ModManager and module CS1101S does not exist in ModManager. Classes for CS2103T exists.</p>
+<p>Prerequisites: View the module using the <code>mod view CS2103T</code> command. Module CS2103T exists in Mod Manager and module CS1101S does not exist in Mod Manager. Classes for CS2103T exists.</p>
 </li>
 <li>
 <p>Test case: <code>class delete 1 /code cs2103t</code><br>
@@ -4458,4 +4487,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 13:49:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:10:04 UTC</div></div></div></body></html>
