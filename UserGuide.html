@@ -54,10 +54,11 @@
 <li><a href="#editing-a-task">4.4.2. Editing a task</a></li>
 <li><a href="#deleting-a-task">4.4.3. Deleting a task</a></li>
 <li><a href="#marking-a-task-as-done">4.4.4. Marking a task as done</a></li>
-<li><a href="#viewing-tasks-for-a-specific-module">4.4.5. Viewing tasks for a specific module</a></li>
-<li><a href="#viewing-all-tasks-not-done-finished">4.4.6. Viewing all tasks not done/finished</a></li>
-<li><a href="#finding-tasks-by-description">4.4.7. Finding tasks by description</a></li>
-<li><a href="#searching-tasks-by-date">4.4.8. Searching tasks by date</a></li>
+<li><a href="#viewing-all-tasks-across-all-modules">4.4.5. Viewing all tasks across all modules</a></li>
+<li><a href="#viewing-tasks-for-a-specific-module">4.4.6. Viewing tasks for a specific module</a></li>
+<li><a href="#viewing-all-tasks-not-done-finished">4.4.7. Viewing all tasks not done/finished</a></li>
+<li><a href="#finding-tasks-by-description">4.4.8. Finding tasks by description</a></li>
+<li><a href="#searching-tasks-by-date">4.4.9. Searching tasks by date</a></li>
 </ul>
 </li>
 <li><a href="#facilitator-feature-code-strong-facil-strong-code">4.5. Facilitator feature : <code><strong>facil</strong></code></a>
@@ -193,7 +194,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code><strong>mod</strong> add /code CS3233 /desc Competitive Programming</code> : adds the module CS3233 to the module list.</p>
 </li>
 <li>
-<p><code><strong>class</strong> add /code CS3233 /type LEC /at FRIDAY 14:00 16:00 /venue i3-Aud</code> : adds a lecture class to the module CS3233.</p>
+<p><code><strong>class</strong> add /code CS3233 /type LEC /at TUESDAY 14:00 16:00 /venue i3-Aud</code> : adds a lecture class to the module CS3233.</p>
 </li>
 <li>
 <p><code><strong>task</strong> add /code CS3233 /desc Complete Pset 10 /on 30/04/2020 /at 23:59</code>: adds a task to the module CS3233.</p>
@@ -677,7 +678,7 @@ Executing these commands will bring you to the Module tab.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>MOD_CODE should be 2-3 letters followed by 4 numbers (and a letter) with no spaces.</p>
+<p>MOD_CODE should be 2-3 letters followed by 4 numbers (and a possible trailing letter) with no spaces.</p>
 </li>
 <li>
 <p>DESCRIPTION should not exceed 64 characters.</p>
@@ -874,7 +875,7 @@ you can type the following command:</p>
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>MOD_CODE should be 2-3 letters followed by 4 numbers (and a letter) with no spaces.</p>
+<p>MOD_CODE should be 2-3 letters followed by 4 numbers (and a possible trailing letter) with no spaces.</p>
 </li>
 <li>
 <p>DESCRIPTION should not exceed 64 characters.</p>
@@ -1481,7 +1482,7 @@ the sorting property of the <a href="#Viewing all tasks across all modules in Mo
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-A newly added task as above will be considered as not done by default.
+A newly added task will be not done by default.
 </td>
 </tr>
 </table>
@@ -1562,9 +1563,11 @@ and hit <kbd>Enter</kbd></p>
 </div>
 <div class="paragraph">
 <p>The <a href="#taskcard">task card</a> has changed to green; which means our task has been marked as done.
-Hooray! We just completed a task.
-==== Viewing all tasks across all modules</p>
+Hooray! We just completed a task.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="viewing-all-tasks-across-all-modules"><a class="link" href="#viewing-all-tasks-across-all-modules">4.4.5. Viewing all tasks across all modules</a></h4>
 <div class="paragraph">
 <p>You can view a list of all tasks across all modules in Mod Manager.
 This is great when you need an overview of all tasks that you need to complete
@@ -1584,7 +1587,7 @@ at present.</p>
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p>By typing the command above, you should see the following:</p>
+<p>By typing the command above, you should see a list of tasks, such as the following:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1594,7 +1597,7 @@ at present.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-tasks-for-a-specific-module"><a class="link" href="#viewing-tasks-for-a-specific-module">4.4.5. Viewing tasks for a specific module</a></h4>
+<h4 id="viewing-tasks-for-a-specific-module"><a class="link" href="#viewing-tasks-for-a-specific-module">4.4.6. Viewing tasks for a specific module</a></h4>
 <div class="paragraph">
 <p>If you want to find tasks for a specific module in Mod Manager, this is the command for you to use!</p>
 </div>
@@ -1629,7 +1632,7 @@ at present.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Alternatively, you can also view the tasks for a specific module in the Module tab (main dashboard).
+Alternatively, you can also view the tasks for a specific module in the <code>Module</code> tab (the <a href="#dashboard">dashboard</a>).
 </td>
 </tr>
 </table>
@@ -1656,7 +1659,7 @@ Mod Manager will automatically redirect you to the Tasks tab if you are currentl
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-all-tasks-not-done-finished"><a class="link" href="#viewing-all-tasks-not-done-finished">4.4.6. Viewing all tasks not done/finished</a></h4>
+<h4 id="viewing-all-tasks-not-done-finished"><a class="link" href="#viewing-all-tasks-not-done-finished">4.4.7. Viewing all tasks not done/finished</a></h4>
 <div class="paragraph">
 <p>Previously, we know that we can mark a task as done, so as to organise, manage,
 and plan our tasks better. Now, with this command, you can see all the
@@ -1683,7 +1686,7 @@ which are in dark red color:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-tasks-by-description"><a class="link" href="#finding-tasks-by-description">4.4.7. Finding tasks by description</a></h4>
+<h4 id="finding-tasks-by-description"><a class="link" href="#finding-tasks-by-description">4.4.8. Finding tasks by description</a></h4>
 <div class="paragraph">
 <p>You are browsing through the task list. But there are too many tasks! You suddenly
 remember a specific task that you want to do, but you can only vaguely remember its description,
@@ -1779,7 +1782,7 @@ Finds all tasks that contain the word <code>math</code> <strong>or</strong> <cod
 </div>
 </div>
 <div class="sect3">
-<h4 id="searching-tasks-by-date"><a class="link" href="#searching-tasks-by-date">4.4.8. Searching tasks by date</a></h4>
+<h4 id="searching-tasks-by-date"><a class="link" href="#searching-tasks-by-date">4.4.9. Searching tasks by date</a></h4>
 <div class="paragraph">
 <p>With this command, you can search for all tasks that occur on your specified date, month, or year.</p>
 </div>
@@ -1869,10 +1872,6 @@ that are happening on 13 April.</p>
 <img src="images/TaskSearchBefore.png" alt="TaskSearchBefore">
 </div>
 <div class="title">Figure 57. Before <code><strong>task</strong> search /date 13 /month 4</code>, all tasks are listed</div>
-</div>
-<div class="paragraph">
-<p>Note that the content above may be different from what is currently on your Mod Manager. You may <code>add</code>
-or <code>edit</code> the tasks to match we have above</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2479,7 +2478,7 @@ the data of your previous Mod Manager folder.</p>
 <dl>
 <dt class="hdlist1"><a id="dashboard"></a> Dashboard</dt>
 <dd>
-<p>The default tab in view when the application starts (i.e. Module tab).</p>
+<p>The default tab in view when the application starts (i.e. the <code>Module</code> tab).</p>
 </dd>
 </dl>
 </div>
@@ -2493,7 +2492,7 @@ description, and time period (if provided upon creation).</p>
 </dl>
 </div>
 <div class="paragraph">
-<p>A dark red card represents a task that is not yet done.</p>
+<p>A dark red card represents a task that is not done.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2655,15 +2654,15 @@ description, and time period (if provided upon creation).</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Constraints</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MOD_CODE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MOD_CODE</code> should be 2-3 letters followed by 4 digits (and a possible trailing letter) with no spaces.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DESCRIPTION</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DESCRIPTION</code> should not exceed 64 characters.
                  This includes <code>Module</code> 's and <code>Task</code> 's description.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MOD_CODE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MOD_CODE</code> should be 2-3 letters followed by 4 digits (and a possible trailing letter) with no spaces.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 17:45:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 01:50:19 UTC</div></div></div></body></html>
