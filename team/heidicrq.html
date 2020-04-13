@@ -161,7 +161,7 @@ When managing your classes, you should take note of the following areas in the m
 <div class="title">Figure 1. Explanation of how to look at classes</div>
 </div>
 <div class="sect3">
-<h4 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h4>
+<h4 id="adding-a-class-heidi"><a class="link" href="#adding-a-class-heidi">Adding a class (Heidi)</a></h4>
 <div class="paragraph">
 <p>You can add a class to a module.</p>
 </div>
@@ -226,7 +226,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-classes-by-day"><a class="link" href="#finding-classes-by-day">Finding classes by day</a></h4>
+<h4 id="finding-classes-by-day-heidi"><a class="link" href="#finding-classes-by-day-heidi">Finding classes by day (Heidi)</a></h4>
 <div class="paragraph">
 <p>You can find classes occurring on a particular day.</p>
 </div>
@@ -268,7 +268,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-next-class"><a class="link" href="#finding-next-class">Finding next class</a></h4>
+<h4 id="finding-next-class-heidi"><a class="link" href="#finding-next-class-heidi">Finding next class (Heidi)</a></h4>
 <div class="paragraph">
 <p>You can find the next class that will start soon.</p>
 </div>
@@ -296,7 +296,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-class"><a class="link" href="#editing-a-class">Editing a class</a></h4>
+<h4 id="editing-a-class-heidi"><a class="link" href="#editing-a-class-heidi">Editing a class (Heidi)</a></h4>
 <div class="paragraph">
 <p>You can edit the information of the class. The class to be edited is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
@@ -353,7 +353,7 @@ You will see a new class added to the module CS2103T as shown in the figure belo
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-class"><a class="link" href="#deleting-a-class">Deleting a class</a></h4>
+<h4 id="deleting-a-class-heidi"><a class="link" href="#deleting-a-class-heidi">Deleting a class (Heidi)</a></h4>
 <div class="paragraph">
 <p>You can delete the class from the module. The class to be deleted is selected by its index in the displayed module&#8217;s class list. You can view the module&#8217;s class list by using <code><strong>mod</strong> view MOD_CODE</code> as stated in section 3.2.3.</p>
 </div>
@@ -442,7 +442,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>DayAndTime
 <div class="sect3">
 <h4 id="implementation-details"><a class="link" href="#implementation-details">Implementation Details</a></h4>
 <div class="sect4">
-<h5 id="adding-a-class-2"><a class="link" href="#adding-a-class-2">Adding a class</a></h5>
+<h5 id="adding-a-class-heidi-2"><a class="link" href="#adding-a-class-heidi-2">Adding a class (Heidi)</a></h5>
 <div class="paragraph">
 <p>The add class command allows user to add a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
 </div>
@@ -497,7 +497,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser<
 </div>
 </div>
 <div class="sect4">
-<h5 id="finding-a-class"><a class="link" href="#finding-a-class">Finding a class</a></h5>
+<h5 id="finding-a-class-heidi"><a class="link" href="#finding-a-class-heidi">Finding a class (Heidi)</a></h5>
 <div class="paragraph">
 <p>The find class command allows user to find a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonFindCommandParser</code> and <code>LessonFindCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#findNextLesson()</code> and <code>Model#findLessonByDay</code>.</p>
 </div>
@@ -549,7 +549,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser
 </div>
 </div>
 <div class="sect4">
-<h5 id="editing-a-class-2"><a class="link" href="#editing-a-class-2">Editing a class</a></h5>
+<h5 id="editing-a-class-heidi-2"><a class="link" href="#editing-a-class-heidi-2">Editing a class (Heidi)</a></h5>
 <div class="paragraph">
 <p>The edit class command allows user to edit a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonEditCommandParser</code> and <code>LessonEditCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#setLesson()</code>.</p>
 </div>
@@ -613,7 +613,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser
 </div>
 </div>
 <div class="sect4">
-<h5 id="deleting-a-class-2"><a class="link" href="#deleting-a-class-2">Deleting a class</a></h5>
+<h5 id="deleting-a-class-heidi-2"><a class="link" href="#deleting-a-class-heidi-2">Deleting a class (Heidi)</a></h5>
 <div class="paragraph">
 <p>The delete class command allows user to add a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonDeleteCommandParser</code> and <code>LessonDeleteCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#removeLesson()</code>.</p>
 </div>
@@ -672,13 +672,13 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonDeleteCommandPars
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="design-considerations-heidi"><a class="link" href="#design-considerations-heidi">Design Considerations (Heidi)</a></h4>
 <div class="sect4">
 <h5 id="aspect-prefix-of-day-and-time"><a class="link" href="#aspect-prefix-of-day-and-time">Aspect: Prefix of day and time</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1: (current choice)</strong> Have one prefix for all three <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
+<p><strong>Alternative 1 (current choice):</strong> Have one prefix for all three <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1169,4 +1169,4 @@ Low (unlikely to have) - <code>*</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:18:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:50:49 UTC</div></div></div></body></html>

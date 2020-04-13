@@ -51,7 +51,7 @@
 <li><a href="#testing-of-general-features">F.1. Testing of General Features</a></li>
 <li><a href="#testing-of-module-feature">F.2. Testing of Module Feature</a></li>
 <li><a href="#testing-of-class-feature">F.3. Testing of Class Feature</a></li>
-<li><a href="#testing-of-task-features">F.4. Testing of Task Features</a></li>
+<li><a href="#testing-of-task-feature">F.4. Testing of Task Feature</a></li>
 <li><a href="#testing-of-facilitator-feature">F.5. Testing of Facilitator Feature</a></li>
 <li><a href="#testing-of-calendar-feature">F.6. Testing of Calendar Feature</a></li>
 </ul>
@@ -285,7 +285,7 @@ The design provides good abstraction for the developers without cluttering a par
 <p>More detailed designs of important sub-components are below.</p>
 </div>
 <div class="sect3">
-<h4 id="module"><a class="link" href="#module">3.4.1. Module</a></h4>
+<h4 id="module-lu-shing"><a class="link" href="#module-lu-shing">3.4.1. Module (Lu Shing)</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModulePackageClassDiagram.png" alt="ModulePackageClassDiagram">
@@ -307,7 +307,7 @@ The design provides good abstraction for the developers without cluttering a par
 </div>
 </div>
 <div class="sect3">
-<h4 id="facilitator"><a class="link" href="#facilitator">3.4.2. Facilitator</a></h4>
+<h4 id="facilitator-lu-shing"><a class="link" href="#facilitator-lu-shing">3.4.2. Facilitator (Lu Shing)</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/FacilitatorPackageClassDiagram.png" alt="FacilitatorPackageClassDiagram">
@@ -332,7 +332,7 @@ The design provides good abstraction for the developers without cluttering a par
 </div>
 </div>
 <div class="sect3">
-<h4 id="lesson"><a class="link" href="#lesson">3.4.3. Lesson</a></h4>
+<h4 id="lesson-lu-shing"><a class="link" href="#lesson-lu-shing">3.4.3. Lesson (Lu Shing)</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/LessonPackageClassDiagram.png" alt="LessonPackageClassDiagram">
@@ -357,7 +357,7 @@ The design provides good abstraction for the developers without cluttering a par
 </div>
 </div>
 <div class="sect3">
-<h4 id="task"><a class="link" href="#task">3.4.4. Task</a></h4>
+<h4 id="task-nhat"><a class="link" href="#task-nhat">3.4.4. Task (Nhat)</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/TaskPackageClassDiagram.png" alt="TaskPackageClassDiagram">
@@ -379,9 +379,15 @@ The design provides good abstraction for the developers without cluttering a par
 <p>Any <code>Task</code> would contain a <code>ModuleCode</code> to indicate which <code>Module</code> it is a task of.</p>
 </li>
 <li>
-<p>A <code>UniqueTaskList</code> comprises of instances of <code>NonScheduledTask</code> and <code>ScheduledTask</code>.
-==== Calendar</p>
+<p>A <code>UniqueTaskList</code> comprises of instances of <code>NonScheduledTask</code> and <code>ScheduledTask</code>.</p>
 </li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calendar"><a class="link" href="#calendar">3.4.5. Calendar</a></h4>
+<div class="ulist">
+<ul>
 <li>
 <p>The <code>Calendar</code> package contains a concrete class <code>Calendar</code> which represents a calendar date.</p>
 </li>
@@ -389,7 +395,7 @@ The design provides good abstraction for the developers without cluttering a par
 </div>
 </div>
 <div class="sect3">
-<h4 id="doableaction"><a class="link" href="#doableaction">3.4.5. DoableAction</a></h4>
+<h4 id="doableaction-nhat"><a class="link" href="#doableaction-nhat">3.4.6. DoableAction (Nhat)</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/DoableActionClassDiagram.png" alt="DoableActionClassDiagram">
@@ -462,7 +468,7 @@ has a <code>DoableActionType</code> value to assist how the undo/redo process is
 <div class="sect3">
 <h4 id="implementation-details"><a class="link" href="#implementation-details">4.1.1. Implementation Details</a></h4>
 <div class="sect4">
-<h5 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo Feature</a></h5>
+<h5 id="undo-redo-command-nhat"><a class="link" href="#undo-redo-command-nhat">Undo/Redo command (Nhat)</a></h5>
 <div class="paragraph">
 <p>Each add/edit/delete action is captured as a <code>DoableAction</code>. Every time a <code>DoableAction</code> is performed, it will be recorded
 to the <code>DoableActionList</code>. Thus, after each add/edit/delete command execution, a suitable <code>DoableAction</code> will be be
@@ -489,14 +495,14 @@ created and recorded. Other sections might not mention this again.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="navigating-through-past-commands-with-up-down-keys"><a class="link" href="#navigating-through-past-commands-with-up-down-keys">Navigating Through Past Commands With Up/Down Keys</a></h5>
+<h5 id="navigating-through-past-commands-with-up-down-keys-nhat"><a class="link" href="#navigating-through-past-commands-with-up-down-keys-nhat">Navigating through past commands with up/down keys (Nhat)</a></h5>
 <div class="paragraph">
 <p>This feature applies to each usage session. The mechanism is below.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Each time the user types anything and presses Enter in the <code>CommandBox</code>, the input will be save the to <code>UserInputHistory</code>.</p>
+<p>Each time the user types anything and presses <kbd>Enter</kbd> in the <code>CommandBox</code>, the input will be saved to the <code>UserInputHistory</code>.</p>
 </li>
 <li>
 <p>When an <code>up</code> key is pressed, the latest previous input will be retrieved from <code>UserInputHistory</code> and display at the
@@ -509,9 +515,8 @@ there are no inputs to show, the <code>CommandBox</code> will become empty.</p>
 </ol>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="clear-command"><a class="link" href="#clear-command">4.1.2. Clear command</a></h4>
+<div class="sect4">
+<h5 id="clear-command"><a class="link" href="#clear-command">Clear command</a></h5>
 <div class="paragraph">
 <p>This command simply clears all the data from the system. The action is not undo-able. Its mechanism is simple.</p>
 </div>
@@ -526,15 +531,16 @@ there are no inputs to show, the <code>CommandBox</code> will become empty.</p>
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="help-command"><a class="link" href="#help-command">4.1.3. Help command</a></h4>
+<div class="sect4">
+<h5 id="help-command"><a class="link" href="#help-command">Help command</a></h5>
 <div class="paragraph">
 <p>This command will pop up a window showing a link to the User Guide. The user simply inputs a help command and the window
 will appear.</p>
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.4. Design Considerations</a></h4>
+<h4 id="design-considerations-nhat"><a class="link" href="#design-considerations-nhat">4.1.2. Design Considerations (Nhat)</a></h4>
 <div class="sect4">
 <h5 id="aspect-undo-redo-implementation"><a class="link" href="#aspect-undo-redo-implementation">Aspect: Undo/Redo Implementation</a></h5>
 <div class="ulist">
@@ -608,7 +614,7 @@ A module has a <code>ModuleCode</code> and an optional <code>Description</code>.
 <div class="sect3">
 <h4 id="implementation-details-2"><a class="link" href="#implementation-details-2">4.2.1. Implementation Details</a></h4>
 <div class="sect4">
-<h5 id="adding-a-module"><a class="link" href="#adding-a-module">Adding a module</a></h5>
+<h5 id="adding-a-module-zi-xin"><a class="link" href="#adding-a-module-zi-xin">Adding a module (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The add module feature allows users to add a module to Mod Manager.
 This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleAddCommandParser</code> and <code>ModuleAddCommand</code>.
@@ -675,7 +681,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="listing-all-modules"><a class="link" href="#listing-all-modules">Listing all modules</a></h5>
+<h5 id="listing-all-modules-zi-xin"><a class="link" href="#listing-all-modules-zi-xin">Listing all modules (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The list module feature allows users to list all modules in Mod Manager.
 This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleViewCommandParser</code> and <code>ModuleViewCommand</code>.
@@ -733,7 +739,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="viewing-a-module"><a class="link" href="#viewing-a-module">Viewing a module</a></h5>
+<h5 id="viewing-a-module-zi-xin"><a class="link" href="#viewing-a-module-zi-xin">Viewing a module (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The view module feature allows users to view information of a module in Mod Manager.
 This feature is facilitated by <code>ModuleCommandParser</code> and <code>ModuleViewCommand</code>.
@@ -791,7 +797,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="editing-a-module"><a class="link" href="#editing-a-module">Editing a module</a></h5>
+<h5 id="editing-a-module-zi-xin"><a class="link" href="#editing-a-module-zi-xin">Editing a module (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The edit module feature allows users to edit a module from Mod Manager.
 This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleEditCommandParser</code> and <code>ModuleEditCommand</code>.
@@ -864,7 +870,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="deleting-a-module"><a class="link" href="#deleting-a-module">Deleting a module</a></h5>
+<h5 id="deleting-a-module-zi-xin"><a class="link" href="#deleting-a-module-zi-xin">Deleting a module (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The delete module feature allows users to delete a module from Mod Manager.
 This feature is facilitated by <code>ModuleCommandParser</code>, <code>ModuleDeleteCommandParser</code> and <code>ModuleDeleteCommand</code>.
@@ -941,7 +947,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-zi-xin"><a class="link" href="#design-considerations-zi-xin">4.2.2. Design Considerations (Zi Xin)</a></h4>
 <div class="sect4">
 <h5 id="aspect-support-for-editing-module-code"><a class="link" href="#aspect-support-for-editing-module-code">Aspect: Support for editing module code</a></h5>
 <div class="ulist">
@@ -1008,7 +1014,7 @@ A class has a <code>ModuleCode</code>, <code>LessonType</code>, <code>DayAndTime
 <div class="sect3">
 <h4 id="implementation-details-3"><a class="link" href="#implementation-details-3">4.3.1. Implementation Details</a></h4>
 <div class="sect4">
-<h5 id="adding-a-class"><a class="link" href="#adding-a-class">Adding a class</a></h5>
+<h5 id="adding-a-class-heidi"><a class="link" href="#adding-a-class-heidi">Adding a class (Heidi)</a></h5>
 <div class="paragraph">
 <p>The add class command allows user to add a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonAddCommandParser</code> and <code>LessonAddCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#addLesson()</code>.</p>
 </div>
@@ -1063,7 +1069,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonAddCommandParser<
 </div>
 </div>
 <div class="sect4">
-<h5 id="finding-a-class"><a class="link" href="#finding-a-class">Finding a class</a></h5>
+<h5 id="finding-a-class-heidi"><a class="link" href="#finding-a-class-heidi">Finding a class (Heidi)</a></h5>
 <div class="paragraph">
 <p>The find class command allows user to find a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonFindCommandParser</code> and <code>LessonFindCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#findNextLesson()</code> and <code>Model#findLessonByDay</code>.</p>
 </div>
@@ -1115,7 +1121,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonFindCommandParser
 </div>
 </div>
 <div class="sect4">
-<h5 id="editing-a-class"><a class="link" href="#editing-a-class">Editing a class</a></h5>
+<h5 id="editing-a-class-heidi"><a class="link" href="#editing-a-class-heidi">Editing a class (Heidi)</a></h5>
 <div class="paragraph">
 <p>The edit class command allows user to edit a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonEditCommandParser</code> and <code>LessonEditCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#setLesson()</code>.</p>
 </div>
@@ -1179,7 +1185,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonEditCommandParser
 </div>
 </div>
 <div class="sect4">
-<h5 id="deleting-a-class"><a class="link" href="#deleting-a-class">Deleting a class</a></h5>
+<h5 id="deleting-a-class-heidi"><a class="link" href="#deleting-a-class-heidi">Deleting a class (Heidi)</a></h5>
 <div class="paragraph">
 <p>The delete class command allows user to add a class to Mod Manager. This feature is facilitated by <code>LessonCommandParser</code>, <code>LessonDeleteCommandParser</code> and <code>LessonDeleteCommand</code>. The operation is exposed in the <code>Model</code> interface as <code>Model#removeLesson()</code>.</p>
 </div>
@@ -1238,13 +1244,13 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonDeleteCommandPars
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-heidi"><a class="link" href="#design-considerations-heidi">4.3.2. Design Considerations (Heidi)</a></h4>
 <div class="sect4">
 <h5 id="aspect-prefix-of-day-and-time"><a class="link" href="#aspect-prefix-of-day-and-time">Aspect: Prefix of day and time</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1: (current choice)</strong> Have one prefix for all three <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
+<p><strong>Alternative 1 (current choice):</strong> Have one prefix for all three <code>day</code>, <code>startTime</code> and <code>endTime</code> fields.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1278,7 +1284,7 @@ The lifeline for <code>LessonCommandParser</code>, <code>LessonDeleteCommandPars
 <h3 id="task-management-feature"><a class="link" href="#task-management-feature">4.4. Task Management Feature</a></h3>
 <div class="paragraph">
 <p>The task management feature manages the tasks in Mod Manager and is represented by the <code>Task</code> abstract class with implementing class
-<code>ScheduledTask</code> for a <code>Task</code> with a time period and <code>NonScheduledTask</code> for a <code>Task</code> with no specified time period.
+<code>ScheduledTask</code> for a <code>Task</code> with a time and <code>NonScheduledTask</code> for a <code>Task</code> with no specified time.
 A task has a <code>Description</code>, an optional <code>TaskDateTime</code>, and exactly one <code>ModuleCode</code>.
 A <code>Module</code> with that <code>ModuleCode</code> of the task should exist in Mod Manager.</p>
 </div>
@@ -1320,14 +1326,14 @@ Generating task number is done through static calls to methods of <code>TaskNumM
 <p><code>search</code>- Searches for tasks that occur on the specified date, month, or year in Mod Manager.</p>
 </li>
 <li>
-<p><code>upcoming</code> - Finds upcoming tasks (for tasks with a specified time period) in Mod Manager. <code>[coming in v2.0]</code></p>
+<p><code>upcoming</code> - Finds upcoming tasks (for tasks with a specified time) in Mod Manager. <code>[coming in v2.0]</code></p>
 </li>
 </ul>
 </div>
 <div class="sect3">
 <h4 id="implementation-details-4"><a class="link" href="#implementation-details-4">4.4.1. Implementation Details</a></h4>
 <div class="sect4">
-<h5 id="adding-a-task"><a class="link" href="#adding-a-task">Adding a task</a></h5>
+<h5 id="adding-a-task-nhat-bao"><a class="link" href="#adding-a-task-nhat-bao">Adding a task (Nhat, Bao)</a></h5>
 <div class="paragraph">
 <p>The add task feature allows users to add a task to Mod Manager.
 This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskAddCommandParser</code> and `
@@ -1341,10 +1347,10 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#addT
 <ol class="arabic">
 <li>
 <p>The user executes the <code>task add</code> command and provides the module code, the description of the task (both compulsory),
-and a time period (optional), which consists of a date (for example, <code>15/04/2020</code>) or a date and time (<code>15/04/2020</code> and <code>23:59</code>) of the task to be added.</p>
+and a time (optional), which consists of a date (for example, <code>15/04/2020</code>) or a date and time (<code>15/04/2020</code> and <code>23:59</code>) of the task to be added.</p>
 </li>
 <li>
-<p><code>TaskAddCommandParser</code> creates a new <code>Task</code> based on the module code, description, and time period (if provided).</p>
+<p><code>TaskAddCommandParser</code> creates a new <code>Task</code> based on the module code, description, and time (if provided).</p>
 </li>
 <li>
 <p><code>TaskAddCommandParser</code> creates a new <code>TaskAddCommand</code> based on the task.</p>
@@ -1393,7 +1399,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h5>
+<h5 id="editing-a-task-nhat"><a class="link" href="#editing-a-task-nhat">Editing a task (Nhat)</a></h5>
 <div class="paragraph">
 <p>The <code>task edit</code> command allows user to edit a task in Mod Manager.
 The fields that can be edited are: description, and task date and time.
@@ -1485,7 +1491,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="deleting-a-task"><a class="link" href="#deleting-a-task">Deleting a task</a></h5>
+<h5 id="deleting-a-task-nhat"><a class="link" href="#deleting-a-task-nhat">Deleting a task (Nhat)</a></h5>
 <div class="paragraph">
 <p>The delete task feature allows user to delete a task from Mod Manager.
 This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskDeleteCommandParser</code> and <code>TaskDeleteCommand</code>.
@@ -1562,7 +1568,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="marking-a-task-as-done"><a class="link" href="#marking-a-task-as-done">Marking a task as done</a></h5>
+<h5 id="marking-a-task-as-done-bao"><a class="link" href="#marking-a-task-as-done-bao">Marking a task as done (Bao)</a></h5>
 <div class="paragraph">
 <p>The marking a task as done command allows users to mark a certain <code>Task</code> in a <code>Module</code> as done,
 based on its task ID called <code>taskNum</code>.
@@ -1586,7 +1592,7 @@ task to be marked as done.</p>
 </li>
 <li>
 <p><code>TaskMarkAsDoneCommand</code> retrieves the <code>moduleCode</code> and <code>taskNum</code> of the task to be marked as done,
-and then retrieves the current existing <code>Task</code> from <code>ModManager</code>.</p>
+and then retrieves the currently existing <code>Task</code> from <code>ModManager</code>.</p>
 </li>
 <li>
 <p><code>TaskMarkAsDoneCommand</code> creates a clone of the retrieved <code>Task</code>, then mark this new <code>Task</code> as done.</p>
@@ -1632,9 +1638,9 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="viewing-all-tasks-across-modules-in-mod-manager"><a class="link" href="#viewing-all-tasks-across-modules-in-mod-manager">Viewing all tasks across modules in Mod Manager</a></h5>
+<h5 id="viewing-all-tasks-across-modules-in-mod-manager-bao"><a class="link" href="#viewing-all-tasks-across-modules-in-mod-manager-bao">Viewing all tasks across modules in Mod Manager (Bao)</a></h5>
 <div class="paragraph">
-<p>The list task feature allows users to list all tasks across all  modules in Mod Manager.
+<p>The list task feature allows users to list all tasks across all modules in Mod Manager.
 This feature is facilitated by <code>TaskCommandParser</code> and <code>TaskListCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
 </div>
@@ -1690,7 +1696,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="viewing-tasks-for-a-specific-module"><a class="link" href="#viewing-tasks-for-a-specific-module">Viewing tasks for a specific module</a></h5>
+<h5 id="viewing-tasks-for-a-specific-module-bao"><a class="link" href="#viewing-tasks-for-a-specific-module-bao">Viewing tasks for a specific module (Bao)</a></h5>
 <div class="paragraph">
 <p>The viewing task by module feature allows users to find all tasks belonging to a specific module in Mod Manager.
 This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskForOneModuleCommandParser</code> and <code>TaskForOneModuleCommand</code>.
@@ -1749,9 +1755,9 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="viewing-undone-tasks"><a class="link" href="#viewing-undone-tasks">Viewing undone tasks</a></h5>
+<h5 id="viewing-undone-tasks-bao"><a class="link" href="#viewing-undone-tasks-bao">Viewing undone tasks (Bao)</a></h5>
 <div class="paragraph">
-<p>The viewing undone tasks only feature allows users to view only tasks that are not yet completed in their <code>Tasks</code> tab.
+<p>The viewing undone tasks only feature allows users to view only tasks that are not completed in their <code>Tasks</code> tab.
 This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskListUndoneCommandParser</code> and <code>TaskListUndoneCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
 </div>
@@ -1807,7 +1813,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="finding-tasks-by-description"><a class="link" href="#finding-tasks-by-description">Finding tasks by description</a></h5>
+<h5 id="finding-tasks-by-description-bao"><a class="link" href="#finding-tasks-by-description-bao">Finding tasks by description (Bao)</a></h5>
 <div class="paragraph">
 <p>The find task feature allows users to find a task by its description in Mod Manager.
 This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskFindCommandParser</code> and <code>TaskFindCommand</code>.
@@ -1865,9 +1871,9 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="searching-tasks-by-date"><a class="link" href="#searching-tasks-by-date">Searching tasks by date</a></h5>
+<h5 id="searching-tasks-by-date-bao"><a class="link" href="#searching-tasks-by-date-bao">Searching tasks by date (Bao)</a></h5>
 <div class="paragraph">
-<p>The search task feature allows users to search all tasks that occur on the specified date, month, or year.
+<p>The search task feature allows users to search for all tasks that occur on the specified date, month, or year.
 This feature is facilitated by <code>TaskCommandParser</code>, <code>TaskSearchCommandParser</code> and <code>TaskSearchCommand</code>.
 The operation is exposed in the <code>Model</code> interface as <code>Model#updateFilteredTaskList()</code>.</p>
 </div>
@@ -1878,7 +1884,7 @@ The operation is exposed in the <code>Model</code> interface as <code>Model#upda
 <ol class="arabic">
 <li>
 <p>The user executes the task search command and provides the date, month, or year, or any combination of which
-that they want to search for.</p>
+they want to search for.</p>
 </li>
 <li>
 <p><code>TaskSearchCommandParser</code> creates a new <code>TaskSearchCommand</code> based on the date, month and year.</p>
@@ -1925,96 +1931,44 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-a-task-may-have-a-specified-time-period-or-not-how-do-we-implement-this-feature"><a class="link" href="#aspect-a-task-may-have-a-specified-time-period-or-not-how-do-we-implement-this-feature">Aspect: A task may have a specified time period, or not. How do we implement this feature?</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Implement <code>Task</code> as an abstract class for Mod Manager.
-A task with a specified time period will be created as a <code>ScheduledTask</code>, while a task with no
-time period specified will be created as a <code>NonScheduledTask</code>, with both <code>ScheduledTask</code> and
-<code>NonScheduledTask</code> are concrete subclasses of <code>Task</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Utilises Object-Oriented Programming. Easy to implement <code><strong>search</strong></code> functionality,
-which we need to search for tasks that occur on a specified date, month, or year,
-and <code><strong>upcoming</strong></code> functionality <code>[coming in v2.0]</code>, which we need to find the upcoming tasks in Mod Manager.
-For these two features, we only need to work on <code>ScheduledTask</code> instances, which reduces the
-burden of checking for <code>null</code> <code>TaskDateTime</code> instances as the second approach below.</p>
-</li>
-<li>
-<p>Cons: More difficulty in implementation due to time constraints. Moreover, command
-<code><strong>edit</strong></code> that allows us to edits the information of the task will be troublesome, when
-a user decides to add a time period to a <code>NonScheduledTask</code>.
-In this case, we have to re-create a new <code>ScheduledTask</code> with the same description and its time provided.
-If we need to maintain a <code>List&lt;ScheduledTask&gt;</code> or <code>List&lt;Task&gt;</code> somewhere in the code, for example,
-in our <code>Module</code> instance, we also have to update the list contents in our <code>Module</code> s too.
-This requires the association between <code>Module</code> and <code>Task</code> to be bi-directional, which
-increases coupling and make it harder for us to maintain and conduct tests. There is also extra overhead time
-communicating and collaborating with another member in our team responsible for the <code>Module</code> component, Because of these challenges,
-we decide to weaken the association between <code>Task</code> and <code>Module</code>, which is elaborated in our next aspect.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Implement <code>Task</code> as a concrete class in Mod Manager. <code>Task</code> s without a specified time period
-will have its time attribute <code>taskDateTime</code> set to <code>null</code>, while <code>Task</code> s with a given time period will be assign a
-non-null instance of <code>taskDateTime</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easier to implement, as we only need to create one class <code>Task</code>.</p>
-</li>
-<li>
-<p>Cons: We must handle <code>null</code> cases every time we query something about the time of a <code>Task</code>.
-For example, it&#8217;s more challenging to implement the <code><strong>search</strong></code> and <code><strong>upcoming</strong></code> command, since we have to check whether the task has a non-null <code>taskDateTime</code> or not.
-Moreover, it&#8217;s complex to implement the method <code>compareTo</code> of <code>Comparable</code> interface for <code>Task</code> to compare the time between tasks,
-when one, or both of our <code>taskDateTime</code> attributes can be <code>null</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
+<h4 id="design-considerations-bao"><a class="link" href="#design-considerations-bao">4.4.2. Design Considerations (Bao)</a></h4>
 <div class="sect4">
 <h5 id="aspect-the-association-between-code-module-code-and-code-task-code"><a class="link" href="#aspect-the-association-between-code-module-code-and-code-task-code">Aspect: The association between <code>Module</code> and <code>Task</code></a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Aggregation: Each <code>Task</code> can have an unique <code>ModuleCode</code> tag, which uniquely identifies which <code>Module</code> the task belongs to.
-This is a aggregation relationship, which is weaker than composition in our second approach.</p>
+<p><strong>Alternative 1 (current choice):</strong></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Each <code>Task</code> can have a unique <code>ModuleCode</code> tag,
+which uniquely identifies the <code>Module</code> it belongs to. This is an <strong>aggregation</strong> relationship,
+which is weaker than composition in our second alternative.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModuleTaskAggregationDiagram.png" alt="ModuleTaskAggregationDiagram">
 </div>
-<div class="title">Figure 47. Class Diagram: A <code>Task</code> acts as a container for <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
+<div class="title">Figure 47. Class Diagram: A <code>Task</code> acts as a container for the <code>ModuleCode</code> object of a <code>Module</code>. <code>ModuleCode</code> objects can survive without a <code>Task</code> object.</div>
+</div>
+<div class="paragraph">
+<p><strong>Pros</strong>: Low coupling with the <code>Module</code> class. The <code>Module</code> does not need to know that there is a list of <code>Task</code> s for it.</p>
+</div>
+<div class="paragraph">
+<p><strong>Cons</strong>: It requires that the <code>ModuleCode</code> must uniquely identify the <code>Module</code>, which requires
+more time to implement from the <code>Module</code> side. The association between <code>Module</code> and <code>Task</code>
+is weak.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easier to implementation, and weak coupling with <code>Module</code> implementation. The <code>Module</code> need not
-to be aware that there are a list of <code>Task</code> s for it.</p>
-</li>
-<li>
-<p>Cons: The association between <code>Module</code> and <code>Task</code> cannot be extensive and fully descriptive as in
-our second approach, but this is a trade-off given the time constraints.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 2:</strong> Composition: each <code>Module</code> has a list of <code>Task</code> s corresponding to it.
-If the <code>Module</code> is deleted, all of the related <code>Task</code> s for the <code>Module</code> will also be removed.</p>
+<p><strong>Alternative 2:</strong></p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
+<div class="paragraph">
+<p>Each <code>Module</code> consists of a list of <code>Task</code> s corresponding to it.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2022,18 +1976,71 @@ If the <code>Module</code> is deleted, all of the related <code>Task</code> s fo
 </div>
 <div class="title">Figure 48. Class Diagram: A <code>Module</code> consists of <code>Task</code> objects.</div>
 </div>
+<div class="paragraph">
+<p><strong>Pros</strong>: This design better simulates the real-life interactions between <code>Module</code> and <code>Task</code>.
+For each NUS <code>Module</code>, we have the list of all the <code>Task</code> s for it,
+such as assignments, homework, term tests, and exams.</p>
+</div>
+<div class="paragraph">
+<p><strong>Cons</strong>: Strong data coupling with the <code>Module</code> class, as the <code>Task</code> data
+must be shared with the <code>Modules</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen for more straightforward implementation, and to reduce coupling
+between <code>Task</code> and <code>Module</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-a-code-task-code-may-have-a-specified-time-or-no-time-how-do-we-implement-this-feature"><a class="link" href="#aspect-a-code-task-code-may-have-a-specified-time-or-no-time-how-do-we-implement-this-feature">Aspect: A <code>Task</code> may have a specified time, or no time. How do we implement this feature?</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: This design choice better simulates the real-life interactions between <code>Module</code> and <code>Task</code>.
-For example, if we drop a <code>Module</code> in NUS, we will also drop all the <code>Task</code> s related to the <code>Module</code>,
-such as assignments, homework, term tests, and exams.</p>
-</li>
-<li>
-<p>Cons: Difficulty in implementation due to time constraints, as well as strong content and data coupling. More overhead in communicating
-and collaborating with the team member responsible for the <code>Module</code> component, as mentioned above.</p>
+<p><strong>Alternative 1 (current choice):</strong></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><code>Task</code> is implemented as an abstract class. A task with a specified time will be created as a <code>ScheduledTask</code>, while a task with no
+time will be created as a <code>NonScheduledTask</code>. <code>ScheduledTask</code> and
+<code>NonScheduledTask</code> are concrete subclasses of <code>Task</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Pros</strong>: Utilises Object-Oriented Programming. Commands such as  <code>task <strong>search</strong></code>
+(searching for tasks that occur on a specified date, month, or year)
+and <code>task <strong>upcoming</strong></code> (<code>[coming in v2.0]</code>, finding the upcoming tasks in our schedule)
+are easier to implement. We just need to filter out the <code>ScheduledTask</code> instances and
+perform operations on them.</p>
+</div>
+<div class="paragraph">
+<p><strong>Cons</strong>: More difficulty in implementation due to time constraints. For example, command
+<code>task <strong>edit</strong></code> allows us to add a time to a class. In this case, our <code>Task</code> is
+initially a <code>NonScheduledTask</code>, so we have to re-create a new <code>ScheduledTask</code>
+with the same description, and the specified time.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 2:</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>Task</code> is implemented as a concrete class. <code>Task</code> s without a specified time
+will have  <code>taskDateTime</code> set to <code>null</code>, while <code>Task</code> s with a given time will be assign
+a valid <code>taskDateTime</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Pros</strong>: Much more simple, as we only need to create one class <code>Task</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Cons</strong>: It&#8217;s troublesome to implement <code><strong>task</strong> search</code> and <code><strong>task</strong> upcoming</code> command
+as above, as we have to avoid <code>null</code> cases of <code>taskDateTime</code>. Just imagine
+comparing a task with a valid time, such as <code>13/4/2020 23:59</code>, to a task with time <code>null</code>.
+It&#8217;s hard to implement this comparison.</p>
+</div>
+<div class="paragraph">
+<p>Alternative 1 is chosen because it works well with all of our <code>Task</code> commands,
+such as <code><strong>task</strong> search</code> and <code><strong>task</strong> upcoming</code> above.</p>
 </div>
 </div>
 </div>
@@ -2070,7 +2077,7 @@ A <code>Module</code> with the <code>ModuleCode</code> of the facilitator should
 <div class="sect3">
 <h4 id="implementation-details-5"><a class="link" href="#implementation-details-5">4.5.1. Implementation Details</a></h4>
 <div class="sect4">
-<h5 id="adding-a-facilitator"><a class="link" href="#adding-a-facilitator">Adding a facilitator</a></h5>
+<h5 id="adding-a-facilitator-zi-xin"><a class="link" href="#adding-a-facilitator-zi-xin">Adding a facilitator (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The add facilitator feature allows users to add a facilitator to Mod Manager.
 This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilAddCommandParser</code> and <code>FacilAddCommand</code>.
@@ -2140,7 +2147,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="listing-all-facilitators"><a class="link" href="#listing-all-facilitators">Listing all facilitators</a></h5>
+<h5 id="listing-all-facilitators-zi-xin"><a class="link" href="#listing-all-facilitators-zi-xin">Listing all facilitators (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The list facilitator feature allows users to list all facilitators in Mod Manager.
 This feature is facilitated by <code>FacilCommandParser</code> and <code>FacilListCommand</code>.
@@ -2198,7 +2205,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="finding-facilitators"><a class="link" href="#finding-facilitators">Finding facilitators</a></h5>
+<h5 id="finding-facilitators-zi-xin"><a class="link" href="#finding-facilitators-zi-xin">Finding facilitators (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The find facilitator feature allows users to find a facilitator by name in Mod Manager.
 This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilFindCommandParser</code> and <code>FacilFindCommand</code>.
@@ -2256,7 +2263,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="editing-a-facilitator"><a class="link" href="#editing-a-facilitator">Editing a facilitator</a></h5>
+<h5 id="editing-a-facilitator-zi-xin"><a class="link" href="#editing-a-facilitator-zi-xin">Editing a facilitator (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The edit facilitator feature allows users to edit a facilitator from Mod Manager.
 This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilEditCommandParser</code> and <code>FacilEditCommand</code>.
@@ -2332,7 +2339,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect4">
-<h5 id="deleting-a-facilitator"><a class="link" href="#deleting-a-facilitator">Deleting a facilitator</a></h5>
+<h5 id="deleting-a-facilitator-zi-xin"><a class="link" href="#deleting-a-facilitator-zi-xin">Deleting a facilitator (Zi Xin)</a></h5>
 <div class="paragraph">
 <p>The delete facilitator feature allows users to delete a facilitator from Mod Manager.
 This feature is facilitated by <code>FacilCommandParser</code>, <code>FacilDeleteCommandParser</code> and <code>FacilDeleteCommand</code>.
@@ -2400,7 +2407,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-zi-xin-2"><a class="link" href="#design-considerations-zi-xin-2">4.5.2. Design Considerations (Zi Xin)</a></h4>
 <div class="sect4">
 <h5 id="aspect-mutability-of-code-facilitator-code-object"><a class="link" href="#aspect-mutability-of-code-facilitator-code-object">Aspect: Mutability of <code>Facilitator</code> object</a></h5>
 <div class="ulist">
@@ -2532,7 +2539,7 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 <div class="sect3">
 <h4 id="implementation-details-6"><a class="link" href="#implementation-details-6">4.6.1. Implementation Details</a></h4>
 <div class="sect4">
-<h5 id="viewing-the-calendar"><a class="link" href="#viewing-the-calendar">Viewing the calendar</a></h5>
+<h5 id="viewing-the-calendar-lu-shing"><a class="link" href="#viewing-the-calendar-lu-shing">Viewing the calendar (Lu Shing)</a></h5>
 <div class="paragraph">
 <p>The view calendar feature allows users to view the calendar for a week in Mod Manager.
 This feature is facilitated by <code>CalCommandParser</code>, <code>CalViewCommandParser</code> and <code>CalViewCommand</code>. The calendar is exposed in the <code>Model</code> interface in <code>Module#updateCalendar()</code> and it is retrieved in <code>MainWindow</code> to show the timeline for the specified week to users.</p>
@@ -2597,7 +2604,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalViewCommandParser</code
 </div>
 </div>
 <div class="sect4">
-<h5 id="finding-empty-slots-in-calendar"><a class="link" href="#finding-empty-slots-in-calendar">Finding empty slots in calendar</a></h5>
+<h5 id="finding-empty-slots-in-calendar-lu-shing"><a class="link" href="#finding-empty-slots-in-calendar-lu-shing">Finding empty slots in calendar (Lu Shing)</a></h5>
 <div class="paragraph">
 <p>The find empty in calendar feature allows users to know the empty slots they have in the calendar from the current day to the end of the week in Mod Manager. This feature is facilitated by <code>CalCommandParser</code>, <code>CalFindCommandParser</code> and <code>CalFindCommand</code>.</p>
 </div>
@@ -2650,7 +2657,7 @@ The lifeline for <code>CalCommandParser</code>, <code>CalFindCommandParser</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-lu-shing"><a class="link" href="#design-considerations-lu-shing">4.6.2. Design Considerations (Lu Shing)</a></h4>
 <div class="sect4">
 <h5 id="aspect-calendar-appearance"><a class="link" href="#aspect-calendar-appearance">Aspect: Calendar appearance</a></h5>
 <div class="imageblock">
@@ -4407,7 +4414,7 @@ that can happen if certain things are not as expected by the <a href="#mss">MSS<
 <dt class="hdlist1"><a id="taskcard"></a> Task card</dt>
 <dd>
 <p>A task card represents a task with details such as the module it belongs to,
-description, and time period (if provided upon creation).</p>
+description, and time (if provided upon creation).</p>
 </dd>
 </dl>
 </div>
@@ -4731,7 +4738,7 @@ Expected: No class is deleted. Error details shown in the status message.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="testing-of-task-features"><a class="link" href="#testing-of-task-features">F.4. Testing of Task Features</a></h3>
+<h3 id="testing-of-task-feature"><a class="link" href="#testing-of-task-feature">F.4. Testing of Task Feature</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4961,4 +4968,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:18:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:50:48 UTC</div></div></div></body></html>

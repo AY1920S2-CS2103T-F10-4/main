@@ -178,7 +178,7 @@ simpler nature and being easy to upgrade in the future.</p>
 <h2 id="task-feature"><a class="link" href="#task-feature">Task feature</a></h2>
 <div class="sectionbody">
 <div class="sect3">
-<h4 id="editing-a-task"><a class="link" href="#editing-a-task">Editing a task</a></h4>
+<h4 id="editing-a-task-nhat"><a class="link" href="#editing-a-task-nhat">Editing a task (Nhat)</a></h4>
 <div class="paragraph">
 <p>From here on, you will be introduced to Mod Manager&#8217;s task ID system.</p>
 </div>
@@ -197,8 +197,7 @@ simpler nature and being easy to upgrade in the future.</p>
 </li>
 <li>
 <p>You can find out a task&#8217;s ID by looking at the general task list - can be viewed with
-<a href="#Viewing all tasks across all modules in ModManger"><code><strong>task</strong> list</code></a>,
-or the task list of a specific module - can be viewed with <a href="#Viewing information of a module"><code><strong>mod</strong> view</code></a>.</p>
+<code><strong>task</strong> list</code>, or the task list of a specific module - can be viewed with <code><strong>mod</strong> view</code>.</p>
 </li>
 </ul>
 </div>
@@ -220,7 +219,7 @@ information.</p>
 </div>
 <div class="paragraph">
 <p>Mod Manager will find the task associated with the module code and task ID number provided and update the information correspondingly.
-The properties of <code>DESCRIPTION</code>, <code>DATE</code> and <code>TIME</code> are described in the <a href="#Adding a task">adding a task</a> section.</p>
+The properties of <code>DESCRIPTION</code>, <code>DATE</code> and <code>TIME</code> are described in the <code><strong>task</strong> add</code> command above.</p>
 </div>
 <div class="paragraph">
 <p>Example: <code><strong>task</strong> edit CS2101 344 /desc OP2 /on 08/04/2020</code></p>
@@ -268,7 +267,7 @@ to remove the date and time from a task without these values,</p>
 </div>
 <div class="paragraph">
 <p>Again, press <kbd>Enter</kbd> and you will see its date and time has been removed. Its order in the list may be changed due to
-the sorting property of the <a href="#Viewing all tasks across all modules in ModManger">task list</a>.</p>
+the sorting property of the <a href="#Viewing all tasks across all modules in Mod Manager (Bao)">task list</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -278,7 +277,7 @@ the sorting property of the <a href="#Viewing all tasks across all modules in Mo
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-task"><a class="link" href="#deleting-a-task">Deleting a task</a></h4>
+<h4 id="deleting-a-task-nhat"><a class="link" href="#deleting-a-task-nhat">Deleting a task (Nhat)</a></h4>
 <div class="paragraph">
 <p>You can delete a task from Mod Manager&#8217;s system.</p>
 </div>
@@ -352,7 +351,7 @@ has a <code>DoableActionType</code> value to assist how the undo/redo process is
 <div class="sect2">
 <h3 id="general-features"><a class="link" href="#general-features">General Features</a></h3>
 <div class="sect4">
-<h5 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo Feature</a></h5>
+<h5 id="undo-redo-command-nhat"><a class="link" href="#undo-redo-command-nhat">Undo/Redo command (Nhat)</a></h5>
 <div class="paragraph">
 <p>Each add/edit/delete action is captured as a <code>DoableAction</code>. Every time a <code>DoableAction</code> is performed, it will be recorded
 to the <code>DoableActionList</code>. Thus, after each add/edit/delete command execution, a suitable <code>DoableAction</code> will be be
@@ -379,14 +378,14 @@ created and recorded. Other sections might not mention this again.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="navigating-through-past-commands-with-up-down-keys"><a class="link" href="#navigating-through-past-commands-with-up-down-keys">Navigating Through Past Commands With Up/Down Keys</a></h5>
+<h5 id="navigating-through-past-commands-with-up-down-keys-nhat"><a class="link" href="#navigating-through-past-commands-with-up-down-keys-nhat">Navigating through past commands with up/down keys (Nhat)</a></h5>
 <div class="paragraph">
 <p>This feature applies to each usage session. The mechanism is below.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Each time the user types anything and presses Enter in the <code>CommandBox</code>, the input will be save the to <code>UserInputHistory</code>.</p>
+<p>Each time the user types anything and presses <kbd>Enter</kbd> in the <code>CommandBox</code>, the input will be saved to the <code>UserInputHistory</code>.</p>
 </li>
 <li>
 <p>When an <code>up</code> key is pressed, the latest previous input will be retrieved from <code>UserInputHistory</code> and display at the
@@ -399,8 +398,8 @@ there are no inputs to show, the <code>CommandBox</code> will become empty.</p>
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="clear-command"><a class="link" href="#clear-command">Clear command</a></h4>
+<div class="sect4">
+<h5 id="clear-command"><a class="link" href="#clear-command">Clear command</a></h5>
 <div class="paragraph">
 <p>This command simply clears all the data from the system. The action is not undo-able. Its mechanism is simple.</p>
 </div>
@@ -415,15 +414,15 @@ there are no inputs to show, the <code>CommandBox</code> will become empty.</p>
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="help-command"><a class="link" href="#help-command">Help command</a></h4>
+<div class="sect4">
+<h5 id="help-command"><a class="link" href="#help-command">Help command</a></h5>
 <div class="paragraph">
 <p>This command will pop up a window showing a link to the User Guide. The user simply inputs a help command and the window
 will appear.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="design-considerations-nhat"><a class="link" href="#design-considerations-nhat">Design Considerations (Nhat)</a></h4>
 <div class="sect4">
 <h5 id="aspect-undo-redo-implementation"><a class="link" href="#aspect-undo-redo-implementation">Aspect: Undo/Redo Implementation</a></h5>
 <div class="ulist">
@@ -469,7 +468,7 @@ some extra challenge.</p>
 <div class="sect2">
 <h3 id="task-management-feature"><a class="link" href="#task-management-feature">Task Management Feature</a></h3>
 <div class="sect4">
-<h5 id="editing-a-task-2"><a class="link" href="#editing-a-task-2">Editing a task</a></h5>
+<h5 id="editing-a-task-nhat-2"><a class="link" href="#editing-a-task-nhat-2">Editing a task (Nhat)</a></h5>
 <div class="paragraph">
 <p>The <code>task edit</code> command allows user to edit a task in Mod Manager.
 The fields that can be edited are: description, and task date and time.
@@ -562,4 +561,4 @@ the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:18:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:50:49 UTC</div></div></div></body></html>
